@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://tew5nggvlbv0"]
+
+[ext_resource type="Script" uid="uid://d0qhvgualhiwk" path="res://src/start_screen/start_screen.gd" id="1_yk0mb"]
+[ext_resource type="PackedScene" uid="uid://to3p8qv7p8yo" path="res://addons/sj/components/ui/settings/volume_slider.tscn" id="4_h2rxl"]
+
+[node name="StartScreen" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yk0mb")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 649.0
+offset_top = 200.0
+offset_right = 1089.0
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 96
+text = "START"
+
+[node name="VBoxContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 2
+
+[node name="SoundLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SFX"
+
+[node name="SoundSlider" parent="VBoxContainer" instance=ExtResource("4_h2rxl")]
+layout_mode = 2
+bus_name = "Sfx"
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "MUSIC"
+
+[node name="MusicSlider" parent="VBoxContainer" instance=ExtResource("4_h2rxl")]
+layout_mode = 2
+bus_name = "Music"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/SoundSlider" to="." method="_on_volume_changed"]
+[connection signal="value_changed" from="VBoxContainer/MusicSlider" to="." method="_on_volume_changed"]
