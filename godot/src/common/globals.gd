@@ -31,7 +31,6 @@ func start_game():
 	
 	music_manager.fade_menu_music()
 	await get_tree().create_timer(1).timeout
-	music_manager.reset_synchronized_stream()
 
 
 	if get_tree().current_scene.scene_file_path != GAME_SCENE_PATH:
