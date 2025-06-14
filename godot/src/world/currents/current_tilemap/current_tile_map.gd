@@ -10,15 +10,30 @@ var current_direction = [
 	Vector2i.LEFT
 ]
 
+var show_current_arrows:
+	set(value):
+		show_current_arrows = value
+		visible = show_current_arrows
+	
+
+var container: Node2D
+
 
 func _ready():
-	self_modulate = Color.TRANSPARENT
 	_generate_all_currents()
+	Debug.show_current_arrows_toggled.connect(func(): show_current_arrows = Debug.show_current_arrows)
+	show_current_arrows = Debug.show_current_arrows
+	
 
 func _generate_all_currents() -> void:
+	container = Node2D.new()
+	container.name = "Currents"
+	
 	for i in current_strength.size():
 		for j in current_direction.size():
 			_generate_currents_for(i,j)
+	
+	add_sibling.call_deferred(container)
 	
 
 func _generate_currents_for(strength: int, direction: int) -> void:
@@ -35,7 +50,7 @@ func _generate_currents_for(strength: int, direction: int) -> void:
 		current.intensity = current_strength[strength]
 		current.direction = current_direction[direction]
 		current.set_polygon(polygon)
-		add_child(current)
+		container.add_child(current)
 		Logger.info("Generated current in direction %s and intensity %s with %s cells" % [current_direction[direction], current_strength[strength], used_cells.size()])
 	
 

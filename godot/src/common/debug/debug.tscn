@@ -18,7 +18,7 @@ mouse_filter = 2
 
 [node name="DebugPanel" parent="MarginContainer" instance=ExtResource("2_j5q3p")]
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_horizontal = 8
 
 [node name="Version" type="Label" parent="MarginContainer"]
 unique_name_in_owner = true
