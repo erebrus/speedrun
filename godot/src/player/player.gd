@@ -6,8 +6,9 @@ class_name Player extends RigidBody2D
 @export var back_thrust_factor := .2
 @export var strafe_thrust_factor := .25
 @export var full_thrust_bonus := 1.2
-@export var thrust_charge_speed :=2.0
+@export var thrust_charge_speed :=1.0
 @export var min_thrust_timeout := .4
+@export var perfect_thrust_interval = Vector2(0.8,.9)
 @export_category("other movement")
 @export var rotation_speed :=2.5
 @export var friction := .7
@@ -44,8 +45,7 @@ var currents:int:
 			
 			if currents >0:
 				loop_current_sfx.play()
-	
-@onready var sanity:float = 100			
+		
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var light: PointLight2D = $PointLight2D
@@ -58,8 +58,7 @@ var currents:int:
 @onready var hurt_sfx: AudioStreamPlayer2D = $sfx/hurt_sfx
 @onready var krill_sfx: AudioStreamPlayer2D = $sfx/krill_sfx
 @onready var ruffle_sfx: AudioStreamPlayer2D = $sfx/ruffle_sfx
-var stingers:=0
-var has_lamp:=false
+
 
 func _ready():
 	animation_player.play("idle")
@@ -96,6 +95,7 @@ func charge_thrust(delta:float):
 	if thrust_factor == 0:
 		thrust_factor = .2	
 		animation_player.play("charge")
+		Events.squid_charge_started.emit()
 		Logger.info("start charge %d" %  Time.get_ticks_msec())
 		charge_sfx.play()
 	else:
@@ -104,6 +104,13 @@ func charge_thrust(delta:float):
 		last_thrust_direction = Vector2.RIGHT
 		do_thrust()
 	
+func is_perfect_thrust()->bool:
+	var perfect :bool = thrust_factor >= perfect_thrust_interval.x and thrust_factor <= perfect_thrust_interval.y
+	Logger.info("thrust factor %.2f window %s" % [thrust_factor, perfect_thrust_interval])
+	if perfect:
+		Logger.info("perfect thrust")
+	return perfect
+
 func do_thrust(rotation_delta:float = 0):
 	var thrust_direction=Vector2.RIGHT.rotated(rotation+rotation_delta)
 	Logger.debug("thrust %d" % Time.get_ticks_msec())
@@ -111,10 +118,11 @@ func do_thrust(rotation_delta:float = 0):
 		thrust_sfx.play()
 	else:
 		tap_sfx.play()
-
-	var intensity:float = thrust * thrust_factor * (full_thrust_bonus if thrust_factor>=1.0 else 1)
-	Logger.debug("thrust intensity %.2f" % intensity)
+	
+	var intensity:float = thrust * (full_thrust_bonus if is_perfect_thrust() else thrust_factor)
+	Logger.info("thrust factor %2.f intensity %.2f" % [thrust_factor, intensity])
 	apply_impulse(thrust_direction * intensity,Vector2.ZERO)
+	Events.squid_charge_done.emit(thrust_factor)
 	#do_noise()
 	can_thrust=false
 	match last_thrust_direction:
