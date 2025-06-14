@@ -1,5 +1,6 @@
 extends Node
 
+signal level_ready(level: BaseLevel)
 signal level_ended()
 signal player_died()
 
