@@ -12,7 +12,7 @@ func _ready():
 	Events.timer_restarted.connect(_on_restart)
 	Events.timer_started.connect(func (): on = true)
 	Events.timer_stopped.connect(func (): on = false)
-
+	Events.score_emitted.emit(ellapsed_time)
 func _on_restart():
 	ellapsed_time = 0
 	on = true

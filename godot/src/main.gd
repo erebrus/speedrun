@@ -18,8 +18,7 @@ func _on_end_level():
 	await fade_panel.fade_out_completed
 	if not level_manager.is_last_level():
 		fade_panel.fade_in()
-	level_manager.load_next_level()
-	
+
 	
 
 
