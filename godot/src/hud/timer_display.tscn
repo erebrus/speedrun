@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://02ojse24fbw5"]
+
+[ext_resource type="Script" uid="uid://dxsmnm86mc46m" path="res://src/hud/timer_display.gd" id="1_7rhdg"]
+[ext_resource type="FontFile" uid="uid://y28tl4ax5wef" path="res://assets/fonts/Kenney Pixel Square.ttf" id="2_wfii7"]
+
+[node name="TimerDisplay" type="Control"]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7rhdg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_wfii7")
+theme_override_font_sizes/font_size = 24
+text = "0.000"
+horizontal_alignment = 1
+vertical_alignment = 1

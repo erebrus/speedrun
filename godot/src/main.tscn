@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=8 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="Script" uid="uid://cgpkxa13hhnox" path="res://src/main.gd" id="1_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://bdj8t5d1w0lh5" path="res://src/common/level_manager.tscn" id="2_fyndt"]
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="3_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://dtoa1mfxryx0c" path="res://src/player/player.tscn" id="4_fyndt"]
+[ext_resource type="PackedScene" uid="uid://02ojse24fbw5" path="res://src/hud/timer_display.tscn" id="5_kmhfv"]
 [ext_resource type="PackedScene" uid="uid://cdm2fhla0kigd" path="res://src/common/fade_panel.tscn" id="6_kmhfv"]
 
 [sub_resource type="Resource" id="Resource_5q4o7"]
@@ -26,6 +27,14 @@ position = Vector2(422, 236)
 metadata/_edit_lock_ = true
 
 [node name="HUDLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerDisplay" parent="HUDLayer" instance=ExtResource("5_kmhfv")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_bottom = 40.0
+grow_horizontal = 0
 
 [node name="OverlayLayer" type="CanvasLayer" parent="."]
 layer = 5

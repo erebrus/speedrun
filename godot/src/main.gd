@@ -39,3 +39,4 @@ func _on_level_manager_level_ready() -> void:
 	if level_manager.current_level_idx==1:
 		game_state=load("res://src/start_state.tres")
 	get_level().set_state(game_state)
+	Events.timer_started.emit()
