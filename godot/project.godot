@@ -25,6 +25,7 @@ Globals="*res://src/common/globals.tscn"
 Logger="*res://addons/gs_logger/logger.gd"
 Debug="*res://src/common/debug/debug.tscn"
 LayerNames="*res://addons/layerNames/layerNames.gd"
+Leaderboard="*res://src/common/leaderboard.gd"
 
 [editor_plugins]
 
