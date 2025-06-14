@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=7 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="Script" uid="uid://cgpkxa13hhnox" path="res://src/main.gd" id="1_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://bdj8t5d1w0lh5" path="res://src/common/level_manager.tscn" id="2_fyndt"]
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="3_3cfgd"]
-[ext_resource type="PackedScene" uid="uid://dtoa1mfxryx0c" path="res://src/player/player.tscn" id="4_fyndt"]
 [ext_resource type="PackedScene" uid="uid://02ojse24fbw5" path="res://src/hud/timer_display.tscn" id="5_kmhfv"]
 [ext_resource type="PackedScene" uid="uid://cdm2fhla0kigd" path="res://src/common/fade_panel.tscn" id="6_kmhfv"]
 
@@ -19,12 +18,6 @@ levels = Array[PackedScene]([ExtResource("3_3cfgd")])
 level_container = NodePath("../Level")
 
 [node name="Level" type="Node2D" parent="."]
-
-[node name="Player" parent="." instance=ExtResource("4_fyndt")]
-position = Vector2(422, 236)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-metadata/_edit_lock_ = true
 
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 
