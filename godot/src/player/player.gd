@@ -1,0 +1,166 @@
+class_name Player extends RigidBody2D
+
+@export_category("thrust")
+@export var base_thrust_timeout := .8
+@export var thrust := 400.0
+@export var back_thrust_factor := .2
+@export var strafe_thrust_factor := .25
+@export var full_thrust_bonus := 1.2
+@export var thrust_charge_speed :=2.0
+@export var min_thrust_timeout := .4
+@export_category("other movement")
+@export var rotation_speed :=2.5
+@export var friction := .7
+
+
+var in_animation:=false
+var can_thrust:=true
+var thrust_factor := 0.0
+var last_thrust_direction:=Vector2.RIGHT
+var currents:int:
+	set(_val):
+		var has_current = currents > 0
+		currents=_val
+		if has_current and currents ==0:
+			Logger.debug("leaving current %d" % currents)
+			var vol=loop_current_sfx.volume_db
+			var tween := create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+			tween.tween_property(loop_current_sfx,"volume_db",-40,.3)
+			await tween.finished
+			loop_current_sfx.stop()
+			loop_current_sfx.volume_db = vol
+		elif not has_current and currents > 0:
+			#enter_current_sfx.play()
+			#await enter_current_sfx.finished
+			
+			var vol=loop_current_sfx.volume_db
+			loop_current_sfx.volume_db = -40
+			loop_current_sfx.play()
+			var tween := create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+			tween.tween_property(loop_current_sfx,"volume_db",vol,.3)
+			await tween.finished
+			
+			Logger.debug("entering current %d" % currents)
+			
+			if currents >0:
+				loop_current_sfx.play()
+	
+@onready var sanity:float = 100			
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var light: PointLight2D = $PointLight2D
+
+@onready var charge_sfx: AudioStreamPlayer2D = $sfx/charge_sfx
+@onready var tap_sfx: AudioStreamPlayer2D = $sfx/tap_sfx
+@onready var thrust_sfx: AudioStreamPlayer2D = $sfx/thrust_sfx
+@onready var enter_current_sfx: AudioStreamPlayer2D = $sfx/enter_current_sfx
+@onready var loop_current_sfx: AudioStreamPlayer2D = $sfx/loop_current_sfx
+@onready var hurt_sfx: AudioStreamPlayer2D = $sfx/hurt_sfx
+@onready var krill_sfx: AudioStreamPlayer2D = $sfx/krill_sfx
+@onready var ruffle_sfx: AudioStreamPlayer2D = $sfx/ruffle_sfx
+var stingers:=0
+var has_lamp:=false
+
+func _ready():
+	animation_player.play("idle")
+
+
+func _physics_process(delta: float) -> void:
+	if in_animation :
+		return
+	
+	var rotate_input:float = Input.get_axis("rotate_left","rotate_right")
+	if rotate_input:
+		rotation += rotate_input * rotation_speed * delta
+
+	if can_thrust:
+		if Input.is_action_pressed("move_forward"):
+			charge_thrust(delta)
+		elif Input.is_action_just_released("move_forward"):
+			last_thrust_direction = Vector2.RIGHT
+			do_thrust()
+		if Input.is_action_just_pressed("move_back"):
+			last_thrust_direction = Vector2.LEFT
+			thrust_factor = back_thrust_factor
+			do_thrust(PI)
+		elif Input.is_action_just_pressed("move_left"):
+			last_thrust_direction = Vector2.UP
+			thrust_factor=strafe_thrust_factor
+			do_thrust(-PI/2)
+		elif Input.is_action_just_pressed("move_right"):
+			last_thrust_direction = Vector2.DOWN
+			thrust_factor=strafe_thrust_factor
+			do_thrust(PI/2)
+			
+func charge_thrust(delta:float):
+	if thrust_factor == 0:
+		thrust_factor = .2	
+		animation_player.play("charge")
+		Logger.info("start charge %d" %  Time.get_ticks_msec())
+		charge_sfx.play()
+	else:
+		thrust_factor+=delta*thrust_charge_speed
+	if thrust_factor >=1.0:
+		last_thrust_direction = Vector2.RIGHT
+		do_thrust()
+	
+func do_thrust(rotation_delta:float = 0):
+	var thrust_direction=Vector2.RIGHT.rotated(rotation+rotation_delta)
+	Logger.debug("thrust %d" % Time.get_ticks_msec())
+	if thrust_factor > .5:
+		thrust_sfx.play()
+	else:
+		tap_sfx.play()
+
+	var intensity:float = thrust * thrust_factor * (full_thrust_bonus if thrust_factor>=1.0 else 1)
+	Logger.debug("thrust intensity %.2f" % intensity)
+	apply_impulse(thrust_direction * intensity,Vector2.ZERO)
+	#do_noise()
+	can_thrust=false
+	match last_thrust_direction:
+		Vector2.LEFT:
+			Logger.debug("thrust back")
+			animation_player.play("back")
+		Vector2.UP:
+			Logger.debug("strafe left")
+			animation_player.play("strafe_left")
+		Vector2.DOWN:
+			Logger.debug("strafe right")
+			animation_player.play("strafe_right")
+		_:
+			Logger.debug("thrust forward")
+			animation_player.play("thrust")
+
+			
+	$ThrustTimer.wait_time = max(min_thrust_timeout, base_thrust_timeout*thrust_factor )
+	Logger.info("wait time %.2f" % $ThrustTimer.wait_time )
+	thrust_factor=0
+	$ThrustTimer.start()
+	Logger.debug("thrust NOT available %d" % Time.get_ticks_msec())
+
+
+func _on_thrust_timer_timeout() -> void:
+	can_thrust=true
+	Logger.debug("thrust available %d" % Time.get_ticks_msec())
+	match last_thrust_direction:		
+		Vector2.RIGHT:
+			if not Input.is_action_pressed("move_forward"):
+				animation_player.play("thrust_to_idle")
+				await animation_player.animation_finished
+				animation_player.play("idle")
+		_:
+			animation_player.play("idle")
+
+	
+
+
+#func kill():
+	#Logger.info("hurt")
+	#visible=false
+	#hurt_sfx.play()
+	#await get_tree().create_timer(1).timeout
+	#Globals.do_lose()
+
+func on_ruffle():
+	if not ruffle_sfx.playing:
+		ruffle_sfx.play()
