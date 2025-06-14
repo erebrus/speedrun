@@ -9,11 +9,20 @@ signal game_completed
 @export var levels: Array[PackedScene]
 @export var level_container:Node
 @export var unload_delay:=0.0
+@export var override_level:PackedScene
+
 var current_level_idx = 0
 func _ready():
 	assert(level_container)
 	assert(levels and not levels.is_empty())
-	
+
+func load_first_level():
+	if override_level:
+		load_level(override_level)
+	else:
+		current_level_idx = 0
+		load_current_level()
+			
 func load_level(scene:PackedScene):
 	if has_loaded_level():
 		unload_current_level()

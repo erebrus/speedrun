@@ -9,7 +9,7 @@ extends Node2D
 func _ready():
 	Events.end_level.connect(_on_end_level)
 	fade_panel.fade_in()
-	level_manager.load_current_level()
+	level_manager.load_first_level()
 
 
 func _on_end_level():
@@ -17,7 +17,7 @@ func _on_end_level():
 	await fade_panel.fade_out_completed
 	if not level_manager.is_last_level():
 		fade_panel.fade_in()
-	level_manager.load_next_level()
+	level_manager.load_first_level()
 	
 
 
