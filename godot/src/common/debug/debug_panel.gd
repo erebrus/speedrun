@@ -1,5 +1,6 @@
 extends PanelContainer
 
+@onready var level_selection:OptionButton = %LevelSelection
 
 func _ready() -> void:
 	for music in Types.GameMusic:
@@ -8,13 +9,13 @@ func _ready() -> void:
 	 
 
 func set_levels(levels:Array[PackedScene]):
-	while %LevelSelection.item_count>0:
-		%LevelSelection.remove_item(0)
+	while level_selection.item_count>0:
+		level_selection.remove_item(0)
 		
 	for i in levels.size():
 		var level = levels[i]
 		var level_name = level.resource_path.get_file().replace(".tscn", "")
-		%LevelSelection.add_item(level_name, i)
+		level_selection.add_item(level_name, i)
 
 func _input(event: InputEvent) -> void:
 	if Debug.debug_build and event.is_action_pressed("debug"):
@@ -36,10 +37,17 @@ func _on_music_tension_item_selected(index:int):
 	
 
 func _on_restart_pressed():
+	var level_idx = level_selection.selected
+	var level_manager = Globals.game.level_manager
+	if level_idx == -1:
+		return
+	if level_idx >= level_manager.levels.size():
+		Logger.warn("Tried to load invalid level (idx=%d)" % level_idx)
+		return
 	if !Globals.in_game:
 		await Globals.start_game()
 		await get_tree().create_timer(0.1).timeout
-	Globals.game.level_manager.load_current_level()
+	level_manager.load_level(level_manager.levels[level_idx])
 	
 
 func _on_next_level_pressed():
