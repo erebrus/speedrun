@@ -31,6 +31,14 @@ grow_horizontal = 2
 grow_vertical = 0
 columns = 2
 
+[node name="NameLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Name"
+
+[node name="PlayerName" type="LineEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="SoundLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "SFX"
