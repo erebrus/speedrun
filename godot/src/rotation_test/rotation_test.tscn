@@ -1,0 +1,570 @@
+[gd_scene load_steps=13 format=3 uid="uid://dq1rle4daklh1"]
+
+[ext_resource type="PackedScene" uid="uid://b88jbwt5g8ppn" path="res://src/rotation_test/rotation_control.tscn" id="1_gdjf4"]
+[ext_resource type="Texture2D" uid="uid://b1jjytri1oxky" path="res://assets/gfx/character/idle_16.png" id="2_q5l4v"]
+[ext_resource type="Texture2D" uid="uid://buhl563q66f0s" path="res://assets/gfx/character/idle_32.png" id="3_q5l4v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmy21"]
+atlas = ExtResource("2_q5l4v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6p60"]
+atlas = ExtResource("2_q5l4v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_13fff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmy21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6p60")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13fff"]
+atlas = ExtResource("3_q5l4v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52guf"]
+atlas = ExtResource("3_q5l4v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmuxw"]
+atlas = ExtResource("3_q5l4v")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxa8g"]
+atlas = ExtResource("3_q5l4v")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nk256"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13fff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52guf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmuxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxa8g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q5l4v"]
+font_size = 32
+
+[node name="RotationTest" type="Node2D"]
+
+[node name="Rotation_0" parent="." instance=ExtResource("1_gdjf4")]
+
+[node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_0"]
+texture_filter = 1
+position = Vector2(50, 19)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.461039
+
+[node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_0"]
+texture_filter = 1
+position = Vector2(50, 55)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.0334052
+
+[node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_0"]
+texture_filter = 1
+position = Vector2(50, 110)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.0388326
+
+[node name="16px_x8" type="AnimatedSprite2D" parent="Rotation_0"]
+texture_filter = 1
+position = Vector2(52, 219)
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.734599
+
+[node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_0"]
+texture_filter = 1
+position = Vector2(59, 326)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.995061
+
+[node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_0"]
+texture_filter = 1
+position = Vector2(62, 399)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_0"]
+texture_filter = 1
+position = Vector2(61, 520)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="Rotation_15" parent="." instance=ExtResource("1_gdjf4")]
+position = Vector2(95, 1)
+individual_rotation = 15.0
+
+[node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_15"]
+texture_filter = 1
+position = Vector2(50, 19)
+rotation = 0.523598
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.589435
+
+[node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_15"]
+texture_filter = 1
+position = Vector2(50, 55)
+rotation = 0.523598
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.161786
+
+[node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_15"]
+texture_filter = 1
+position = Vector2(50, 110)
+rotation = 0.523598
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.167214
+
+[node name="16px_x8" type="AnimatedSprite2D" parent="Rotation_15"]
+texture_filter = 1
+position = Vector2(52, 219)
+rotation = 0.523598
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.862972
+
+[node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_15"]
+texture_filter = 1
+position = Vector2(59, 326)
+rotation = 0.523598
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.329368
+
+[node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_15"]
+texture_filter = 1
+position = Vector2(62, 399)
+rotation = 0.523598
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_15"]
+texture_filter = 1
+position = Vector2(61, 520)
+rotation = 0.523598
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="Rotation_30" parent="." instance=ExtResource("1_gdjf4")]
+position = Vector2(206, 7)
+individual_rotation = 30.0
+
+[node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_30"]
+texture_filter = 1
+position = Vector2(50, 19)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.589435
+
+[node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_30"]
+texture_filter = 1
+position = Vector2(50, 55)
+rotation = 1.5708
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.161786
+
+[node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_30"]
+texture_filter = 1
+position = Vector2(50, 110)
+rotation = 1.5708
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.167214
+
+[node name="16px_x8" type="AnimatedSprite2D" parent="Rotation_30"]
+texture_filter = 1
+position = Vector2(52, 219)
+rotation = 1.5708
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.862972
+
+[node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_30"]
+texture_filter = 1
+position = Vector2(59, 326)
+rotation = 1.0472
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.329368
+
+[node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_30"]
+texture_filter = 1
+position = Vector2(62, 399)
+rotation = 1.0472
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_30"]
+texture_filter = 1
+position = Vector2(61, 520)
+rotation = 1.0472
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="Rotation_45" parent="." instance=ExtResource("1_gdjf4")]
+position = Vector2(333, 9)
+individual_rotation = 45.0
+
+[node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_45"]
+texture_filter = 1
+position = Vector2(50, 19)
+rotation = 2.3562
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.589435
+
+[node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_45"]
+texture_filter = 1
+position = Vector2(50, 55)
+rotation = 2.3562
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.161786
+
+[node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_45"]
+texture_filter = 1
+position = Vector2(50, 110)
+rotation = 2.3562
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.167214
+
+[node name="16px_x8" type="AnimatedSprite2D" parent="Rotation_45"]
+texture_filter = 1
+position = Vector2(52, 219)
+rotation = 2.3562
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.862972
+
+[node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_45"]
+texture_filter = 1
+position = Vector2(59, 326)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.329368
+
+[node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_45"]
+texture_filter = 1
+position = Vector2(62, 399)
+rotation = 1.5708
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_45"]
+texture_filter = 1
+position = Vector2(61, 520)
+rotation = 1.5708
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="Rotation_60" parent="." instance=ExtResource("1_gdjf4")]
+position = Vector2(470, 18)
+individual_rotation = 60.0
+
+[node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_60"]
+texture_filter = 1
+position = Vector2(50, 19)
+rotation = 3.1416
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.589435
+
+[node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_60"]
+texture_filter = 1
+position = Vector2(50, 55)
+rotation = 3.1416
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.161786
+
+[node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_60"]
+texture_filter = 1
+position = Vector2(50, 110)
+rotation = 3.1416
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.167214
+
+[node name="16px_x8" type="AnimatedSprite2D" parent="Rotation_60"]
+texture_filter = 1
+position = Vector2(52, 219)
+rotation = 3.1416
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.862972
+
+[node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_60"]
+texture_filter = 1
+position = Vector2(59, 326)
+rotation = 2.0944
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.329368
+
+[node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_60"]
+texture_filter = 1
+position = Vector2(62, 399)
+rotation = 2.0944
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_60"]
+texture_filter = 1
+position = Vector2(61, 520)
+rotation = 2.0944
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="Rotation_75" parent="." instance=ExtResource("1_gdjf4")]
+position = Vector2(608, 25)
+individual_rotation = 75.0
+
+[node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_75"]
+texture_filter = 1
+position = Vector2(50, 19)
+rotation = 3.927
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.589435
+
+[node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_75"]
+texture_filter = 1
+position = Vector2(50, 55)
+rotation = 3.927
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.161786
+
+[node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_75"]
+texture_filter = 1
+position = Vector2(50, 110)
+rotation = 3.927
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.167214
+
+[node name="16px_x8" type="AnimatedSprite2D" parent="Rotation_75"]
+texture_filter = 1
+position = Vector2(52, 219)
+rotation = 1.309
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.862972
+
+[node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_75"]
+texture_filter = 1
+position = Vector2(59, 326)
+rotation = 2.618
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.329368
+
+[node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_75"]
+texture_filter = 1
+position = Vector2(62, 399)
+rotation = 2.618
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_75"]
+texture_filter = 1
+position = Vector2(61, 520)
+rotation = 2.618
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="Rotating" parent="." instance=ExtResource("1_gdjf4")]
+position = Vector2(755, 18)
+animate_speed = 1.0
+
+[node name="16px_x1" type="AnimatedSprite2D" parent="Rotating"]
+texture_filter = 1
+position = Vector2(50, 19)
+rotation = 196.049
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.589435
+
+[node name="16px_x2" type="AnimatedSprite2D" parent="Rotating"]
+texture_filter = 1
+position = Vector2(50, 55)
+rotation = 196.049
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.161786
+
+[node name="16px_x4" type="AnimatedSprite2D" parent="Rotating"]
+texture_filter = 1
+position = Vector2(50, 110)
+rotation = 196.049
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.167214
+
+[node name="16px_x8" type="AnimatedSprite2D" parent="Rotating"]
+texture_filter = 1
+position = Vector2(52, 219)
+rotation = 196.049
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_13fff")
+autoplay = "default"
+frame_progress = 0.862972
+
+[node name="32px_x1" type="AnimatedSprite2D" parent="Rotating"]
+texture_filter = 1
+position = Vector2(59, 326)
+rotation = 196.049
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.329368
+
+[node name="32px_x2" type="AnimatedSprite2D" parent="Rotating"]
+texture_filter = 1
+position = Vector2(62, 399)
+rotation = 196.049
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="32px_x4" type="AnimatedSprite2D" parent="Rotating"]
+texture_filter = 1
+position = Vector2(61, 520)
+rotation = 196.049
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_nk256")
+autoplay = "default"
+frame_progress = 0.328106
+
+[node name="Label" type="Label" parent="."]
+offset_left = 882.0
+offset_top = 4.0
+offset_right = 1119.0
+offset_bottom = 49.0
+text = "ORIGINAL (16px)"
+label_settings = SubResource("LabelSettings_q5l4v")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 882.0
+offset_top = 52.0
+offset_right = 1137.0
+offset_bottom = 97.0
+text = "x2 (32px)"
+label_settings = SubResource("LabelSettings_q5l4v")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 882.0
+offset_top = 109.0
+offset_right = 1137.0
+offset_bottom = 154.0
+text = "x4 (64px)"
+label_settings = SubResource("LabelSettings_q5l4v")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 888.0
+offset_top = 210.0
+offset_right = 1143.0
+offset_bottom = 255.0
+text = "x8 (128px)"
+label_settings = SubResource("LabelSettings_q5l4v")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 884.0
+offset_top = 320.0
+offset_right = 1121.0
+offset_bottom = 365.0
+text = "ORIGINAL (32px)"
+label_settings = SubResource("LabelSettings_q5l4v")
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 885.0
+offset_top = 394.0
+offset_right = 1140.0
+offset_bottom = 439.0
+text = "x2 (64px)"
+label_settings = SubResource("LabelSettings_q5l4v")
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 891.0
+offset_top = 495.0
+offset_right = 1146.0
+offset_bottom = 540.0
+text = "x4 (128px)"
+label_settings = SubResource("LabelSettings_q5l4v")

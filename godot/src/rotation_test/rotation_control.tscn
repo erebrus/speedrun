@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b88jbwt5g8ppn"]
+
+[ext_resource type="Script" uid="uid://5i007d06w3eo" path="res://src/rotation_test/rotation_control.gd" id="1_hme48"]
+
+[node name="RotationControl" type="Node2D"]
+script = ExtResource("1_hme48")
