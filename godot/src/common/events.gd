@@ -1,6 +1,9 @@
 extends Node
 
-signal end_level()
+signal level_ended()
+signal player_died()
+
+signal timer_restarted()
 signal timer_started()
 signal timer_stopped()
 

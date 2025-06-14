@@ -1,4 +1,4 @@
-extends Node2D
+class_name Game extends Node2D
 
 @export var game_state:GameState
 
@@ -7,17 +7,19 @@ extends Node2D
 @onready var fade_panel: FadePanel = %FadePanel
 
 func _ready():
-	Events.end_level.connect(_on_end_level)
+	Globals.game = self
+	Events.level_ended.connect(_on_end_level)
 	fade_panel.fade_in()
 	level_manager.load_first_level()
-
+	Debug.set_levels(level_manager.levels)
 
 func _on_end_level():
 	fade_panel.fade_out()
 	await fade_panel.fade_out_completed
 	if not level_manager.is_last_level():
 		fade_panel.fade_in()
-	level_manager.load_first_level()
+	level_manager.load_next_level()
+	
 	
 
 
@@ -39,4 +41,4 @@ func _on_level_manager_level_ready() -> void:
 	if level_manager.current_level_idx==1:
 		game_state=load("res://src/start_state.tres")
 	get_level().set_state(game_state)
-	Events.timer_started.emit()
+	Events.timer_restarted.emit()

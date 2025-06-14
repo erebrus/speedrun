@@ -13,3 +13,5 @@ extends CanvasLayer
 func _ready() -> void:
 	%Version.text = ProjectSettings.get_setting("application/config/version")
 	
+func set_levels(levels:Array[PackedScene]):
+	$MarginContainer/DebugPanel.set_levels(levels)
