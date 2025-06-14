@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://lqtollaovard"]
+[gd_scene load_steps=5 format=3 uid="uid://lqtollaovard"]
 
 [ext_resource type="Script" uid="uid://b4ytavk038x8p" path="res://src/world/base_level.gd" id="1_mnxva"]
 [ext_resource type="PackedScene" uid="uid://dtoa1mfxryx0c" path="res://src/player/player.tscn" id="2_1135c"]
 [ext_resource type="PackedScene" uid="uid://ljmvdynfjm14" path="res://src/world/plancton/plancton_generator.tscn" id="3_3nebk"]
+[ext_resource type="PackedScene" uid="uid://b2osqltn8up02" path="res://src/world/currents/current_tilemap/current_tile_map.tscn" id="4_3nebk"]
 
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_mnxva")
@@ -17,3 +18,5 @@ size = Vector2(1800, 1200)
 target_container = NodePath("../../Plankton")
 
 [node name="Plankton" type="Node2D" parent="."]
+
+[node name="CurrentTileMap" parent="." instance=ExtResource("4_3nebk")]

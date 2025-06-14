@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dplqqjrgor2d6"]
+[gd_scene load_steps=4 format=3 uid="uid://dplqqjrgor2d6"]
 
 [ext_resource type="Script" uid="uid://ba8oovky3bhiq" path="res://src/common/debug/debug_panel.gd" id="1_ab2n8"]
+
+[sub_resource type="Theme" id="Theme_hjvbx"]
+default_font_size = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvt4n"]
 content_margin_left = 8.0
@@ -16,6 +19,7 @@ anchor_bottom = 1.0
 offset_left = -111.0
 grow_horizontal = 0
 grow_vertical = 2
+theme = SubResource("Theme_hjvbx")
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvt4n")
 script = ExtResource("1_ab2n8")
 
@@ -68,8 +72,19 @@ focus_mode = 0
 text = "Win Game
 "
 
+[node name="AssistLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Assist"
+
+[node name="CurrentArrows" type="CheckBox" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Current Arrows"
+
 [connection signal="item_selected" from="VBoxContainer/Music/MusicTension" to="." method="_on_music_tension_item_selected"]
 [connection signal="pressed" from="VBoxContainer/Level/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="pressed" from="VBoxContainer/WinGame" to="." method="_on_win_game_pressed"]
+[connection signal="toggled" from="VBoxContainer/CurrentArrows" to="." method="_on_current_arrows_toggled"]

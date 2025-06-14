@@ -56,3 +56,4 @@ func do_lose():
 
 func do_win():
 	get_tree().quit()
+	

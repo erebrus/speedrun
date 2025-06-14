@@ -3,10 +3,12 @@ extends PanelContainer
 @onready var level_selection:OptionButton = %LevelSelection
 
 func _ready() -> void:
-	for music in Types.GameMusic:
-		%MusicTension.add_item(music, Types.GameMusic[music])	
 	hide()
-	 
+	for music in Types.GameMusic:
+		%MusicTension.add_item(music, Types.GameMusic[music])
+	
+	%CurrentArrows.button_pressed = Debug.show_current_arrows
+	
 
 func set_levels(levels:Array[PackedScene]):
 	while level_selection.item_count>0:
@@ -16,6 +18,7 @@ func set_levels(levels:Array[PackedScene]):
 		var level = levels[i]
 		var level_name = level.resource_path.get_file().replace(".tscn", "")
 		level_selection.add_item(level_name, i)
+	
 
 func _input(event: InputEvent) -> void:
 	if Debug.debug_build and event.is_action_pressed("debug"):
@@ -62,3 +65,6 @@ func _on_game_over_pressed():
 func _on_win_game_pressed():
 	Globals.do_win()
 	
+
+func _on_current_arrows_toggled(toggled_on: bool):
+	Debug.show_current_arrows = toggled_on
