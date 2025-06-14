@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ljmvdynfjm14"]
+
+[ext_resource type="Script" uid="uid://deui0ptflr83" path="res://src/world/plancton/plancton_generator.gd" id="1_ylmm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlojj"]
+size = Vector2(2000, 1200)
+
+[node name="PlanctonGenerator" type="Node2D"]
+script = ExtResource("1_ylmm2")
+plancton_scene = null
+max_count = 1000
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jlojj")

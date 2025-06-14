@@ -130,7 +130,7 @@ individual_rotation = 15.0
 [node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_15"]
 texture_filter = 1
 position = Vector2(50, 19)
-rotation = 0.523598
+rotation = 0.261799
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
 frame_progress = 0.589435
@@ -138,7 +138,7 @@ frame_progress = 0.589435
 [node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_15"]
 texture_filter = 1
 position = Vector2(50, 55)
-rotation = 0.523598
+rotation = 0.261799
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -147,7 +147,7 @@ frame_progress = 0.161786
 [node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_15"]
 texture_filter = 1
 position = Vector2(50, 110)
-rotation = 0.523598
+rotation = 0.261799
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -156,7 +156,7 @@ frame_progress = 0.167214
 [node name="16px_x8" type="AnimatedSprite2D" parent="Rotation_15"]
 texture_filter = 1
 position = Vector2(52, 219)
-rotation = 0.523598
+rotation = 0.261799
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -165,7 +165,7 @@ frame_progress = 0.862972
 [node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_15"]
 texture_filter = 1
 position = Vector2(59, 326)
-rotation = 0.523598
+rotation = 0.261799
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
 frame_progress = 0.329368
@@ -173,7 +173,7 @@ frame_progress = 0.329368
 [node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_15"]
 texture_filter = 1
 position = Vector2(62, 399)
-rotation = 0.523598
+rotation = 0.261799
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -182,7 +182,7 @@ frame_progress = 0.328106
 [node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_15"]
 texture_filter = 1
 position = Vector2(61, 520)
-rotation = 0.523598
+rotation = 0.261799
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -195,7 +195,7 @@ individual_rotation = 30.0
 [node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_30"]
 texture_filter = 1
 position = Vector2(50, 19)
-rotation = 1.5708
+rotation = 0.523599
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
 frame_progress = 0.589435
@@ -203,7 +203,7 @@ frame_progress = 0.589435
 [node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_30"]
 texture_filter = 1
 position = Vector2(50, 55)
-rotation = 1.5708
+rotation = 0.523599
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -212,7 +212,7 @@ frame_progress = 0.161786
 [node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_30"]
 texture_filter = 1
 position = Vector2(50, 110)
-rotation = 1.5708
+rotation = 0.523599
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -221,7 +221,7 @@ frame_progress = 0.167214
 [node name="16px_x8" type="AnimatedSprite2D" parent="Rotation_30"]
 texture_filter = 1
 position = Vector2(52, 219)
-rotation = 1.5708
+rotation = 0.523599
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -230,7 +230,7 @@ frame_progress = 0.862972
 [node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_30"]
 texture_filter = 1
 position = Vector2(59, 326)
-rotation = 1.0472
+rotation = 0.523599
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
 frame_progress = 0.329368
@@ -238,7 +238,7 @@ frame_progress = 0.329368
 [node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_30"]
 texture_filter = 1
 position = Vector2(62, 399)
-rotation = 1.0472
+rotation = 0.523599
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -247,7 +247,7 @@ frame_progress = 0.328106
 [node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_30"]
 texture_filter = 1
 position = Vector2(61, 520)
-rotation = 1.0472
+rotation = 0.523599
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -260,7 +260,7 @@ individual_rotation = 45.0
 [node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_45"]
 texture_filter = 1
 position = Vector2(50, 19)
-rotation = 2.3562
+rotation = 0.785398
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
 frame_progress = 0.589435
@@ -268,7 +268,7 @@ frame_progress = 0.589435
 [node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_45"]
 texture_filter = 1
 position = Vector2(50, 55)
-rotation = 2.3562
+rotation = 0.785398
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -277,7 +277,7 @@ frame_progress = 0.161786
 [node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_45"]
 texture_filter = 1
 position = Vector2(50, 110)
-rotation = 2.3562
+rotation = 0.785398
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -286,7 +286,7 @@ frame_progress = 0.167214
 [node name="16px_x8" type="AnimatedSprite2D" parent="Rotation_45"]
 texture_filter = 1
 position = Vector2(52, 219)
-rotation = 2.3562
+rotation = 0.785398
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -295,7 +295,7 @@ frame_progress = 0.862972
 [node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_45"]
 texture_filter = 1
 position = Vector2(59, 326)
-rotation = 1.5708
+rotation = 0.785398
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
 frame_progress = 0.329368
@@ -303,7 +303,7 @@ frame_progress = 0.329368
 [node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_45"]
 texture_filter = 1
 position = Vector2(62, 399)
-rotation = 1.5708
+rotation = 0.785398
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -312,7 +312,7 @@ frame_progress = 0.328106
 [node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_45"]
 texture_filter = 1
 position = Vector2(61, 520)
-rotation = 1.5708
+rotation = 0.785398
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -325,7 +325,7 @@ individual_rotation = 60.0
 [node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_60"]
 texture_filter = 1
 position = Vector2(50, 19)
-rotation = 3.1416
+rotation = 1.0472
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
 frame_progress = 0.589435
@@ -333,7 +333,7 @@ frame_progress = 0.589435
 [node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_60"]
 texture_filter = 1
 position = Vector2(50, 55)
-rotation = 3.1416
+rotation = 1.0472
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -342,7 +342,7 @@ frame_progress = 0.161786
 [node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_60"]
 texture_filter = 1
 position = Vector2(50, 110)
-rotation = 3.1416
+rotation = 1.0472
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -351,7 +351,7 @@ frame_progress = 0.167214
 [node name="16px_x8" type="AnimatedSprite2D" parent="Rotation_60"]
 texture_filter = 1
 position = Vector2(52, 219)
-rotation = 3.1416
+rotation = 1.0472
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -360,7 +360,7 @@ frame_progress = 0.862972
 [node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_60"]
 texture_filter = 1
 position = Vector2(59, 326)
-rotation = 2.0944
+rotation = 1.0472
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
 frame_progress = 0.329368
@@ -368,7 +368,7 @@ frame_progress = 0.329368
 [node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_60"]
 texture_filter = 1
 position = Vector2(62, 399)
-rotation = 2.0944
+rotation = 1.0472
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -377,7 +377,7 @@ frame_progress = 0.328106
 [node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_60"]
 texture_filter = 1
 position = Vector2(61, 520)
-rotation = 2.0944
+rotation = 1.0472
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -390,7 +390,7 @@ individual_rotation = 75.0
 [node name="16px_x1" type="AnimatedSprite2D" parent="Rotation_75"]
 texture_filter = 1
 position = Vector2(50, 19)
-rotation = 3.927
+rotation = 1.309
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
 frame_progress = 0.589435
@@ -398,7 +398,7 @@ frame_progress = 0.589435
 [node name="16px_x2" type="AnimatedSprite2D" parent="Rotation_75"]
 texture_filter = 1
 position = Vector2(50, 55)
-rotation = 3.927
+rotation = 1.309
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -407,7 +407,7 @@ frame_progress = 0.161786
 [node name="16px_x4" type="AnimatedSprite2D" parent="Rotation_75"]
 texture_filter = 1
 position = Vector2(50, 110)
-rotation = 3.927
+rotation = 1.309
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -425,7 +425,7 @@ frame_progress = 0.862972
 [node name="32px_x1" type="AnimatedSprite2D" parent="Rotation_75"]
 texture_filter = 1
 position = Vector2(59, 326)
-rotation = 2.618
+rotation = 1.309
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
 frame_progress = 0.329368
@@ -433,7 +433,7 @@ frame_progress = 0.329368
 [node name="32px_x2" type="AnimatedSprite2D" parent="Rotation_75"]
 texture_filter = 1
 position = Vector2(62, 399)
-rotation = 2.618
+rotation = 1.309
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -442,7 +442,7 @@ frame_progress = 0.328106
 [node name="32px_x4" type="AnimatedSprite2D" parent="Rotation_75"]
 texture_filter = 1
 position = Vector2(61, 520)
-rotation = 2.618
+rotation = 1.309
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -455,7 +455,7 @@ animate_speed = 1.0
 [node name="16px_x1" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(50, 19)
-rotation = 196.049
+rotation = 2.28333
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
 frame_progress = 0.589435
@@ -463,7 +463,7 @@ frame_progress = 0.589435
 [node name="16px_x2" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(50, 55)
-rotation = 196.049
+rotation = 2.28333
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -472,7 +472,7 @@ frame_progress = 0.161786
 [node name="16px_x4" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(50, 110)
-rotation = 196.049
+rotation = 2.28333
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -481,7 +481,7 @@ frame_progress = 0.167214
 [node name="16px_x8" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(52, 219)
-rotation = 196.049
+rotation = 2.28333
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -490,7 +490,7 @@ frame_progress = 0.862972
 [node name="32px_x1" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(59, 326)
-rotation = 196.049
+rotation = 2.28333
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
 frame_progress = 0.329368
@@ -498,7 +498,7 @@ frame_progress = 0.329368
 [node name="32px_x2" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(62, 399)
-rotation = 196.049
+rotation = 2.28333
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -507,7 +507,7 @@ frame_progress = 0.328106
 [node name="32px_x4" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(61, 520)
-rotation = 196.049
+rotation = 2.28333
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"

@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://iab6i78fljla"]
+
+[ext_resource type="Script" uid="uid://dax3xkfee7704" path="res://src/world/plancton/plancton.gd" id="1_5cp07"]
+[ext_resource type="Script" uid="uid://dsanfc3iwqum4" path="res://addons/random_timer_plugin/random_timer.gd" id="1_pxc3u"]
+[ext_resource type="Shader" uid="uid://cypgc5u4yjqii" path="res://src/world/light/brakatuta.gdshader" id="2_857ka"]
+[ext_resource type="Texture2D" uid="uid://dg0cf05iylsc8" path="res://assets/gfx/environment/plankton.png" id="2_kv1uu"]
+[ext_resource type="Texture2D" uid="uid://be0xvrixrkar2" path="res://src/world/light/round_light_16.tres" id="3_7y42s"]
+
+[sub_resource type="Gradient" id="Gradient_857ka"]
+offsets = PackedFloat32Array(0.252252, 0.56982)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7y42s"]
+gradient = SubResource("Gradient_857ka")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7y42s"]
+shader = ExtResource("2_857ka")
+shader_parameter/light_texture = SubResource("GradientTexture2D_7y42s")
+shader_parameter/light_color = Color(0.382556, 0.511816, 0.639862, 1)
+shader_parameter/brightness = 0.15
+shader_parameter/attenuation_strength = 0.5
+shader_parameter/intensity = 5.0
+shader_parameter/max_brightness = 1.48
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2tyvq"]
+radius = 2.0
+
+[node name="Plancton" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 0
+mass = 0.1
+gravity_scale = 0.0
+linear_damp = 5.0
+script = ExtResource("1_5cp07")
+
+[node name="Core" type="Sprite2D" parent="."]
+texture = ExtResource("2_kv1uu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7y42s")
+texture = ExtResource("3_7y42s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_2tyvq")
+
+[node name="RandomTimer" type="Timer" parent="."]
+wait_time = 6.9535
+script = ExtResource("1_pxc3u")
+variance = 2.0
+metadata/_custom_type_script = "uid://dsanfc3iwqum4"
+
+[connection signal="timeout" from="RandomTimer" to="." method="_on_random_timer_timeout"]
