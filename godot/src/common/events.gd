@@ -6,4 +6,4 @@ signal timer_stopped()
 
 
 signal squid_charge_started()
-signal squid_charge_done(thrust_factor, float)
+signal squid_charge_done(thrust_factor: float)
