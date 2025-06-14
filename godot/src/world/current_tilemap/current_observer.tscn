@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3brugf870frx"]
+
+[ext_resource type="Script" uid="uid://d2svw0wymqgna" path="res://src/world/current_tilemap/current_observer.gd" id="1_d7byk"]
+
+[node name="CurrentObserver" type="Node2D"]
+script = ExtResource("1_d7byk")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2osqltn8up02"]
+
+[ext_resource type="Script" uid="uid://c4hxqiolldrb" path="res://src/world/current_tilemap/current_tile_map.gd" id="1_4bng1"]
+[ext_resource type="TileSet" uid="uid://c5x60sxg8mnaf" path="res://src/world/current_tilemap/debug_tileset.tres" id="1_30rxa"]
+
+[node name="CurrentTileMap" type="TileMapLayer"]
+tile_set = ExtResource("1_30rxa")
+script = ExtResource("1_4bng1")

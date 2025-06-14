@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://iab6i78fljla"]
+[gd_scene load_steps=11 format=3 uid="uid://iab6i78fljla"]
 
 [ext_resource type="Script" uid="uid://dax3xkfee7704" path="res://src/world/plancton/plancton.gd" id="1_5cp07"]
 [ext_resource type="Script" uid="uid://dsanfc3iwqum4" path="res://addons/random_timer_plugin/random_timer.gd" id="1_pxc3u"]
 [ext_resource type="Shader" uid="uid://cypgc5u4yjqii" path="res://src/world/light/brakatuta.gdshader" id="2_857ka"]
 [ext_resource type="Texture2D" uid="uid://dg0cf05iylsc8" path="res://assets/gfx/environment/plankton.png" id="2_kv1uu"]
 [ext_resource type="Texture2D" uid="uid://be0xvrixrkar2" path="res://src/world/light/round_light_16.tres" id="3_7y42s"]
+[ext_resource type="PackedScene" uid="uid://c3brugf870frx" path="res://src/world/current_tilemap/current_observer.tscn" id="6_82pvg"]
 
 [sub_resource type="Gradient" id="Gradient_857ka"]
 offsets = PackedFloat32Array(0.252252, 0.56982)
@@ -48,11 +49,15 @@ texture = ExtResource("3_7y42s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource("CircleShape2D_2tyvq")
+disabled = true
 
 [node name="RandomTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 4.89735
 script = ExtResource("1_pxc3u")
 variance = 2.0
 metadata/_custom_type_script = "uid://dsanfc3iwqum4"
+
+[node name="CurrentObserver" parent="." node_paths=PackedStringArray("target") instance=ExtResource("6_82pvg")]
+target = NodePath("..")
 
 [connection signal="timeout" from="RandomTimer" to="." method="_on_random_timer_timeout"]

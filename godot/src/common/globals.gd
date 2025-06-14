@@ -9,6 +9,7 @@ var config:ConfigFile
 var in_game:=false
 var in_dialogue:=false
 
+var level: BaseLevel
 
 @onready var music_manager: MusicManager = $MusicManager
 @onready var ui_sfx: UiSfx = $UiSfx
@@ -56,3 +57,4 @@ func do_lose():
 
 func do_win():
 	get_tree().quit()
+	

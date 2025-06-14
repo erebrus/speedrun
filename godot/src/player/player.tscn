@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://dtoa1mfxryx0c"]
+[gd_scene load_steps=24 format=3 uid="uid://dtoa1mfxryx0c"]
 
 [ext_resource type="Script" uid="uid://nnqtis7t5gq0" path="res://src/player/player.gd" id="1_0sqbu"]
+[ext_resource type="PackedScene" uid="uid://c3brugf870frx" path="res://src/world/current_tilemap/current_observer.tscn" id="2_rxibo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mf2ua"]
 radius = 15.0
@@ -465,5 +466,8 @@ bus = &"Sfx"
 [node name="ruffle_sfx" type="AudioStreamPlayer2D" parent="sfx"]
 stream = SubResource("AudioStreamRandomizer_j2873")
 bus = &"Sfx"
+
+[node name="CurrentObserver" parent="." node_paths=PackedStringArray("target") instance=ExtResource("2_rxibo")]
+target = NodePath("..")
 
 [connection signal="timeout" from="ThrustTimer" to="." method="_on_thrust_timer_timeout"]
