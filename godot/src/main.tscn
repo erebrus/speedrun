@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgpkxa13hhnox" path="res://src/main.gd" id="1_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://bdj8t5d1w0lh5" path="res://src/common/level_manager.tscn" id="2_fyndt"]
-[ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="3_3cfgd"]
+[ext_resource type="PackedScene" uid="uid://dk3sfdk4mpkgm" path="res://src/world/levels/test_level.tscn" id="3_fyndt"]
 [ext_resource type="PackedScene" uid="uid://02ojse24fbw5" path="res://src/hud/timer_display.tscn" id="5_kmhfv"]
 [ext_resource type="PackedScene" uid="uid://cdm2fhla0kigd" path="res://src/common/fade_panel.tscn" id="6_kmhfv"]
 
@@ -14,7 +14,7 @@ script = ExtResource("1_3cfgd")
 game_state = SubResource("Resource_5q4o7")
 
 [node name="LevelManager" parent="." node_paths=PackedStringArray("level_container") instance=ExtResource("2_fyndt")]
-levels = Array[PackedScene]([ExtResource("3_3cfgd")])
+levels = Array[PackedScene]([ExtResource("3_fyndt")])
 level_container = NodePath("../Level")
 
 [node name="Level" type="Node2D" parent="."]
@@ -36,11 +36,6 @@ layer = 5
 unique_name_in_owner = true
 visible = true
 metadata/_edit_lock_ = true
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(797, 169)
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(-6, 123, -67, -32, 85, -72, 141, 42)
 
 [connection signal="game_completed" from="LevelManager" to="." method="_on_level_manager_game_completed"]
 [connection signal="level_ready" from="LevelManager" to="." method="_on_level_manager_level_ready"]

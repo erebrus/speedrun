@@ -4,7 +4,8 @@ extends Node2D
 @export var size := Vector2(1400,800):
 	set(_size):
 		size=_size
-		refresh_shape()
+		if $CollisionShape2D:
+			refresh_shape()
 
 @export var max_count:=100
 @export var target_container:NodePath

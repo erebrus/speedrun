@@ -50,7 +50,7 @@ visible = false
 shape = SubResource("CircleShape2D_2tyvq")
 
 [node name="RandomTimer" type="Timer" parent="."]
-wait_time = 6.9535
+wait_time = 4.0
 script = ExtResource("1_pxc3u")
 variance = 2.0
 metadata/_custom_type_script = "uid://dsanfc3iwqum4"
