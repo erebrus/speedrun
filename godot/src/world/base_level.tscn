@@ -17,6 +17,7 @@ zoom = Vector2(3, 3)
 [node name="PlanctonGenerator" parent="Player" instance=ExtResource("3_3nebk")]
 visible = false
 size = Vector2(1800, 1200)
+max_count = 600
 target_container = NodePath("../../Plankton")
 
 [node name="Plankton" type="Node2D" parent="."]

@@ -6,6 +6,7 @@ class_name Player extends RigidBody2D
 @export var back_thrust_factor := .2
 @export var strafe_thrust_factor := .25
 @export var full_thrust_bonus := 1.2
+@export var wall_thrust_factor := 1.5
 @export var thrust_charge_speed :=1.0
 @export var min_thrust_timeout := .4
 @export var perfect_thrust_interval = Vector2(0.8,.9)
@@ -48,7 +49,7 @@ var currents:int:
 		
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var light: PointLight2D = $PointLight2D
+@onready var back_rc: RayCast2D = $BackRC
 
 @onready var charge_sfx: AudioStreamPlayer2D = $sfx/charge_sfx
 @onready var tap_sfx: AudioStreamPlayer2D = $sfx/tap_sfx
@@ -119,7 +120,9 @@ func do_thrust(rotation_delta:float = 0):
 	else:
 		tap_sfx.play()
 	
-	var intensity:float = thrust * (full_thrust_bonus if is_perfect_thrust() else thrust_factor)
+	var intensity:float = thrust * \
+		(full_thrust_bonus if is_perfect_thrust() else thrust_factor) *\
+		(wall_thrust_factor if back_rc.is_colliding() else 1)
 	Logger.info("thrust factor %2.f intensity %.2f" % [thrust_factor, intensity])
 	apply_impulse(thrust_direction * intensity,Vector2.ZERO)
 	Events.squid_charge_done.emit(thrust_factor)
