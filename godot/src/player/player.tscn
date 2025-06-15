@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dtoa1mfxryx0c"]
+[gd_scene load_steps=22 format=3 uid="uid://dtoa1mfxryx0c"]
 
 [ext_resource type="Script" uid="uid://nnqtis7t5gq0" path="res://src/player/player.gd" id="1_0sqbu"]
 [ext_resource type="Texture2D" uid="uid://cx10q02axlwkp" path="res://assets/gfx/character/squid-sheet.png" id="2_rxibo"]
@@ -58,47 +58,6 @@ tracks/2/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_k60ra"]
-resource_name = "attach"
-length = 0.5
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 20), Vector2(0, 16)]
-}
-
 [sub_resource type="Animation" id="Animation_o822w"]
 resource_name = "back"
 length = 0.6
@@ -155,47 +114,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [Vector2i(1, 0), Vector2i(4, 0), Vector2i(5, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_a4vah"]
-resource_name = "dettach"
-length = 0.3
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [Vector2i(2, 4), Vector2i(1, 4), Vector2i(0, 4)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 16), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_mf2ua"]
@@ -346,10 +264,8 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_244u8"]
 _data = {
 &"RESET": SubResource("Animation_rxibo"),
-&"attach": SubResource("Animation_k60ra"),
 &"back": SubResource("Animation_o822w"),
 &"charge": SubResource("Animation_244u8"),
-&"dettach": SubResource("Animation_a4vah"),
 &"idle": SubResource("Animation_mf2ua"),
 &"strafe_left": SubResource("Animation_l271a"),
 &"strafe_right": SubResource("Animation_x42xx"),
@@ -388,6 +304,7 @@ linear_damp = 1.0
 angular_damp = 2.0
 script = ExtResource("1_0sqbu")
 thrust = 300.0
+full_thrust_bonus = 1.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
