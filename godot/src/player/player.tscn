@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cx10q02axlwkp" path="res://assets/gfx/character/squid-sheet.png" id="2_rxibo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mf2ua"]
-radius = 22.0
-height = 52.0
+radius = 15.0
+height = 36.0
 
 [sub_resource type="Gradient" id="Gradient_rxibo"]
 offsets = PackedFloat32Array(0.130233, 0.573256, 1)
@@ -303,21 +303,22 @@ lock_rotation = true
 linear_damp = 1.0
 angular_damp = 2.0
 script = ExtResource("1_0sqbu")
-thrust = 300.0
 full_thrust_bonus = 1.5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 texture = ExtResource("2_rxibo")
 hframes = 15
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(10, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mf2ua")
+
+[node name="BackRC" type="RayCast2D" parent="."]
+target_position = Vector2(-12, 0)
 
 [node name="ThrustTimer" type="Timer" parent="."]
 wait_time = 0.6
