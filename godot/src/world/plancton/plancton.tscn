@@ -40,6 +40,8 @@ script = ExtResource("1_5cp07")
 
 [node name="Core" type="Sprite2D" parent="."]
 texture = ExtResource("2_kv1uu")
+region_enabled = true
+region_rect = Rect2(1, 1, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_7y42s")

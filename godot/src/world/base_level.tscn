@@ -9,6 +9,17 @@
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_mnxva")
 
+[node name="Plankton" type="Node2D" parent="."]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Terrain" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(2, -1)
+tile_set = ExtResource("5_6urnh")
+
+[node name="CurrentTileMap" parent="." instance=ExtResource("4_3nebk")]
+
 [node name="Player" parent="." instance=ExtResource("2_1135c")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -19,12 +30,3 @@ visible = false
 size = Vector2(1800, 1200)
 max_count = 600
 target_container = NodePath("../../Plankton")
-
-[node name="Plankton" type="Node2D" parent="."]
-
-[node name="Terrain" type="TileMapLayer" parent="."]
-texture_filter = 1
-position = Vector2(2, -1)
-tile_set = ExtResource("5_6urnh")
-
-[node name="CurrentTileMap" parent="." instance=ExtResource("4_3nebk")]
