@@ -13,7 +13,11 @@ class_name Player extends RigidBody2D
 @export_category("other movement")
 @export var rotation_speed :=2.5
 @export var friction := .7
+@export_category("energy")
+@export var max_energy := 100
 
+
+var energy = 0
 
 var in_animation:=false
 var can_thrust:=true
@@ -177,6 +181,19 @@ func on_ruffle():
 		ruffle_sfx.play()
 		
 func collect(node:EnergyNode):
-	Logger.info("Player collected energy")
-	#TODO decide what to do with energy
+	
+	energy = min(node.energy+energy, max_energy)
+	Events.player_energy_changed.emit(energy)
+	Logger.info("Player collected energy. Energy = %d" % energy)
+	
+func can_boost()->bool:
+	return energy == max_energy
+	
+func boost():
+	if not can_boost():
+		return
+	Logger.info("BOOST") #TODO
+	energy = 0 #TODO tween?
+	Events.player_energy_changed.emit(energy)
+	
 	
