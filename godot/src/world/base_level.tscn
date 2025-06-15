@@ -1,26 +1,91 @@
-[gd_scene load_steps=6 format=3 uid="uid://lqtollaovard"]
+[gd_scene load_steps=10 format=3 uid="uid://lqtollaovard"]
 
 [ext_resource type="Script" uid="uid://b4ytavk038x8p" path="res://src/world/base_level.gd" id="1_mnxva"]
+[ext_resource type="Texture2D" uid="uid://4xv6i8je5imf" path="res://assets/gfx/environment/seaweed1.png" id="2_4oyy3"]
 [ext_resource type="PackedScene" uid="uid://dtoa1mfxryx0c" path="res://src/player/player.tscn" id="2_1135c"]
 [ext_resource type="PackedScene" uid="uid://ljmvdynfjm14" path="res://src/world/plancton/plancton_generator.tscn" id="3_3nebk"]
+[ext_resource type="Texture2D" uid="uid://dpo3a2i0pru2y" path="res://assets/gfx/environment/seaweed2.png" id="3_ogqxo"]
 [ext_resource type="PackedScene" uid="uid://b2osqltn8up02" path="res://src/world/currents/current_tilemap/current_tile_map.tscn" id="4_3nebk"]
+[ext_resource type="Texture2D" uid="uid://dqc30htixarul" path="res://assets/gfx/environment/seaweed3.png" id="4_pm2c1"]
 [ext_resource type="TileSet" uid="uid://cds2rivrnrhp5" path="res://src/world/tilemap/obstacles.tres" id="5_6urnh"]
+[ext_resource type="Texture2D" uid="uid://dnsoxboxo6jj" path="res://assets/gfx/environment/seaweed4.png" id="5_coo7k"]
 
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_mnxva")
 
-[node name="Player" parent="." instance=ExtResource("2_1135c")]
+[node name="BG" type="Parallax2D" parent="."]
+modulate = Color(0.6734, 0.67895, 0.74, 0.639216)
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(2200, 540)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
+[node name="Seaweed1" type="Sprite2D" parent="BG"]
+position = Vector2(-630, 500)
+texture = ExtResource("2_4oyy3")
 
-[node name="PlanctonGenerator" parent="Player" instance=ExtResource("3_3nebk")]
-visible = false
-size = Vector2(1800, 1200)
-max_count = 600
-target_container = NodePath("../../Plankton")
+[node name="Seaweed5" type="Sprite2D" parent="BG"]
+position = Vector2(333, 500)
+texture = ExtResource("2_4oyy3")
 
-[node name="Plankton" type="Node2D" parent="."]
+[node name="Seaweed2" type="Sprite2D" parent="BG"]
+position = Vector2(-495, 500)
+texture = ExtResource("3_ogqxo")
+
+[node name="Seaweed6" type="Sprite2D" parent="BG"]
+position = Vector2(-1299, 500)
+texture = ExtResource("3_ogqxo")
+
+[node name="Seaweed3" type="Sprite2D" parent="BG"]
+position = Vector2(-232, 500)
+texture = ExtResource("4_pm2c1")
+
+[node name="Seaweed7" type="Sprite2D" parent="BG"]
+position = Vector2(-1158, 500)
+texture = ExtResource("4_pm2c1")
+
+[node name="Seaweed4" type="Sprite2D" parent="BG"]
+position = Vector2(-14, 500)
+texture = ExtResource("5_coo7k")
+
+[node name="Seaweed8" type="Sprite2D" parent="BG"]
+position = Vector2(187, 480)
+texture = ExtResource("5_coo7k")
+
+[node name="BG2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0.8)
+repeat_size = Vector2(2200, 540)
+
+[node name="Seaweed1" type="Sprite2D" parent="BG2"]
+position = Vector2(61, 476)
+texture = ExtResource("2_4oyy3")
+
+[node name="Seaweed5" type="Sprite2D" parent="BG2"]
+position = Vector2(-1609, 479)
+texture = ExtResource("2_4oyy3")
+
+[node name="Seaweed2" type="Sprite2D" parent="BG2"]
+position = Vector2(-770, 500)
+texture = ExtResource("3_ogqxo")
+
+[node name="Seaweed6" type="Sprite2D" parent="BG2"]
+position = Vector2(-1240, 500)
+texture = ExtResource("3_ogqxo")
+flip_h = true
+
+[node name="Seaweed3" type="Sprite2D" parent="BG2"]
+position = Vector2(-507, 500)
+texture = ExtResource("4_pm2c1")
+
+[node name="Seaweed7" type="Sprite2D" parent="BG2"]
+position = Vector2(1215, 492)
+texture = ExtResource("4_pm2c1")
+
+[node name="Seaweed4" type="Sprite2D" parent="BG2"]
+position = Vector2(-289, 500)
+texture = ExtResource("5_coo7k")
+
+[node name="Seaweed8" type="Sprite2D" parent="BG2"]
+position = Vector2(-88, 480)
+texture = ExtResource("5_coo7k")
 
 [node name="Terrain" type="TileMapLayer" parent="."]
 texture_filter = 1
@@ -28,3 +93,16 @@ position = Vector2(2, -1)
 tile_set = ExtResource("5_6urnh")
 
 [node name="CurrentTileMap" parent="." instance=ExtResource("4_3nebk")]
+
+[node name="Plankton" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_1135c")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+
+[node name="PlanctonGenerator" parent="Player" instance=ExtResource("3_3nebk")]
+visible = false
+size = Vector2(1800, 1200)
+max_count = 600
+target_container = NodePath("../../Plankton")
