@@ -31,7 +31,7 @@ shader_parameter/max_brightness = 1.48
 radius = 2.0
 
 [node name="Plancton" type="RigidBody2D"]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 0
 mass = 0.1
 gravity_scale = 0.0
@@ -40,6 +40,8 @@ script = ExtResource("1_5cp07")
 
 [node name="Core" type="Sprite2D" parent="."]
 texture = ExtResource("2_kv1uu")
+region_enabled = true
+region_rect = Rect2(1, 1, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_7y42s")
@@ -50,7 +52,7 @@ visible = false
 shape = SubResource("CircleShape2D_2tyvq")
 
 [node name="RandomTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 3.52816
 script = ExtResource("1_pxc3u")
 variance = 2.0
 metadata/_custom_type_script = "uid://dsanfc3iwqum4"

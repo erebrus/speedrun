@@ -96,6 +96,8 @@ tile_set = ExtResource("5_6urnh")
 
 [node name="Plankton" type="Node2D" parent="."]
 
+[node name="Objects" type="Node2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("2_1135c")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

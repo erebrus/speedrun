@@ -175,3 +175,8 @@ func _on_thrust_timer_timeout() -> void:
 func on_ruffle():
 	if not ruffle_sfx.playing:
 		ruffle_sfx.play()
+		
+func collect(node:EnergyNode):
+	Logger.info("Player collected energy")
+	#TODO decide what to do with energy
+	
