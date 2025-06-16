@@ -550,7 +550,6 @@ animate_speed = 1.0
 [node name="16px_x1" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(50, 19)
-rotation = 72.7677
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
 frame_progress = 0.589435
@@ -558,7 +557,6 @@ frame_progress = 0.589435
 [node name="16px_x2" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(50, 55)
-rotation = 72.7677
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -567,7 +565,6 @@ frame_progress = 0.161786
 [node name="16px_x4" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(50, 110)
-rotation = 72.7677
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -576,7 +573,6 @@ frame_progress = 0.167214
 [node name="16px_x8" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(52, 219)
-rotation = 72.7677
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_13fff")
 autoplay = "default"
@@ -585,7 +581,6 @@ frame_progress = 0.862972
 [node name="32px_x1" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(59, 315)
-rotation = 72.7677
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
 frame_progress = 0.329368
@@ -593,7 +588,6 @@ frame_progress = 0.329368
 [node name="32px_x2" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(62.0001, 373)
-rotation = 72.7677
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -602,7 +596,6 @@ frame_progress = 0.328106
 [node name="32px_x3" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(62, 468)
-rotation = 41.3499
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
@@ -611,7 +604,6 @@ frame_progress = 0.328106
 [node name="32px_x4" type="AnimatedSprite2D" parent="Rotating"]
 texture_filter = 1
 position = Vector2(61, 563)
-rotation = 72.7677
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_nk256")
 autoplay = "default"
