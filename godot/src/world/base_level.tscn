@@ -11,10 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://dnsoxboxo6jj" path="res://assets/gfx/environment/seaweed4.png" id="5_coo7k"]
 
 [node name="BaseLevel" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_mnxva")
 
 [node name="BG" type="Parallax2D" parent="."]
-modulate = Color(0.6734, 0.67895, 0.74, 0.639216)
+modulate = Color(0.6734, 0.67895, 0.74, 1)
 scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(2200, 540)
 
