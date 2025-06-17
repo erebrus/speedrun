@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://q1f2gdofbcix"]
+[gd_scene load_steps=4 format=4 uid="uid://q1f2gdofbcix"]
 
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="1_lkwel"]
 [ext_resource type="PackedScene" uid="uid://b4qx3sm45yl5d" path="res://src/world/objects/energy_node.tscn" id="2_lkwel"]
+[ext_resource type="PackedScene" uid="uid://86s62ypn5h1p" path="res://src/world/objects/clam.tscn" id="3_j2t8f"]
 
 [node name="TestLevel" instance=ExtResource("1_lkwel")]
 
@@ -16,6 +17,9 @@ position = Vector2(-314.608, 369.19)
 
 [node name="EnergyNode2" parent="Objects" index="1" instance=ExtResource("2_lkwel")]
 position = Vector2(-374, 370)
+
+[node name="Clam" parent="Objects" index="2" instance=ExtResource("3_j2t8f")]
+position = Vector2(-259.009, 125.211)
 
 [node name="Player" parent="." index="6"]
 position = Vector2(-768, 400)
