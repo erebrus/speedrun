@@ -67,7 +67,7 @@ var currents:int:
 
 func _ready():
 	animation_player.play("idle")
-
+	Events.player_max_energy_changed.emit(max_energy)
 
 func _physics_process(delta: float) -> void:
 	if in_animation :

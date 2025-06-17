@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://b4oaclob0dg5u"]
+
+[ext_resource type="Texture2D" uid="uid://d2j42c0lf61o6" path="res://assets/gfx/UI/energy-frame1.png" id="1_6h0yl"]
+[ext_resource type="Script" uid="uid://1ncq23a0ro1u" path="res://src/hud/energy_bar.gd" id="1_a2ceq"]
+[ext_resource type="Texture2D" uid="uid://dbtu63nkboqlc" path="res://assets/gfx/UI/energy-frame2.png" id="2_a2ceq"]
+[ext_resource type="Texture2D" uid="uid://dy0yl3metawb2" path="res://assets/gfx/UI/energy-frame3.png" id="3_j7ufm"]
+[ext_resource type="Texture2D" uid="uid://dinnfhsklhfni" path="res://assets/gfx/UI/energy-frame4.png" id="4_p24jq"]
+[ext_resource type="Texture2D" uid="uid://bx7h03jh036ob" path="res://assets/gfx/UI/energy-frame5.png" id="5_f7ta6"]
+[ext_resource type="Texture2D" uid="uid://cuybmxnfnm5h0" path="res://assets/gfx/UI/energy-frame6.png" id="6_474on"]
+[ext_resource type="Texture2D" uid="uid://cqoistifk0g52" path="res://assets/gfx/UI/energy bar.png" id="7_e5f62"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_cyut5"]
+frames = 6
+speed_scale = 10.0
+frame_0/texture = ExtResource("1_6h0yl")
+frame_1/texture = ExtResource("2_a2ceq")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_j7ufm")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_p24jq")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_f7ta6")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_474on")
+frame_5/duration = 1.0
+
+[node name="EnergyBar" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a2ceq")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 50.0
+fill_mode = 3
+texture_under = SubResource("AnimatedTexture_cyut5")
+texture_progress = ExtResource("7_e5f62")

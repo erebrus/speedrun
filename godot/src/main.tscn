@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=10 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="Script" uid="uid://cgpkxa13hhnox" path="res://src/main.gd" id="1_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://bdj8t5d1w0lh5" path="res://src/common/level_manager.tscn" id="2_fyndt"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://02ojse24fbw5" path="res://src/hud/timer_display.tscn" id="5_kmhfv"]
 [ext_resource type="PackedScene" uid="uid://q1f2gdofbcix" path="res://src/world/levels/test_level_with_tilemap.tscn" id="5_rlaii"]
 [ext_resource type="PackedScene" uid="uid://cdm2fhla0kigd" path="res://src/common/fade_panel.tscn" id="6_kmhfv"]
+[ext_resource type="PackedScene" uid="uid://b4oaclob0dg5u" path="res://src/hud/energy_bar.tscn" id="7_5mrjc"]
 
 [sub_resource type="Resource" id="Resource_5q4o7"]
 metadata/__load_path__ = "res://src/tutorial_state.tres"
@@ -32,12 +33,14 @@ offset_left = -80.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
+[node name="EnergyBar" parent="HUDLayer" instance=ExtResource("7_5mrjc")]
+scale = Vector2(3, 3)
+
 [node name="OverlayLayer" type="CanvasLayer" parent="."]
 layer = 5
 
 [node name="FadePanel" parent="OverlayLayer" instance=ExtResource("6_kmhfv")]
 unique_name_in_owner = true
-visible = true
 metadata/_edit_lock_ = true
 
 [connection signal="game_completed" from="LevelManager" to="." method="_on_level_manager_game_completed"]

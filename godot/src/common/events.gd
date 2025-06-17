@@ -13,3 +13,4 @@ signal squid_charge_started()
 signal squid_charge_done(thrust_factor: float)
 
 signal player_energy_changed(new_energy:int)
+signal player_max_energy_changed(new_max_energy:int)
