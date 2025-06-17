@@ -40,10 +40,10 @@ script = ExtResource("1_5cp07")
 
 [node name="Core" type="Sprite2D" parent="."]
 texture = ExtResource("2_kv1uu")
-region_enabled = true
 region_rect = Rect2(1, 1, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_7y42s")
 texture = ExtResource("3_7y42s")
 
@@ -52,7 +52,7 @@ visible = false
 shape = SubResource("CircleShape2D_2tyvq")
 
 [node name="RandomTimer" type="Timer" parent="."]
-wait_time = 3.52816
+wait_time = 3.35271
 script = ExtResource("1_pxc3u")
 variance = 2.0
 metadata/_custom_type_script = "uid://dsanfc3iwqum4"
