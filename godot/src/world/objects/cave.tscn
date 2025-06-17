@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2ivjq3gqi8r2"]
+
+[ext_resource type="Script" uid="uid://bwobc2jeeigl1" path="res://src/world/objects/cave.gd" id="1_l0fd7"]
+[ext_resource type="Texture2D" uid="uid://cl0sitr8f3yto" path="res://assets/gfx/environment/cave_back.png" id="1_n0l6c"]
+[ext_resource type="Texture2D" uid="uid://crer751eg6v7e" path="res://assets/gfx/environment/cave_front.png" id="2_l0fd7"]
+
+[node name="Cave" type="StaticBody2D"]
+texture_filter = 1
+script = ExtResource("1_l0fd7")
+
+[node name="PlayerTarget" type="Marker2D" parent="."]
+position = Vector2(-1.18646, -3.08631)
+
+[node name="BackSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_n0l6c")
+region_rect = Rect2(0, 0, 85, 128)
+
+[node name="FrontSprite" type="Sprite2D" parent="."]
+z_index = 5
+texture = ExtResource("2_l0fd7")
+offset = Vector2(-1, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+z_index = 5
+polygon = PackedVector2Array(-17, 45, -36, 10, -34, -25, -23, -48, 1, -48, 24, -24, 16, -2, 22, 22, 3, 31)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(24, -24, 29, -7, 29, 4, 22, 20, 16, -2)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

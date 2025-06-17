@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ev1ert1usngp"]
+
+[ext_resource type="Texture2D" uid="uid://c28130jrmj2rs" path="res://assets/gfx/environment/urchin.png" id="1_b4mco"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4mco"]
+height = 38.0
+
+[node name="Urchin" type="Area2D"]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b4mco")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_b4mco")

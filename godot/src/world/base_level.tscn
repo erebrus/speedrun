@@ -100,13 +100,18 @@ current_strength = Array[float]([50.0, 100.0, 150.0])
 
 [node name="Objects" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("2_1135c")]
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+
+[node name="Player" parent="." instance=ExtResource("2_1135c")]
 
 [node name="PlanctonGenerator" parent="Player" instance=ExtResource("3_3nebk")]
 visible = false
 size = Vector2(1800, 1200)
 max_count = 600
 target_container = NodePath("../../Plankton")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+update_rotation = false
+update_scale = false
