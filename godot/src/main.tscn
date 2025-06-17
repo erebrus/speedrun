@@ -41,6 +41,7 @@ layer = 5
 
 [node name="FadePanel" parent="OverlayLayer" instance=ExtResource("6_kmhfv")]
 unique_name_in_owner = true
+visible = true
 metadata/_edit_lock_ = true
 
 [connection signal="game_completed" from="LevelManager" to="." method="_on_level_manager_game_completed"]

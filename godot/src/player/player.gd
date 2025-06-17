@@ -196,4 +196,8 @@ func boost():
 	energy = 0 #TODO tween?
 	Events.player_energy_changed.emit(energy)
 	
+func lose_camera():
+	var node:Node2D = get_node("RemoteTransform2D")
+	if node:
+		node.queue_free()
 	
