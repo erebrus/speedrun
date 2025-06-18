@@ -389,6 +389,7 @@ angular_damp = 2.0
 script = ExtResource("1_0sqbu")
 thrust = 200.0
 full_thrust_bonus = 1.5
+perfect_thrust_interval = Vector2(0.7, 0.9)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
