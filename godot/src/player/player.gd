@@ -63,11 +63,12 @@ var currents:int:
 @onready var hurt_sfx: AudioStreamPlayer2D = $sfx/hurt_sfx
 @onready var krill_sfx: AudioStreamPlayer2D = $sfx/krill_sfx
 @onready var ruffle_sfx: AudioStreamPlayer2D = $sfx/ruffle_sfx
-
+@onready var bubbles: AnimatedSprite2D = $Bubbles
 
 func _ready():
 	animation_player.play("idle")
 	Events.player_max_energy_changed.emit(max_energy)
+	bubbles.animation_finished.connect(func():bubbles.visible = false)
 
 func _physics_process(delta: float) -> void:
 	if in_animation :
@@ -130,6 +131,9 @@ func do_thrust(rotation_delta:float = 0):
 	Logger.info("thrust factor %2.f intensity %.2f" % [thrust_factor, intensity])
 	apply_impulse(thrust_direction * intensity,Vector2.ZERO)
 	Events.squid_charge_done.emit(thrust_factor)
+	if back_rc.is_colliding():
+		bubbles.play("default")
+		bubbles.visible = true
 	#do_noise()
 	can_thrust=false
 	match last_thrust_direction:
@@ -152,7 +156,8 @@ func do_thrust(rotation_delta:float = 0):
 	thrust_factor=0
 	$ThrustTimer.start()
 	Logger.debug("thrust NOT available %d" % Time.get_ticks_msec())
-
+	
+		
 
 func _on_thrust_timer_timeout() -> void:
 	can_thrust=true

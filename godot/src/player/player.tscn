@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://dtoa1mfxryx0c"]
+[gd_scene load_steps=30 format=3 uid="uid://dtoa1mfxryx0c"]
 
 [ext_resource type="Script" uid="uid://nnqtis7t5gq0" path="res://src/player/player.gd" id="1_0sqbu"]
 [ext_resource type="Texture2D" uid="uid://cx10q02axlwkp" path="res://assets/gfx/character/squid-sheet.png" id="2_rxibo"]
+[ext_resource type="Texture2D" uid="uid://cn4d6j82c362j" path="res://assets/gfx/environment/bubbles.png" id="3_mf2ua"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mf2ua"]
 radius = 5.0
@@ -282,6 +283,70 @@ streams_count = 3
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_j2873"]
 streams_count = 4
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_244u8"]
+atlas = ExtResource("3_mf2ua")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f2sf"]
+atlas = ExtResource("3_mf2ua")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiejy"]
+atlas = ExtResource("3_mf2ua")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o822w"]
+atlas = ExtResource("3_mf2ua")
+region = Rect2(48, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x42xx"]
+atlas = ExtResource("3_mf2ua")
+region = Rect2(64, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l271a"]
+atlas = ExtResource("3_mf2ua")
+region = Rect2(80, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ydov"]
+atlas = ExtResource("3_mf2ua")
+region = Rect2(96, 0, 16, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylhto"]
+atlas = ExtResource("3_mf2ua")
+region = Rect2(112, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwolq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_244u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f2sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jiejy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o822w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x42xx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l271a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ydov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylhto")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="Player" type="RigidBody2D"]
 texture_filter = 1
 collision_layer = 2
@@ -307,7 +372,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mf2ua")
 
 [node name="BackRC" type="RayCast2D" parent="."]
-target_position = Vector2(-12, 0)
+target_position = Vector2(-10, 0)
 
 [node name="ThrustTimer" type="Timer" parent="."]
 wait_time = 0.6
@@ -358,5 +423,13 @@ bus = &"Sfx"
 [node name="ruffle_sfx" type="AudioStreamPlayer2D" parent="sfx"]
 stream = SubResource("AudioStreamRandomizer_j2873")
 bus = &"Sfx"
+
+[node name="Bubbles" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-25, 1)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_cwolq")
+frame = 2
+frame_progress = 0.986059
 
 [connection signal="timeout" from="ThrustTimer" to="." method="_on_thrust_timer_timeout"]
