@@ -5,9 +5,6 @@
 
 [node name="TestLevel" instance=ExtResource("1_qdnul")]
 
-[node name="CurrentTileMap" parent="." index="1"]
-occlusion_enabled = false
-
 [node name="Currents" type="Node2D" parent="." index="3"]
 
 [node name="Current" parent="Currents" index="0" instance=ExtResource("2_jp7w3")]
@@ -23,6 +20,9 @@ direction = Vector2(0, 1)
 position = Vector2(172, -484)
 
 [node name="Objects2" type="Node2D" parent="." index="4"]
+
+[node name="CurrentTileMap" parent="." index="5"]
+occlusion_enabled = false
 
 [node name="Polygon2D" type="Polygon2D" parent="Objects" index="0"]
 position = Vector2(797, 169)
@@ -44,5 +44,5 @@ position = Vector2(-439, 485)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-6, 123, -67, -32, 85, -72, 141, 42)
 
-[node name="Player" parent="." index="6"]
+[node name="Player" parent="." index="9"]
 position = Vector2(-310, 412)

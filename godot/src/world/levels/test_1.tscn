@@ -13,8 +13,50 @@
 [node name="BG" parent="." index="0"]
 modulate = Color(0.787942, 0.974565, 1, 1)
 
+[node name="Seaweed1" parent="BG" index="0"]
+position = Vector2(-129, 300)
+
+[node name="Seaweed5" parent="BG" index="1"]
+position = Vector2(232, 284)
+
+[node name="Seaweed2" parent="BG" index="2"]
+position = Vector2(-208, 256)
+
+[node name="Seaweed6" parent="BG" index="3"]
+position = Vector2(152, 301)
+
+[node name="Seaweed3" parent="BG" index="4"]
+position = Vector2(-262, 305)
+
+[node name="Seaweed7" parent="BG" index="5"]
+position = Vector2(96, 287)
+
+[node name="Seaweed4" parent="BG" index="6"]
+position = Vector2(-32, 239)
+
+[node name="Seaweed8" parent="BG" index="7"]
+position = Vector2(-331, 326)
+
 [node name="Seaweed1" parent="BG2" index="0"]
-position = Vector2(61, 487)
+position = Vector2(73, 285)
+
+[node name="Seaweed5" parent="BG2" index="1"]
+position = Vector2(193, 276)
+
+[node name="Seaweed2" parent="BG2" index="2"]
+position = Vector2(10, 220)
+
+[node name="Seaweed6" parent="BG2" index="3"]
+position = Vector2(-358, 287)
+
+[node name="Seaweed3" parent="BG2" index="4"]
+position = Vector2(-191, 302)
+
+[node name="Seaweed4" parent="BG2" index="6"]
+position = Vector2(-291, 347)
+
+[node name="Seaweed8" parent="BG2" index="7"]
+position = Vector2(-83, 264)
 
 [node name="Terrain" parent="." index="2"]
 tile_map_data = PackedByteArray("AAD1/w8AAgACAAYAAgD1/xAAAgABAAAAAwD2/xAAAgADAAIAAgD3/xAAAgADAAIAAgD3/w8AAgADAAMAAgD4/w8AAgADAAMAAwD5/w8AAgACAAIAAAD2/w8AAgACAAIAAAD0/w8AAgACAAIAAgD0/w4AAgABAAQAAADz/w4AAgAAAAMAAQD1/w4AAgACAAIAAQDy/w4AAgACAAAAAwDz/w0AAgAAAAQAAADy/w0AAgACAAIAAwD5/xAAAgABAAMAAQD4/xAAAgADAAIAAgD3/w4AAgACAAAAAAD4/w4AAgABAAAAAQD6/w8AAgACAAMAAgD7/w8AAgADAAUAAAD8/w8AAgAAAAMAAwD6/xAAAgADAAUAAgD7/xAAAgABAAQAAwD8/xAAAgADAAQAAAD9/xAAAgADAAMAAwD9/xEAAgACAAIAAgD8/xEAAgAAAAIAAgD+/xAAAgACAAIAAAD+/xEAAgAAAAMAAQD7/xEAAgAAAAIAAgD6/xEAAgAAAAIAAgD5/xEAAgABAAEAAwD9/w8AAgACAAAAAQDz/w8AAgACAAEAAwD7/w4AAgAAAAMAAgD6/w4AAgADAAEAAAD7/w0AAgADAAAAAAD8/w4AAgADAAIAAQD8/w0AAgACAAAAAQD3/wsAAgAAAAEAAwD4/wsAAgADAAIAAgD3/woAAgADAAYAAgD4/woAAgACAAIAAADz/wwAAgABAAQAAwDz/wsAAgAAAAMAAgDy/wwAAgABAAIAAwDy/wsAAgABAAAAAADz/woAAgADAAAAAAD0/woAAgADAAMAAgD0/wsAAgADAAMAAAD1/woAAgABAAMAAAD2/woAAgAAAAIAAgD1/wkAAgABAAIAAAD2/wkAAgACAAIAAAD0/wkAAgADAAAAAAD3/wkAAgAAAAAAAQD0/w0AAgACAAMAAwD0/wwAAgACAAIAAQD1/wsAAgAAAAAAAgD5/woAAgABAAMAAgD5/wsAAgAAAAIAAgD6/woAAgACAAMAAAD6/wkAAgABAAIAAAD5/wkAAgAAAAAAAAD6/wsAAgADAAEAAgD1/w0AAgACAAEAAQD7/wkAAgAAAAYAAwD8/wkAAgACAAEAAgD7/wgAAgADAAAAAAD8/wgAAgADAAYAAQD7/woAAgADAAEAAgD9/wgAAgACAAIAAgD+/wgAAgAAAAIAAgD//wgAAgACAAYAAAD//wkAAgACAAAAAwAAAAkAAgADAAYAAgAAAAoAAgAAAAEAAwABAAoAAgACAAIAAgABAAkAAgADAAIAAAAAAAgAAgADAAEAAQD+/wcAAgAAAAIAAAD//wcAAgAAAAEAAQD9/wcAAgACAAIAAAD8/wcAAgAAAAEAAAD//wwAAgACAAEAAAD//w0AAgAAAAEAAwAAAA0AAgADAAYAAgAAAA4AAgACAAAAAwABAA4AAgACAAEAAgABAA0AAgABAAAAAQAAAAwAAgABAAEAAQACAAoAAgADAAYAAAACAAsAAgAAAAAAAwADAAsAAgADAAIAAgADAAoAAgAAAAIAAAACAAkAAgACAAEAAQD//xEAAgAAAAMAAwAAABEAAgADAAIAAAAAABIAAgAAAAIAAgABABIAAgABAAIAAgABABEAAgADAAMAAgACABEAAgABAAMAAwADABEAAgAAAAMAAgADABAAAgABAAEAAAD//xAAAgADAAAAAQD//xIAAgADAAIAAgD+/xIAAgACAAEAAwACABIAAgADAAIAAgADABIAAgACAAIAAgAEABIAAgADAAAAAgAEABEAAgACAAMAAAAEABAAAgAAAAIAAAAFABAAAgABAAMAAgAFAA8AAgABAAEAAAAFABEAAgACAAIAAgAGABEAAgAAAAAAAgAGABAAAgADAAIAAQAGAA8AAgADAAEAAQAEAAsAAgAAAAIAAgAFAAsAAgABAAIAAgAFAAoAAgADAAIAAAAGAAoAAgADAAYAAwAEAAoAAgABAAIAAAAGAAkAAgABAAAAAAAHAAkAAgAAAAAAAQAHAAoAAgACAAAAAgAGAAsAAgADAAAAAgA=")
@@ -39,66 +81,75 @@ position = Vector2(172, -484)
 occlusion_enabled = false
 
 [node name="Polygon2D" type="Polygon2D" parent="Objects" index="0"]
-position = Vector2(948, -22)
+position = Vector2(664, -192)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-6, 123, -67, -32, 85, -72, 141, 42)
 
 [node name="Polygon2D2" type="Polygon2D" parent="Objects" index="1"]
-position = Vector2(543, -321)
+position = Vector2(118, -246)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-6, 123, -67, -32, 85, -72, 141, 42)
 
 [node name="Polygon2D3" type="Polygon2D" parent="Objects" index="2"]
-position = Vector2(-585, -271)
+position = Vector2(-455, -255)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-6, 123, -67, -32, 85, -72, 141, 42)
 
 [node name="Polygon2D4" type="Polygon2D" parent="Objects" index="3"]
-position = Vector2(-783, 88)
+position = Vector2(-776, -158)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-6, 123, -67, -32, 85, -72, 141, 42)
 
-[node name="Player" parent="." index="8"]
+[node name="Camera2D" parent="." index="8"]
 position = Vector2(-310, 412)
-
-[node name="Camera2D" parent="Player" index="6"]
-position = Vector2(-106, -210)
 
 [node name="Corals" type="Node" parent="." index="9"]
 
-[node name="Corals1" type="Sprite2D" parent="." index="10"]
-position = Vector2(-378, 401)
-texture = ExtResource("3_sddhl")
-
-[node name="Corals2" type="Sprite2D" parent="." index="11"]
-position = Vector2(-171, 491)
-texture = ExtResource("4_uicgt")
-
-[node name="Corals3" type="Sprite2D" parent="." index="12"]
+[node name="Corals3" type="Sprite2D" parent="Corals" index="0"]
+texture_filter = 1
 position = Vector2(-363, 405)
 texture = ExtResource("5_kcv5s")
 
-[node name="Corals4" type="Sprite2D" parent="." index="13"]
+[node name="Corals2" type="Sprite2D" parent="Corals" index="1"]
+texture_filter = 1
+position = Vector2(-171, 491)
+texture = ExtResource("4_uicgt")
+
+[node name="Corals4" type="Sprite2D" parent="Corals" index="2"]
+texture_filter = 1
 position = Vector2(-395, 405)
 texture = ExtResource("6_s68es")
 
-[node name="Corals5" type="Sprite2D" parent="." index="14"]
+[node name="Corals5" type="Sprite2D" parent="Corals" index="3"]
+texture_filter = 1
 position = Vector2(-101, 482)
 texture = ExtResource("5_kcv5s")
 
-[node name="Corals6" type="Sprite2D" parent="." index="15"]
+[node name="Corals6" type="Sprite2D" parent="Corals" index="4"]
+texture_filter = 1
 position = Vector2(-115, 491)
 texture = ExtResource("6_s68es")
 
-[node name="Corals7" type="Sprite2D" parent="." index="16"]
+[node name="Corals7" type="Sprite2D" parent="Corals" index="5"]
+texture_filter = 1
 position = Vector2(-97, 501)
 texture = ExtResource("7_qylgt")
 
-[node name="Corals8" type="Sprite2D" parent="." index="17"]
+[node name="Corals8" type="Sprite2D" parent="Corals" index="6"]
+texture_filter = 1
 position = Vector2(-143, 452)
 texture = ExtResource("6_s68es")
 
-[node name="Corals9" type="Sprite2D" parent="." index="18"]
+[node name="Corals9" type="Sprite2D" parent="Corals" index="7"]
+texture_filter = 1
 position = Vector2(-132, 466)
 rotation = -0.558505
 texture = ExtResource("3_sddhl")
+
+[node name="Corals1" type="Sprite2D" parent="Corals" index="8"]
+texture_filter = 1
+position = Vector2(-378, 401)
+texture = ExtResource("3_sddhl")
+
+[node name="Player" parent="." index="10"]
+position = Vector2(-310, 412)
