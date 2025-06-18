@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://fotw7jhyi00a"]
+
+[ext_resource type="Texture2D" uid="uid://b33mu1312tg2r" path="res://assets/gfx/UI/thrust_assist_bg.png" id="1_uovxd"]
+[ext_resource type="Texture2D" uid="uid://bsqu6krb13mh7" path="res://assets/gfx/UI/thrust_assist.png" id="2_yr2u0"]
+[ext_resource type="Script" uid="uid://d2e0dgoc0y5r1" path="res://src/player/thrust_assist.gd" id="3_55j44"]
+
+[node name="ThrustAssist" type="Node2D"]
+script = ExtResource("3_55j44")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+texture_filter = 1
+offset_left = -9.0
+offset_top = 11.0
+offset_right = 7.0
+offset_bottom = 16.0
+max_value = 1.0
+step = 0.01
+value = 1.0
+texture_under = ExtResource("1_uovxd")
+texture_progress = ExtResource("2_yr2u0")
+texture_progress_offset = Vector2(1, 2)
