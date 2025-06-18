@@ -10,6 +10,7 @@ class_name Player extends RigidBody2D
 @export var thrust_charge_speed :=1.0
 @export var min_thrust_timeout := .4
 @export var perfect_thrust_interval = Vector2(0.8,.9)
+@export var super_thrust := 800
 @export_category("other movement")
 @export var rotation_speed :=2.5
 @export var friction := .7
@@ -17,7 +18,11 @@ class_name Player extends RigidBody2D
 @export var max_energy := 100
 
 
-var energy = 0
+var energy := 0:
+	set(v):
+		energy = v
+		energy = clamp(energy, 0, max_energy)
+		Events.player_energy_changed.emit(energy)
 
 var in_animation:=false
 var can_thrust:=true
@@ -69,7 +74,8 @@ func _ready():
 	animation_player.play("idle")
 	Events.player_max_energy_changed.emit(max_energy)
 	bubbles.animation_finished.connect(func():bubbles.visible = false)
-
+	energy=100
+	
 func _physics_process(delta: float) -> void:
 	if in_animation :
 		return
@@ -96,7 +102,9 @@ func _physics_process(delta: float) -> void:
 			last_thrust_direction = Vector2.DOWN
 			thrust_factor=strafe_thrust_factor
 			do_thrust(PI/2)
-			
+		elif Input.is_action_just_released("boost"):
+			last_thrust_direction = Vector2.RIGHT
+			do_super_thrust()
 func charge_thrust(delta:float):
 	if thrust_factor == 0:
 		thrust_factor = .2	
@@ -158,7 +166,24 @@ func do_thrust(rotation_delta:float = 0):
 	Logger.debug("thrust NOT available %d" % Time.get_ticks_msec())
 	
 		
-
+func do_super_thrust():
+	if not can_boost():
+		return
+	Events.player_energy_changed.emit(energy)
+	in_animation = true
+	var thrust_direction=Vector2.RIGHT
+	animation_player.play("super_thrust")
+	var intensity:float = super_thrust *\
+		(wall_thrust_factor if back_rc.is_colliding() else 1)
+	await get_tree().create_timer(.4).timeout
+	var tween:=create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self,"energy",0,.3)
+	apply_impulse(thrust_direction * intensity,Vector2.ZERO)
+	await get_tree().create_timer(.3).timeout
+	in_animation=false
+	await animation_player.animation_finished
+	_on_thrust_timer_timeout()
+	
 func _on_thrust_timer_timeout() -> void:
 	can_thrust=true
 	Logger.debug("thrust available %d" % Time.get_ticks_msec())
@@ -194,12 +219,6 @@ func collect(node:EnergyNode):
 func can_boost()->bool:
 	return energy == max_energy
 	
-func boost():
-	if not can_boost():
-		return
-	Logger.info("BOOST") #TODO
-	energy = 0 #TODO tween?
-	Events.player_energy_changed.emit(energy)
 	
 func lose_camera():
 	var node:Node2D = get_node("RemoteTransform2D")
