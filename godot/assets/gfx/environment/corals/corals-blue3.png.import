@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds0kan72w2ow4"
-path="res://.godot/imported/corals3.png-27c94c9d7d48d8f0da667330af9521c8.ctex"
+uid="uid://six1oksu6odo"
+path="res://.godot/imported/corals-blue3.png-422dd1a430270f5b0f6ca33cb625a3da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/Aseprite/corals3.png"
-dest_files=["res://.godot/imported/corals3.png-27c94c9d7d48d8f0da667330af9521c8.ctex"]
+source_file="res://assets/gfx/environment/corals/corals-blue3.png"
+dest_files=["res://.godot/imported/corals-blue3.png-422dd1a430270f5b0f6ca33cb625a3da.ctex"]
 
 [params]
 
