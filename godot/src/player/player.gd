@@ -163,8 +163,9 @@ func do_thrust(rotation_delta:float = 0):
 			animation_player.play("strafe_right")
 		_:
 			Logger.debug("thrust forward")
-			animation_player.play("thrust")						
-			$ResponsivenessTimer.start()
+			animation_player.play("thrust")	
+			if $ResponsivenessTimer.wait_time>0:
+				$ResponsivenessTimer.start()
 
 	responsive = false			
 	$ThrustTimer.wait_time = max(min_thrust_timeout, base_thrust_timeout*thrust_factor )
