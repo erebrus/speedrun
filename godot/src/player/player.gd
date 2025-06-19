@@ -2,6 +2,7 @@ class_name Player extends RigidBody2D
 
 @export_category("thrust")
 @export var base_thrust_timeout := .8
+@export var responsiveness_timeout := .8
 @export var thrust := 400.0
 @export var back_thrust_factor := .2
 @export var strafe_thrust_factor := .25
@@ -17,7 +18,7 @@ class_name Player extends RigidBody2D
 @export_category("energy")
 @export var max_energy := 100
 
-
+var responsive := true
 var energy := 0:
 	set(v):
 		energy = v
@@ -75,6 +76,7 @@ func _ready():
 	Events.player_max_energy_changed.emit(max_energy)
 	bubbles.animation_finished.connect(func():bubbles.visible = false)
 	energy=100
+	$ResponsivenessTimer.wait_time = responsiveness_timeout
 	
 func _physics_process(delta: float) -> void:
 	if in_animation :
@@ -90,6 +92,10 @@ func _physics_process(delta: float) -> void:
 		elif Input.is_action_just_released("move_forward"):
 			last_thrust_direction = Vector2.RIGHT
 			do_thrust()
+		elif Input.is_action_just_released("boost"):
+			last_thrust_direction = Vector2.RIGHT
+			do_super_thrust()
+	if responsive:
 		if Input.is_action_just_pressed("move_back"):
 			last_thrust_direction = Vector2.LEFT
 			thrust_factor = back_thrust_factor
@@ -102,9 +108,7 @@ func _physics_process(delta: float) -> void:
 			last_thrust_direction = Vector2.DOWN
 			thrust_factor=strafe_thrust_factor
 			do_thrust(PI/2)
-		elif Input.is_action_just_released("boost"):
-			last_thrust_direction = Vector2.RIGHT
-			do_super_thrust()
+		
 func charge_thrust(delta:float):
 	if thrust_factor == 0:
 		thrust_factor = .2	
@@ -126,6 +130,9 @@ func is_perfect_thrust()->bool:
 	return perfect
 
 func do_thrust(rotation_delta:float = 0):
+	if not $ThrustTimer.paused:
+		$ThrustTimer.stop()
+		
 	var thrust_direction=Vector2.RIGHT.rotated(rotation+rotation_delta)
 	Logger.debug("thrust %d" % Time.get_ticks_msec())
 	if thrust_factor > .5:
@@ -147,7 +154,7 @@ func do_thrust(rotation_delta:float = 0):
 	match last_thrust_direction:
 		Vector2.LEFT:
 			Logger.debug("thrust back")
-			animation_player.play("back")
+			animation_player.play("back")			
 		Vector2.UP:
 			Logger.debug("strafe left")
 			animation_player.play("strafe_left")
@@ -156,14 +163,15 @@ func do_thrust(rotation_delta:float = 0):
 			animation_player.play("strafe_right")
 		_:
 			Logger.debug("thrust forward")
-			animation_player.play("thrust")
+			animation_player.play("thrust")						
+			$ResponsivenessTimer.start()
 
-			
+	responsive = false			
 	$ThrustTimer.wait_time = max(min_thrust_timeout, base_thrust_timeout*thrust_factor )
 	Logger.info("wait time %.2f" % $ThrustTimer.wait_time )
 	thrust_factor=0
 	$ThrustTimer.start()
-	Logger.debug("thrust NOT available %d" % Time.get_ticks_msec())
+	Logger.info("thrust NOT available %d" % Time.get_ticks_msec())
 	
 		
 func do_super_thrust():
@@ -186,7 +194,8 @@ func do_super_thrust():
 	
 func _on_thrust_timer_timeout() -> void:
 	can_thrust=true
-	Logger.debug("thrust available %d" % Time.get_ticks_msec())
+	responsive = true
+	Logger.info("thrust available %d" % Time.get_ticks_msec())
 	match last_thrust_direction:		
 		Vector2.RIGHT:
 			if not Input.is_action_pressed("move_forward"):
@@ -225,3 +234,8 @@ func lose_camera():
 	if node:
 		node.queue_free()
 	
+
+
+func _on_responsiveness_timer_timeout() -> void:
+	responsive = true
+	Logger.info("responsive %d" % Time.get_ticks_msec())
