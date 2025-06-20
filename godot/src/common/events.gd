@@ -3,7 +3,7 @@ extends Node
 signal level_ready(level: BaseLevel)
 signal level_ended()
 signal player_died()
-
+signal player_near_end()
 signal timer_restarted()
 signal timer_started()
 signal timer_stopped()

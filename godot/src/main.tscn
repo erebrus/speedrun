@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=12 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="Script" uid="uid://cgpkxa13hhnox" path="res://src/main.gd" id="1_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://bdj8t5d1w0lh5" path="res://src/common/level_manager.tscn" id="2_fyndt"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="3_kmhfv"]
 [ext_resource type="PackedScene" uid="uid://b2rn5s16m8cqa" path="res://src/world/levels/test_3.tscn" id="5_5mrjc"]
 [ext_resource type="PackedScene" uid="uid://02ojse24fbw5" path="res://src/hud/timer_display.tscn" id="5_kmhfv"]
+[ext_resource type="PackedScene" uid="uid://q1f2gdofbcix" path="res://src/world/levels/test_level_with_tilemap.tscn" id="6_kf8lf"]
 [ext_resource type="PackedScene" uid="uid://cdm2fhla0kigd" path="res://src/common/fade_panel.tscn" id="6_kmhfv"]
 [ext_resource type="PackedScene" uid="uid://b4oaclob0dg5u" path="res://src/hud/energy_bar.tscn" id="7_5mrjc"]
+[ext_resource type="AudioStream" uid="uid://cumnr4b5k13mb" path="res://assets/sfx/MC_CaveTP.wav" id="9_mgm53"]
 
 [sub_resource type="Resource" id="Resource_5q4o7"]
 metadata/__load_path__ = "res://src/tutorial_state.tres"
@@ -19,7 +21,7 @@ game_state = SubResource("Resource_5q4o7")
 [node name="LevelManager" parent="." node_paths=PackedStringArray("level_container") instance=ExtResource("2_fyndt")]
 levels = Array[PackedScene]([ExtResource("3_kmhfv"), ExtResource("3_fyndt"), ExtResource("5_5mrjc")])
 level_container = NodePath("../Level")
-override_level = ExtResource("5_5mrjc")
+override_level = ExtResource("6_kf8lf")
 
 [node name="Level" type="Node2D" parent="."]
 
@@ -38,6 +40,9 @@ scale = Vector2(3, 3)
 
 [node name="OverlayLayer" type="CanvasLayer" parent="."]
 layer = 5
+
+[node name="end_sfx" type="AudioStreamPlayer" parent="OverlayLayer"]
+stream = ExtResource("9_mgm53")
 
 [node name="FadePanel" parent="OverlayLayer" instance=ExtResource("6_kmhfv")]
 unique_name_in_owner = true

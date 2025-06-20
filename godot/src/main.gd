@@ -5,6 +5,7 @@ class_name Game extends Node2D
 
 @onready var level_manager: LevelManager = $LevelManager
 @onready var fade_panel: FadePanel = %FadePanel
+@onready var end_sfx: AudioStreamPlayer = $OverlayLayer/end_sfx
 
 func _ready():
 	Globals.game = self
@@ -12,7 +13,7 @@ func _ready():
 	fade_panel.fade_in()
 	level_manager.load_first_level()
 	Debug.set_levels(level_manager.levels)
-
+	Events.player_near_end.connect(func():end_sfx.play())
 func _on_end_level():
 	fade_panel.fade_out()
 	await fade_panel.fade_out_completed

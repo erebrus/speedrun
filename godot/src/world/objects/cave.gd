@@ -8,6 +8,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	area_2d.collision_mask=0
 	collision_mask=0
 	body.lose_camera()
+	Events.player_near_end.emit()
 	var tween := get_tree().create_tween().set_trans(Tween.TRANS_LINEAR)
 	tween.tween_property(body,"global_position",player_target.global_position,.3)
 	await tween.finished
