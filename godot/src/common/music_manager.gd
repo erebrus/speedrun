@@ -2,11 +2,11 @@ class_name MusicManager extends Node
 
 
 @onready var menu_music: AudioStreamPlayer = $menu_music
-@onready var game_music_stream_player: AudioStreamPlayer = $game_music
+#@onready var game_music_stream_player: AudioStreamPlayer = $game_music
 @onready var game_music_node: Node = $game_music
 
 
-@onready var game_music_stream:AudioStreamSynchronized = game_music_stream_player.stream if game_music_stream_player else null
+@onready var game_music_stream:AudioStreamSynchronized = game_music_node.stream if game_music_node is AudioStreamPlayer else null
 
 var current_game_music_id = 0#Types.GameMusic.EASY
 var default_music_volume:float = 0.0 
@@ -31,19 +31,20 @@ func fade_menu_music(time:float=1.0):
 	fade_stream(menu_music, time)
 	
 func fade_in_game_music(time:float=1.0):
-	if game_music_stream_player:
-			fade_in_stream(game_music_stream_player, time)
+	if game_music_node is AudioStreamPlayer :
+			fade_in_stream(game_music_node as AudioStreamPlayer, time)
 	else:
-		for stream in get_children():
-			if stream is AudioStreamPlayer:
+		for idx in game_music_node.get_child_count():
+			var stream = game_music_node.get_child(0)
+			if stream is AudioStreamPlayer and idx==current_game_music_id:
 				fade_in_stream(stream, time)
 				
 
 func fade_game_music(time:float=1.0):
-	if game_music_stream_player:
-		fade_stream(game_music_stream_player, time)
+	if game_music_node is AudioStreamPlayer :
+		fade_stream(game_music_node as AudioStreamPlayer, time)
 	else:
-		for stream in get_children():
+		for stream in game_music_node.get_children():
 			if stream is AudioStreamPlayer:
 				fade_stream(stream, time)
 		
