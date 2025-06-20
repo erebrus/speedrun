@@ -14,6 +14,7 @@ func _ready():
 	level_manager.load_first_level()
 	Debug.set_levels(level_manager.levels)
 	Events.player_near_end.connect(func():end_sfx.play())
+	Events.player_died.connect(func():Globals.do_lose())
 func _on_end_level():
 	fade_panel.fade_out()
 	await fade_panel.fade_out_completed

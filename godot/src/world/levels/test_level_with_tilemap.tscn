@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://q1f2gdofbcix"]
+[gd_scene load_steps=8 format=4 uid="uid://q1f2gdofbcix"]
 
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="1_lkwel"]
 [ext_resource type="PackedScene" uid="uid://b4qx3sm45yl5d" path="res://src/world/objects/energy_node.tscn" id="2_lkwel"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b2ivjq3gqi8r2" path="res://src/world/objects/cave.tscn" id="4_lxhwt"]
 [ext_resource type="PackedScene" uid="uid://ckr2ktvcwwtrq" path="res://src/world/objects/grass_a.tscn" id="5_siovn"]
 [ext_resource type="PackedScene" uid="uid://ba0qgk7glqhuv" path="res://src/world/objects/grass_b.tscn" id="6_732ok"]
+[ext_resource type="PackedScene" uid="uid://ev1ert1usngp" path="res://src/world/objects/urchin.tscn" id="7_732ok"]
 
 [node name="TestLevel" instance=ExtResource("1_lkwel")]
 
@@ -33,6 +34,9 @@ position = Vector2(-146, 787)
 
 [node name="GrassA2" parent="Objects" index="5" instance=ExtResource("6_732ok")]
 position = Vector2(-443, 833)
+
+[node name="Urchin" parent="Objects" index="6" instance=ExtResource("7_732ok")]
+position = Vector2(-299, 791)
 
 [node name="Camera2D" parent="." index="6"]
 position = Vector2(-309, 860)

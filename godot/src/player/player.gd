@@ -221,12 +221,13 @@ func _on_thrust_timer_timeout() -> void:
 	
 
 
-#func kill():
-	#Logger.info("hurt")
-	#visible=false
-	#hurt_sfx.play()
-	#await get_tree().create_timer(1).timeout
-	#Globals.do_lose()
+func kill():
+	animation_player.play("death")	
+	in_animation = true
+	lose_camera()
+	hurt_sfx.play()
+	await hurt_sfx.finished
+	Events.player_died.emit()
 
 func on_ruffle():
 	if not ruffle_sfx.playing:

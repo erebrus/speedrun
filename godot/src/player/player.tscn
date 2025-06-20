@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://vd7a1n8xf4dh" path="res://assets/sfx/MC_Trustback_1.wav" id="3_o822w"]
 [ext_resource type="AudioStream" uid="uid://cdfor56ytu778" path="res://assets/sfx/MC_MegaThrust.wav" id="3_x42xx"]
 [ext_resource type="PackedScene" uid="uid://fotw7jhyi00a" path="res://src/player/thrust_assist.tscn" id="4_244u8"]
+[ext_resource type="AudioStream" uid="uid://cumnr4b5k13mb" path="res://assets/sfx/MC_CaveTP.wav" id="4_l271a"]
 [ext_resource type="AudioStream" uid="uid://cgel0dk4bc357" path="res://assets/sfx/MC_Trustback_2.wav" id="4_x42xx"]
 [ext_resource type="AudioStream" uid="uid://dduomqmcjxutw" path="res://assets/sfx/MC_Trustback_3.wav" id="5_l271a"]
 
@@ -303,9 +304,6 @@ streams_count = 3
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hja65"]
 streams_count = 3
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4uy46"]
-streams_count = 3
-
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5shm8"]
 streams_count = 3
 stream_0/stream = ExtResource("3_o822w")
@@ -445,7 +443,7 @@ volume_db = -10.0
 bus = &"Sfx"
 
 [node name="hurt_sfx" type="AudioStreamPlayer2D" parent="sfx"]
-stream = SubResource("AudioStreamRandomizer_4uy46")
+stream = ExtResource("4_l271a")
 volume_db = -10.0
 bus = &"Sfx"
 
