@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://f51wavfh1oep"]
+[gd_scene load_steps=15 format=4 uid="uid://f51wavfh1oep"]
 
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="1_pkk5k"]
 [ext_resource type="Texture2D" uid="uid://bg5yhommbu724" path="res://assets/gfx/environment/seaweed6.png" id="2_pfr2q"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b2ivjq3gqi8r2" path="res://src/world/objects/cave.tscn" id="11_q3wqq"]
 [ext_resource type="PackedScene" uid="uid://ckr2ktvcwwtrq" path="res://src/world/objects/grass_a.tscn" id="12_dku3n"]
 [ext_resource type="PackedScene" uid="uid://ba0qgk7glqhuv" path="res://src/world/objects/grass_b.tscn" id="13_g6pnv"]
+[ext_resource type="PackedScene" uid="uid://ev1ert1usngp" path="res://src/world/objects/urchin.tscn" id="14_pfr2q"]
 
 [node name="TestLevel" instance=ExtResource("1_pkk5k")]
 
@@ -457,7 +458,12 @@ position = Vector2(353, 727)
 position = Vector2(436, 729)
 
 [node name="Camera2D" parent="." index="6"]
-position = Vector2(-306, 143)
+position = Vector2(23, 688)
 
 [node name="Player" parent="." index="7"]
-position = Vector2(-306, 143)
+position = Vector2(23, 688)
+
+[node name="Urchins" type="Node2D" parent="." index="8"]
+
+[node name="Urchin" parent="Urchins" index="0" instance=ExtResource("14_pfr2q")]
+position = Vector2(182, 669)
