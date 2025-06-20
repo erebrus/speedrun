@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b7j2rcuhmi45m" path="res://src/world/objects/urchin.gd" id="1_dtg80"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4mco"]
+radius = 9.0
 height = 36.0
 
 [node name="Urchin" type="Area2D"]

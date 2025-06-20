@@ -26,6 +26,7 @@ bus = &"Music"
 
 [node name="section1" type="AudioStreamPlayer" parent="MusicManager/game_music"]
 stream = ExtResource("4_q26s1")
+bus = &"Music"
 script = ExtResource("5_i6p1b")
 intro_stream = ExtResource("6_hcytl")
 metadata/_custom_type_script = "uid://dotkr5yf1ychu"

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b6q7h0qkfogx3" path="res://assets/gfx/environment/grass2.png" id="2_f7qy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f7qy8"]
-size = Vector2(32, 27)
+size = Vector2(32, 29.5)
 
 [sub_resource type="Animation" id="Animation_feg76"]
 length = 0.001
@@ -53,7 +53,7 @@ texture = ExtResource("2_f7qy8")
 hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_f7qy8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

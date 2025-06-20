@@ -2,7 +2,11 @@ extends Node
 
 signal session_created
 
+@export var inverted = true
+
+
 var player_identifier: String
+var player_uid: String
 var player_id: String
 var player_name: String
 
@@ -15,7 +19,9 @@ func _ready() -> void:
 	var response = await LL_Authentication.GuestSession.new().send()
 	if response.success:
 		player_identifier = response.player_identifier
-		player_id = response.public_uid
+		player_id = str(response.player_id)
+		player_uid = response.public_uid
+		
 		if response.seen_before:
 			player_name = response.player_name
 		else:
@@ -44,12 +50,25 @@ func submit_score(leaderboard: String, score: int, check_highscore: bool = false
 	if !response.success:
 		return
 	
-	return SubmitResponse.new(response.rank, response.score, previous_score)
+	var is_highscore = false
+	if previous_score == null:
+		is_highscore = true
+	else:
+		if inverted:
+			is_highscore = previous_score > response.score
+		else:
+			is_highscore = previous_score < response.score
+	
+	return SubmitResponse.new(response.rank, response.score, is_highscore)
 	
 
 func get_top_scores(leaderboard: String, count: int = 10) -> Array[Rank]:
+	return await get_scores(leaderboard, 0, count)
+	
+
+func get_scores(leaderboard: String, from: int = 0, count: int = 10) -> Array[Rank]:
 	var list: Array[Rank]
-	var response = await LL_Leaderboards.GetScoreList.new(leaderboard, count).send()
+	var response = await LL_Leaderboards.GetScoreList.new(leaderboard, count, from - 1).send()
 	if response.success:
 		for i in response.items:
 			list.append(Rank.new(i.player.name, i.rank, i.score))
@@ -61,10 +80,17 @@ class SubmitResponse extends RefCounted:
 	var rank: int
 	var is_highscore: bool
 	
-	func _init(_rank: int, new_score: int, old_score) -> void:
+	func _init(_rank: int, new_score: int, _is_highscore) -> void:
 		score = new_score
-		is_highscore = old_score != null and new_score > old_score
+		is_highscore = _is_highscore
 		rank = _rank
+		
+	func _to_string() -> String:
+		var highscore_str = ""
+		if is_highscore:
+			highscore_str = "HIGHSCORE"
+		
+		return "#%s: %s %s " % [rank, score, highscore_str]
 	
 
 class Rank extends RefCounted:

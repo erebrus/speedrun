@@ -1,7 +1,13 @@
 class_name CurrentTilemap extends TileMapLayer
 
+@export var PlanctonScene:PackedScene
 @export var CurrentScene: PackedScene
 @export var current_strength: Array[float]
+@export var plankton_chance: Array[float]
+
+@export var target_container:Node2D
+
+var rnd := RandomNumberGenerator.new()
 
 var current_direction = [
 	Vector2i.DOWN,
@@ -19,7 +25,11 @@ var show_current_arrows:
 var container: Node2D
 
 
+var cells_by_strength: Array[Array]
+
+
 func _ready():
+	rnd.randomize()
 	_generate_all_currents()
 	Debug.show_current_arrows_toggled.connect(func(): show_current_arrows = Debug.show_current_arrows)
 	show_current_arrows = Debug.show_current_arrows
@@ -30,6 +40,7 @@ func _generate_all_currents() -> void:
 	container.name = "Currents"
 	
 	for i in current_strength.size():
+		cells_by_strength.append([])
 		for j in current_direction.size():
 			_generate_currents_for(i,j)
 	
@@ -39,6 +50,7 @@ func _generate_all_currents() -> void:
 func _generate_currents_for(strength: int, direction: int) -> void:
 	Logger.info("Generating currents in direction %s and intensity %s" % [current_direction[direction], current_strength[strength]])
 	var cells = get_used_cells_by_id(0, Vector2i(strength,0), direction)
+	cells_by_strength[strength].append_array(cells)
 	while not cells.is_empty():
 		var used_cells: Array[Vector2i]
 		var seed = cells.pop_front()
@@ -83,3 +95,19 @@ func _get_cell_polygon(cell: Vector2i) -> PackedVector2Array:
 	])
 	return polygon
 	
+
+func _on_plankton_timer_timeout():
+	var tile_size = tile_set.tile_size
+	for strength in cells_by_strength.size():
+		var cells = cells_by_strength[strength]
+		var chance = plankton_chance[strength]
+		var number = floor(chance * cells.size())
+		if rnd.randf() < (chance - cells.size() * number):
+			number += 1
+		
+		cells.shuffle()
+		for i in number:
+			var cell = cells[i]
+			var plancton := PlanctonScene.instantiate() as Plancton
+			plancton.global_position = map_to_local(cell) + Vector2(tile_size.x * rnd.randf(), tile_size.y * rnd.randf())
+			target_container.add_child(plancton)

@@ -93,8 +93,9 @@ texture_filter = 1
 position = Vector2(2, -1)
 tile_set = ExtResource("5_6urnh")
 
-[node name="CurrentTileMap" parent="." instance=ExtResource("4_3nebk")]
+[node name="CurrentTileMap" parent="." node_paths=PackedStringArray("target_container") instance=ExtResource("4_3nebk")]
 current_strength = Array[float]([50.0, 100.0, 150.0])
+target_container = NodePath("../Plankton")
 
 [node name="Plankton" type="Node2D" parent="."]
 

@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=14 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="Script" uid="uid://cgpkxa13hhnox" path="res://src/main.gd" id="1_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://bdj8t5d1w0lh5" path="res://src/common/level_manager.tscn" id="2_fyndt"]
 [ext_resource type="PackedScene" uid="uid://dk3sfdk4mpkgm" path="res://src/world/levels/test_level.tscn" id="3_fyndt"]
-[ext_resource type="PackedScene" uid="uid://f51wavfh1oep" path="res://src/world/levels/level_1.tscn" id="3_kf8lf"]
+[ext_resource type="PackedScene" uid="uid://d06uocvuxgg47" path="res://src/world/levels/level_3.tscn" id="3_kf8lf"]
 [ext_resource type="PackedScene" uid="uid://b2rn5s16m8cqa" path="res://src/world/levels/level_tutorial.tscn" id="5_5mrjc"]
 [ext_resource type="PackedScene" uid="uid://02ojse24fbw5" path="res://src/hud/timer_display.tscn" id="5_kmhfv"]
 [ext_resource type="PackedScene" uid="uid://cdm2fhla0kigd" path="res://src/common/fade_panel.tscn" id="6_kmhfv"]
+[ext_resource type="PackedScene" uid="uid://wnypwqtpsqfq" path="res://src/world/levels/test_end_level.tscn" id="6_kqbth"]
 [ext_resource type="PackedScene" uid="uid://b4oaclob0dg5u" path="res://src/hud/energy_bar.tscn" id="7_5mrjc"]
 [ext_resource type="AudioStream" uid="uid://cumnr4b5k13mb" path="res://assets/sfx/MC_CaveTP.wav" id="9_mgm53"]
+[ext_resource type="PackedScene" uid="uid://b778impvuqi80" path="res://src/hud/leaderboard/leaderboard_panel.tscn" id="10_mgm53"]
+[ext_resource type="PackedScene" uid="uid://bh8f5eo2lmqqf" path="res://src/hud/leaderboard/highscore.tscn" id="11_uewes"]
 
 [sub_resource type="Resource" id="Resource_5q4o7"]
 metadata/__load_path__ = "res://src/tutorial_state.tres"
@@ -20,13 +23,14 @@ game_state = SubResource("Resource_5q4o7")
 [node name="LevelManager" parent="." node_paths=PackedStringArray("level_container") instance=ExtResource("2_fyndt")]
 levels = Array[PackedScene]([ExtResource("3_kf8lf"), ExtResource("3_fyndt"), ExtResource("5_5mrjc")])
 level_container = NodePath("../Level")
-override_level = ExtResource("3_kf8lf")
+override_level = ExtResource("6_kqbth")
 
 [node name="Level" type="Node2D" parent="."]
 
 [node name="HUDLayer" type="CanvasLayer" parent="."]
 
 [node name="TimerDisplay" parent="HUDLayer" instance=ExtResource("5_kmhfv")]
+unique_name_in_owner = true
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -47,6 +51,14 @@ stream = ExtResource("9_mgm53")
 unique_name_in_owner = true
 visible = true
 metadata/_edit_lock_ = true
+
+[node name="LeaderboardPanel" parent="OverlayLayer" instance=ExtResource("10_mgm53")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Highscore" parent="OverlayLayer" instance=ExtResource("11_uewes")]
+unique_name_in_owner = true
+visible = false
 
 [connection signal="game_completed" from="LevelManager" to="." method="_on_level_manager_game_completed"]
 [connection signal="level_ready" from="LevelManager" to="." method="_on_level_manager_level_ready"]
