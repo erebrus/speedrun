@@ -68,3 +68,7 @@ func _on_win_game_pressed():
 
 func _on_current_arrows_toggled(toggled_on: bool):
 	Debug.show_current_arrows = toggled_on
+
+
+func _on_max_energy_pressed() -> void:
+	Events.debug_max_energy.emit()

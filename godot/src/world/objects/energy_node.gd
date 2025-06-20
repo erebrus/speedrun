@@ -10,7 +10,7 @@ func _ready() -> void:
 	animation_player.play("default")
 	
 func _on_body_entered(body: Node2D) -> void:
-	body.collect(self)
+	body.collect(self.energy)
 	destroy()
 
 func destroy():

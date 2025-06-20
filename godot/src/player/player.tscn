@@ -1,9 +1,13 @@
-[gd_scene load_steps=32 format=3 uid="uid://dtoa1mfxryx0c"]
+[gd_scene load_steps=35 format=3 uid="uid://dtoa1mfxryx0c"]
 
 [ext_resource type="Script" uid="uid://nnqtis7t5gq0" path="res://src/player/player.gd" id="1_0sqbu"]
 [ext_resource type="Texture2D" uid="uid://cx10q02axlwkp" path="res://assets/gfx/character/squid-sheet.png" id="2_rxibo"]
 [ext_resource type="Texture2D" uid="uid://cn4d6j82c362j" path="res://assets/gfx/environment/bubbles.png" id="3_mf2ua"]
+[ext_resource type="AudioStream" uid="uid://vd7a1n8xf4dh" path="res://assets/sfx/MC_Trustback_1.wav" id="3_o822w"]
+[ext_resource type="AudioStream" uid="uid://cdfor56ytu778" path="res://assets/sfx/MC_MegaThrust.wav" id="3_x42xx"]
 [ext_resource type="PackedScene" uid="uid://fotw7jhyi00a" path="res://src/player/thrust_assist.tscn" id="4_244u8"]
+[ext_resource type="AudioStream" uid="uid://cgel0dk4bc357" path="res://assets/sfx/MC_Trustback_2.wav" id="4_x42xx"]
+[ext_resource type="AudioStream" uid="uid://dduomqmcjxutw" path="res://assets/sfx/MC_Trustback_3.wav" id="5_l271a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mf2ua"]
 radius = 5.0
@@ -299,14 +303,14 @@ streams_count = 3
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hja65"]
 streams_count = 3
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5efpn"]
-streams_count = 3
-
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4uy46"]
 streams_count = 3
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5shm8"]
 streams_count = 3
+stream_0/stream = ExtResource("3_o822w")
+stream_1/stream = ExtResource("4_x42xx")
+stream_2/stream = ExtResource("5_l271a")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hrerp"]
 streams_count = 3
@@ -435,8 +439,8 @@ stream = SubResource("AudioStreamRandomizer_hja65")
 volume_db = -10.0
 bus = &"Sfx"
 
-[node name="krill_sfx" type="AudioStreamPlayer2D" parent="sfx"]
-stream = SubResource("AudioStreamRandomizer_5efpn")
+[node name="super_thrust_sfx" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("3_x42xx")
 volume_db = -10.0
 bus = &"Sfx"
 
@@ -446,6 +450,11 @@ volume_db = -10.0
 bus = &"Sfx"
 
 [node name="thrust_sfx" type="AudioStreamPlayer2D" parent="sfx"]
+stream = SubResource("AudioStreamRandomizer_5shm8")
+volume_db = -10.0
+bus = &"Sfx"
+
+[node name="wall_thrust_sfx" type="AudioStreamPlayer2D" parent="sfx"]
 stream = SubResource("AudioStreamRandomizer_5shm8")
 volume_db = -10.0
 bus = &"Sfx"
