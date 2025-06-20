@@ -1,68 +1,323 @@
-[gd_scene load_steps=8 format=4 uid="uid://b2rn5s16m8cqa"]
+[gd_scene load_steps=14 format=4 uid="uid://b2rn5s16m8cqa"]
 
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="1_l25c7"]
+[ext_resource type="Texture2D" uid="uid://bg5yhommbu724" path="res://assets/gfx/environment/seaweed6.png" id="2_ks0nc"]
 [ext_resource type="Texture2D" uid="uid://dnsoxboxo6jj" path="res://assets/gfx/environment/seaweed4.png" id="2_mf8a0"]
 [ext_resource type="PackedScene" uid="uid://b4qx3sm45yl5d" path="res://src/world/objects/energy_node.tscn" id="3_6q0lt"]
+[ext_resource type="Texture2D" uid="uid://b1r0vbfba2fu4" path="res://assets/gfx/environment/seaweed5.png" id="3_pu22r"]
 [ext_resource type="PackedScene" uid="uid://86s62ypn5h1p" path="res://src/world/objects/clam.tscn" id="4_ks0nc"]
+[ext_resource type="Texture2D" uid="uid://dkha2lw3qgww8" path="res://assets/gfx/environment/seaweed7.png" id="4_vxs8w"]
 [ext_resource type="PackedScene" uid="uid://b2ivjq3gqi8r2" path="res://src/world/objects/cave.tscn" id="5_pu22r"]
+[ext_resource type="Texture2D" uid="uid://4xv6i8je5imf" path="res://assets/gfx/environment/seaweed1.png" id="6_pu22r"]
 [ext_resource type="PackedScene" uid="uid://ckr2ktvcwwtrq" path="res://src/world/objects/grass_a.tscn" id="6_vxs8w"]
+[ext_resource type="Texture2D" uid="uid://dpo3a2i0pru2y" path="res://assets/gfx/environment/seaweed2.png" id="7_1cpod"]
 [ext_resource type="PackedScene" uid="uid://ba0qgk7glqhuv" path="res://src/world/objects/grass_b.tscn" id="7_q2op7"]
+[ext_resource type="Texture2D" uid="uid://dqc30htixarul" path="res://assets/gfx/environment/seaweed3.png" id="8_ygqkp"]
 
 [node name="TestLevel" instance=ExtResource("1_l25c7")]
 
-[node name="Seaweed1" parent="BG" index="0"]
+[node name="Seaweed13" type="Sprite2D" parent="BG" index="0"]
+position = Vector2(-24, 502)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed12" type="Sprite2D" parent="BG" index="1"]
+position = Vector2(-77, 480)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed14" type="Sprite2D" parent="BG" index="2"]
+position = Vector2(-3, 440)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed15" type="Sprite2D" parent="BG" index="3"]
+position = Vector2(92, 483)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed16" type="Sprite2D" parent="BG" index="4"]
+position = Vector2(39, 469)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed17" type="Sprite2D" parent="BG" index="5"]
+position = Vector2(-132, 454)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed18" type="Sprite2D" parent="BG" index="6"]
+position = Vector2(243, 507)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed19" type="Sprite2D" parent="BG" index="7"]
+position = Vector2(178, 489)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed20" type="Sprite2D" parent="BG" index="8"]
+position = Vector2(282, 433)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed21" type="Sprite2D" parent="BG" index="9"]
+position = Vector2(375, 483)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed22" type="Sprite2D" parent="BG" index="10"]
+position = Vector2(327, 470)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed23" type="Sprite2D" parent="BG" index="11"]
+position = Vector2(125, 463)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed24" type="Sprite2D" parent="BG" index="12"]
+position = Vector2(518, 523)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed25" type="Sprite2D" parent="BG" index="13"]
+position = Vector2(465, 501)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed26" type="Sprite2D" parent="BG" index="14"]
+position = Vector2(539, 461)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed27" type="Sprite2D" parent="BG" index="15"]
+position = Vector2(634, 504)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed28" type="Sprite2D" parent="BG" index="16"]
+position = Vector2(581, 490)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed29" type="Sprite2D" parent="BG" index="17"]
+position = Vector2(410, 475)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed30" type="Sprite2D" parent="BG" index="18"]
+position = Vector2(785, 528)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed31" type="Sprite2D" parent="BG" index="19"]
+position = Vector2(720, 510)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed32" type="Sprite2D" parent="BG" index="20"]
+position = Vector2(824, 454)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed33" type="Sprite2D" parent="BG" index="21"]
+position = Vector2(917, 504)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed34" type="Sprite2D" parent="BG" index="22"]
+position = Vector2(869, 491)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed35" type="Sprite2D" parent="BG" index="23"]
+position = Vector2(667, 484)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed36" type="Sprite2D" parent="BG" index="24"]
+position = Vector2(1068, 519)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed37" type="Sprite2D" parent="BG" index="25"]
+position = Vector2(1015, 497)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed38" type="Sprite2D" parent="BG" index="26"]
+position = Vector2(1089, 457)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed39" type="Sprite2D" parent="BG" index="27"]
+position = Vector2(1184, 500)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed40" type="Sprite2D" parent="BG" index="28"]
+position = Vector2(1131, 486)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed41" type="Sprite2D" parent="BG" index="29"]
+position = Vector2(960, 471)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed42" type="Sprite2D" parent="BG" index="30"]
+position = Vector2(1335, 524)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed43" type="Sprite2D" parent="BG" index="31"]
+position = Vector2(1270, 506)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed44" type="Sprite2D" parent="BG" index="32"]
+position = Vector2(1374, 450)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed45" type="Sprite2D" parent="BG" index="33"]
+position = Vector2(1467, 500)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed46" type="Sprite2D" parent="BG" index="34"]
+position = Vector2(1419, 487)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed47" type="Sprite2D" parent="BG" index="35"]
+position = Vector2(1217, 480)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed48" type="Sprite2D" parent="BG" index="36"]
+position = Vector2(1614, 510)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed49" type="Sprite2D" parent="BG" index="37"]
+position = Vector2(1561, 488)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed50" type="Sprite2D" parent="BG" index="38"]
+position = Vector2(1635, 448)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed51" type="Sprite2D" parent="BG" index="39"]
+position = Vector2(1730, 491)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed52" type="Sprite2D" parent="BG" index="40"]
+position = Vector2(1677, 477)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed53" type="Sprite2D" parent="BG" index="41"]
+position = Vector2(1506, 462)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed54" type="Sprite2D" parent="BG" index="42"]
+position = Vector2(1881, 515)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed55" type="Sprite2D" parent="BG" index="43"]
+position = Vector2(1816, 497)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed56" type="Sprite2D" parent="BG" index="44"]
+position = Vector2(1920, 441)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed57" type="Sprite2D" parent="BG" index="45"]
+position = Vector2(2013, 491)
+texture = ExtResource("2_ks0nc")
+
+[node name="Seaweed58" type="Sprite2D" parent="BG" index="46"]
+position = Vector2(1965, 478)
+texture = ExtResource("3_pu22r")
+
+[node name="Seaweed59" type="Sprite2D" parent="BG" index="47"]
+position = Vector2(1763, 471)
+texture = ExtResource("4_vxs8w")
+
+[node name="Seaweed1" parent="BG" index="48"]
+visible = false
 position = Vector2(-364, 491)
 
-[node name="Seaweed6" parent="BG" index="3"]
+[node name="Seaweed5" parent="BG" index="49"]
+visible = false
+
+[node name="Seaweed2" parent="BG" index="50"]
+visible = false
+
+[node name="Seaweed6" parent="BG" index="51"]
+visible = false
 position = Vector2(919, 514)
 
-[node name="Seaweed7" parent="BG" index="5"]
+[node name="Seaweed3" parent="BG" index="52"]
+visible = false
+
+[node name="Seaweed7" parent="BG" index="53"]
+visible = false
 position = Vector2(448, 498)
 
-[node name="Seaweed9" type="Sprite2D" parent="BG" index="8"]
+[node name="Seaweed4" parent="BG" index="54"]
+visible = false
+
+[node name="Seaweed8" parent="BG" index="55"]
+visible = false
+
+[node name="Seaweed9" type="Sprite2D" parent="BG" index="56"]
+visible = false
 position = Vector2(643, 503)
 texture = ExtResource("2_mf8a0")
 
-[node name="Seaweed10" type="Sprite2D" parent="BG" index="9"]
+[node name="Seaweed10" type="Sprite2D" parent="BG" index="57"]
+visible = false
 position = Vector2(1155, 496)
 texture = ExtResource("2_mf8a0")
 
-[node name="Seaweed11" type="Sprite2D" parent="BG" index="10"]
+[node name="Seaweed11" type="Sprite2D" parent="BG" index="58"]
+visible = false
 position = Vector2(1045, 503)
 texture = ExtResource("2_mf8a0")
 
 [node name="Seaweed1" parent="BG2" index="0"]
-position = Vector2(67, 492)
+position = Vector2(-96, 488)
 
-[node name="Seaweed5" parent="BG2" index="1"]
-position = Vector2(546, 510)
+[node name="Seaweed12" type="Sprite2D" parent="BG2" index="1"]
+position = Vector2(-33, 510)
+texture = ExtResource("6_pu22r")
 
-[node name="Seaweed2" parent="BG2" index="2"]
-position = Vector2(225, 536)
+[node name="Seaweed5" parent="BG2" index="2"]
+position = Vector2(91, 419)
 
-[node name="Seaweed6" parent="BG2" index="3"]
-position = Vector2(825, 506)
+[node name="Seaweed2" parent="BG2" index="3"]
+position = Vector2(20, 512)
 
-[node name="Seaweed3" parent="BG2" index="4"]
-position = Vector2(-418, 503)
+[node name="Seaweed6" parent="BG2" index="4"]
+position = Vector2(390, 421)
 
-[node name="Seaweed4" parent="BG2" index="6"]
-position = Vector2(-287, 486)
+[node name="Seaweed3" parent="BG2" index="5"]
+position = Vector2(-313, 488)
 
-[node name="Seaweed8" parent="BG2" index="7"]
-position = Vector2(-109, 477)
+[node name="Seaweed7" parent="BG2" index="6"]
+position = Vector2(819, 484)
 
-[node name="Seaweed11" type="Sprite2D" parent="BG2" index="8"]
-position = Vector2(1083, 520)
+[node name="Seaweed4" parent="BG2" index="7"]
+position = Vector2(-235, 438)
+
+[node name="Seaweed8" parent="BG2" index="8"]
+position = Vector2(-146, 466)
+
+[node name="Seaweed13" type="Sprite2D" parent="BG2" index="9"]
+position = Vector2(597, 420)
+texture = ExtResource("6_pu22r")
+
+[node name="Seaweed14" type="Sprite2D" parent="BG2" index="10"]
+position = Vector2(519, 520)
+texture = ExtResource("7_1cpod")
+
+[node name="Seaweed15" type="Sprite2D" parent="BG2" index="11"]
+position = Vector2(698, 429)
+texture = ExtResource("7_1cpod")
+flip_h = true
+
+[node name="Seaweed16" type="Sprite2D" parent="BG2" index="12"]
+position = Vector2(228, 496)
+texture = ExtResource("8_ygqkp")
+
+[node name="Seaweed17" type="Sprite2D" parent="BG2" index="13"]
+position = Vector2(1756, 500)
+texture = ExtResource("8_ygqkp")
+
+[node name="Seaweed18" type="Sprite2D" parent="BG2" index="14"]
+position = Vector2(306, 446)
 texture = ExtResource("2_mf8a0")
 
-[node name="Seaweed9" type="Sprite2D" parent="BG2" index="9"]
+[node name="Seaweed19" type="Sprite2D" parent="BG2" index="15"]
+position = Vector2(445, 477)
+texture = ExtResource("2_mf8a0")
+
+[node name="Seaweed11" type="Sprite2D" parent="BG2" index="16"]
+position = Vector2(756, 488)
+texture = ExtResource("2_mf8a0")
+
+[node name="Seaweed9" type="Sprite2D" parent="BG2" index="17"]
 visible = false
 position = Vector2(640, 494)
 texture = ExtResource("2_mf8a0")
 
-[node name="Seaweed10" type="Sprite2D" parent="BG2" index="10"]
-position = Vector2(699, 510)
+[node name="Seaweed10" type="Sprite2D" parent="BG2" index="18"]
+position = Vector2(154, 420)
 texture = ExtResource("2_mf8a0")
 
 [node name="Terrain" parent="." index="2"]
