@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b2rn5s16m8cqa" path="res://src/world/levels/level_tutorial.tscn" id="5_5mrjc"]
 [ext_resource type="PackedScene" uid="uid://02ojse24fbw5" path="res://src/hud/timer_display.tscn" id="5_kmhfv"]
 [ext_resource type="PackedScene" uid="uid://cdm2fhla0kigd" path="res://src/common/fade_panel.tscn" id="6_kmhfv"]
-[ext_resource type="PackedScene" uid="uid://wnypwqtpsqfq" path="res://src/world/levels/test_end_level.tscn" id="6_kqbth"]
+[ext_resource type="PackedScene" uid="uid://f51wavfh1oep" path="res://src/world/levels/level_2.tscn" id="6_kqbth"]
 [ext_resource type="PackedScene" uid="uid://b4oaclob0dg5u" path="res://src/hud/energy_bar.tscn" id="7_5mrjc"]
 [ext_resource type="AudioStream" uid="uid://cumnr4b5k13mb" path="res://assets/sfx/MC_CaveTP.wav" id="9_mgm53"]
 [ext_resource type="PackedScene" uid="uid://b778impvuqi80" path="res://src/hud/leaderboard/leaderboard_panel.tscn" id="10_mgm53"]
