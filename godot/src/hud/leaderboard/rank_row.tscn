@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://xk5f6d721oah"]
+
+[ext_resource type="Script" uid="uid://cbi8mx7ppkc2s" path="res://src/hud/leaderboard/rank_row.gd" id="1_kphcb"]
+
+[node name="RankRow" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+script = ExtResource("1_kphcb")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Rank" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="PlayerName" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Score" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+horizontal_alignment = 2
