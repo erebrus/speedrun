@@ -38,7 +38,7 @@ func _generate_all_currents() -> void:
 
 func _generate_currents_for(strength: int, direction: int) -> void:
 	Logger.info("Generating currents in direction %s and intensity %s" % [current_direction[direction], current_strength[strength]])
-	var cells = get_used_cells_by_id(strength, Vector2i(-1,-1), direction)
+	var cells = get_used_cells_by_id(0, Vector2i(strength,0), direction)
 	while not cells.is_empty():
 		var used_cells: Array[Vector2i]
 		var seed = cells.pop_front()

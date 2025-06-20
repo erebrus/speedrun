@@ -384,12 +384,14 @@ collision_layer = 2
 gravity_scale = 0.05
 inertia = 1.0
 lock_rotation = true
-linear_damp = 1.0
-angular_damp = 2.0
+linear_damp = 1.3
+angular_damp = 1.0
 script = ExtResource("1_0sqbu")
 responsiveness_timeout = 0.3
 thrust = 200.0
-full_thrust_bonus = 1.5
+strafe_thrust_factor = 0.3
+full_thrust_bonus = 1.0
+wall_thrust_factor = 1.0
 perfect_thrust_interval = Vector2(0.7, 0.9)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
