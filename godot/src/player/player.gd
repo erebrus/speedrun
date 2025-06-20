@@ -146,7 +146,7 @@ func do_thrust(rotation_delta:float = 0):
 	Logger.info("thrust factor %2.f intensity %.2f" % [thrust_factor, intensity])
 	apply_impulse(thrust_direction * intensity,Vector2.ZERO)
 	Events.squid_charge_done.emit(thrust_factor)
-	if back_rc.is_colliding():
+	if back_rc.is_colliding() or is_perfect_thrust():
 		bubbles.play("default")
 		bubbles.visible = true
 	#do_noise()
