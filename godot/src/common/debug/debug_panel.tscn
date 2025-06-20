@@ -55,6 +55,11 @@ focus_mode = 0
 text = "Start
 "
 
+[node name="MaxEnergy" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Max Energy"
+
 [node name="NextLevel" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 focus_mode = 0
@@ -84,6 +89,7 @@ text = "Current Arrows"
 
 [connection signal="item_selected" from="VBoxContainer/Music/MusicTension" to="." method="_on_music_tension_item_selected"]
 [connection signal="pressed" from="VBoxContainer/Level/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/MaxEnergy" to="." method="_on_max_energy_pressed"]
 [connection signal="pressed" from="VBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="pressed" from="VBoxContainer/WinGame" to="." method="_on_win_game_pressed"]

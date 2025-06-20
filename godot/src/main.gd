@@ -6,6 +6,7 @@ class_name Game extends Node2D
 
 @onready var level_manager: LevelManager = $LevelManager
 @onready var fade_panel: FadePanel = %FadePanel
+@onready var end_sfx: AudioStreamPlayer = $OverlayLayer/end_sfx
 @onready var timer = %TimerDisplay
 @onready var leaderboard = %LeaderboardPanel
 @onready var highscore = %Highscore
@@ -17,7 +18,8 @@ func _ready():
 	level_manager.load_first_level()
 	leaderboard.next_level_pressed.connect(_on_next_level_pressed)
 	Debug.set_levels(level_manager.levels)
-	
+	Events.player_near_end.connect(func():end_sfx.play())
+	Events.player_died.connect(func():level_manager.load_current_level())	
 
 func end_level():
 	fade_panel.fade_out()

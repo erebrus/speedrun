@@ -1,21 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://rumvotveqal5"]
+[gd_scene load_steps=10 format=3 uid="uid://rumvotveqal5"]
 
 [ext_resource type="Script" uid="uid://dodm85vhrwagf" path="res://src/common/globals.gd" id="1_noqpm"]
-[ext_resource type="AudioStream" uid="uid://bjfe8j08byxx4" path="res://assets/music/kennys/Cheerful Annoyance.ogg" id="3_gfpot"]
 [ext_resource type="Script" uid="uid://c3gbbvoifoygf" path="res://src/common/music_manager.gd" id="3_h14hn"]
+[ext_resource type="AudioStream" uid="uid://dbkbnjfluvt0u" path="res://assets/music/Music_1_loop.mp3" id="4_q26s1"]
 [ext_resource type="AudioStream" uid="uid://bxrc4c7inujhh" path="res://assets/music/kennys/Farm Frolics.ogg" id="4_v6ulc"]
 [ext_resource type="Script" uid="uid://04681mljvxoh" path="res://src/common/ui_sfx.gd" id="5_fmvy8"]
+[ext_resource type="Script" uid="uid://dotkr5yf1ychu" path="res://addons/audio_intro/intro_audio_stream_player.gd" id="5_i6p1b"]
 [ext_resource type="AudioStream" uid="uid://vdr7ewrp5m01" path="res://assets/sfx/kenneys/select_001.ogg" id="5_kyxtr"]
 [ext_resource type="AudioStream" uid="uid://dcowjg8y0gyjd" path="res://assets/sfx/kenneys/select_002.ogg" id="6_7sypx"]
-
-[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_q1nu8"]
-stream_count = 3
-stream_0/stream = ExtResource("3_gfpot")
-stream_0/volume = 0.0
-stream_1/stream = ExtResource("3_gfpot")
-stream_1/volume = -60.0
-stream_2/stream = ExtResource("3_gfpot")
-stream_2/volume = 0.0
+[ext_resource type="AudioStream" uid="uid://hnh072boqexq" path="res://assets/music/Music_1_Intro.mp3" id="6_hcytl"]
 
 [node name="Globals" type="Node"]
 process_mode = 3
@@ -24,15 +17,18 @@ script = ExtResource("1_noqpm")
 [node name="MusicManager" type="Node" parent="."]
 script = ExtResource("3_h14hn")
 
-[node name="game_music" type="AudioStreamPlayer" parent="MusicManager"]
-process_mode = 3
-stream = SubResource("AudioStreamSynchronized_q1nu8")
-bus = &"Music"
-
 [node name="menu_music" type="AudioStreamPlayer" parent="MusicManager"]
 process_mode = 3
 stream = ExtResource("4_v6ulc")
 bus = &"Music"
+
+[node name="game_music" type="Node" parent="MusicManager"]
+
+[node name="section1" type="AudioStreamPlayer" parent="MusicManager/game_music"]
+stream = ExtResource("4_q26s1")
+script = ExtResource("5_i6p1b")
+intro_stream = ExtResource("6_hcytl")
+metadata/_custom_type_script = "uid://dotkr5yf1ychu"
 
 [node name="UiSfx" type="Node" parent="."]
 script = ExtResource("5_fmvy8")

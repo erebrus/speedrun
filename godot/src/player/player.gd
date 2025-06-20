@@ -70,6 +70,8 @@ var currents:int:
 @onready var krill_sfx: AudioStreamPlayer2D = $sfx/krill_sfx
 @onready var ruffle_sfx: AudioStreamPlayer2D = $sfx/ruffle_sfx
 @onready var bubbles: AnimatedSprite2D = $Bubbles
+@onready var wall_thrust_sfx: AudioStreamPlayer2D = $sfx/wall_thrust_sfx
+@onready var super_thrust_sfx: AudioStreamPlayer2D = $sfx/super_thrust_sfx
 
 func _ready():
 	animation_player.play("idle")
@@ -77,7 +79,7 @@ func _ready():
 	bubbles.animation_finished.connect(func():bubbles.visible = false)
 	energy=100
 	$ResponsivenessTimer.wait_time = responsiveness_timeout
-	
+	Events.debug_max_energy.connect(func():collect(max_energy))
 func _physics_process(delta: float) -> void:
 	if in_animation :
 		return
@@ -129,6 +131,8 @@ func is_perfect_thrust()->bool:
 		Logger.info("perfect thrust")
 	return perfect
 
+func is_wall_thrust():
+	return  last_thrust_direction == Vector2.RIGHT && back_rc.is_colliding()
 func do_thrust(rotation_delta:float = 0):
 	if not $ThrustTimer.paused:
 		$ThrustTimer.stop()
@@ -136,17 +140,23 @@ func do_thrust(rotation_delta:float = 0):
 	var thrust_direction=Vector2.RIGHT.rotated(rotation+rotation_delta)
 	Logger.debug("thrust %d" % Time.get_ticks_msec())
 	if thrust_factor > .5:
-		thrust_sfx.play()
+		if is_perfect_thrust() or is_wall_thrust():
+			wall_thrust_sfx.play()
+		else:
+			thrust_sfx.play()
 	else:
-		tap_sfx.play()
+		if is_wall_thrust():
+			thrust_sfx.play()
+		else:
+			tap_sfx.play()
 	
 	var intensity:float = thrust * \
 		(full_thrust_bonus if is_perfect_thrust() else thrust_factor) *\
-		(wall_thrust_factor if back_rc.is_colliding() else 1)
+		(wall_thrust_factor if is_wall_thrust() else 1)
 	Logger.info("thrust factor %2.f intensity %.2f" % [thrust_factor, intensity])
 	apply_impulse(thrust_direction * intensity,Vector2.ZERO)
 	Events.squid_charge_done.emit(thrust_factor)
-	if back_rc.is_colliding():
+	if is_wall_thrust() or is_perfect_thrust():
 		bubbles.play("default")
 		bubbles.visible = true
 	#do_noise()
@@ -175,13 +185,15 @@ func do_thrust(rotation_delta:float = 0):
 	Logger.info("thrust NOT available %d" % Time.get_ticks_msec())
 	
 		
-func do_super_thrust():
+func do_super_thrust(rotation_delta:float = 0):
 	if not can_boost():
 		return
+
 	Events.player_energy_changed.emit(energy)
 	in_animation = true
-	var thrust_direction=Vector2.RIGHT
+	var thrust_direction=Vector2.RIGHT.rotated(rotation+rotation_delta)
 	animation_player.play("super_thrust")
+	super_thrust_sfx.play()
 	var intensity:float = super_thrust *\
 		(wall_thrust_factor if back_rc.is_colliding() else 1)
 	await get_tree().create_timer(.4).timeout
@@ -209,20 +221,21 @@ func _on_thrust_timer_timeout() -> void:
 	
 
 
-#func kill():
-	#Logger.info("hurt")
-	#visible=false
-	#hurt_sfx.play()
-	#await get_tree().create_timer(1).timeout
-	#Globals.do_lose()
+func kill():
+	animation_player.play("death")	
+	in_animation = true
+	lose_camera()
+	hurt_sfx.play()
+	await hurt_sfx.finished
+	Events.player_died.emit()
 
 func on_ruffle():
 	if not ruffle_sfx.playing:
 		ruffle_sfx.play()
 		
-func collect(node:EnergyNode):
+func collect(node_energy):
 	
-	energy = min(node.energy+energy, max_energy)
+	energy = min(node_energy+energy, max_energy)
 	Events.player_energy_changed.emit(energy)
 	Logger.info("Player collected energy. Energy = %d" % energy)
 	

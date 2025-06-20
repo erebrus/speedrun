@@ -7,7 +7,7 @@ func _enter_tree():
 		"IntroAudioStreamPlayer",           # Node name in editor
 		"AudioStreamPlayer",                # Parent class
 		preload("res://addons/audio_intro/intro_audio_stream_player.gd"),
-		preload("res://icon.png")  # Optional icon
+		preload("res://icon.svg")  # Optional icon
 	)
 
 func _exit_tree():
