@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4qx3sm45yl5d"]
+[gd_scene load_steps=11 format=3 uid="uid://b4qx3sm45yl5d"]
 
 [ext_resource type="Script" uid="uid://srnd1paanxgp" path="res://src/world/objects/energy_node.gd" id="1_wrg6s"]
 [ext_resource type="Texture2D" uid="uid://dcs5bsfonfuil" path="res://assets/gfx/environment/pearl.png" id="2_u70qn"]
+[ext_resource type="AudioStream" uid="uid://coh34tgat8sn" path="res://assets/sfx/MC_CollectEnergy_1.wav" id="3_fm3yy"]
+[ext_resource type="AudioStream" uid="uid://dryrtckaii8dm" path="res://assets/sfx/MC_CollectEnergy_2.wav" id="4_nx7o3"]
+[ext_resource type="AudioStream" uid="uid://ccd8haeccapk7" path="res://assets/sfx/MC_CollectEnergy_3.wav" id="5_xr1it"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w4nni"]
 radius = 4.12311
@@ -45,6 +48,12 @@ _data = {
 &"default": SubResource("Animation_u70qn")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ayagh"]
+streams_count = 3
+stream_0/stream = ExtResource("3_fm3yy")
+stream_1/stream = ExtResource("4_nx7o3")
+stream_2/stream = ExtResource("5_xr1it")
+
 [node name="EnergyNode" type="Area2D"]
 collision_layer = 4
 collision_mask = 2
@@ -61,5 +70,8 @@ shape = SubResource("CircleShape2D_w4nni")
 libraries = {
 &"": SubResource("AnimationLibrary_t8hjd")
 }
+
+[node name="collect_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ayagh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
