@@ -79,6 +79,12 @@ func _ready():
 	energy=100
 	$ResponsivenessTimer.wait_time = responsiveness_timeout
 	Events.debug_max_energy.connect(func():collect(max_energy))
+	
+	_reparent_tentacle.call_deferred($LeftTentacle)
+	_reparent_tentacle.call_deferred($RightTentacle)
+	
+	
+
 func _physics_process(delta: float) -> void:
 	if in_animation :
 		return
@@ -184,7 +190,7 @@ func do_thrust(rotation_delta:float = 0):
 	$ThrustTimer.start()
 	Logger.info("thrust NOT available %d" % Time.get_ticks_msec())
 	
-		
+
 func do_super_thrust(rotation_delta:float = 0):
 	if not can_boost():
 		return
@@ -205,6 +211,7 @@ func do_super_thrust(rotation_delta:float = 0):
 	await animation_player.animation_finished
 	_on_thrust_timer_timeout()
 	
+
 func _on_thrust_timer_timeout() -> void:
 	can_thrust=true
 	responsive = true
@@ -223,8 +230,14 @@ func _on_thrust_timer_timeout() -> void:
 					return
 			animation_player.play("idle")
 
+func _reparent_tentacle(tentacle: Tentacle) -> void:
+	var offset = tentacle.position
+	remove_child(tentacle)
+	get_parent().add_child(tentacle)
+	tentacle.global_position = global_position + offset
+	tentacle.player = self
+	tentacle.build()
 	
-
 
 func kill():
 	animation_player.play("death")	
@@ -251,7 +264,7 @@ func can_boost()->bool:
 	
 	
 func lose_camera():
-	var node:Node2D = get_node("RemoteTransform2D")
+	var node:Node2D = get_node_or_null("RemoteTransform2D")
 	if node:
 		node.queue_free()
 	

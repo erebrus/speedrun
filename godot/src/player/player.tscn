@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dtoa1mfxryx0c"]
+[gd_scene load_steps=40 format=3 uid="uid://dtoa1mfxryx0c"]
 
 [ext_resource type="Script" uid="uid://nnqtis7t5gq0" path="res://src/player/player.gd" id="1_0sqbu"]
 [ext_resource type="Texture2D" uid="uid://cx10q02axlwkp" path="res://assets/gfx/character/squid-sheet.png" id="2_rxibo"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://djp3d86rnes6k" path="res://assets/sfx/MC_foliage_1.wav" id="8_cwolq"]
 [ext_resource type="AudioStream" uid="uid://c8vhdoa717rxg" path="res://assets/sfx/MC_foliage_2.wav" id="9_2smqc"]
 [ext_resource type="AudioStream" uid="uid://dff24dit2fuih" path="res://assets/sfx/MC_foliage_3.wav" id="10_rl62b"]
+[ext_resource type="PackedScene" uid="uid://cvye2he3mpgbk" path="res://src/player/tentacles/tentacle.tscn" id="13_2smqc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mf2ua"]
 radius = 5.0
@@ -505,6 +506,13 @@ frame_progress = 0.986059
 
 [node name="ThrustAssist" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_244u8")]
 player = NodePath("..")
+
+[node name="LeftTentacle" parent="." instance=ExtResource("13_2smqc")]
+position = Vector2(0, -3)
+flip = true
+
+[node name="RightTentacle" parent="." instance=ExtResource("13_2smqc")]
+position = Vector2(0, 3)
 
 [connection signal="timeout" from="ThrustTimer" to="." method="_on_thrust_timer_timeout"]
 [connection signal="timeout" from="ResponsivenessTimer" to="." method="_on_responsiveness_timer_timeout"]
