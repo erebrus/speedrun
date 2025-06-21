@@ -23,6 +23,13 @@ func load_first_level():
 		current_level_idx = 0
 		load_current_level()
 			
+func load_level_by_idx(idx:int):
+	if idx >=0 and idx < levels.size():
+		current_level_idx = idx
+		load_level(levels[current_level_idx])
+	else:
+		Logger.warn("Tried to load invalid level with index %d" % idx)
+		
 func load_level(scene:PackedScene):
 	if has_loaded_level():
 		unload_current_level()

@@ -50,7 +50,8 @@ func _on_restart_pressed():
 	if !Globals.in_game:
 		await Globals.start_game()
 		await get_tree().create_timer(0.1).timeout
-	level_manager.load_level(level_manager.levels[level_idx])
+		
+	level_manager.load_level_by_idx(level_idx)
 	
 
 func _on_next_level_pressed():
