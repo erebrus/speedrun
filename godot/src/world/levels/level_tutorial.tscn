@@ -16,7 +16,7 @@
 
 [node name="TestLevel" instance=ExtResource("1_l25c7")]
 
-[node name="BG" parent="." index="0"]
+[node name="BG" parent="." index="1"]
 modulate = Color(1, 1, 1, 1)
 
 [node name="Seaweed13" type="Sprite2D" parent="BG" index="0"]
@@ -211,31 +211,31 @@ texture = ExtResource("3_pu22r")
 position = Vector2(1763, 471)
 texture = ExtResource("4_vxs8w")
 
-[node name="Seaweed1" parent="BG" index="48"]
+[node name="Seaweed8" parent="BG" index="48"]
+visible = false
+
+[node name="Seaweed2" parent="BG" index="49"]
+visible = false
+
+[node name="Seaweed1" parent="BG" index="50"]
 visible = false
 position = Vector2(-364, 491)
 
-[node name="Seaweed5" parent="BG" index="49"]
-visible = false
-
-[node name="Seaweed2" parent="BG" index="50"]
-visible = false
-
-[node name="Seaweed6" parent="BG" index="51"]
-visible = false
-position = Vector2(919, 514)
-
-[node name="Seaweed3" parent="BG" index="52"]
-visible = false
-
-[node name="Seaweed7" parent="BG" index="53"]
+[node name="Seaweed7" parent="BG" index="51"]
 visible = false
 position = Vector2(448, 498)
 
-[node name="Seaweed4" parent="BG" index="54"]
+[node name="Seaweed6" parent="BG" index="52"]
+visible = false
+position = Vector2(919, 514)
+
+[node name="Seaweed4" parent="BG" index="53"]
 visible = false
 
-[node name="Seaweed8" parent="BG" index="55"]
+[node name="Seaweed5" parent="BG" index="54"]
+visible = false
+
+[node name="Seaweed3" parent="BG" index="55"]
 visible = false
 
 [node name="Seaweed9" type="Sprite2D" parent="BG" index="56"]
@@ -323,10 +323,10 @@ texture = ExtResource("2_mf8a0")
 position = Vector2(154, 420)
 texture = ExtResource("2_mf8a0")
 
-[node name="Terrain" parent="." index="2"]
+[node name="Terrain" parent="." index="3"]
 tile_map_data = PackedByteArray("AAD5/xAAAgAAAAMAAAD4/xAAAgABAAIAAwD4/xEAAgAAAAIAAwD4/xIAAgACAAIAAwD4/xMAAgABAAEAAwD5/xMAAgACAAYAAgD5/xQAAgACAAAAAwD5/xEAAgADAAIAAQD5/w8AAgABAAIAAAD4/w8AAgAAAAAAAAD5/xIAAgABAAIAAQD6/xQAAgADAAYAAgD6/xMAAgABAAEAAQD7/xQAAgAAAAIAAAD7/xUAAgACAAIAAgD8/xUAAgACAAIAAgD8/xQAAgADAAIAAAD6/xUAAgABAAEAAwD6/w8AAgAAAAIAAAD7/w8AAgADAAYAAwD8/w8AAgABAAIAAgD6/xAAAgADAAIAAgD9/xAAAgACAAIAAwD9/xEAAgAAAAEAAwD+/xEAAgAAAAYAAAD+/xAAAgADAAIAAQD9/w8AAgACAAYAAAD8/w4AAgACAAIAAAD7/w4AAgACAAEAAAD+/w8AAgACAAAAAQD7/xAAAgABAAEAAgD9/w4AAgADAAEAAQD9/xUAAgAAAAIAAgD9/xQAAgADAAIAAAD+/xQAAgADAAIAAAD+/xIAAgABAAAAAwD//xIAAgAAAAIAAgD//xEAAgABAAIAAAAAABIAAgACAAIAAgAAABEAAgABAAIAAAABABEAAgABAAIAAAD+/xUAAgADAAIAAgD//xUAAgACAAIAAgAAABUAAgAAAAIAAgAAABQAAgACAAIAAAD//xQAAgACAAIAAAABABQAAgADAAIAAAABABUAAgABAAIAAgABABIAAgABAAIAAgACABIAAgABAAIAAgADABIAAgACAAIAAgAEABIAAgADAAIAAgADABEAAgABAAIAAAACABEAAgACAAIAAAACABQAAgABAAIAAAACABUAAgABAAIAAgADABUAAgABAAIAAgAEABUAAgADAAIAAgADABQAAgACAAIAAAAEABQAAgAAAAIAAAAEABEAAgACAAIAAAAFABIAAgABAAIAAgAFABEAAgADAAIAAAAFABUAAgAAAAIAAgAFABQAAgABAAIAAAAGABEAAgACAAYAAQAGABQAAgACAAIAAAAGABUAAgAAAAIAAgAHABUAAgABAAIAAgAIABUAAgADAAIAAgAIABQAAgABAAIAAAAJABQAAgACAAYAAQAJABUAAgADAAEAAgAKABQAAgAAAAEAAgAKABMAAgAAAAYAAQALABMAAgAAAAAAAgAJABMAAgABAAAAAAAKABIAAgAAAAAAAAALABIAAgABAAYAAwAHABEAAgADAAIAAgAHABAAAgABAAIAAAAIABAAAgACAAYAAQAJABAAAgACAAIAAgAJAA8AAgADAAIAAAAGABAAAgABAAAAAAAIABEAAgABAAAAAgAGABIAAgABAAEAAgAIAA8AAgABAAAAAAAKAA8AAgACAAYAAQAHABQAAgAAAAIAAAALABEAAgACAAEAAAAKABAAAgABAAAAAgADAA8AAgAAAAEAAwAEAA8AAgABAAEAAgAEAA4AAgAAAAEAAQADAA4AAgADAAEAAAAMABEAAgACAAIAAAAMABIAAgABAAIAAgANABEAAgABAAIAAAALAA8AAgACAAAAAgALAA4AAgAAAAYAAQAKAA4AAgADAAAAAAAMAA4AAgADAAIAAgAMAA0AAgADAAIAAAALAA0AAgADAAEAAAANAA0AAgABAAIAAAANAA4AAgACAAIAAgAOAA4AAgADAAYAAgAOAA0AAgACAAEAAQANABIAAgAAAAIAAgAOABIAAgADAAIAAgAOABEAAgAAAAIAAAAPABEAAgACAAYAAwAPABAAAgADAAIAAwAQABAAAgAAAAIAAQAQABEAAgABAAEAAgAPABIAAgAAAAAAAgAPAA4AAgAAAAEAAQAPAA8AAgABAAYAAAAOAA8AAgAAAAAAAwAQAA8AAgACAAAAAQD//xgAAgACAAEAAwD//xcAAgACAAAAAAAAABcAAgACAAEAAQAAABgAAgACAAEAAgAMABQAAgACAAEAAAAMABUAAgACAAEAAwANABUAAgAAAAAAAgANABQAAgACAAEAAQA=")
 
-[node name="CurrentTileMap" parent="." index="3"]
+[node name="CurrentTileMap" parent="." index="4"]
 tile_map_data = PackedByteArray("AAD//xMAAAACAAAAAQAAABMAAAACAAAAAQABABMAAAACAAAAAQACABMAAAACAAAAAQADABMAAAACAAAAAQD+/xMAAAACAAAAAQA=")
 current_strength = Array[float]([50.0, 150.0, 350.0])
 
@@ -460,8 +460,8 @@ position = Vector2(1, 735)
 [node name="GrassA12" parent="Objects" index="33" instance=ExtResource("7_q2op7")]
 position = Vector2(417, 639)
 
-[node name="Camera2D" parent="." index="6"]
+[node name="Camera2D" parent="." index="7"]
 position = Vector2(-152, 579)
 
-[node name="Player" parent="." index="7"]
+[node name="Player" parent="." index="9"]
 position = Vector2(-152, 579)
