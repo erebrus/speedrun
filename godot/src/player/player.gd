@@ -223,10 +223,12 @@ func _on_thrust_timer_timeout() -> void:
 
 func kill():
 	animation_player.play("death")	
+	Logger.info("playing dying %d" % Time.get_ticks_msec())
 	in_animation = true
 	lose_camera()
 	hurt_sfx.play()
-	await animation_player.animation_finished
+	await hurt_sfx.finished
+	Logger.info("playing died %d" % Time.get_ticks_msec())
 	Events.player_died.emit()
 
 func on_ruffle():

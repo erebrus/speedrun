@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://cgpkxa13hhnox" path="res://src/main.gd" id="1_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://bdj8t5d1w0lh5" path="res://src/common/level_manager.tscn" id="2_fyndt"]
-[ext_resource type="PackedScene" uid="uid://dk3sfdk4mpkgm" path="res://src/world/levels/test_level.tscn" id="3_fyndt"]
-[ext_resource type="PackedScene" uid="uid://d06uocvuxgg47" path="res://src/world/levels/level_3.tscn" id="3_kf8lf"]
+[ext_resource type="PackedScene" path="res://src/world/levels/level_3.tscn" id="3_kf8lf"]
+[ext_resource type="PackedScene" path="res://src/world/levels/level_2.tscn" id="4_kqbth"]
 [ext_resource type="PackedScene" uid="uid://b2rn5s16m8cqa" path="res://src/world/levels/level_tutorial.tscn" id="5_5mrjc"]
 [ext_resource type="PackedScene" uid="uid://02ojse24fbw5" path="res://src/hud/timer_display.tscn" id="5_kmhfv"]
 [ext_resource type="PackedScene" uid="uid://cdm2fhla0kigd" path="res://src/common/fade_panel.tscn" id="6_kmhfv"]
-[ext_resource type="PackedScene" uid="uid://wnypwqtpsqfq" path="res://src/world/levels/test_end_level.tscn" id="6_kqbth"]
+[ext_resource type="PackedScene" path="res://src/world/levels/level_4.tscn" id="6_srxbw"]
 [ext_resource type="PackedScene" uid="uid://b4oaclob0dg5u" path="res://src/hud/energy_bar.tscn" id="7_5mrjc"]
 [ext_resource type="AudioStream" uid="uid://cumnr4b5k13mb" path="res://assets/sfx/MC_CaveTP.wav" id="9_mgm53"]
 [ext_resource type="PackedScene" uid="uid://b778impvuqi80" path="res://src/hud/leaderboard/leaderboard_panel.tscn" id="10_mgm53"]
@@ -21,9 +21,8 @@ script = ExtResource("1_3cfgd")
 game_state = SubResource("Resource_5q4o7")
 
 [node name="LevelManager" parent="." node_paths=PackedStringArray("level_container") instance=ExtResource("2_fyndt")]
-levels = Array[PackedScene]([ExtResource("3_kf8lf"), ExtResource("3_fyndt"), ExtResource("5_5mrjc")])
+levels = Array[PackedScene]([ExtResource("5_5mrjc"), ExtResource("4_kqbth"), ExtResource("3_kf8lf"), ExtResource("6_srxbw")])
 level_container = NodePath("../Level")
-override_level = ExtResource("6_kqbth")
 
 [node name="Level" type="Node2D" parent="."]
 
