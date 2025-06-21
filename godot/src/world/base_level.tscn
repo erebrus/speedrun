@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://lqtollaovard"]
+[gd_scene load_steps=12 format=3 uid="uid://lqtollaovard"]
 
 [ext_resource type="Script" uid="uid://b4ytavk038x8p" path="res://src/world/base_level.gd" id="1_mnxva"]
 [ext_resource type="Texture2D" uid="uid://4xv6i8je5imf" path="res://assets/gfx/environment/seaweed1.png" id="2_4oyy3"]
 [ext_resource type="PackedScene" uid="uid://dtoa1mfxryx0c" path="res://src/player/player.tscn" id="2_1135c"]
+[ext_resource type="PackedScene" uid="uid://c0e3lq8maoorb" path="res://src/world/shark/shark.tscn" id="2_pm2c1"]
 [ext_resource type="PackedScene" uid="uid://ljmvdynfjm14" path="res://src/world/plancton/plancton_generator.tscn" id="3_3nebk"]
 [ext_resource type="Texture2D" uid="uid://dpo3a2i0pru2y" path="res://assets/gfx/environment/seaweed2.png" id="3_ogqxo"]
 [ext_resource type="PackedScene" uid="uid://b2osqltn8up02" path="res://src/world/currents/current_tilemap/current_tile_map.tscn" id="4_3nebk"]
@@ -14,6 +15,13 @@
 [node name="BaseLevel" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_mnxva")
+
+[node name="Shark" parent="." node_paths=PackedStringArray("player", "camera") instance=ExtResource("2_pm2c1")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(211, 437)
+player = NodePath("../Player")
+camera = NodePath("../Camera2D")
 
 [node name="BG" type="Parallax2D" parent="."]
 modulate = Color(0.6734, 0.67895, 0.74, 1)

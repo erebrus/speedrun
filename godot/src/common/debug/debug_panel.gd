@@ -73,3 +73,7 @@ func _on_current_arrows_toggled(toggled_on: bool):
 
 func _on_max_energy_pressed() -> void:
 	Events.debug_max_energy.emit()
+
+
+func _on_shark_pressed():
+	Events.trigger_shark.emit()

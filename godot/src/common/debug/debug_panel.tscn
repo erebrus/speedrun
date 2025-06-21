@@ -87,6 +87,16 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Current Arrows"
 
+[node name="TriggerLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "Trigger"
+
+[node name="Shark" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Shark"
+
 [connection signal="item_selected" from="VBoxContainer/Music/MusicTension" to="." method="_on_music_tension_item_selected"]
 [connection signal="pressed" from="VBoxContainer/Level/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/MaxEnergy" to="." method="_on_max_energy_pressed"]
@@ -94,3 +104,4 @@ text = "Current Arrows"
 [connection signal="pressed" from="VBoxContainer/GameOver" to="." method="_on_game_over_pressed"]
 [connection signal="pressed" from="VBoxContainer/WinGame" to="." method="_on_win_game_pressed"]
 [connection signal="toggled" from="VBoxContainer/CurrentArrows" to="." method="_on_current_arrows_toggled"]
+[connection signal="pressed" from="VBoxContainer/Shark" to="." method="_on_shark_pressed"]

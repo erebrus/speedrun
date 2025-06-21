@@ -30,3 +30,7 @@ signal player_max_energy_changed(new_max_energy:int)
 signal debug_max_energy()
 @warning_ignore("unused_signal")
 signal entered_music_area(idx:int)
+
+
+@warning_ignore("unused_signal")
+signal trigger_shark
