@@ -105,14 +105,14 @@ target_container = NodePath("../Plankton")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="MusicAreas" type="Node2D" parent="."]
+[node name="AdaptiveMusic" type="Node2D" parent="."]
 
-[node name="MusicArea" parent="MusicAreas" instance=ExtResource("8_ogqxo")]
+[node name="MusicArea" parent="AdaptiveMusic" instance=ExtResource("8_ogqxo")]
 
-[node name="MusicArea2" parent="MusicAreas" instance=ExtResource("8_ogqxo")]
+[node name="MusicArea2" parent="AdaptiveMusic" instance=ExtResource("8_ogqxo")]
 music_idx = 1
 
-[node name="MusicArea3" parent="MusicAreas" instance=ExtResource("8_ogqxo")]
+[node name="MusicArea3" parent="AdaptiveMusic" instance=ExtResource("8_ogqxo")]
 music_idx = 2
 
 [node name="Player" parent="." instance=ExtResource("2_1135c")]
