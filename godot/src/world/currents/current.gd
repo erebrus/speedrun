@@ -4,8 +4,18 @@ class_name Current extends Area2D
 @export var direction:Vector2 = Vector2.DOWN
 @export var intensity:float = 10
 
+@onready var timer: Timer = $Timer
+
+var turn_time: float = 0.0
+
 func set_polygon(polygon: PackedVector2Array) -> void:
 	$CollisionShape2D.polygon = polygon
+	
+
+func _ready():
+	if turn_time > 0:
+		timer.wait_time = turn_time
+		timer.start()
 	
 
 func _physics_process(_delta: float) -> void:
@@ -28,3 +38,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body is Player:
 		body.currents -= 1
+
+
+func _on_timer_timeout():
+	direction = -direction

@@ -1,10 +1,11 @@
 class_name CurrentTilemap extends TileMapLayer
 
-@export var PlanctonScene:PackedScene
-@export var CurrentScene: PackedScene
 @export var current_strength: Array[float]
 @export var plankton_chance: Array[float]
+@export var turn_time: float = 3.0
 
+@export var PlanctonScene:PackedScene
+@export var CurrentScene: PackedScene
 @export var target_container:Node2D
 
 var rnd := RandomNumberGenerator.new()
@@ -42,14 +43,15 @@ func _generate_all_currents() -> void:
 	for i in current_strength.size():
 		cells_by_strength.append([])
 		for j in current_direction.size():
-			_generate_currents_for(i,j)
+			for o in 2:
+				_generate_currents_for(i,j,o)
 	
 	add_sibling.call_deferred(container)
 	
 
-func _generate_currents_for(strength: int, direction: int) -> void:
+func _generate_currents_for(strength: int, direction: int, option: int) -> void:
 	Logger.info("Generating currents in direction %s and intensity %s" % [current_direction[direction], current_strength[strength]])
-	var cells = get_used_cells_by_id(0, Vector2i(strength,0), direction)
+	var cells = get_used_cells_by_id(0, Vector2i(strength, option), direction)
 	cells_by_strength[strength].append_array(cells)
 	while not cells.is_empty():
 		var used_cells: Array[Vector2i]
@@ -61,6 +63,9 @@ func _generate_currents_for(strength: int, direction: int) -> void:
 		var current: Current = CurrentScene.instantiate()
 		current.intensity = current_strength[strength]
 		current.direction = current_direction[direction]
+		if option == 1:
+			current.turn_time = turn_time
+		
 		current.set_polygon(polygon)
 		container.add_child(current)
 		Logger.info("Generated current in direction %s and intensity %s with %s cells" % [current_direction[direction], current_strength[strength], used_cells.size()])

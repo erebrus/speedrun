@@ -9,10 +9,10 @@
 tile_set = ExtResource("1_lcjnt")
 collision_enabled = false
 script = ExtResource("2_tj1uw")
-PlanctonScene = ExtResource("3_mm5k4")
-CurrentScene = ExtResource("3_03oj2")
 current_strength = Array[float]([75.0, 125.0, 200.0])
 plankton_chance = Array[float]([0.5, 0.75, 1.0])
+PlanctonScene = ExtResource("3_mm5k4")
+CurrentScene = ExtResource("3_03oj2")
 
 [node name="PlanktonTimer" type="Timer" parent="."]
 autostart = true
