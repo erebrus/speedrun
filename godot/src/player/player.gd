@@ -132,6 +132,7 @@ func is_perfect_thrust()->bool:
 
 func is_wall_thrust():
 	return  last_thrust_direction == Vector2.RIGHT && back_rc.is_colliding()
+
 func do_thrust(rotation_delta:float = 0):
 	if not $ThrustTimer.paused:
 		$ThrustTimer.stop()
@@ -214,7 +215,12 @@ func _on_thrust_timer_timeout() -> void:
 				animation_player.play("thrust_to_idle")
 				await animation_player.animation_finished
 				animation_player.play("idle")
+		
+			
 		_:
+			if (last_thrust_direction == Vector2.UP and Input.is_action_pressed("move_right")) or\
+				(last_thrust_direction == Vector2.DOWN and Input.is_action_pressed("move_left")):
+					return
 			animation_player.play("idle")
 
 	
