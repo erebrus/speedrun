@@ -1,62 +1,104 @@
-[gd_scene load_steps=7 format=3 uid="uid://ckr2ktvcwwtrq"]
+[gd_scene load_steps=12 format=3 uid="uid://ckr2ktvcwwtrq"]
 
 [ext_resource type="Script" uid="uid://et6lpvs7j0bs" path="res://src/world/objects/grass.gd" id="1_wlwjk"]
 [ext_resource type="Texture2D" uid="uid://blwpfslxodojt" path="res://assets/gfx/environment/grass1.png" id="2_i5aiv"]
 
-[sub_resource type="Animation" id="Animation_fk40y"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_osh4a"]
+atlas = ExtResource("2_i5aiv")
+region = Rect2(0, 0, 64, 80)
 
-[sub_resource type="Animation" id="Animation_jns6r"]
-resource_name = "default"
-length = 1.8
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0)]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_kriiv"]
+atlas = ExtResource("2_i5aiv")
+region = Rect2(64, 0, 64, 80)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0y8wb"]
-_data = {
-&"RESET": SubResource("Animation_fk40y"),
-&"default": SubResource("Animation_jns6r")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkhut"]
+atlas = ExtResource("2_i5aiv")
+region = Rect2(128, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dikap"]
+atlas = ExtResource("2_i5aiv")
+region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e245n"]
+atlas = ExtResource("2_i5aiv")
+region = Rect2(256, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a71ik"]
+atlas = ExtResource("2_i5aiv")
+region = Rect2(320, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypweg"]
+atlas = ExtResource("2_i5aiv")
+region = Rect2(384, 0, 64, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogdbr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osh4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kriiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkhut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dikap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e245n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a71ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypweg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osh4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kriiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkhut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dikap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e245n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a71ik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypweg")
+}],
+"loop": false,
+"name": &"ruffle",
+"speed": 16.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlwjk"]
 size = Vector2(42, 40)
 
 [node name="GrassA" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_wlwjk")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_i5aiv")
-hframes = 7
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0y8wb")
-}
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ogdbr")
+animation = &"ruffle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 2)
 shape = SubResource("RectangleShape2D_wlwjk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
