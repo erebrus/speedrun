@@ -226,7 +226,7 @@ func kill():
 	in_animation = true
 	lose_camera()
 	hurt_sfx.play()
-	await hurt_sfx.finished
+	await animation_player.animation_finished
 	Events.player_died.emit()
 
 func on_ruffle():
