@@ -2,7 +2,7 @@ class_name Game extends Node2D
 
 @export var game_state:GameState
 
-@export var leaderboard_prefix: String = "speedrun-jam"
+@export var leaderboard_prefix: String = "speedrunjam"
 
 @onready var level_manager: LevelManager = $LevelManager
 @onready var fade_panel: FadePanel = %FadePanel
@@ -21,12 +21,20 @@ func _ready():
 	Events.player_near_end.connect(func():end_sfx.play())
 	Events.player_died.connect(func():level_manager.load_current_level())	
 	Events.entered_music_area.connect(_on_entered_music_area)
+	
+
 func end_level():
 	fade_panel.fade_out()
 	
-	var leaderboard_key = "%s-%02d" % [leaderboard_prefix, level_manager.current_level_idx + 1]
+	var leaderboard_key = "%s%02d" % [leaderboard_prefix, level_manager.current_level_idx + 1]
 	var result = await Leaderboard.submit_score(leaderboard_key, int(timer.ellapsed_time * 100), true)
 	Logger.info("Score published: %s" % result)
+	
+	if result == null:
+		if not fade_panel.has_faded:
+			await fade_panel.fade_out_completed
+		_on_next_level_pressed()
+		return
 	
 	leaderboard.is_last_level = level_manager.is_last_level()
 	leaderboard.populate.call_deferred(leaderboard_key, result.rank)

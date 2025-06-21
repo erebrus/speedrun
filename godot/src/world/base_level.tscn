@@ -19,75 +19,93 @@ script = ExtResource("1_mnxva")
 modulate = Color(0.6734, 0.67895, 0.74, 1)
 scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(2200, 540)
-
-[node name="Seaweed1" type="Sprite2D" parent="BG"]
-position = Vector2(-630, 500)
-texture = ExtResource("2_4oyy3")
-
-[node name="Seaweed5" type="Sprite2D" parent="BG"]
-position = Vector2(333, 500)
-texture = ExtResource("2_4oyy3")
-
-[node name="Seaweed2" type="Sprite2D" parent="BG"]
-position = Vector2(-495, 500)
-texture = ExtResource("3_ogqxo")
-
-[node name="Seaweed6" type="Sprite2D" parent="BG"]
-position = Vector2(-1299, 500)
-texture = ExtResource("3_ogqxo")
-
-[node name="Seaweed3" type="Sprite2D" parent="BG"]
-position = Vector2(-232, 500)
-texture = ExtResource("4_pm2c1")
-
-[node name="Seaweed7" type="Sprite2D" parent="BG"]
-position = Vector2(-1158, 500)
-texture = ExtResource("4_pm2c1")
-
-[node name="Seaweed4" type="Sprite2D" parent="BG"]
-position = Vector2(-14, 500)
-texture = ExtResource("5_coo7k")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed8" type="Sprite2D" parent="BG"]
-position = Vector2(187, 480)
+position = Vector2(187, 500)
 texture = ExtResource("5_coo7k")
+metadata/_edit_lock_ = true
+
+[node name="Seaweed2" type="Sprite2D" parent="BG"]
+position = Vector2(495, 500)
+texture = ExtResource("3_ogqxo")
+metadata/_edit_lock_ = true
+
+[node name="Seaweed1" type="Sprite2D" parent="BG"]
+position = Vector2(630, 500)
+texture = ExtResource("2_4oyy3")
+metadata/_edit_lock_ = true
+
+[node name="Seaweed7" type="Sprite2D" parent="BG"]
+position = Vector2(900, 500)
+texture = ExtResource("4_pm2c1")
+metadata/_edit_lock_ = true
+
+[node name="Seaweed6" type="Sprite2D" parent="BG"]
+position = Vector2(1299, 500)
+texture = ExtResource("3_ogqxo")
+metadata/_edit_lock_ = true
+
+[node name="Seaweed4" type="Sprite2D" parent="BG"]
+position = Vector2(1500, 500)
+texture = ExtResource("5_coo7k")
+metadata/_edit_lock_ = true
+
+[node name="Seaweed5" type="Sprite2D" parent="BG"]
+position = Vector2(1680, 500)
+texture = ExtResource("2_4oyy3")
+metadata/_edit_lock_ = true
+
+[node name="Seaweed3" type="Sprite2D" parent="BG"]
+position = Vector2(1950, 500)
+texture = ExtResource("4_pm2c1")
+metadata/_edit_lock_ = true
 
 [node name="BG2" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.8, 0.8)
 repeat_size = Vector2(2200, 540)
+metadata/_edit_lock_ = true
 
 [node name="Seaweed1" type="Sprite2D" parent="BG2"]
-position = Vector2(61, 476)
+position = Vector2(61, 500)
 texture = ExtResource("2_4oyy3")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed5" type="Sprite2D" parent="BG2"]
-position = Vector2(-1609, 479)
+position = Vector2(1609, 500)
 texture = ExtResource("2_4oyy3")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed2" type="Sprite2D" parent="BG2"]
-position = Vector2(-770, 500)
+position = Vector2(770, 500)
 texture = ExtResource("3_ogqxo")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed6" type="Sprite2D" parent="BG2"]
-position = Vector2(-1240, 500)
+position = Vector2(1240, 500)
 texture = ExtResource("3_ogqxo")
 flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="Seaweed3" type="Sprite2D" parent="BG2"]
-position = Vector2(-507, 500)
+position = Vector2(507, 500)
 texture = ExtResource("4_pm2c1")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed7" type="Sprite2D" parent="BG2"]
-position = Vector2(1215, 492)
+position = Vector2(1215, 500)
 texture = ExtResource("4_pm2c1")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed4" type="Sprite2D" parent="BG2"]
-position = Vector2(-289, 500)
+position = Vector2(289, 500)
 texture = ExtResource("5_coo7k")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed8" type="Sprite2D" parent="BG2"]
-position = Vector2(-88, 480)
+position = Vector2(88, 500)
 texture = ExtResource("5_coo7k")
+metadata/_edit_lock_ = true
 
 [node name="Terrain" type="TileMapLayer" parent="."]
 texture_filter = 1
