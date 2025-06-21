@@ -1,14 +1,17 @@
-[gd_scene load_steps=40 format=3 uid="uid://dtoa1mfxryx0c"]
+[gd_scene load_steps=43 format=3 uid="uid://dtoa1mfxryx0c"]
 
 [ext_resource type="Script" uid="uid://nnqtis7t5gq0" path="res://src/player/player.gd" id="1_0sqbu"]
 [ext_resource type="Texture2D" uid="uid://cx10q02axlwkp" path="res://assets/gfx/character/squid-sheet.png" id="2_rxibo"]
+[ext_resource type="AudioStream" uid="uid://cu6gen8fytyv2" path="res://assets/sfx/MC_Trust_tap_1.wav" id="3_6bm8s"]
 [ext_resource type="Texture2D" uid="uid://cn4d6j82c362j" path="res://assets/gfx/environment/bubbles.png" id="3_mf2ua"]
 [ext_resource type="AudioStream" uid="uid://vd7a1n8xf4dh" path="res://assets/sfx/MC_Trustback_1.wav" id="3_o822w"]
 [ext_resource type="AudioStream" uid="uid://cdfor56ytu778" path="res://assets/sfx/MC_MegaThrust.wav" id="3_x42xx"]
 [ext_resource type="PackedScene" uid="uid://fotw7jhyi00a" path="res://src/player/thrust_assist.tscn" id="4_244u8"]
+[ext_resource type="AudioStream" uid="uid://b3pu8gmifw7ji" path="res://assets/sfx/MC_Trust_tap_2.wav" id="4_hrerp"]
 [ext_resource type="AudioStream" uid="uid://cumnr4b5k13mb" path="res://assets/sfx/MC_CaveTP.wav" id="4_l271a"]
 [ext_resource type="AudioStream" uid="uid://cgel0dk4bc357" path="res://assets/sfx/MC_Trustback_2.wav" id="4_x42xx"]
 [ext_resource type="AudioStream" uid="uid://dduomqmcjxutw" path="res://assets/sfx/MC_Trustback_3.wav" id="5_l271a"]
+[ext_resource type="AudioStream" uid="uid://bb0p3dt0j7skf" path="res://assets/sfx/MC_Trust_tap_3.wav" id="5_oyld2"]
 [ext_resource type="AudioStream" uid="uid://djp3d86rnes6k" path="res://assets/sfx/MC_foliage_1.wav" id="8_cwolq"]
 [ext_resource type="AudioStream" uid="uid://c8vhdoa717rxg" path="res://assets/sfx/MC_foliage_2.wav" id="9_2smqc"]
 [ext_resource type="AudioStream" uid="uid://dff24dit2fuih" path="res://assets/sfx/MC_foliage_3.wav" id="10_rl62b"]
@@ -322,8 +325,11 @@ _data = {
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jcdrv"]
 streams_count = 3
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hja65"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vwsmr"]
 streams_count = 3
+stream_0/stream = ExtResource("3_6bm8s")
+stream_1/stream = ExtResource("4_hrerp")
+stream_2/stream = ExtResource("5_oyld2")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5shm8"]
 streams_count = 3
@@ -459,7 +465,7 @@ volume_db = -10.0
 bus = &"Sfx"
 
 [node name="tap_sfx" type="AudioStreamPlayer2D" parent="sfx"]
-stream = SubResource("AudioStreamRandomizer_hja65")
+stream = SubResource("AudioStreamRandomizer_vwsmr")
 volume_db = -10.0
 bus = &"Sfx"
 
