@@ -101,8 +101,8 @@ func _on_plankton_timer_timeout():
 	for strength in cells_by_strength.size():
 		var cells = cells_by_strength[strength]
 		var chance = plankton_chance[strength]
-		var number = floor(chance * cells.size())
-		if rnd.randf() < (chance - cells.size() * number):
+		var number = int(floor(chance * cells.size()))
+		if rnd.randf() < (chance * cells.size() - number):
 			number += 1
 		
 		cells.shuffle()
