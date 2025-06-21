@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://gqxyo5vtca3y"]
+
+[ext_resource type="Script" uid="uid://bjligufrga2rb" path="res://src/world/music_area.gd" id="1_4gr4v"]
+
+[node name="MusicArea" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_4gr4v")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

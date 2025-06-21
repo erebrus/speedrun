@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lqtollaovard"]
+[gd_scene load_steps=11 format=3 uid="uid://lqtollaovard"]
 
 [ext_resource type="Script" uid="uid://b4ytavk038x8p" path="res://src/world/base_level.gd" id="1_mnxva"]
 [ext_resource type="Texture2D" uid="uid://4xv6i8je5imf" path="res://assets/gfx/environment/seaweed1.png" id="2_4oyy3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dqc30htixarul" path="res://assets/gfx/environment/seaweed3.png" id="4_pm2c1"]
 [ext_resource type="TileSet" uid="uid://cds2rivrnrhp5" path="res://src/world/tilemap/obstacles.tres" id="5_6urnh"]
 [ext_resource type="Texture2D" uid="uid://dnsoxboxo6jj" path="res://assets/gfx/environment/seaweed4.png" id="5_coo7k"]
+[ext_resource type="PackedScene" uid="uid://gqxyo5vtca3y" path="res://src/world/music_area.tscn" id="8_ogqxo"]
 
 [node name="BaseLevel" type="Node2D"]
 texture_filter = 1
@@ -103,6 +104,16 @@ target_container = NodePath("../Plankton")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+
+[node name="MusicAreas" type="Node2D" parent="."]
+
+[node name="MusicArea" parent="MusicAreas" instance=ExtResource("8_ogqxo")]
+
+[node name="MusicArea2" parent="MusicAreas" instance=ExtResource("8_ogqxo")]
+music_idx = 1
+
+[node name="MusicArea3" parent="MusicAreas" instance=ExtResource("8_ogqxo")]
+music_idx = 2
 
 [node name="Player" parent="." instance=ExtResource("2_1135c")]
 

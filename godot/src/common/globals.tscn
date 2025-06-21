@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rumvotveqal5"]
+[gd_scene load_steps=11 format=3 uid="uid://rumvotveqal5"]
 
 [ext_resource type="Script" uid="uid://dodm85vhrwagf" path="res://src/common/globals.gd" id="1_noqpm"]
 [ext_resource type="Script" uid="uid://c3gbbvoifoygf" path="res://src/common/music_manager.gd" id="3_h14hn"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://vdr7ewrp5m01" path="res://assets/sfx/kenneys/select_001.ogg" id="5_kyxtr"]
 [ext_resource type="AudioStream" uid="uid://dcowjg8y0gyjd" path="res://assets/sfx/kenneys/select_002.ogg" id="6_7sypx"]
 [ext_resource type="AudioStream" uid="uid://hnh072boqexq" path="res://assets/music/Music_1_Intro.mp3" id="6_hcytl"]
+[ext_resource type="AudioStream" uid="uid://cyfnt2vtm2fl" path="res://assets/music/Music Loop 2.mp3" id="7_i6p1b"]
 
 [node name="Globals" type="Node"]
 process_mode = 3
@@ -29,6 +30,12 @@ stream = ExtResource("4_q26s1")
 bus = &"Music"
 script = ExtResource("5_i6p1b")
 intro_stream = ExtResource("6_hcytl")
+metadata/_custom_type_script = "uid://dotkr5yf1ychu"
+
+[node name="section2" type="AudioStreamPlayer" parent="MusicManager/game_music"]
+stream = ExtResource("7_i6p1b")
+bus = &"Music"
+script = ExtResource("5_i6p1b")
 metadata/_custom_type_script = "uid://dotkr5yf1ychu"
 
 [node name="UiSfx" type="Node" parent="."]

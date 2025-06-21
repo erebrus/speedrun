@@ -20,7 +20,7 @@ func _ready():
 	Debug.set_levels(level_manager.levels)
 	Events.player_near_end.connect(func():end_sfx.play())
 	Events.player_died.connect(func():level_manager.load_current_level())	
-
+	Events.entered_music_area.connect(_on_entered_music_area)
 func end_level():
 	fade_panel.fade_out()
 	
@@ -76,3 +76,7 @@ func _on_level_manager_level_ready() -> void:
 	get_level().set_state(game_state)
 	Events.timer_restarted.emit()
 	
+
+func _on_entered_music_area(idx:int):
+	if Globals.music_manager.current_game_music_id < idx:
+		Globals.music_manager.change_game_music_to(idx)
