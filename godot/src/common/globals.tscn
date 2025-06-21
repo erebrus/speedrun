@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://rumvotveqal5"]
+[gd_scene load_steps=12 format=3 uid="uid://rumvotveqal5"]
 
 [ext_resource type="Script" uid="uid://dodm85vhrwagf" path="res://src/common/globals.gd" id="1_noqpm"]
 [ext_resource type="Script" uid="uid://c3gbbvoifoygf" path="res://src/common/music_manager.gd" id="3_h14hn"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dcowjg8y0gyjd" path="res://assets/sfx/kenneys/select_002.ogg" id="6_7sypx"]
 [ext_resource type="AudioStream" uid="uid://hnh072boqexq" path="res://assets/music/Music_1_Intro.mp3" id="6_hcytl"]
 [ext_resource type="AudioStream" uid="uid://cyfnt2vtm2fl" path="res://assets/music/Music Loop 2.mp3" id="7_i6p1b"]
+[ext_resource type="AudioStream" uid="uid://b6u4drlpbhrv4" path="res://assets/music/Music Intro 2.mp3" id="8_hcytl"]
 
 [node name="Globals" type="Node"]
 process_mode = 3
@@ -36,6 +37,7 @@ metadata/_custom_type_script = "uid://dotkr5yf1ychu"
 stream = ExtResource("7_i6p1b")
 bus = &"Music"
 script = ExtResource("5_i6p1b")
+intro_stream = ExtResource("8_hcytl")
 metadata/_custom_type_script = "uid://dotkr5yf1ychu"
 
 [node name="UiSfx" type="Node" parent="."]
