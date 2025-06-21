@@ -47,5 +47,5 @@ polygon = PackedVector2Array(-6, 123, -67, -32, 85, -72, 141, 42)
 [node name="Camera2D" parent="." index="8"]
 position = Vector2(-310, 412)
 
-[node name="Player" parent="." index="9"]
+[node name="Player" parent="." index="10"]
 position = Vector2(-310, 412)

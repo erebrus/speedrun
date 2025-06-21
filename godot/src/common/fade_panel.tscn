@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdm2fhla0kigd"]
 
-[ext_resource type="Script" uid="uid://b1ef8jgf7oa5h" path="res://src/common/fade_panel.gd" id="1_y6epw"]
+[ext_resource type="Script" uid="uid://cvlc745wv4k2g" path="res://src/common/fade_panel.gd" id="1_y6epw"]
 
 [node name="FadePanel" type="ColorRect"]
 visible = false

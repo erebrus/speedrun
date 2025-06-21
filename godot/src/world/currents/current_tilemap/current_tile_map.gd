@@ -53,9 +53,9 @@ func _generate_currents_for(strength: int, direction: int) -> void:
 	cells_by_strength[strength].append_array(cells)
 	while not cells.is_empty():
 		var used_cells: Array[Vector2i]
-		var seed = cells.pop_front()
-		_add_neighbors(seed, used_cells, cells)
-		var polygon = _get_cell_polygon(seed)
+		var seed_cell = cells.pop_front()
+		_add_neighbors(seed_cell, used_cells, cells)
+		var polygon = _get_cell_polygon(seed_cell)
 		for cell in used_cells:
 			polygon = Geometry2D.merge_polygons(polygon, _get_cell_polygon(cell)).front()
 		var current: Current = CurrentScene.instantiate()
@@ -66,18 +66,18 @@ func _generate_currents_for(strength: int, direction: int) -> void:
 		Logger.info("Generated current in direction %s and intensity %s with %s cells" % [current_direction[direction], current_strength[strength], used_cells.size()])
 	
 
-func _add_neighbors(seed: Vector2i, used_cells: Array[Vector2i], cells: Array[Vector2i]) -> void:
-	_add_neighbor(seed, TileSet.CellNeighbor.CELL_NEIGHBOR_LEFT_SIDE, used_cells, cells)
-	_add_neighbor(seed, TileSet.CellNeighbor.CELL_NEIGHBOR_TOP_SIDE, used_cells, cells)
-	_add_neighbor(seed, TileSet.CellNeighbor.CELL_NEIGHBOR_RIGHT_SIDE, used_cells, cells)
-	_add_neighbor(seed, TileSet.CellNeighbor.CELL_NEIGHBOR_BOTTOM_SIDE, used_cells, cells)
+func _add_neighbors(seed_cell: Vector2i, used_cells: Array[Vector2i], cells: Array[Vector2i]) -> void:
+	_add_neighbor(seed_cell, TileSet.CellNeighbor.CELL_NEIGHBOR_LEFT_SIDE, used_cells, cells)
+	_add_neighbor(seed_cell, TileSet.CellNeighbor.CELL_NEIGHBOR_TOP_SIDE, used_cells, cells)
+	_add_neighbor(seed_cell, TileSet.CellNeighbor.CELL_NEIGHBOR_RIGHT_SIDE, used_cells, cells)
+	_add_neighbor(seed_cell, TileSet.CellNeighbor.CELL_NEIGHBOR_BOTTOM_SIDE, used_cells, cells)
 	
 
-func _add_neighbor(seed: Vector2i, neighbor: TileSet.CellNeighbor, used_cells: Array[Vector2i], cells: Array[Vector2i]) -> void:
+func _add_neighbor(seed_cell: Vector2i, neighbor: TileSet.CellNeighbor, used_cells: Array[Vector2i], cells: Array[Vector2i]) -> void:
 	if cells.is_empty():
 		return
 	
-	var cell = get_neighbor_cell(seed, neighbor)
+	var cell = get_neighbor_cell(seed_cell, neighbor)
 	if cells.has(cell):
 		cells.erase(cell)
 		used_cells.append(cell)

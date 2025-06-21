@@ -67,7 +67,6 @@ var currents:int:
 @onready var enter_current_sfx: AudioStreamPlayer2D = $sfx/enter_current_sfx
 @onready var loop_current_sfx: AudioStreamPlayer2D = $sfx/loop_current_sfx
 @onready var hurt_sfx: AudioStreamPlayer2D = $sfx/hurt_sfx
-@onready var krill_sfx: AudioStreamPlayer2D = $sfx/krill_sfx
 @onready var ruffle_sfx: AudioStreamPlayer2D = $sfx/ruffle_sfx
 @onready var bubbles: AnimatedSprite2D = $Bubbles
 @onready var wall_thrust_sfx: AudioStreamPlayer2D = $sfx/wall_thrust_sfx
@@ -152,7 +151,7 @@ func do_thrust(rotation_delta:float = 0):
 	
 	var intensity:float = thrust * \
 		(full_thrust_bonus if is_perfect_thrust() else thrust_factor) *\
-		(wall_thrust_factor if is_wall_thrust() else 1)
+		(wall_thrust_factor if is_wall_thrust() else 1.0)
 	Logger.info("thrust factor %2.f intensity %.2f" % [thrust_factor, intensity])
 	apply_impulse(thrust_direction * intensity,Vector2.ZERO)
 	Events.squid_charge_done.emit(thrust_factor)
@@ -195,7 +194,7 @@ func do_super_thrust(rotation_delta:float = 0):
 	animation_player.play("super_thrust")
 	super_thrust_sfx.play()
 	var intensity:float = super_thrust *\
-		(wall_thrust_factor if back_rc.is_colliding() else 1)
+		(wall_thrust_factor if back_rc.is_colliding() else 1.0)
 	await get_tree().create_timer(.4).timeout
 	var tween:=create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	tween.tween_property(self,"energy",0,.3)
