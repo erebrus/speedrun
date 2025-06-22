@@ -69,6 +69,7 @@ var currents:int:
 @onready var loop_current_sfx: AudioStreamPlayer2D = $sfx/loop_current_sfx
 @onready var hurt_sfx: AudioStreamPlayer2D = $sfx/hurt_sfx
 @onready var ruffle_sfx: AudioStreamPlayer2D = $sfx/ruffle_sfx
+@onready var death_sfx: AudioStreamPlayer2D = $sfx/death_sfx
 @onready var bubbles: AnimatedSprite2D = $Bubbles
 @onready var wall_thrust_sfx: AudioStreamPlayer2D = $sfx/wall_thrust_sfx
 @onready var super_thrust_sfx: AudioStreamPlayer2D = $sfx/super_thrust_sfx
@@ -157,7 +158,7 @@ func is_wall_thrust():
 func do_thrust(rotation_delta:float = 0):
 	if not $ThrustTimer.paused:
 		$ThrustTimer.stop()
-		
+	_set_target_angle()
 	var thrust_direction=Vector2.RIGHT.rotated(rotation+rotation_delta)
 	Logger.debug("thrust %d" % Time.get_ticks_msec())
 	if thrust_factor > .5:
@@ -209,7 +210,7 @@ func do_thrust(rotation_delta:float = 0):
 func do_super_thrust(rotation_delta:float = 0):
 	if not can_boost():
 		return
-
+	_set_target_angle()
 	Events.player_energy_changed.emit(energy)
 	in_animation = true
 	var thrust_direction=Vector2.RIGHT.rotated(rotation+rotation_delta)
@@ -259,8 +260,8 @@ func kill():
 	Logger.info("playing dying %d" % Time.get_ticks_msec())
 	in_animation = true
 	lose_camera()
-	hurt_sfx.play()
-	await hurt_sfx.finished
+	death_sfx.play()
+	await get_tree().create_timer(.9).timeout #.finished
 	Logger.info("playing died %d" % Time.get_ticks_msec())
 	Events.player_died.emit()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dtoa1mfxryx0c"]
+[gd_scene load_steps=47 format=3 uid="uid://dtoa1mfxryx0c"]
 
 [ext_resource type="Script" uid="uid://nnqtis7t5gq0" path="res://src/player/player.gd" id="1_0sqbu"]
 [ext_resource type="Texture2D" uid="uid://cx10q02axlwkp" path="res://assets/gfx/character/squid-sheet.png" id="2_rxibo"]
@@ -8,12 +8,15 @@
 [ext_resource type="AudioStream" uid="uid://cdfor56ytu778" path="res://assets/sfx/MC_MegaThrust.wav" id="3_x42xx"]
 [ext_resource type="PackedScene" uid="uid://fotw7jhyi00a" path="res://src/player/thrust_assist.tscn" id="4_244u8"]
 [ext_resource type="AudioStream" uid="uid://b3pu8gmifw7ji" path="res://assets/sfx/MC_Trust_tap_2.wav" id="4_hrerp"]
-[ext_resource type="AudioStream" uid="uid://cumnr4b5k13mb" path="res://assets/sfx/MC_CaveTP.wav" id="4_l271a"]
 [ext_resource type="AudioStream" uid="uid://cgel0dk4bc357" path="res://assets/sfx/MC_Trustback_2.wav" id="4_x42xx"]
 [ext_resource type="AudioStream" uid="uid://dduomqmcjxutw" path="res://assets/sfx/MC_Trustback_3.wav" id="5_l271a"]
 [ext_resource type="AudioStream" uid="uid://bb0p3dt0j7skf" path="res://assets/sfx/MC_Trust_tap_3.wav" id="5_oyld2"]
+[ext_resource type="AudioStream" uid="uid://de0snj2mgkspr" path="res://assets/sfx/MC_Hurt_1.wav" id="7_vwsmr"]
 [ext_resource type="AudioStream" uid="uid://djp3d86rnes6k" path="res://assets/sfx/MC_foliage_1.wav" id="8_cwolq"]
+[ext_resource type="AudioStream" uid="uid://bh0cnl7d8d5hv" path="res://assets/sfx/MC_Hurt_2.wav" id="8_jcdrv"]
 [ext_resource type="AudioStream" uid="uid://c8vhdoa717rxg" path="res://assets/sfx/MC_foliage_2.wav" id="9_2smqc"]
+[ext_resource type="AudioStream" uid="uid://dr2mm6mobimad" path="res://assets/sfx/MC_Hurt_3.wav" id="9_hja65"]
+[ext_resource type="AudioStream" uid="uid://6076yu57rdb2" path="res://assets/sfx/MC_dies.wav" id="10_5shm8"]
 [ext_resource type="AudioStream" uid="uid://dff24dit2fuih" path="res://assets/sfx/MC_foliage_3.wav" id="10_rl62b"]
 [ext_resource type="PackedScene" uid="uid://cvye2he3mpgbk" path="res://src/player/tentacles/tentacle.tscn" id="13_2smqc"]
 
@@ -331,6 +334,12 @@ stream_0/stream = ExtResource("3_6bm8s")
 stream_1/stream = ExtResource("4_hrerp")
 stream_2/stream = ExtResource("5_oyld2")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5efpn"]
+streams_count = 3
+stream_0/stream = ExtResource("7_vwsmr")
+stream_1/stream = ExtResource("8_jcdrv")
+stream_2/stream = ExtResource("9_hja65")
+
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5shm8"]
 streams_count = 3
 stream_0/stream = ExtResource("3_o822w")
@@ -475,7 +484,12 @@ volume_db = -10.0
 bus = &"Sfx"
 
 [node name="hurt_sfx" type="AudioStreamPlayer2D" parent="sfx"]
-stream = ExtResource("4_l271a")
+stream = SubResource("AudioStreamRandomizer_5efpn")
+volume_db = -10.0
+bus = &"Sfx"
+
+[node name="death_sfx" type="AudioStreamPlayer2D" parent="sfx"]
+stream = ExtResource("10_5shm8")
 volume_db = -10.0
 bus = &"Sfx"
 
