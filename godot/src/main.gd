@@ -92,4 +92,4 @@ func _on_level_manager_level_ready() -> void:
 
 func _on_entered_music_area(idx:int):
 	if Globals.music_manager.current_game_music_id < idx:
-		Globals.music_manager.change_game_music_to(idx)
+		Globals.music_manager.change_game_music_to(idx, 1.5)
