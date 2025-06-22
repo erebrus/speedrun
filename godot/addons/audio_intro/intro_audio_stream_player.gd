@@ -7,7 +7,7 @@ class_name IntroAudioStreamPlayer extends AudioStreamPlayer
 var _main_stream: AudioStream = null
 var _playing_intro := false
 
-func play(from_position := 0.0):
+func play_from_intro():
 	if intro_stream:
 		_main_stream = stream
 		stream = intro_stream
@@ -15,7 +15,7 @@ func play(from_position := 0.0):
 		super.play()
 	else:
 		_playing_intro = false
-		super.play(from_position)
+		super.play(0)
 
 func _ready():
 	connect("finished", _on_stream_finished)

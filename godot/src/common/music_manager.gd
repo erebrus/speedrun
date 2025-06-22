@@ -42,11 +42,11 @@ func fade_menu_music(time:float=1.0):
 	
 func fade_in_game_music(time:float=1.0):
 	if game_music_node is AudioStreamPlayer :
-			fade_in_stream(game_music_node as AudioStreamPlayer, time)
+			fade_in_stream(game_music_node as IntroAudioStreamPlayer, time)
 	else:
 		for idx in game_music_node.get_child_count():
 			var stream = game_music_node.get_child(0)
-			if stream is AudioStreamPlayer and idx==current_game_music_id:
+			if stream is IntroAudioStreamPlayer and idx==current_game_music_id:
 				fade_in_stream(stream, time)
 				
 
@@ -58,7 +58,7 @@ func fade_game_music(time:float=1.0):
 			if stream is AudioStreamPlayer:
 				fade_stream(stream, time)
 		
-func play_music(node:AudioStreamPlayer):
+func play_music(node:IntroAudioStreamPlayer):
 	if not node.playing:
 		node.play()
 	
@@ -72,11 +72,11 @@ func reset_game_music():
 		else:
 			game_music_stream.set_sync_stream_volume(i,-60)
 
-func fade_in_stream(node:AudioStreamPlayer, duration := 1.0):
+func fade_in_stream(node:IntroAudioStreamPlayer, duration := 1.0):
 	if duration > 0:
-		var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR)
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 		node.volume_db=-20
-		node.play()
+		node.play_from_intro()
 		tween.tween_property(node,"volume_db",default_music_volume , duration)
 		Logger.info("still %s playing %s volume:%f at %d ms" % [node.name, node.playing, node.volume_db, Time.get_ticks_msec()])
 		await tween.finished
@@ -89,7 +89,7 @@ func fade_in_stream(node:AudioStreamPlayer, duration := 1.0):
 
 func fade_stream(node:AudioStreamPlayer, duration := 1.0):
 	if duration >0:
-		var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR)
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 		tween.tween_property(node,"volume_db",-20 , duration)
 		await tween.finished
 		Logger.info("%s playing %s volume:%f at %d ms" % [node.name, node.playing, node.volume_db, Time.get_ticks_msec()])
