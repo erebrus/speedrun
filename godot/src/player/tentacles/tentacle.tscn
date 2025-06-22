@@ -7,10 +7,12 @@
 
 [node name="Tentacle" type="Node2D"]
 script = ExtResource("1_l8m0r")
+show_target = true
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_filter = 1
 texture_repeat = 2
+points = PackedVector2Array(0, 0, -24, 0)
 width = 1.0
 texture = ExtResource("2_tk65n")
 
@@ -28,11 +30,19 @@ position = Vector2(-2, 0)
 texture = ExtResource("4_6c6ah")
 
 [node name="TentacleSection2" parent="Sections" node_paths=PackedStringArray("next") instance=ExtResource("1_4t6td")]
+visible = false
 position = Vector2(-16, 0)
 next = NodePath("../TentacleSection3")
 
 [node name="TentacleSection3" parent="Sections" node_paths=PackedStringArray("next") instance=ExtResource("1_4t6td")]
+visible = false
 position = Vector2(-8, 0)
 next = NodePath("../TentacleSection4")
 
 [node name="TentacleSection4" parent="Sections" instance=ExtResource("1_4t6td")]
+visible = false
+
+[node name="Target" type="Polygon2D" parent="."]
+visible = false
+color = Color(0.0251539, 0.649886, 1.92523e-07, 1)
+polygon = PackedVector2Array(0, -1, -1, 0, 0, 1, 1, 0)
