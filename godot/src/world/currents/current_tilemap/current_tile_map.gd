@@ -43,7 +43,7 @@ func _generate_all_currents() -> void:
 	for i in current_strength.size():
 		cells_by_strength.append([])
 		for j in current_direction.size():
-			for o in 2:
+			for o in 4:
 				_generate_currents_for(i,j,o)
 	
 	add_sibling.call_deferred(container)
@@ -63,8 +63,8 @@ func _generate_currents_for(strength: int, direction: int, option: int) -> void:
 		var current: Current = CurrentScene.instantiate()
 		current.intensity = current_strength[strength]
 		current.direction = current_direction[direction]
-		if option == 1:
-			current.turn_time = turn_time
+		current.type = option
+		current.turn_time = turn_time
 		
 		current.set_polygon(polygon)
 		container.add_child(current)
