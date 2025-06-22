@@ -25,6 +25,7 @@ var energy := 0:
 		energy = clamp(energy, 0, max_energy)
 		Events.player_energy_changed.emit(energy)
 
+var target_angle:float
 var in_animation:=false
 var can_thrust:=true
 var thrust_factor := 0.0
@@ -68,6 +69,7 @@ var currents:int:
 @onready var loop_current_sfx: AudioStreamPlayer2D = $sfx/loop_current_sfx
 @onready var hurt_sfx: AudioStreamPlayer2D = $sfx/hurt_sfx
 @onready var ruffle_sfx: AudioStreamPlayer2D = $sfx/ruffle_sfx
+@onready var death_sfx: AudioStreamPlayer2D = $sfx/death_sfx
 @onready var bubbles: AnimatedSprite2D = $Bubbles
 @onready var wall_thrust_sfx: AudioStreamPlayer2D = $sfx/wall_thrust_sfx
 @onready var super_thrust_sfx: AudioStreamPlayer2D = $sfx/super_thrust_sfx
@@ -83,16 +85,30 @@ func _ready():
 	_reparent_tentacle.call_deferred($LeftTentacle)
 	_reparent_tentacle.call_deferred($RightTentacle)
 	
-	
 
+func _set_target_angle():
+	var pos = get_global_mouse_position()
+	target_angle = global_position.angle_to_point(pos)
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		_set_target_angle()
+		return
+		
 func _physics_process(delta: float) -> void:
 	if in_animation :
 		return
 	
-	var rotate_input:float = Input.get_axis("rotate_left","rotate_right")
-	if rotate_input:
-		rotation += rotate_input * rotation_speed * delta
+	#var rotate_input:float = Input.get_axis("rotate_left","rotate_right")
+	#if rotate_input:
+		#rotation += rotate_input * rotation_speed * delta
 
+	if angle_difference(rotation, target_angle) < PI/60:
+		rotation = target_angle
+	else:
+		rotation=lerp_angle(rotation, target_angle, .4)
+		
 	if can_thrust:
 		if Input.is_action_pressed("move_forward"):
 			charge_thrust(delta)
@@ -142,7 +158,7 @@ func is_wall_thrust():
 func do_thrust(rotation_delta:float = 0):
 	if not $ThrustTimer.paused:
 		$ThrustTimer.stop()
-		
+	_set_target_angle()
 	var thrust_direction=Vector2.RIGHT.rotated(rotation+rotation_delta)
 	Logger.debug("thrust %d" % Time.get_ticks_msec())
 	if thrust_factor > .5:
@@ -194,7 +210,7 @@ func do_thrust(rotation_delta:float = 0):
 func do_super_thrust(rotation_delta:float = 0):
 	if not can_boost():
 		return
-
+	_set_target_angle()
 	Events.player_energy_changed.emit(energy)
 	in_animation = true
 	var thrust_direction=Vector2.RIGHT.rotated(rotation+rotation_delta)
@@ -244,8 +260,8 @@ func kill():
 	Logger.info("playing dying %d" % Time.get_ticks_msec())
 	in_animation = true
 	lose_camera()
-	hurt_sfx.play()
-	await hurt_sfx.finished
+	death_sfx.play()
+	await get_tree().create_timer(.9).timeout #.finished
 	Logger.info("playing died %d" % Time.get_ticks_msec())
 	Events.player_died.emit()
 
