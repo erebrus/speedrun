@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxat6ni7tpohi"]
+
+[ext_resource type="PackedScene" uid="uid://bp0vnoxdpmukf" path="res://src/player/tentacles/tentacle_section.tscn" id="1_cblpg"]
+[ext_resource type="Texture2D" uid="uid://dq5j16fc6dt7y" path="res://assets/gfx/character/tentacle_end.png" id="2_20j43"]
+[ext_resource type="Script" uid="uid://2r44tuv753h0" path="res://src/player/tentacles/tentacle_end.gd" id="2_c46dr"]
+
+[node name="TentacleEnd" instance=ExtResource("1_cblpg")]
+script = ExtResource("2_c46dr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
+texture_filter = 1
+position = Vector2(-2, 0)
+texture = ExtResource("2_20j43")

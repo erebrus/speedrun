@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 signal show_current_arrows_toggled
-
+signal tentacle_mode_changed(mode: Tentacle.AttachMode)
 
 @export var debug_build: bool = true:
 	set(value):
@@ -19,6 +19,13 @@ signal show_current_arrows_toggled
 		if value != show_current_arrows:
 			show_current_arrows = value
 			show_current_arrows_toggled.emit()
+	
+
+@export var tentacle_mode: Tentacle.AttachMode = Tentacle.AttachMode.PointAndClick:
+	set(value):
+		if value != tentacle_mode:
+			tentacle_mode = value
+			tentacle_mode_changed.emit(tentacle_mode)
 	
 
 func _ready() -> void:

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bp0vnoxdpmukf" path="res://src/player/tentacles/tentacle_section.tscn" id="1_4t6td"]
 [ext_resource type="Script" uid="uid://blicp2nlaplh1" path="res://src/player/tentacles/tentacle.gd" id="1_l8m0r"]
 [ext_resource type="Texture2D" uid="uid://mm3mo6kj1171" path="res://assets/gfx/character/tentacle_rope.png" id="2_tk65n"]
-[ext_resource type="Texture2D" uid="uid://dq5j16fc6dt7y" path="res://assets/gfx/character/tentacle_end.png" id="4_6c6ah"]
+[ext_resource type="PackedScene" uid="uid://bxat6ni7tpohi" path="res://src/player/tentacles/tentacle_end.tscn" id="3_6c6ah"]
 
 [node name="Tentacle" type="Node2D"]
 script = ExtResource("1_l8m0r")
@@ -18,29 +18,18 @@ texture = ExtResource("2_tk65n")
 
 [node name="Sections" type="Node2D" parent="."]
 
-[node name="TentacleSection" parent="Sections" node_paths=PackedStringArray("next") instance=ExtResource("1_4t6td")]
+[node name="TentacleEnd" parent="Sections" instance=ExtResource("3_6c6ah")]
 position = Vector2(-24, 0)
-mass = 0.05
-next = NodePath("../TentacleSection2")
-
-[node name="TentacleEnd" type="Sprite2D" parent="Sections/TentacleSection"]
-unique_name_in_owner = true
-texture_filter = 1
-position = Vector2(-2, 0)
-texture = ExtResource("4_6c6ah")
 
 [node name="TentacleSection2" parent="Sections" node_paths=PackedStringArray("next") instance=ExtResource("1_4t6td")]
-visible = false
 position = Vector2(-16, 0)
 next = NodePath("../TentacleSection3")
 
 [node name="TentacleSection3" parent="Sections" node_paths=PackedStringArray("next") instance=ExtResource("1_4t6td")]
-visible = false
 position = Vector2(-8, 0)
 next = NodePath("../TentacleSection4")
 
 [node name="TentacleSection4" parent="Sections" instance=ExtResource("1_4t6td")]
-visible = false
 
 [node name="Target" type="Polygon2D" parent="."]
 visible = false

@@ -1,6 +1,7 @@
 extends PanelContainer
 
 @onready var level_selection:OptionButton = %LevelSelection
+@onready var tentacle_mode:OptionButton = %TentacleMode
 
 func _ready() -> void:
 	hide()
@@ -31,6 +32,8 @@ func _input(event: InputEvent) -> void:
 func open() -> void:
 	if not is_instance_valid(Globals.game):
 		return
+	
+	tentacle_mode.select(Debug.tentacle_mode)
 	
 	show()
 	
@@ -77,3 +80,7 @@ func _on_max_energy_pressed() -> void:
 
 func _on_shark_pressed():
 	Events.trigger_shark.emit()
+
+
+func _on_tentacle_mode_item_selected(index):
+	Debug.tentacle_mode = index
