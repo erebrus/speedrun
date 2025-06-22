@@ -25,6 +25,7 @@ var energy := 0:
 		energy = clamp(energy, 0, max_energy)
 		Events.player_energy_changed.emit(energy)
 
+var target_angle:float
 var in_animation:=false
 var can_thrust:=true
 var thrust_factor := 0.0
@@ -83,16 +84,30 @@ func _ready():
 	_reparent_tentacle.call_deferred($LeftTentacle)
 	_reparent_tentacle.call_deferred($RightTentacle)
 	
-	
 
+func _set_target_angle():
+	var pos = get_global_mouse_position()
+	target_angle = global_position.angle_to_point(pos)
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		_set_target_angle()
+		return
+		
 func _physics_process(delta: float) -> void:
 	if in_animation :
 		return
 	
-	var rotate_input:float = Input.get_axis("rotate_left","rotate_right")
-	if rotate_input:
-		rotation += rotate_input * rotation_speed * delta
+	#var rotate_input:float = Input.get_axis("rotate_left","rotate_right")
+	#if rotate_input:
+		#rotation += rotate_input * rotation_speed * delta
 
+	if angle_difference(rotation, target_angle) < PI/60:
+		rotation = target_angle
+	else:
+		rotation=lerp_angle(rotation, target_angle, .4)
+		
 	if can_thrust:
 		if Input.is_action_pressed("move_forward"):
 			charge_thrust(delta)
