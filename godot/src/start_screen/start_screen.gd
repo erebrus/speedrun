@@ -5,6 +5,7 @@ extends TextureRect
 @onready var player_name: LineEdit = %PlayerName
 @onready var start_sfx: AudioStreamPlayer = %StartSfx
 
+var is_ready: bool = false
 
 func _ready() -> void:
 	Globals.in_game=false
@@ -12,6 +13,7 @@ func _ready() -> void:
 	
 	player_name.text = Leaderboard.player_name
 	Leaderboard.session_created.connect(_on_player_identified)
+	Leaderboard.session_failed.connect(_on_session_failed)
 	
 
 func _exit_tree() -> void:
@@ -26,6 +28,9 @@ func _on_volume_changed(_value: float) -> void:
 	
 
 func _on_start_button_pressed() -> void:
+	if not is_ready:
+		return
+	
 	Leaderboard.set_player_name.call_deferred(player_name.text)
 	start_sfx.play()
 	
@@ -34,4 +39,8 @@ func _on_start_button_pressed() -> void:
 
 func _on_player_identified() -> void:
 	player_name.text = Leaderboard.player_name
+	is_ready = true
 	
+
+func _on_session_failed() -> void:
+	is_ready = true

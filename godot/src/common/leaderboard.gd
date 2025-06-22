@@ -1,7 +1,7 @@
 extends Node
 
 signal session_created
-
+signal session_failed
 @export var inverted = true
 
 
@@ -25,12 +25,12 @@ func _ready() -> void:
 		if response.seen_before:
 			player_name = response.player_name
 		else:
-			player_name = "Guest%s" % _rng.randi()
+			await set_player_name("Guest%s" % _rng.randi())
 		
 		session_created.emit()
 	else:
 		Logger.error("Login failed with reason: " + response.error_data.to_string())
-	
+		
 
 func set_player_name(value: String) -> void:
 	if value == player_name:
@@ -43,7 +43,7 @@ func submit_score(leaderboard: String, score: int, check_highscore: bool = false
 	var previous_score = null
 	if check_highscore:
 		var previous_response = await LL_Leaderboards.GetMemberRank.new(leaderboard, player_id).send()
-		if previous_response.success:
+		if previous_response.success and previous_response.player != null:
 			previous_score = previous_response.score
 	
 	var response = await LL_Leaderboards.SubmitScore.new(leaderboard, score, player_id).send()

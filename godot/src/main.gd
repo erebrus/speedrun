@@ -17,6 +17,7 @@ func _ready():
 	fade_panel.fade_in()
 	level_manager.load_first_level()
 	leaderboard.next_level_pressed.connect(_on_next_level_pressed)
+	leaderboard.reload_level_pressed.connect(func():level_manager.load_current_level())
 	Debug.set_levels(level_manager.levels)
 	Events.player_near_end.connect(func():end_sfx.play())
 	Events.player_died.connect(func():level_manager.load_current_level())	
@@ -26,7 +27,8 @@ func _ready():
 func end_level():
 	fade_panel.fade_out()
 	
-	var leaderboard_key = "%s%02d" % [leaderboard_prefix, level_manager.current_level_idx + 1]
+	var level_number = level_manager.current_level_idx + 1
+	var leaderboard_key = "%s%02d" % [leaderboard_prefix, level_number]
 	var result = await Leaderboard.submit_score(leaderboard_key, int(timer.ellapsed_time * 100), true)
 	Logger.info("Score published: %s" % result)
 	
@@ -37,7 +39,7 @@ func end_level():
 		return
 	
 	leaderboard.is_last_level = level_manager.is_last_level()
-	leaderboard.populate.call_deferred(leaderboard_key, result.rank)
+	leaderboard.populate.call_deferred(level_number, leaderboard_key, result.rank)
 	
 	if not fade_panel.has_faded:
 		await fade_panel.fade_out_completed
@@ -82,6 +84,9 @@ func _on_level_manager_level_ready() -> void:
 	if level_manager.current_level_idx==1:
 		game_state=load("res://src/start_state.tres")
 	get_level().set_state(game_state)
+	fade_panel.fade_in()
+	await fade_panel.fade_in_completed
+	
 	Events.timer_restarted.emit()
 	
 

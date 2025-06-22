@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh8f5eo2lmqqf"]
+[gd_scene load_steps=4 format=3 uid="uid://bh8f5eo2lmqqf"]
 
 [ext_resource type="Script" uid="uid://bdradurjm2pjj" path="res://src/hud/leaderboard/highscore.gd" id="1_4y4jk"]
+[ext_resource type="Theme" uid="uid://dpj5o8t6g161t" path="res://src/hud/theme.tres" id="1_af5gi"]
+[ext_resource type="AudioStream" uid="uid://b1dp8dmhc0yjn" path="res://assets/music/Highscore_Fanfare.mp3" id="3_uac4g"]
 
 [node name="Highscore" type="PanelContainer"]
 anchors_preset = 8
@@ -14,32 +16,51 @@ offset_right = 0.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_af5gi")
 script = ExtResource("1_4y4jk")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
 text = "Highscore!"
 horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="VBoxContainer"]
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_type_variation = &"HeaderMedium"
 text = "1586"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_type_variation = &"HeaderMedium"
 text = "Ranking"
 horizontal_alignment = 1
 
-[node name="Ranking" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="Ranking" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_type_variation = &"HeaderMedium"
 text = "#1"
 horizontal_alignment = 1
+
+[node name="FanfareSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uac4g")
+volume_db = 4.561
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

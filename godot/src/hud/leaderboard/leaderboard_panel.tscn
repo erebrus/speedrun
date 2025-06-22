@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b778impvuqi80"]
+[gd_scene load_steps=4 format=3 uid="uid://b778impvuqi80"]
 
+[ext_resource type="Theme" uid="uid://dpj5o8t6g161t" path="res://src/hud/theme.tres" id="1_opgo0"]
 [ext_resource type="Script" uid="uid://cfka3vfr5e4vr" path="res://src/hud/leaderboard/leaderboard_panel.gd" id="1_ss4l0"]
 [ext_resource type="PackedScene" uid="uid://xk5f6d721oah" path="res://src/hud/leaderboard/rank_row.tscn" id="2_6r4yo"]
 
 [node name="LeaderboardPanel" type="MarginContainer"]
+texture_filter = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -11,6 +13,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_opgo0")
 script = ExtResource("1_ss4l0")
 row_scene = ExtResource("2_6r4yo")
 
@@ -19,6 +22,27 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TitleRow" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/TitleRow"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Level"
+
+[node name="LevelLabel" type="Label" parent="PanelContainer/VBoxContainer/TitleRow"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "#1"
+
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/TitleRow"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Highscores"
 
 [node name="TopRanks" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -26,12 +50,12 @@ layout_mode = 2
 
 [node name="Bottom" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Bottom"]
 layout_mode = 2
 text = "..."
+horizontal_alignment = 1
 
 [node name="AheadOfPlayer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Bottom"]
 unique_name_in_owner = true
@@ -40,6 +64,10 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+
+[node name="RepeatLevelButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Repeat Level"
 
 [node name="NextLevelButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -50,5 +78,6 @@ text = "Next Level"
 layout_mode = 2
 text = "Menu"
 
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/RepeatLevelButton" to="." method="_on_repeat_level_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
