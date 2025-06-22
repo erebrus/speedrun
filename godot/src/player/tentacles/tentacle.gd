@@ -31,7 +31,6 @@ var target: Vector2
 
 @onready var line: Line2D = $Line2D
 @onready var tentacle_end: Sprite2D = %TentacleEnd
-@onready var tentacle_joint: PinJoint2D = %TentacleJoint
 @onready var debug_target: Node = $Target
 
 func _ready() -> void:
@@ -52,7 +51,6 @@ func _ready() -> void:
 		raycast.collision_mask = 1
 		raycasts.append(raycast)
 		sections.front().add_child(raycast)
-		
 	
 
 func build() -> void:
