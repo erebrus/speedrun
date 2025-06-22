@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://rumvotveqal5"]
+[gd_scene load_steps=14 format=3 uid="uid://rumvotveqal5"]
 
 [ext_resource type="Script" uid="uid://dodm85vhrwagf" path="res://src/common/globals.gd" id="1_noqpm"]
 [ext_resource type="Script" uid="uid://c3gbbvoifoygf" path="res://src/common/music_manager.gd" id="3_h14hn"]
@@ -6,11 +6,18 @@
 [ext_resource type="AudioStream" uid="uid://bxrc4c7inujhh" path="res://assets/music/kennys/Farm Frolics.ogg" id="4_v6ulc"]
 [ext_resource type="Script" uid="uid://04681mljvxoh" path="res://src/common/ui_sfx.gd" id="5_fmvy8"]
 [ext_resource type="Script" uid="uid://dotkr5yf1ychu" path="res://addons/audio_intro/intro_audio_stream_player.gd" id="5_i6p1b"]
-[ext_resource type="AudioStream" uid="uid://vdr7ewrp5m01" path="res://assets/sfx/kenneys/select_001.ogg" id="5_kyxtr"]
-[ext_resource type="AudioStream" uid="uid://dcowjg8y0gyjd" path="res://assets/sfx/kenneys/select_002.ogg" id="6_7sypx"]
 [ext_resource type="AudioStream" uid="uid://hnh072boqexq" path="res://assets/music/Music_1_Intro.mp3" id="6_hcytl"]
 [ext_resource type="AudioStream" uid="uid://cyfnt2vtm2fl" path="res://assets/music/Music Loop 2.mp3" id="7_i6p1b"]
 [ext_resource type="AudioStream" uid="uid://b6u4drlpbhrv4" path="res://assets/music/Music Intro 2.mp3" id="8_hcytl"]
+[ext_resource type="AudioStream" uid="uid://di16gh18fuj4j" path="res://assets/sfx/UI_button_1.wav" id="10_le8b3"]
+[ext_resource type="AudioStream" uid="uid://wof6pw1te30a" path="res://assets/sfx/UI_button_2.wav" id="11_i01vm"]
+[ext_resource type="AudioStream" uid="uid://cmhye7i0wjqxc" path="res://assets/sfx/UI_button_3.wav" id="12_k8e2b"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xcs8h"]
+streams_count = 3
+stream_0/stream = ExtResource("10_le8b3")
+stream_1/stream = ExtResource("11_i01vm")
+stream_2/stream = ExtResource("12_k8e2b")
 
 [node name="Globals" type="Node"]
 process_mode = 3
@@ -42,13 +49,13 @@ metadata/_custom_type_script = "uid://dotkr5yf1ychu"
 
 [node name="UiSfx" type="Node" parent="."]
 script = ExtResource("5_fmvy8")
+button_hover_auto_connect = false
 
 [node name="click_sfx" type="AudioStreamPlayer" parent="UiSfx"]
 process_mode = 3
-stream = ExtResource("6_7sypx")
+stream = SubResource("AudioStreamRandomizer_xcs8h")
 bus = &"Sfx"
 
 [node name="hover_sfx" type="AudioStreamPlayer" parent="UiSfx"]
 process_mode = 3
-stream = ExtResource("5_kyxtr")
 bus = &"Sfx"

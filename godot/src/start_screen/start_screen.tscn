@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://tew5nggvlbv0"]
+[gd_scene load_steps=4 format=3 uid="uid://tew5nggvlbv0"]
 
 [ext_resource type="Script" uid="uid://d0qhvgualhiwk" path="res://src/start_screen/start_screen.gd" id="1_yk0mb"]
+[ext_resource type="AudioStream" uid="uid://1g5dm4e2ign5" path="res://assets/sfx/UI_button_big.wav" id="3_15q2y"]
 [ext_resource type="PackedScene" uid="uid://to3p8qv7p8yo" path="res://addons/sj/components/ui/settings/volume_slider.tscn" id="4_h2rxl"]
 
 [node name="StartScreen" type="TextureRect"]
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yk0mb")
+auto_connect_ui_sounds = null
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 1
@@ -54,6 +56,10 @@ text = "MUSIC"
 [node name="MusicSlider" parent="VBoxContainer" instance=ExtResource("4_h2rxl")]
 layout_mode = 2
 bus_name = "Music"
+
+[node name="StartSfx" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_15q2y")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/SoundSlider" to="." method="_on_volume_changed"]

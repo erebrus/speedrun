@@ -35,7 +35,9 @@ func play_game_music():
 	fade_in_game_music(0)
 	
 func fade_in_menu_music(time:float=1.0):
-	fade_in_stream(menu_music,time)
+	pass
+	# TODO: fix menu music
+	#fade_in_stream(menu_music,time)
 
 func fade_menu_music(time:float=1.0):
 	fade_stream(menu_music, time)

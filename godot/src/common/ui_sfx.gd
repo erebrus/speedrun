@@ -21,8 +21,12 @@ func _connect_all_buttons(node: Node) -> void:
 
 func _connect_node(node: Node) -> void:
 	if node is Button:
-		if button_press_auto_connect:
+		var node_press_autoconnect = node.get("button_press_auto_connect")
+		if node_press_autoconnect:
 			node.pressed.connect(_on_button_pressed)
+		elif node_press_autoconnect == null and button_press_auto_connect:
+			node.pressed.connect(_on_button_pressed)
+		
 		if button_hover_auto_connect:
 			node.mouse_entered.connect(_on_button_entered)
 	

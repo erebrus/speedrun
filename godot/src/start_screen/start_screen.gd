@@ -1,7 +1,10 @@
 extends TextureRect
 
+@export var button_press_auto_connect: bool = false
 
 @onready var player_name: LineEdit = %PlayerName
+@onready var start_sfx: AudioStreamPlayer = %StartSfx
+
 
 func _ready() -> void:
 	Globals.in_game=false
@@ -24,6 +27,8 @@ func _on_volume_changed(_value: float) -> void:
 
 func _on_start_button_pressed() -> void:
 	Leaderboard.set_player_name.call_deferred(player_name.text)
+	start_sfx.play()
+	
 	Globals.start_game()
 	
 
