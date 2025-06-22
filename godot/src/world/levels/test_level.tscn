@@ -21,7 +21,7 @@ position = Vector2(172, -484)
 
 [node name="Objects2" type="Node2D" parent="." index="4"]
 
-[node name="CurrentTileMap" parent="." index="5"]
+[node name="CurrentTileMap" parent="." index="6"]
 occlusion_enabled = false
 
 [node name="Polygon2D" type="Polygon2D" parent="Objects" index="0"]
@@ -44,8 +44,8 @@ position = Vector2(-439, 485)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-6, 123, -67, -32, 85, -72, 141, 42)
 
-[node name="Camera2D" parent="." index="8"]
+[node name="Camera2D" parent="." index="9"]
 position = Vector2(-310, 412)
 
-[node name="Player" parent="." index="10"]
+[node name="Player" parent="." index="11"]
 position = Vector2(-310, 412)
