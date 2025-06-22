@@ -11,6 +11,7 @@ class_name MusicManager extends Node
 var current_game_music_id = 0#Types.GameMusic.EASY
 var default_music_volume:float = 0.0 
 
+var log_crossfade := false
 func _ready():
 	var music_bus := AudioServer.get_bus_index("Music")
 	if music_bus != -1:
@@ -18,6 +19,15 @@ func _ready():
 	else:
 		Logger.warn("Cannot set default music volume. Can't find Music bus.")
 
+func _physics_process(delta: float) -> void:
+	if not log_crossfade:
+		return
+	var volumes = []
+	for stream in game_music_node.get_children():
+			if stream is AudioStreamPlayer:
+				volumes.append(stream.volume_db)
+	Logger.info("volumes %s" % [volumes])
+				
 func play_menu_music():
 	fade_in_menu_music(0)
 
@@ -64,22 +74,25 @@ func reset_game_music():
 
 func fade_in_stream(node:AudioStreamPlayer, duration := 1.0):
 	if duration > 0:
-		var tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR)
 		node.volume_db=-20
 		node.play()
 		tween.tween_property(node,"volume_db",default_music_volume , duration)
+		Logger.info("still %s playing %s volume:%f at %d ms" % [node.name, node.playing, node.volume_db, Time.get_ticks_msec()])
 		await tween.finished
+		Logger.info("%s playing %s volume:%f at %d ms" % [node.name, node.playing, node.volume_db, Time.get_ticks_msec()])
 	else:
 		node.volume_db=default_music_volume
 		node.play()
-	Logger.info("%s playing %s volume:%f" % [node.name, node.playing, node.volume_db])
+		Logger.info("%s playing %s volume:%f at %d ms" % [node.name, node.playing, node.volume_db, Time.get_ticks_msec()])
 	
 
 func fade_stream(node:AudioStreamPlayer, duration := 1.0):
 	if duration >0:
-		var tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		var tween = get_tree().create_tween().set_trans(Tween.TRANS_LINEAR)
 		tween.tween_property(node,"volume_db",-20 , duration)
 		await tween.finished
+		Logger.info("%s playing %s volume:%f at %d ms" % [node.name, node.playing, node.volume_db, Time.get_ticks_msec()])
 	node.stop()
 	
 
@@ -120,7 +133,10 @@ func crossfade_streams(current:AudioStreamPlayer, next:AudioStreamPlayer, time:=
 func crossfade_streams_with_transition(current:AudioStreamPlayer, next:AudioStreamPlayer, transition:AudioStreamPlayer, time:=1.0):
 	if transition:
 		transition.play()
+	log_crossfade = true
+	Logger.info("starting area music change at %d ms" % Time.get_ticks_msec())
 	fade_in_stream(next, time)
 	await fade_stream(current, time)
-		
+	Logger.info("completed area music change at %d ms" % Time.get_ticks_msec())
+	log_crossfade = false
 			

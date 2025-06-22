@@ -463,5 +463,8 @@ position = Vector2(417, 639)
 [node name="Camera2D" parent="." index="7"]
 position = Vector2(-152, 579)
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AdaptiveMusic/MusicArea2" index="0"]
+polygon = PackedVector2Array(63, 592, 63, 650, 329, 655, 353, 606, 311, 514)
+
 [node name="Player" parent="." index="9"]
 position = Vector2(-152, 579)
