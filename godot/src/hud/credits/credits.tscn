@@ -47,7 +47,6 @@ position = Vector2(114, 360)
 position = Vector2(919, 303)
 
 [node name="Label" type="Label" parent="."]
-layout_mode = 0
 offset_left = 101.0
 offset_top = 157.0
 offset_right = 743.0
