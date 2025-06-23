@@ -3,7 +3,7 @@ class_name EnergyBar extends Control
 
 var max_energy:int:
 	set(v):
-		$ProgressBar.max_value = max_energy
+		$ProgressBar.max_value = float(v)
 	get:
 		return $ProgressBar.max_value
 		

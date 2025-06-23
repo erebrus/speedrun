@@ -78,7 +78,7 @@ func _ready():
 	animation_player.play("idle")
 	Events.player_max_energy_changed.emit(max_energy)
 	bubbles.animation_finished.connect(func():bubbles.visible = false)
-	energy=100
+	energy=0
 	$ResponsivenessTimer.wait_time = responsiveness_timeout
 	Events.debug_max_energy.connect(func():collect(max_energy))
 	
