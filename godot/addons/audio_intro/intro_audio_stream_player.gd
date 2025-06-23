@@ -19,8 +19,11 @@ func play_from_intro():
 func _ready():
 	_intro_player = AudioStreamPlayer.new()
 	_intro_player.bus = bus
-	_intro_player.stream = intro_stream
-	_intro_player.finished.connect(_on_stream_finished)
+	if intro_stream:
+		_intro_player.stream = intro_stream
+		var intro_duration = intro_stream.get_length()
+		get_tree().create_timer(intro_duration - 0.1).timeout.connect(_on_stream_finished)
+	
 	add_child(_intro_player)
 	
 
