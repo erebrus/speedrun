@@ -1,47 +1,107 @@
-[gd_scene load_steps=5 format=3 uid="uid://tew5nggvlbv0"]
+[gd_scene load_steps=11 format=3 uid="uid://tew5nggvlbv0"]
 
 [ext_resource type="Theme" uid="uid://m1aiqyn5vres" path="res://src/hud/theme.tres" id="1_1wdge"]
 [ext_resource type="Script" uid="uid://d0qhvgualhiwk" path="res://src/start_screen/start_screen.gd" id="1_yk0mb"]
+[ext_resource type="Texture2D" uid="uid://cju5eqft53a2o" path="res://assets/gfx/UI/seaweedback.png" id="3_1wl0k"]
 [ext_resource type="AudioStream" uid="uid://1g5dm4e2ign5" path="res://assets/sfx/UI_button_big.wav" id="3_15q2y"]
+[ext_resource type="Texture2D" uid="uid://dqxb4tg2mofql" path="res://assets/gfx/UI/title_no_bg.png" id="3_esdhr"]
 [ext_resource type="PackedScene" uid="uid://to3p8qv7p8yo" path="res://addons/sj/components/ui/settings/volume_slider.tscn" id="4_h2rxl"]
+[ext_resource type="Texture2D" uid="uid://srd0a5xs8l7g" path="res://assets/gfx/UI/start_button1.png" id="5_axy6j"]
+[ext_resource type="Texture2D" uid="uid://d3dm6be13km1c" path="res://assets/gfx/UI/start_button3.png" id="6_pxykv"]
+[ext_resource type="Texture2D" uid="uid://2t84vawatj3v" path="res://assets/gfx/UI/start_button2.png" id="7_osa57"]
+[ext_resource type="PackedScene" uid="uid://dyeqx6bsh0dw3" path="res://src/start_screen/bubble_particles.tscn" id="10_pxykv"]
 
-[node name="StartScreen" type="TextureRect"]
+[node name="StartScreen" type="Control"]
+texture_filter = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_1wdge")
 script = ExtResource("1_yk0mb")
 
-[node name="StartButton" type="Button" parent="."]
-layout_mode = 1
-offset_left = 649.0
-offset_top = 200.0
-offset_right = 1089.0
-offset_bottom = 435.0
-theme_override_font_sizes/font_size = 96
-text = "START"
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+texture = ExtResource("3_1wl0k")
+
+[node name="Bubbles" type="Node2D" parent="."]
+
+[node name="BubbleParticles" parent="Bubbles" instance=ExtResource("10_pxykv")]
+position = Vector2(227, 608)
+
+[node name="BubbleParticles2" parent="Bubbles" instance=ExtResource("10_pxykv")]
+position = Vector2(1154, 530)
+
+[node name="BubbleParticles3" parent="Bubbles" instance=ExtResource("10_pxykv")]
+position = Vector2(382, 413)
+
+[node name="BubbleParticles4" parent="Bubbles" instance=ExtResource("10_pxykv")]
+position = Vector2(1120, 253)
+
+[node name="BubbleParticles5" parent="Bubbles" instance=ExtResource("10_pxykv")]
+position = Vector2(710, 227)
+
+[node name="BubbleParticles6" parent="Bubbles" instance=ExtResource("10_pxykv")]
+position = Vector2(616, 527)
+
+[node name="BubbleParticles7" parent="Bubbles" instance=ExtResource("10_pxykv")]
+position = Vector2(350, 120)
+
+[node name="BubbleParticles8" parent="Bubbles" instance=ExtResource("10_pxykv")]
+position = Vector2(114, 360)
+
+[node name="BubbleParticles9" parent="Bubbles" instance=ExtResource("10_pxykv")]
+position = Vector2(919, 303)
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_esdhr")
+
+[node name="StartButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 430.0
+offset_right = 593.0
+offset_bottom = 544.0
+texture_normal = ExtResource("5_axy6j")
+texture_pressed = ExtResource("6_pxykv")
+texture_hover = ExtResource("7_osa57")
+
+[node name="PlayerName" type="LineEdit" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 241.0
+offset_top = 587.0
+offset_right = 641.0
+offset_bottom = 642.0
+placeholder_text = "TYPE YOUR NAME"
+alignment = 1
+max_length = 30
 
 [node name="VBoxContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -50.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 204.0
+offset_top = 262.0
+offset_right = 604.0
+offset_bottom = 312.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 columns = 2
-
-[node name="NameLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Name"
-
-[node name="PlayerName" type="LineEdit" parent="VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-max_length = 30
 
 [node name="SoundLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyeqx6bsh0dw3"]
+
+[ext_resource type="Texture2D" uid="uid://bauoms11qq5eg" path="res://assets/gfx/environment/bubble.png" id="1_1pyil"]
+[ext_resource type="Script" uid="uid://cob8p15xi8pve" path="res://src/start_screen/bubble_particles.gd" id="2_ns8qb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ns8qb"]
+particles_animation = true
+particles_anim_h_frames = 9
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wi1al"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector3(0, -10, 0)
+anim_speed_min = 0.2
+anim_speed_max = 0.8
+turbulence_enabled = true
+turbulence_noise_scale = 5.0
+
+[node name="BubbleParticles" type="GPUParticles2D"]
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_ns8qb")
+texture = ExtResource("1_1pyil")
+lifetime = 20.0
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_wi1al")
+script = ExtResource("2_ns8qb")

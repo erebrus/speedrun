@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 
 @export var button_press_auto_connect: bool = false
 
@@ -32,14 +32,16 @@ func _on_start_button_pressed() -> void:
 	if not is_ready:
 		return
 	
-	Leaderboard.set_player_name.call_deferred(player_name.text)
+	var player_name = player_name.text
+	if not player_name.is_empty():
+		Leaderboard.set_player_name.call_deferred(player_name)
+	
 	start_sfx.play()
 	
 	Globals.start_game()
 	
 
 func _on_player_identified() -> void:
-	player_name.text = Leaderboard.player_name
 	is_ready = true
 	
 
