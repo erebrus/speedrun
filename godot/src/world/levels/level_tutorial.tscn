@@ -71,7 +71,7 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
-[node name="TestLevel" instance=ExtResource("1_l25c7")]
+[node name="TestLevel2" instance=ExtResource("1_l25c7")]
 
 [node name="BG" parent="." index="1"]
 modulate = Color(1, 1, 1, 1)
