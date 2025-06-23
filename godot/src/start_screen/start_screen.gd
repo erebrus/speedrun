@@ -9,6 +9,7 @@ var is_ready: bool = false
 
 func _ready() -> void:
 	Globals.in_game=false
+	Globals.music_manager.fade_game_music()
 	Globals.music_manager.fade_in_menu_music()
 	
 	player_name.text = Leaderboard.player_name
