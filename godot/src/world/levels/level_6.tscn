@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://4plrof37tcod"]
+[gd_scene load_steps=36 format=4 uid="uid://4plrof37tcod"]
 
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="1_oyonb"]
 [ext_resource type="Texture2D" uid="uid://bg5yhommbu724" path="res://assets/gfx/environment/seaweed6.png" id="2_432lm"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://dpo3a2i0pru2y" path="res://assets/gfx/environment/seaweed2.png" id="7_ipuxo"]
 [ext_resource type="Texture2D" uid="uid://dqc30htixarul" path="res://assets/gfx/environment/seaweed3.png" id="8_db1tq"]
 [ext_resource type="PackedScene" uid="uid://b4qx3sm45yl5d" path="res://src/world/objects/energy_node.tscn" id="9_8tu4r"]
+[ext_resource type="Theme" uid="uid://m1aiqyn5vres" path="res://src/hud/theme.tres" id="9_kmgli"]
 [ext_resource type="PackedScene" uid="uid://86s62ypn5h1p" path="res://src/world/objects/clam.tscn" id="10_lqy2e"]
+[ext_resource type="Texture2D" uid="uid://cr88vksceyh0w" path="res://assets/gfx/UI/click.png" id="10_vqqht"]
 [ext_resource type="PackedScene" uid="uid://b2ivjq3gqi8r2" path="res://src/world/objects/cave.tscn" id="11_ykote"]
 [ext_resource type="PackedScene" uid="uid://ckr2ktvcwwtrq" path="res://src/world/objects/grass_a.tscn" id="12_t863l"]
 [ext_resource type="PackedScene" uid="uid://ba0qgk7glqhuv" path="res://src/world/objects/grass_b.tscn" id="13_o74nl"]
@@ -32,6 +34,8 @@
 [ext_resource type="Texture2D" uid="uid://ccl4wgetix23j" path="res://assets/gfx/environment/corals/corals-orange1.png" id="30_dhyo0"]
 [ext_resource type="Texture2D" uid="uid://beia3bxbvvyg" path="res://assets/gfx/environment/corals/corals-blue5.png" id="30_k2j70"]
 [ext_resource type="Texture2D" uid="uid://dxl2o88scf238" path="res://assets/gfx/environment/corals/corals-purple6.png" id="31_b7fjo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vfp7o"]
 
 [node name="TestLevel" instance=ExtResource("1_oyonb")]
 
@@ -350,6 +354,47 @@ tile_map_data = PackedByteArray("AAAGABAAAAABAAEAAQAGABEAAAABAAEAAQAHABEAAAABAAE
 current_strength = Array[float]([50.0, 150.0, 350.0])
 turn_time = 4.0
 
+[node name="Boost" type="PanelContainer" parent="Tips" index="0"]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 183.183
+offset_top = 1651.65
+offset_right = 465.183
+offset_bottom = 1731.65
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_kmgli")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vfp7o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tips/Boost" index="0"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tips/Boost/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Tips/Boost/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Click"
+
+[node name="TextureRect" type="TextureRect" parent="Tips/Boost/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_vqqht")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="Tips/Boost/VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+text = "near a wall to grab"
+
+[node name="Label3" type="Label" parent="Tips/Boost/VBoxContainer" index="1"]
+layout_mode = 2
+text = "onto it with your tentacles"
+
 [node name="EnergyNode" parent="Objects" index="0" instance=ExtResource("9_8tu4r")]
 position = Vector2(339, 542)
 
@@ -481,9 +526,6 @@ position = Vector2(1064, 699)
 [node name="GrassA12" parent="Objects" index="34" instance=ExtResource("13_o74nl")]
 position = Vector2(118, 638)
 
-[node name="Camera2D" parent="." index="7"]
-position = Vector2(93, 591)
-
 [node name="Urchins" type="Node2D" parent="." index="8"]
 
 [node name="Urchin4" parent="Urchins" index="0" instance=ExtResource("14_n5b2b")]
@@ -609,9 +651,8 @@ rotation = -1.5708
 position = Vector2(1191, 692)
 rotation = -1.5708
 
-[node name="Player" parent="." index="10"]
+[node name="Camera2D" parent="." index="9"]
 position = Vector2(93, 591)
-rotation = 5.81718
 
 [node name="Coral" type="Node2D" parent="." index="11"]
 
@@ -1126,3 +1167,7 @@ texture = ExtResource("30_k2j70")
 [node name="Corals-purple50" type="Sprite2D" parent="Coral" index="71"]
 position = Vector2(820, 665)
 texture = ExtResource("31_b7fjo")
+
+[node name="Player" parent="." index="12"]
+position = Vector2(93, 591)
+rotation = 5.81718
