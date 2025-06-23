@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://datsi4kfyl4m0"]
+
+[ext_resource type="Theme" uid="uid://m1aiqyn5vres" path="res://src/hud/theme.tres" id="1_mbe7p"]
+[ext_resource type="Script" uid="uid://d1ppehbr1ph50" path="res://src/hud/menu/pause_menu.gd" id="2_x1vwk"]
+[ext_resource type="PackedScene" uid="uid://to3p8qv7p8yo" path="res://addons/sj/components/ui/settings/volume_slider.tscn" id="3_55ofl"]
+
+[node name="PauseMenu" type="PanelContainer"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -116.5
+offset_right = 240.0
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_mbe7p")
+script = ExtResource("2_x1vwk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Resume Level"
+
+[node name="RepeatLevelButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Restart Level"
+
+[node name="NextLevelButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Skip to Next Level"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="GridContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+columns = 2
+
+[node name="SoundLabel" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "SFX"
+
+[node name="SoundSlider" parent="VBoxContainer/VBoxContainer" instance=ExtResource("3_55ofl")]
+layout_mode = 2
+size_flags_vertical = 4
+bus_name = "Sfx"
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "MUSIC"
+
+[node name="MusicSlider" parent="VBoxContainer/VBoxContainer" instance=ExtResource("3_55ofl")]
+layout_mode = 2
+size_flags_vertical = 4
+bus_name = "Music"
+
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RepeatLevelButton" to="." method="_on_repeat_level_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/SoundSlider" to="." method="_on_volume_changed"]
+[connection signal="value_changed" from="VBoxContainer/VBoxContainer/MusicSlider" to="." method="_on_volume_changed"]

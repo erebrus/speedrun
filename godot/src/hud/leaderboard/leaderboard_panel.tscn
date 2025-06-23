@@ -145,7 +145,7 @@ text = "Next Level"
 
 [node name="ExitButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Menu"
+text = "Exit"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/RepeatLevelButton" to="." method="_on_repeat_level_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
