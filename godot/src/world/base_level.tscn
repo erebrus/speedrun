@@ -124,6 +124,9 @@ tile_set = ExtResource("5_6urnh")
 current_strength = Array[float]([50.0, 100.0, 150.0])
 target_container = NodePath("../Plankton")
 
+[node name="Tips" type="Node2D" parent="."]
+scale = Vector2(0.333, 0.333)
+
 [node name="Plankton" type="Node2D" parent="."]
 
 [node name="Objects" type="Node2D" parent="."]
