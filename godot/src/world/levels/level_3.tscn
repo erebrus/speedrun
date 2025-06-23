@@ -491,9 +491,6 @@ position = Vector2(453, 1063)
 [node name="GrassA12" parent="Objects" index="33" instance=ExtResource("13_g1dfp")]
 position = Vector2(405, 1063)
 
-[node name="Camera2D" parent="." index="7"]
-position = Vector2(-54, 595)
-
 [node name="Urchins" type="Node2D" parent="." index="8"]
 
 [node name="Urchin12" parent="Urchins" index="0" instance=ExtResource("14_us871")]
@@ -540,10 +537,7 @@ rotation = -6.28319
 position = Vector2(439, 831)
 rotation = -6.28319
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AdaptiveMusic/MusicArea2" index="0"]
-polygon = PackedVector2Array(363, 498, 365, 404, 493, 422, 484, 653, 556, 730, 558, 802, 432, 867, 339, 854)
-
-[node name="Player" parent="." index="10"]
+[node name="Camera2D" parent="." index="9"]
 position = Vector2(-54, 595)
 
 [node name="Node2D" type="Node2D" parent="." index="11"]
@@ -1383,3 +1377,6 @@ texture = ExtResource("29_7skqp")
 [node name="Corals-yellow24" type="Sprite2D" parent="Node2D" index="63"]
 position = Vector2(550, 639)
 texture = ExtResource("30_qdipr")
+
+[node name="Player" parent="." index="12"]
+position = Vector2(-54, 595)
