@@ -676,583 +676,578 @@ position = Vector2(-314.608, 369.19)
 [node name="EnergyNode2" parent="Objects" index="1" instance=ExtResource("3_6q0lt")]
 position = Vector2(-374, 370)
 
-[node name="Clam" parent="Objects" index="2" instance=ExtResource("4_ks0nc")]
-position = Vector2(694, 420)
-closed_time = 1.5
-open_time = 1.5
-
-[node name="Clam2" parent="Objects" index="3" instance=ExtResource("4_ks0nc")]
+[node name="Clam2" parent="Objects" index="2" instance=ExtResource("4_ks0nc")]
 position = Vector2(1189, 790)
 scale = Vector2(1, -1)
 closed_time = 1.5
 open_time = 1.5
 
-[node name="Cave" parent="Objects" index="4" instance=ExtResource("5_pu22r")]
+[node name="Cave" parent="Objects" index="3" instance=ExtResource("5_pu22r")]
 position = Vector2(915, 520)
 rotation = 3.23235
 
-[node name="GrassA" parent="Objects" index="5" instance=ExtResource("6_vxs8w")]
+[node name="GrassA" parent="Objects" index="4" instance=ExtResource("6_vxs8w")]
 position = Vector2(838, 573)
 
-[node name="GrassA3" parent="Objects" index="6" instance=ExtResource("6_vxs8w")]
+[node name="GrassA3" parent="Objects" index="5" instance=ExtResource("6_vxs8w")]
 position = Vector2(872, 558)
 
-[node name="GrassA13" parent="Objects" index="7" instance=ExtResource("6_vxs8w")]
+[node name="GrassA13" parent="Objects" index="6" instance=ExtResource("6_vxs8w")]
 position = Vector2(732, 570)
 
-[node name="GrassA22" parent="Objects" index="8" instance=ExtResource("6_vxs8w")]
+[node name="GrassA22" parent="Objects" index="7" instance=ExtResource("6_vxs8w")]
 position = Vector2(641, 687)
 
-[node name="GrassA23" parent="Objects" index="9" instance=ExtResource("6_vxs8w")]
+[node name="GrassA23" parent="Objects" index="8" instance=ExtResource("6_vxs8w")]
 position = Vector2(681, 262)
 
-[node name="GrassA24" parent="Objects" index="10" instance=ExtResource("6_vxs8w")]
+[node name="GrassA24" parent="Objects" index="9" instance=ExtResource("6_vxs8w")]
 position = Vector2(877, 414)
 
-[node name="GrassA14" parent="Objects" index="11" instance=ExtResource("6_vxs8w")]
+[node name="GrassA14" parent="Objects" index="10" instance=ExtResource("6_vxs8w")]
 position = Vector2(246, 582)
 rotation = -0.359538
 scale = Vector2(-1, -1)
 
-[node name="GrassA30" parent="Objects" index="12" instance=ExtResource("6_vxs8w")]
+[node name="GrassA30" parent="Objects" index="11" instance=ExtResource("6_vxs8w")]
 position = Vector2(-129, 519)
 rotation = -0.359538
 scale = Vector2(-1, -1)
 
-[node name="GrassA15" parent="Objects" index="13" instance=ExtResource("6_vxs8w")]
+[node name="GrassA15" parent="Objects" index="12" instance=ExtResource("6_vxs8w")]
 position = Vector2(128, 507)
 scale = Vector2(-1, -1)
 
-[node name="GrassA16" parent="Objects" index="14" instance=ExtResource("6_vxs8w")]
+[node name="GrassA16" parent="Objects" index="13" instance=ExtResource("6_vxs8w")]
 position = Vector2(577, 545)
 rotation = 3.45226
 scale = Vector2(-1, -1)
 
-[node name="GrassA17" parent="Objects" index="15" instance=ExtResource("6_vxs8w")]
+[node name="GrassA17" parent="Objects" index="14" instance=ExtResource("6_vxs8w")]
 position = Vector2(703, 354)
 scale = Vector2(-1, -1)
 
-[node name="GrassA5" parent="Objects" index="16" instance=ExtResource("6_vxs8w")]
+[node name="GrassA5" parent="Objects" index="15" instance=ExtResource("6_vxs8w")]
 position = Vector2(302, 625)
 rotation = -0.359538
 
-[node name="GrassA33" parent="Objects" index="17" instance=ExtResource("6_vxs8w")]
+[node name="GrassA33" parent="Objects" index="16" instance=ExtResource("6_vxs8w")]
 position = Vector2(-279, 489)
 rotation = 2.69099
 
-[node name="GrassA2" parent="Objects" index="18" instance=ExtResource("7_q2op7")]
+[node name="GrassA2" parent="Objects" index="17" instance=ExtResource("7_q2op7")]
 position = Vector2(-277, 1010)
 
-[node name="GrassA4" parent="Objects" index="19" instance=ExtResource("7_q2op7")]
+[node name="GrassA4" parent="Objects" index="18" instance=ExtResource("7_q2op7")]
 position = Vector2(-173, 1042)
 
-[node name="GrassA6" parent="Objects" index="20" instance=ExtResource("7_q2op7")]
+[node name="GrassA6" parent="Objects" index="19" instance=ExtResource("7_q2op7")]
 position = Vector2(370, 547)
 rotation = -0.47822
 
-[node name="GrassA7" parent="Objects" index="21" instance=ExtResource("7_q2op7")]
+[node name="GrassA7" parent="Objects" index="20" instance=ExtResource("7_q2op7")]
 position = Vector2(265, 638)
 
-[node name="GrassA8" parent="Objects" index="22" instance=ExtResource("7_q2op7")]
+[node name="GrassA8" parent="Objects" index="21" instance=ExtResource("7_q2op7")]
 position = Vector2(349, 569)
 rotation = -0.47822
 
-[node name="GrassA9" parent="Objects" index="23" instance=ExtResource("7_q2op7")]
+[node name="GrassA9" parent="Objects" index="22" instance=ExtResource("7_q2op7")]
 position = Vector2(323, 596)
 rotation = -0.359538
 
-[node name="GrassA18" parent="Objects" index="24" instance=ExtResource("7_q2op7")]
+[node name="GrassA18" parent="Objects" index="23" instance=ExtResource("7_q2op7")]
 position = Vector2(393, 483)
 scale = Vector2(-1, -1)
 
-[node name="GrassA27" parent="Objects" index="25" instance=ExtResource("7_q2op7")]
+[node name="GrassA27" parent="Objects" index="24" instance=ExtResource("7_q2op7")]
 position = Vector2(305, 547)
 rotation = -0.359538
 scale = Vector2(-1, -1)
 
-[node name="GrassA28" parent="Objects" index="26" instance=ExtResource("7_q2op7")]
+[node name="GrassA28" parent="Objects" index="25" instance=ExtResource("7_q2op7")]
 position = Vector2(277, 559)
 rotation = -0.359538
 scale = Vector2(-1, -1)
 
-[node name="GrassA31" parent="Objects" index="27" instance=ExtResource("7_q2op7")]
+[node name="GrassA31" parent="Objects" index="26" instance=ExtResource("7_q2op7")]
 position = Vector2(-104, 514)
 rotation = 0.355545
 scale = Vector2(-1, -1)
 
-[node name="GrassA29" parent="Objects" index="28" instance=ExtResource("7_q2op7")]
+[node name="GrassA29" parent="Objects" index="27" instance=ExtResource("7_q2op7")]
 position = Vector2(333, 535)
 rotation = -0.598648
 scale = Vector2(-1, -1)
 
-[node name="GrassA19" parent="Objects" index="29" instance=ExtResource("7_q2op7")]
+[node name="GrassA19" parent="Objects" index="28" instance=ExtResource("7_q2op7")]
 position = Vector2(671, 342)
 scale = Vector2(-1, -1)
 
-[node name="GrassA20" parent="Objects" index="30" instance=ExtResource("7_q2op7")]
+[node name="GrassA20" parent="Objects" index="29" instance=ExtResource("7_q2op7")]
 position = Vector2(573, 358)
 scale = Vector2(-1, -1)
 
-[node name="GrassA21" parent="Objects" index="31" instance=ExtResource("7_q2op7")]
+[node name="GrassA21" parent="Objects" index="30" instance=ExtResource("7_q2op7")]
 position = Vector2(123, 504)
 scale = Vector2(-1, -1)
 
-[node name="GrassA10" parent="Objects" index="32" instance=ExtResource("7_q2op7")]
+[node name="GrassA10" parent="Objects" index="31" instance=ExtResource("7_q2op7")]
 position = Vector2(223, 639)
 
-[node name="GrassA32" parent="Objects" index="33" instance=ExtResource("7_q2op7")]
+[node name="GrassA32" parent="Objects" index="32" instance=ExtResource("7_q2op7")]
 position = Vector2(-267, 639)
 
-[node name="GrassA25" parent="Objects" index="34" instance=ExtResource("7_q2op7")]
+[node name="GrassA25" parent="Objects" index="33" instance=ExtResource("7_q2op7")]
 position = Vector2(672, 686)
 rotation = -0.0143032
 
-[node name="GrassA26" parent="Objects" index="35" instance=ExtResource("7_q2op7")]
+[node name="GrassA26" parent="Objects" index="34" instance=ExtResource("7_q2op7")]
 position = Vector2(24, 746)
 rotation = 0.464258
 
-[node name="GrassA11" parent="Objects" index="36" instance=ExtResource("7_q2op7")]
+[node name="GrassA11" parent="Objects" index="35" instance=ExtResource("7_q2op7")]
 position = Vector2(1, 735)
 
-[node name="GrassA12" parent="Objects" index="37" instance=ExtResource("7_q2op7")]
+[node name="GrassA12" parent="Objects" index="36" instance=ExtResource("7_q2op7")]
 position = Vector2(417, 639)
 
-[node name="GrassA34" parent="Objects" index="38" instance=ExtResource("6_vxs8w")]
+[node name="GrassA34" parent="Objects" index="37" instance=ExtResource("6_vxs8w")]
 position = Vector2(659, 489)
 rotation = 3.14159
 
-[node name="GrassA35" parent="Objects" index="39" instance=ExtResource("6_vxs8w")]
+[node name="GrassA35" parent="Objects" index="38" instance=ExtResource("6_vxs8w")]
 position = Vector2(691, 569)
 
-[node name="GrassA36" parent="Objects" index="40" instance=ExtResource("7_q2op7")]
+[node name="GrassA36" parent="Objects" index="39" instance=ExtResource("7_q2op7")]
 position = Vector2(-277, 1010)
 
-[node name="GrassA37" parent="Objects" index="41" instance=ExtResource("7_q2op7")]
+[node name="GrassA37" parent="Objects" index="40" instance=ExtResource("7_q2op7")]
 position = Vector2(-173, 1042)
 
-[node name="GrassA38" parent="Objects" index="42" instance=ExtResource("7_q2op7")]
+[node name="GrassA38" parent="Objects" index="41" instance=ExtResource("7_q2op7")]
 position = Vector2(78, 640)
 
-[node name="GrassA39" parent="Objects" index="43" instance=ExtResource("7_q2op7")]
+[node name="GrassA39" parent="Objects" index="42" instance=ExtResource("7_q2op7")]
 position = Vector2(161, 604)
 
-[node name="GrassA40" parent="Objects" index="44" instance=ExtResource("7_q2op7")]
+[node name="GrassA40" parent="Objects" index="43" instance=ExtResource("7_q2op7")]
 position = Vector2(266, 606)
 
-[node name="GrassA41" parent="Objects" index="45" instance=ExtResource("7_q2op7")]
+[node name="GrassA41" parent="Objects" index="44" instance=ExtResource("7_q2op7")]
 position = Vector2(182, 510)
 rotation = -3.14159
 
-[node name="GrassA42" parent="Objects" index="46" instance=ExtResource("7_q2op7")]
+[node name="GrassA42" parent="Objects" index="45" instance=ExtResource("7_q2op7")]
 position = Vector2(135, 511)
 scale = Vector2(-1, -1)
 
-[node name="GrassA43" parent="Objects" index="47" instance=ExtResource("7_q2op7")]
+[node name="GrassA43" parent="Objects" index="46" instance=ExtResource("7_q2op7")]
 position = Vector2(118, 638)
 
-[node name="Corals-pink68" type="Sprite2D" parent="Objects" index="48"]
-position = Vector2(205, 457)
+[node name="Corals-pink68" type="Sprite2D" parent="Objects" index="47"]
+position = Vector2(853, 622)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-yellow40" type="Sprite2D" parent="Objects" index="49"]
-position = Vector2(226, 462)
+[node name="Corals-yellow40" type="Sprite2D" parent="Objects" index="48"]
+position = Vector2(556, 620.999)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-purple45" type="Sprite2D" parent="Objects" index="50"]
-position = Vector2(226, 488)
+[node name="Corals-purple45" type="Sprite2D" parent="Objects" index="49"]
+position = Vector2(600, 613.999)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink69" type="Sprite2D" parent="Objects" index="51"]
-position = Vector2(237, 476.001)
+[node name="Corals-pink69" type="Sprite2D" parent="Objects" index="50"]
+position = Vector2(611, 602)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-green27" type="Sprite2D" parent="Objects" index="52"]
-position = Vector2(186, 470)
+[node name="Corals-green27" type="Sprite2D" parent="Objects" index="51"]
+position = Vector2(834, 635)
 texture = ExtResource("31_g6c3a")
 
-[node name="Corals-yellow41" type="Sprite2D" parent="Objects" index="53"]
-position = Vector2(172, 462)
+[node name="Corals-yellow41" type="Sprite2D" parent="Objects" index="52"]
+position = Vector2(946, 588)
 texture = ExtResource("36_ke18h")
 
-[node name="Corals11" type="Sprite2D" parent="Objects" index="54"]
-position = Vector2(183, 441)
+[node name="Corals11" type="Sprite2D" parent="Objects" index="53"]
+position = Vector2(957, 567)
 texture = ExtResource("23_xg3jy")
 
-[node name="Corals-blue24" type="Sprite2D" parent="Objects" index="55"]
-position = Vector2(213, 444)
+[node name="Corals-blue24" type="Sprite2D" parent="Objects" index="54"]
+position = Vector2(543, 602.999)
 texture = ExtResource("14_afkq4")
 
-[node name="Corals-orange66" type="Sprite2D" parent="Objects" index="56"]
-position = Vector2(197, 436)
+[node name="Corals-orange66" type="Sprite2D" parent="Objects" index="55"]
+position = Vector2(971, 562)
 texture = ExtResource("15_0av7m")
 
-[node name="Corals-yellow42" type="Sprite2D" parent="Objects" index="57"]
-position = Vector2(54.0001, 505)
+[node name="Corals-yellow42" type="Sprite2D" parent="Objects" index="56"]
+position = Vector2(122, 578)
 texture = ExtResource("19_iw4bo")
 
-[node name="Corals-purple46" type="Sprite2D" parent="Objects" index="58"]
-position = Vector2(250, 441.001)
+[node name="Corals-purple46" type="Sprite2D" parent="Objects" index="57"]
+position = Vector2(580, 600)
 texture = ExtResource("24_jmbtv")
 
-[node name="Corals-pink70" type="Sprite2D" parent="Objects" index="59"]
-position = Vector2(104, 520)
+[node name="Corals-pink70" type="Sprite2D" parent="Objects" index="58"]
+position = Vector2(134, 483)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-orange67" type="Sprite2D" parent="Objects" index="60"]
-position = Vector2(88.0001, 516)
+[node name="Corals-orange67" type="Sprite2D" parent="Objects" index="59"]
+position = Vector2(118, 479)
 texture = ExtResource("28_t0xht")
 
-[node name="Corals-green28" type="Sprite2D" parent="Objects" index="61"]
-position = Vector2(102, 509)
+[node name="Corals-green28" type="Sprite2D" parent="Objects" index="60"]
+position = Vector2(132, 472)
 texture = ExtResource("29_kg78h")
 
-[node name="Corals-green29" type="Sprite2D" parent="Objects" index="62"]
-position = Vector2(232, 444)
+[node name="Corals-green29" type="Sprite2D" parent="Objects" index="61"]
+position = Vector2(562, 602.999)
 texture = ExtResource("30_6dnew")
 
-[node name="Corals-yellow43" type="Sprite2D" parent="Objects" index="63"]
-position = Vector2(147, 456)
+[node name="Corals-yellow43" type="Sprite2D" parent="Objects" index="62"]
+position = Vector2(921, 582)
 texture = ExtResource("33_lik57")
 
-[node name="Corals-pink74" type="Sprite2D" parent="Objects" index="64"]
+[node name="Corals-pink74" type="Sprite2D" parent="Objects" index="63"]
 position = Vector2(469, 459)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-yellow47" type="Sprite2D" parent="Objects" index="65"]
+[node name="Corals-yellow47" type="Sprite2D" parent="Objects" index="64"]
 position = Vector2(490, 464)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-purple51" type="Sprite2D" parent="Objects" index="66"]
-position = Vector2(503, 482)
+[node name="Corals-purple51" type="Sprite2D" parent="Objects" index="65"]
+position = Vector2(554, 437)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink75" type="Sprite2D" parent="Objects" index="67"]
-position = Vector2(514, 470)
+[node name="Corals-pink75" type="Sprite2D" parent="Objects" index="66"]
+position = Vector2(566, 441)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-green33" type="Sprite2D" parent="Objects" index="68"]
-position = Vector2(398, 478)
+[node name="Corals-green33" type="Sprite2D" parent="Objects" index="67"]
+position = Vector2(584, 400)
 texture = ExtResource("31_g6c3a")
 
-[node name="Corals-yellow48" type="Sprite2D" parent="Objects" index="69"]
-position = Vector2(384, 470)
+[node name="Corals-yellow48" type="Sprite2D" parent="Objects" index="68"]
+position = Vector2(379, 455)
 texture = ExtResource("36_ke18h")
 
-[node name="Corals12" type="Sprite2D" parent="Objects" index="70"]
+[node name="Corals12" type="Sprite2D" parent="Objects" index="69"]
 position = Vector2(442, 455)
 texture = ExtResource("23_xg3jy")
 
-[node name="Corals-blue29" type="Sprite2D" parent="Objects" index="71"]
+[node name="Corals-blue29" type="Sprite2D" parent="Objects" index="70"]
 position = Vector2(477, 446)
 texture = ExtResource("14_afkq4")
 
-[node name="Corals-orange71" type="Sprite2D" parent="Objects" index="72"]
+[node name="Corals-orange71" type="Sprite2D" parent="Objects" index="71"]
 position = Vector2(456, 450)
 texture = ExtResource("15_0av7m")
 
-[node name="Corals-purple52" type="Sprite2D" parent="Objects" index="73"]
+[node name="Corals-purple52" type="Sprite2D" parent="Objects" index="72"]
 position = Vector2(514, 443)
 texture = ExtResource("24_jmbtv")
 
-[node name="Corals-green34" type="Sprite2D" parent="Objects" index="74"]
+[node name="Corals-green34" type="Sprite2D" parent="Objects" index="73"]
 position = Vector2(496, 446)
 texture = ExtResource("30_6dnew")
 
-[node name="Corals-yellow49" type="Sprite2D" parent="Objects" index="75"]
+[node name="Corals-yellow49" type="Sprite2D" parent="Objects" index="74"]
 position = Vector2(359, 464)
 texture = ExtResource("33_lik57")
 
-[node name="Corals-orange37" type="Sprite2D" parent="Objects" index="76"]
-position = Vector2(752, 463)
+[node name="Corals-orange37" type="Sprite2D" parent="Objects" index="75"]
+position = Vector2(773, 451)
 texture = ExtResource("16_0fquw")
 
-[node name="Corals-pink37" type="Sprite2D" parent="Objects" index="77"]
-position = Vector2(759, 479)
+[node name="Corals-pink37" type="Sprite2D" parent="Objects" index="76"]
+position = Vector2(780, 467)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-yellow30" type="Sprite2D" parent="Objects" index="78"]
-position = Vector2(786, 468)
+[node name="Corals-yellow30" type="Sprite2D" parent="Objects" index="77"]
+position = Vector2(807, 456)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-purple27" type="Sprite2D" parent="Objects" index="79"]
-position = Vector2(773, 462)
+[node name="Corals-purple27" type="Sprite2D" parent="Objects" index="78"]
+position = Vector2(794, 450)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink38" type="Sprite2D" parent="Objects" index="80"]
-position = Vector2(740, 474)
+[node name="Corals-pink38" type="Sprite2D" parent="Objects" index="79"]
+position = Vector2(760, 460)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-purple29" type="Sprite2D" parent="Objects" index="81"]
+[node name="Corals-purple29" type="Sprite2D" parent="Objects" index="80"]
 position = Vector2(959, 400)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink42" type="Sprite2D" parent="Objects" index="82"]
+[node name="Corals-pink42" type="Sprite2D" parent="Objects" index="81"]
 position = Vector2(945, 404)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-orange40" type="Sprite2D" parent="Objects" index="83"]
-position = Vector2(560, 472)
+[node name="Corals-orange40" type="Sprite2D" parent="Objects" index="82"]
+position = Vector2(578, 454)
 texture = ExtResource("16_0fquw")
 
-[node name="Corals-pink43" type="Sprite2D" parent="Objects" index="84"]
+[node name="Corals-pink43" type="Sprite2D" parent="Objects" index="83"]
 position = Vector2(746, 434)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-yellow33" type="Sprite2D" parent="Objects" index="85"]
+[node name="Corals-yellow33" type="Sprite2D" parent="Objects" index="84"]
 position = Vector2(725, 429)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-purple30" type="Sprite2D" parent="Objects" index="86"]
+[node name="Corals-purple30" type="Sprite2D" parent="Objects" index="85"]
 position = Vector2(547, 456)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink80" type="Sprite2D" parent="Objects" index="87"]
-position = Vector2(495, 550)
+[node name="Corals-pink80" type="Sprite2D" parent="Objects" index="86"]
+position = Vector2(501, 583)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-blue32" type="Sprite2D" parent="Objects" index="88"]
+[node name="Corals-blue32" type="Sprite2D" parent="Objects" index="87"]
 position = Vector2(530, 565)
 texture = ExtResource("14_afkq4")
 
-[node name="Corals-orange78" type="Sprite2D" parent="Objects" index="89"]
+[node name="Corals-orange78" type="Sprite2D" parent="Objects" index="88"]
 position = Vector2(546, 573)
 texture = ExtResource("15_0av7m")
 
-[node name="Corals-purple58" type="Sprite2D" parent="Objects" index="90"]
+[node name="Corals-purple58" type="Sprite2D" parent="Objects" index="89"]
 position = Vector2(493, 568)
 texture = ExtResource("24_jmbtv")
 
-[node name="Corals-green41" type="Sprite2D" parent="Objects" index="91"]
+[node name="Corals-green41" type="Sprite2D" parent="Objects" index="90"]
 position = Vector2(511, 565)
 texture = ExtResource("30_6dnew")
 
-[node name="Corals-pink81" type="Sprite2D" parent="Objects" index="92"]
+[node name="Corals-pink81" type="Sprite2D" parent="Objects" index="91"]
 position = Vector2(879, 454)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-blue33" type="Sprite2D" parent="Objects" index="93"]
-position = Vector2(914, 469)
+[node name="Corals-blue33" type="Sprite2D" parent="Objects" index="92"]
+position = Vector2(946, 456)
 texture = ExtResource("14_afkq4")
 
-[node name="Corals-orange79" type="Sprite2D" parent="Objects" index="94"]
-position = Vector2(930, 477)
+[node name="Corals-orange79" type="Sprite2D" parent="Objects" index="93"]
+position = Vector2(962, 464)
 texture = ExtResource("15_0av7m")
 
-[node name="Corals-purple59" type="Sprite2D" parent="Objects" index="95"]
-position = Vector2(877, 472)
+[node name="Corals-purple59" type="Sprite2D" parent="Objects" index="94"]
+position = Vector2(909, 459)
 texture = ExtResource("24_jmbtv")
 
-[node name="Corals-green42" type="Sprite2D" parent="Objects" index="96"]
-position = Vector2(895, 469)
+[node name="Corals-green42" type="Sprite2D" parent="Objects" index="95"]
+position = Vector2(927, 456)
 texture = ExtResource("30_6dnew")
 
-[node name="Corals-pink82" type="Sprite2D" parent="Objects" index="97"]
-position = Vector2(664, 567)
+[node name="Corals-pink82" type="Sprite2D" parent="Objects" index="96"]
+position = Vector2(661, 594)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-blue34" type="Sprite2D" parent="Objects" index="98"]
-position = Vector2(699, 582)
+[node name="Corals-blue34" type="Sprite2D" parent="Objects" index="97"]
+position = Vector2(696, 609)
 texture = ExtResource("14_afkq4")
 
-[node name="Corals-orange80" type="Sprite2D" parent="Objects" index="99"]
-position = Vector2(715, 590)
+[node name="Corals-orange80" type="Sprite2D" parent="Objects" index="98"]
+position = Vector2(717, 609)
 texture = ExtResource("15_0av7m")
 
-[node name="Corals-purple60" type="Sprite2D" parent="Objects" index="100"]
-position = Vector2(662, 585)
+[node name="Corals-purple60" type="Sprite2D" parent="Objects" index="99"]
+position = Vector2(659, 612)
 texture = ExtResource("24_jmbtv")
 
-[node name="Corals-green43" type="Sprite2D" parent="Objects" index="101"]
-position = Vector2(680, 582)
+[node name="Corals-green43" type="Sprite2D" parent="Objects" index="100"]
+position = Vector2(677, 609)
 texture = ExtResource("30_6dnew")
 
-[node name="Corals-pink88" type="Sprite2D" parent="Objects" index="102"]
+[node name="Corals-pink88" type="Sprite2D" parent="Objects" index="101"]
 position = Vector2(796, 603)
 rotation = 3.14159
 texture = ExtResource("17_g0a00")
 
 [node name="Corals-blue36" type="Sprite2D" parent="Objects/Corals-pink88" index="0"]
-position = Vector2(35, 15)
+position = Vector2(39, 5.00007)
 texture = ExtResource("14_afkq4")
 
 [node name="Corals-orange86" type="Sprite2D" parent="Objects/Corals-pink88" index="1"]
-position = Vector2(51, 23)
+position = Vector2(24, -3.99995)
 texture = ExtResource("15_0av7m")
 
 [node name="Corals-purple66" type="Sprite2D" parent="Objects/Corals-pink88" index="2"]
-position = Vector2(-2, 18)
+position = Vector2(3.00002, -14)
 texture = ExtResource("24_jmbtv")
 
 [node name="Corals-green45" type="Sprite2D" parent="Objects/Corals-pink88" index="3"]
-position = Vector2(16, 15)
+position = Vector2(17.9999, 11.0001)
 texture = ExtResource("30_6dnew")
 
-[node name="Corals-pink83" type="Sprite2D" parent="Objects" index="103"]
-position = Vector2(614, 418)
+[node name="Corals-pink83" type="Sprite2D" parent="Objects" index="102"]
+position = Vector2(671, 450)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-blue35" type="Sprite2D" parent="Objects" index="104"]
+[node name="Corals-blue35" type="Sprite2D" parent="Objects" index="103"]
 position = Vector2(649, 433)
 texture = ExtResource("14_afkq4")
 
-[node name="Corals-orange81" type="Sprite2D" parent="Objects" index="105"]
+[node name="Corals-orange81" type="Sprite2D" parent="Objects" index="104"]
 position = Vector2(665, 441)
 texture = ExtResource("15_0av7m")
 
-[node name="Corals-purple61" type="Sprite2D" parent="Objects" index="106"]
+[node name="Corals-purple61" type="Sprite2D" parent="Objects" index="105"]
 position = Vector2(612, 436)
 texture = ExtResource("24_jmbtv")
 
-[node name="Corals-orange82" type="Sprite2D" parent="Objects" index="107"]
-position = Vector2(634, 566)
+[node name="Corals-orange82" type="Sprite2D" parent="Objects" index="106"]
+position = Vector2(602, 590)
 texture = ExtResource("16_0fquw")
 
-[node name="Corals-yellow60" type="Sprite2D" parent="Objects" index="108"]
+[node name="Corals-yellow60" type="Sprite2D" parent="Objects" index="107"]
 position = Vector2(621, 576)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-purple62" type="Sprite2D" parent="Objects" index="109"]
-position = Vector2(621, 550)
+[node name="Corals-purple62" type="Sprite2D" parent="Objects" index="108"]
+position = Vector2(630, 597)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink84" type="Sprite2D" parent="Objects" index="110"]
+[node name="Corals-pink84" type="Sprite2D" parent="Objects" index="109"]
 position = Vector2(610, 562)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-orange83" type="Sprite2D" parent="Objects" index="111"]
-position = Vector2(826, 493)
+[node name="Corals-orange83" type="Sprite2D" parent="Objects" index="110"]
+position = Vector2(816, 437)
 texture = ExtResource("16_0fquw")
 
-[node name="Corals-yellow61" type="Sprite2D" parent="Objects" index="112"]
-position = Vector2(692, 491)
+[node name="Corals-yellow61" type="Sprite2D" parent="Objects" index="111"]
+position = Vector2(703, 488)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-purple63" type="Sprite2D" parent="Objects" index="113"]
-position = Vector2(692, 465)
+[node name="Corals-purple63" type="Sprite2D" parent="Objects" index="112"]
+position = Vector2(703, 462)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink85" type="Sprite2D" parent="Objects" index="114"]
-position = Vector2(681, 477)
+[node name="Corals-pink85" type="Sprite2D" parent="Objects" index="113"]
+position = Vector2(692, 474)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-orange84" type="Sprite2D" parent="Objects" index="115"]
+[node name="Corals-orange84" type="Sprite2D" parent="Objects" index="114"]
 position = Vector2(547, 376)
 texture = ExtResource("16_0fquw")
 
-[node name="Corals-yellow62" type="Sprite2D" parent="Objects" index="116"]
+[node name="Corals-yellow62" type="Sprite2D" parent="Objects" index="115"]
 position = Vector2(534, 386)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-purple64" type="Sprite2D" parent="Objects" index="117"]
+[node name="Corals-purple64" type="Sprite2D" parent="Objects" index="116"]
 position = Vector2(534, 360)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink86" type="Sprite2D" parent="Objects" index="118"]
+[node name="Corals-pink86" type="Sprite2D" parent="Objects" index="117"]
 position = Vector2(523, 372)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-orange85" type="Sprite2D" parent="Objects" index="119"]
+[node name="Corals-orange85" type="Sprite2D" parent="Objects" index="118"]
 position = Vector2(826, 407)
 texture = ExtResource("16_0fquw")
 
-[node name="Corals-yellow63" type="Sprite2D" parent="Objects" index="120"]
+[node name="Corals-yellow63" type="Sprite2D" parent="Objects" index="119"]
 position = Vector2(813, 417)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-purple65" type="Sprite2D" parent="Objects" index="121"]
-position = Vector2(813, 391)
+[node name="Corals-purple65" type="Sprite2D" parent="Objects" index="120"]
+position = Vector2(788, 417)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink87" type="Sprite2D" parent="Objects" index="122"]
+[node name="Corals-pink87" type="Sprite2D" parent="Objects" index="121"]
 position = Vector2(802, 403)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-green44" type="Sprite2D" parent="Objects" index="123"]
+[node name="Corals-green44" type="Sprite2D" parent="Objects" index="122"]
 position = Vector2(630, 433)
 texture = ExtResource("30_6dnew")
 
-[node name="Corals-pink44" type="Sprite2D" parent="Objects" index="124"]
+[node name="Corals-pink44" type="Sprite2D" parent="Objects" index="123"]
 position = Vector2(533, 460)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-pink78" type="Sprite2D" parent="Objects" index="125"]
+[node name="Corals-pink78" type="Sprite2D" parent="Objects" index="124"]
 position = Vector2(44, 655)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-yellow53" type="Sprite2D" parent="Objects" index="126"]
-position = Vector2(10.0002, 632)
+[node name="Corals-yellow53" type="Sprite2D" parent="Objects" index="125"]
+position = Vector2(-249, 673)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-purple55" type="Sprite2D" parent="Objects" index="127"]
+[node name="Corals-purple55" type="Sprite2D" parent="Objects" index="126"]
 position = Vector2(78.0002, 687)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink79" type="Sprite2D" parent="Objects" index="128"]
+[node name="Corals-pink79" type="Sprite2D" parent="Objects" index="127"]
 position = Vector2(89.0002, 675)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-green37" type="Sprite2D" parent="Objects" index="129"]
+[node name="Corals-green37" type="Sprite2D" parent="Objects" index="128"]
 position = Vector2(38.0002, 669)
 texture = ExtResource("31_g6c3a")
 
-[node name="Corals-yellow54" type="Sprite2D" parent="Objects" index="130"]
+[node name="Corals-yellow54" type="Sprite2D" parent="Objects" index="129"]
 position = Vector2(24.0002, 661)
 texture = ExtResource("36_ke18h")
 
-[node name="Corals14" type="Sprite2D" parent="Objects" index="131"]
-position = Vector2(35.0003, 640)
+[node name="Corals14" type="Sprite2D" parent="Objects" index="130"]
+position = Vector2(-224, 681)
 texture = ExtResource("23_xg3jy")
 
-[node name="Corals-blue31" type="Sprite2D" parent="Objects" index="132"]
-position = Vector2(-2.99984, 614)
+[node name="Corals-blue31" type="Sprite2D" parent="Objects" index="131"]
+position = Vector2(-262, 655)
 texture = ExtResource("14_afkq4")
 
-[node name="Corals-orange73" type="Sprite2D" parent="Objects" index="133"]
-position = Vector2(49.0003, 635)
+[node name="Corals-orange73" type="Sprite2D" parent="Objects" index="132"]
+position = Vector2(-210, 676)
 texture = ExtResource("15_0av7m")
 
-[node name="Corals-purple56" type="Sprite2D" parent="Objects" index="134"]
+[node name="Corals-purple56" type="Sprite2D" parent="Objects" index="133"]
 position = Vector2(124, 679)
 texture = ExtResource("24_jmbtv")
 
-[node name="Corals-green38" type="Sprite2D" parent="Objects" index="135"]
+[node name="Corals-green38" type="Sprite2D" parent="Objects" index="134"]
 position = Vector2(106, 682)
 texture = ExtResource("30_6dnew")
 
-[node name="Corals-yellow55" type="Sprite2D" parent="Objects" index="136"]
+[node name="Corals-yellow55" type="Sprite2D" parent="Objects" index="135"]
 position = Vector2(-0.999756, 655)
 texture = ExtResource("33_lik57")
 
-[node name="Corals-blue25" type="Sprite2D" parent="Objects" index="137"]
-position = Vector2(70.0001, 498)
+[node name="Corals-blue25" type="Sprite2D" parent="Objects" index="136"]
+position = Vector2(138, 571)
 texture = ExtResource("34_g8pxr")
 
-[node name="Corals-purple47" type="Sprite2D" parent="Objects" index="138"]
-position = Vector2(87.0001, 503)
+[node name="Corals-purple47" type="Sprite2D" parent="Objects" index="137"]
+position = Vector2(155, 576)
 texture = ExtResource("38_o1vrl")
 
-[node name="Corals-yellow44" type="Sprite2D" parent="Objects" index="139"]
-position = Vector2(269, 636)
+[node name="Corals-yellow44" type="Sprite2D" parent="Objects" index="138"]
+position = Vector2(146, 680)
 texture = ExtResource("19_iw4bo")
 
-[node name="Corals-pink71" type="Sprite2D" parent="Objects" index="140"]
+[node name="Corals-pink71" type="Sprite2D" parent="Objects" index="139"]
 position = Vector2(319, 651)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-orange68" type="Sprite2D" parent="Objects" index="141"]
+[node name="Corals-orange68" type="Sprite2D" parent="Objects" index="140"]
 position = Vector2(303, 647)
 texture = ExtResource("28_t0xht")
 
-[node name="Corals-green30" type="Sprite2D" parent="Objects" index="142"]
+[node name="Corals-green30" type="Sprite2D" parent="Objects" index="141"]
 position = Vector2(317, 640)
 texture = ExtResource("29_kg78h")
 
-[node name="Corals-blue26" type="Sprite2D" parent="Objects" index="143"]
-position = Vector2(285, 629)
+[node name="Corals-blue26" type="Sprite2D" parent="Objects" index="142"]
+position = Vector2(162, 673)
 texture = ExtResource("34_g8pxr")
 
-[node name="Corals-purple48" type="Sprite2D" parent="Objects" index="144"]
-position = Vector2(302, 634)
+[node name="Corals-purple48" type="Sprite2D" parent="Objects" index="143"]
+position = Vector2(179, 678)
 texture = ExtResource("38_o1vrl")
 
 [node name="Camera2D" parent="." index="8"]
@@ -1261,11 +1256,11 @@ position = Vector2(-241, 559)
 [node name="Corals" type="Node2D" parent="." index="10"]
 
 [node name="Corals-blue3" type="Sprite2D" parent="Corals" index="0"]
-position = Vector2(-208, 608)
+position = Vector2(-198, 626)
 texture = ExtResource("14_afkq4")
 
 [node name="Corals-orange4" type="Sprite2D" parent="Corals" index="1"]
-position = Vector2(-213, 625)
+position = Vector2(-203, 643)
 texture = ExtResource("15_0av7m")
 
 [node name="Corals-orange1" type="Sprite2D" parent="Corals" index="2"]
@@ -1397,7 +1392,7 @@ position = Vector2(-23, 665)
 texture = ExtResource("14_afkq4")
 
 [node name="Corals-blue9" type="Sprite2D" parent="Corals" index="34"]
-position = Vector2(-321, 608)
+position = Vector2(-327, 607)
 texture = ExtResource("14_afkq4")
 
 [node name="Corals-orange2" type="Sprite2D" parent="Corals" index="35"]
@@ -1413,7 +1408,7 @@ position = Vector2(-322, 536)
 texture = ExtResource("20_r006i")
 
 [node name="Corals-yellow11" type="Sprite2D" parent="Corals" index="38"]
-position = Vector2(-323, 625)
+position = Vector2(-329, 624)
 rotation = 1.5708
 texture = ExtResource("20_r006i")
 
@@ -1426,11 +1421,11 @@ position = Vector2(-240, 490)
 texture = ExtResource("14_afkq4")
 
 [node name="Corals-yellow23" type="Sprite2D" parent="Corals" index="41"]
-position = Vector2(-220, 637)
+position = Vector2(-210, 655)
 texture = ExtResource("20_r006i")
 
 [node name="Corals-blue18" type="Sprite2D" parent="Corals" index="42"]
-position = Vector2(-235, 632)
+position = Vector2(-225, 650)
 texture = ExtResource("14_afkq4")
 
 [node name="Corals-yellow6" type="Sprite2D" parent="Corals" index="43"]
@@ -1574,11 +1569,11 @@ position = Vector2(463, -29)
 texture = ExtResource("48_n2sm7")
 
 [node name="Corals-yellow23" type="Sprite2D" parent="Corals/Corals-blue13" index="21"]
-position = Vector2(767, -7)
+position = Vector2(762, 9)
 texture = ExtResource("48_n2sm7")
 
 [node name="Corals-yellow24" type="Sprite2D" parent="Corals/Corals-blue13" index="22"]
-position = Vector2(770, 87)
+position = Vector2(752, 22)
 texture = ExtResource("48_n2sm7")
 
 [node name="Corals-yellow25" type="Sprite2D" parent="Corals/Corals-blue13" index="23"]
@@ -1622,7 +1617,7 @@ position = Vector2(232, 529)
 texture = ExtResource("46_q3inn")
 
 [node name="Corals-orange35" type="Sprite2D" parent="Corals" index="62"]
-position = Vector2(252, 552)
+position = Vector2(269, 531)
 texture = ExtResource("47_1rwi5")
 
 [node name="Corals-yellow28" type="Sprite2D" parent="Corals" index="63"]
@@ -1662,11 +1657,11 @@ rotation = 3.14159
 texture = ExtResource("46_q3inn")
 
 [node name="Corals-orange36" type="Sprite2D" parent="Corals" index="71"]
-position = Vector2(488, 480)
+position = Vector2(533, 427)
 texture = ExtResource("47_1rwi5")
 
 [node name="Corals-yellow29" type="Sprite2D" parent="Corals" index="72"]
-position = Vector2(468, 475)
+position = Vector2(601, 454)
 texture = ExtResource("48_n2sm7")
 
 [node name="Corals-pink19" type="Sprite2D" parent="Corals" index="73"]
