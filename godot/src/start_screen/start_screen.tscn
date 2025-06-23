@@ -132,6 +132,7 @@ bus_name = "Music"
 unique_name_in_owner = true
 stream = ExtResource("3_15q2y")
 volume_db = -12.0
+bus = &"Sfx"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="value_changed" from="VBoxContainer/SoundSlider" to="." method="_on_volume_changed"]
