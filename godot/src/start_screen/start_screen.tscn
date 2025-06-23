@@ -75,16 +75,23 @@ texture_normal = ExtResource("5_axy6j")
 texture_pressed = ExtResource("6_pxykv")
 texture_hover = ExtResource("7_osa57")
 
-[node name="PlayerName" type="LineEdit" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 575.0
+offset_right = 746.0
+offset_bottom = 615.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "NAME:"
+
+[node name="PlayerName" type="LineEdit" parent="HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(400, 0)
-layout_mode = 0
-offset_left = 241.0
-offset_top = 587.0
-offset_right = 641.0
-offset_bottom = 642.0
+layout_mode = 2
 placeholder_text = "TYPE YOUR NAME"
-alignment = 1
 max_length = 30
 
 [node name="VBoxContainer" type="GridContainer" parent="."]

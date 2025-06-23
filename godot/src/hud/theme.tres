@@ -88,6 +88,7 @@ HeaderSmall/font_sizes/font_size = 20
 Label/colors/font_color = Color(0.85098, 0.980392, 0.968627, 1)
 LineEdit/colors/font_color = Color(0.941176, 0.956863, 1, 1)
 LineEdit/colors/font_placeholder_color = Color(0.85098, 0.980392, 0.968627, 1)
+LineEdit/colors/selection_color = Color(0.913725, 0.913725, 0.866667, 1)
 LineEdit/font_sizes/font_size = 24
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_yktrs")
 LineEdit/styles/normal = SubResource("StyleBoxEmpty_yktrs")
