@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://02ojse24fbw5"]
 
 [ext_resource type="Script" uid="uid://dxsmnm86mc46m" path="res://src/hud/timer_display.gd" id="1_7rhdg"]
-[ext_resource type="FontFile" uid="uid://y28tl4ax5wef" path="res://assets/fonts/Kenney Pixel Square.ttf" id="2_wfii7"]
+[ext_resource type="FontFile" uid="uid://dl8wj07sdcq6d" path="res://assets/fonts/Tilt_Warp/TiltWarp-Regular-VariableFont_XROT,YROT.ttf" id="2_o6ga0"]
 
 [node name="TimerDisplay" type="Control"]
 custom_minimum_size = Vector2(80, 40)
@@ -22,7 +22,7 @@ offset_right = 40.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_wfii7")
+theme_override_fonts/font = ExtResource("2_o6ga0")
 theme_override_font_sizes/font_size = 24
 text = "0.000"
 horizontal_alignment = 1
