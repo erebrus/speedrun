@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3 uid="uid://8mej8e63hnqy"]
+
+[ext_resource type="Theme" uid="uid://m1aiqyn5vres" path="res://src/hud/theme.tres" id="1_se5v6"]
+[ext_resource type="Texture2D" uid="uid://ddufh7pgas6i2" path="res://assets/gfx/UI/credits.png" id="1_yvg0s"]
+[ext_resource type="Script" uid="uid://co3nqt2bum6vl" path="res://src/hud/credits/credits.gd" id="2_24jg4"]
+[ext_resource type="PackedScene" uid="uid://dyeqx6bsh0dw3" path="res://src/start_screen/bubble_particles.tscn" id="2_jgsy6"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_se5v6")
+script = ExtResource("2_24jg4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_yvg0s")
+
+[node name="Bubbles" type="Node2D" parent="."]
+
+[node name="BubbleParticles" parent="Bubbles" instance=ExtResource("2_jgsy6")]
+position = Vector2(227, 608)
+
+[node name="BubbleParticles2" parent="Bubbles" instance=ExtResource("2_jgsy6")]
+position = Vector2(1154, 530)
+
+[node name="BubbleParticles3" parent="Bubbles" instance=ExtResource("2_jgsy6")]
+position = Vector2(382, 413)
+
+[node name="BubbleParticles4" parent="Bubbles" instance=ExtResource("2_jgsy6")]
+position = Vector2(1120, 253)
+
+[node name="BubbleParticles5" parent="Bubbles" instance=ExtResource("2_jgsy6")]
+position = Vector2(710, 227)
+
+[node name="BubbleParticles6" parent="Bubbles" instance=ExtResource("2_jgsy6")]
+position = Vector2(616, 527)
+
+[node name="BubbleParticles7" parent="Bubbles" instance=ExtResource("2_jgsy6")]
+position = Vector2(350, 120)
+
+[node name="BubbleParticles8" parent="Bubbles" instance=ExtResource("2_jgsy6")]
+position = Vector2(114, 360)
+
+[node name="BubbleParticles9" parent="Bubbles" instance=ExtResource("2_jgsy6")]
+position = Vector2(919, 303)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 101.0
+offset_top = 157.0
+offset_right = 743.0
+offset_bottom = 239.0
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.85098, 0.980392, 0.968627, 1)
+theme_override_font_sizes/font_size = 64
+text = "THANKS FOR PLAYING"
+horizontal_alignment = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 289.0
+offset_right = 591.0
+offset_bottom = 445.0
+columns = 2
+
+[node name="Label" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "erebrus"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.85098, 0.980392, 0.968627, 1)
+text = "- Programmer, Team Leader"
+
+[node name="Label3" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "angelalb"
+horizontal_alignment = 2
+
+[node name="Label4" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.85098, 0.980392, 0.968627, 1)
+text = "- Programmer"
+
+[node name="Label5" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "skwid"
+horizontal_alignment = 2
+
+[node name="Label6" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.85098, 0.980392, 0.968627, 1)
+text = "- Artist, Level Designer"
+
+[node name="Label7" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "thom13made"
+horizontal_alignment = 2
+
+[node name="Label8" type="Label" parent="GridContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.85098, 0.980392, 0.968627, 1)
+text = "- Composer, Sound Designer"

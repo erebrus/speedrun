@@ -27,7 +27,7 @@ func resume() -> void:
 
 func _on_exit_button_pressed():
 	resume()
-	Globals.go_to_main_menu()
+	Globals.go_to_credits()
 
 
 func _on_resume_button_pressed():

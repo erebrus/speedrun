@@ -2,6 +2,7 @@ extends Node
 
 const START_SCENE_PATH = "res://src/start_screen/start_screen.tscn"
 const GAME_SCENE_PATH = "res://src/main.tscn"
+const CREDITS_SCENE_PATH = "res://src/hud/credits/credits.tscn"
 
 const GameDataPath = "user://conf.cfg"
 var config:ConfigFile
@@ -23,6 +24,10 @@ func _ready():
 
 func go_to_main_menu():
 	get_tree().change_scene_to_file(START_SCENE_PATH)
+
+func go_to_credits():
+	get_tree().change_scene_to_file(CREDITS_SCENE_PATH)
+	
 
 func start_game():
 	Logger.info("Starting Game")

@@ -71,7 +71,7 @@ func _on_next_level_button_pressed():
 	
 
 func _on_exit_button_pressed():
-	Globals.go_to_main_menu()
+	Globals.go_to_credits()
 	
 
 func _on_repeat_level_button_pressed():
