@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://d2c46sf3tcf6r"]
+[gd_scene load_steps=44 format=4 uid="uid://bo04dde7n411v"]
 
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="1_bxgrf"]
 [ext_resource type="Texture2D" uid="uid://bg5yhommbu724" path="res://assets/gfx/environment/seaweed6.png" id="2_v7n51"]

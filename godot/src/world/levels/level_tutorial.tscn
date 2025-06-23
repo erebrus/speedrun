@@ -49,7 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://b35mwfykch5bp" path="res://assets/gfx/environment/corals/corals-orange6.png" id="47_1rwi5"]
 [ext_resource type="Texture2D" uid="uid://dswcexn8tkovc" path="res://assets/gfx/environment/corals/corals-yellow4.png" id="48_n2sm7"]
 
-[node name="TestLevel" instance=ExtResource("1_l25c7")]
+[node name="TestLevel2" instance=ExtResource("1_l25c7")]
 
 [node name="BG" parent="." index="1"]
 modulate = Color(1, 1, 1, 1)

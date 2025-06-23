@@ -379,12 +379,9 @@ position = Vector2(-374, 370)
 position = Vector2(596, 754)
 rotation = 4.66876
 
-[node name="Camera2D" parent="." index="7"]
-position = Vector2(-60, 607)
-
 [node name="Urchins" type="Node2D" parent="." index="8"]
 
-[node name="Player" parent="." index="10"]
+[node name="Camera2D" parent="." index="9"]
 position = Vector2(-60, 607)
 
 [node name="Corals" type="Node2D" parent="." index="11"]
@@ -1092,3 +1089,6 @@ texture = ExtResource("11_81n6t")
 [node name="Corals-blue2" type="Sprite2D" parent="Corals/Corals6" index="0"]
 position = Vector2(-7, 10)
 texture = ExtResource("52_nqoll")
+
+[node name="Player" parent="." index="12"]
+position = Vector2(-60, 607)
