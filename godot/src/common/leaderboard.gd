@@ -24,13 +24,16 @@ func _ready() -> void:
 		
 		if response.seen_before:
 			player_name = response.player_name
-		else:
-			await set_player_name("Guest%s" % _rng.randi())
+			
 		
 		session_created.emit()
 	else:
 		Logger.error("Login failed with reason: " + response.error_data.to_string())
 		
+
+func generate_name() -> void:
+	await set_player_name("Guest%s" % _rng.randi())
+	
 
 func set_player_name(value: String) -> void:
 	if value == player_name:

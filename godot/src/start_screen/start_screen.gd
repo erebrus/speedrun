@@ -33,7 +33,9 @@ func _on_start_button_pressed() -> void:
 		return
 	
 	var player_name = player_name.text
-	if not player_name.is_empty():
+	if player_name.is_empty():
+		Leaderboard.generate_name.call_deferred()
+	else:
 		Leaderboard.set_player_name.call_deferred(player_name)
 	
 	start_sfx.play()
@@ -42,6 +44,8 @@ func _on_start_button_pressed() -> void:
 	
 
 func _on_player_identified() -> void:
+	if not Leaderboard.player_name.is_empty():
+		player_name.text = Leaderboard.player_name
 	is_ready = true
 	
 
