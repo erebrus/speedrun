@@ -58,6 +58,7 @@ stream_2/stream = ExtResource("5_xr1it")
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_wrg6s")
+energy = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_u70qn")

@@ -540,6 +540,9 @@ rotation = -6.28319
 position = Vector2(439, 831)
 rotation = -6.28319
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AdaptiveMusic/MusicArea2" index="0"]
+polygon = PackedVector2Array(363, 498, 365, 404, 493, 422, 484, 653, 556, 730, 558, 802, 432, 867, 339, 854)
+
 [node name="Player" parent="." index="10"]
 position = Vector2(-54, 595)
 
