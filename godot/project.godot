@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Speedrun"
-config/version="1.0.0"
+config/version="1.0.1"
 run/main_scene="uid://tew5nggvlbv0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
