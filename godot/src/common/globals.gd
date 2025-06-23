@@ -23,7 +23,6 @@ func _ready():
 
 func go_to_main_menu():
 	get_tree().change_scene_to_file(START_SCENE_PATH)
-	
 
 func start_game():
 	Logger.info("Starting Game")

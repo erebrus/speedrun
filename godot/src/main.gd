@@ -93,3 +93,9 @@ func _on_level_manager_level_ready() -> void:
 func _on_entered_music_area(idx:int):
 	if Globals.music_manager.current_game_music_id < idx:
 		Globals.music_manager.change_game_music_to(idx, 1.5)
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("restart"):
+		level_manager.load_current_level()
+	if Input.is_action_just_pressed("next_level") and not level_manager.is_last_level():
+		level_manager.load_next_level()
