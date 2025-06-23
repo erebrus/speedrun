@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bdj8t5d1w0lh5" path="res://src/common/level_manager.tscn" id="2_fyndt"]
 [ext_resource type="PackedScene" uid="uid://d07k54my0fqgp" path="res://src/world/levels/level_8.tscn" id="3_d3u4l"]
 [ext_resource type="PackedScene" uid="uid://d06uocvuxgg47" path="res://src/world/levels/level_3.tscn" id="3_kf8lf"]
-[ext_resource type="PackedScene" path="res://src/world/levels/level_10.tscn" id="3_okx7f"]
+[ext_resource type="PackedScene" uid="uid://cw6p3rlljye5l" path="res://src/world/levels/level_10.tscn" id="3_okx7f"]
 [ext_resource type="PackedScene" uid="uid://beymi3q61x0rr" path="res://src/world/levels/level_5.tscn" id="3_srxbw"]
 [ext_resource type="PackedScene" uid="uid://cglj3v02ye0nw" path="res://src/world/levels/level_9.tscn" id="3_tb146"]
 [ext_resource type="PackedScene" uid="uid://f51wavfh1oep" path="res://src/world/levels/level_2.tscn" id="4_kqbth"]
