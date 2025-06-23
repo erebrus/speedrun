@@ -24,6 +24,7 @@ anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_5vugt")
 script = ExtResource("1_kphcb")
 plain_stylebox = SubResource("StyleBoxTexture_5vugt")
 highlight_stylebox = SubResource("StyleBoxTexture_u8ltn")
@@ -35,14 +36,20 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "#1"
 
 [node name="PlayerName" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_type_variation = &"HeaderSmall"
+text = "Gamer34565679"
 
 [node name="Score" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+theme_type_variation = &"HeaderSmall"
+text = "12.56s"
 horizontal_alignment = 2

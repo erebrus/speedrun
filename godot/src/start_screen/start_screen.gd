@@ -12,9 +12,12 @@ func _ready() -> void:
 	Globals.music_manager.fade_game_music()
 	Globals.music_manager.fade_in_menu_music()
 	
-	player_name.text = Leaderboard.player_name
 	Leaderboard.session_created.connect(_on_player_identified)
 	Leaderboard.session_failed.connect(_on_session_failed)
+	
+	if not Leaderboard.player_name.is_empty():
+		player_name.text = Leaderboard.player_name
+		is_ready = true
 	
 
 func _exit_tree() -> void:

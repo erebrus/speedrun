@@ -44,10 +44,9 @@ func end_level():
 	if not fade_panel.has_faded:
 		await fade_panel.fade_out_completed
 	
-	if result.is_highscore:
-		highscore.populate(result)
-		highscore.show()
-		await highscore.hidden
+	highscore.populate(result)
+	highscore.show()
+	await highscore.hidden
 	
 	if not leaderboard.is_ready:
 		await leaderboard.loaded
