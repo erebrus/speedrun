@@ -11,8 +11,6 @@ var _playing_intro := false
 func play_from_intro():
 	if intro_stream:
 		_intro_player.play()
-		var intro_duration = intro_stream.get_length()
-		get_tree().create_timer(intro_duration - 0.1).timeout.connect(_on_stream_finished)
 		_playing_intro = true
 	else:
 		_playing_intro = false
@@ -23,6 +21,8 @@ func _ready():
 	_intro_player.bus = bus
 	if intro_stream:
 		_intro_player.stream = intro_stream
+		var intro_duration = intro_stream.get_length()
+		get_tree().create_timer(intro_duration - 0.1).timeout.connect(_on_stream_finished)
 	
 	add_child(_intro_player)
 	
