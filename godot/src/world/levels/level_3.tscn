@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://d06uocvuxgg47"]
+[gd_scene load_steps=50 format=4 uid="uid://d06uocvuxgg47"]
 
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="1_lrcau"]
 [ext_resource type="Texture2D" uid="uid://bg5yhommbu724" path="res://assets/gfx/environment/seaweed6.png" id="2_fngah"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://4xv6i8je5imf" path="res://assets/gfx/environment/seaweed1.png" id="6_msyaa"]
 [ext_resource type="Texture2D" uid="uid://dpo3a2i0pru2y" path="res://assets/gfx/environment/seaweed2.png" id="7_hp8ro"]
 [ext_resource type="Texture2D" uid="uid://dqc30htixarul" path="res://assets/gfx/environment/seaweed3.png" id="8_15s0d"]
+[ext_resource type="Theme" uid="uid://m1aiqyn5vres" path="res://src/hud/theme.tres" id="9_ba66e"]
 [ext_resource type="PackedScene" uid="uid://b4qx3sm45yl5d" path="res://src/world/objects/energy_node.tscn" id="9_qm08k"]
 [ext_resource type="PackedScene" uid="uid://86s62ypn5h1p" path="res://src/world/objects/clam.tscn" id="10_lu0na"]
 [ext_resource type="PackedScene" uid="uid://b2ivjq3gqi8r2" path="res://src/world/objects/cave.tscn" id="11_we660"]
@@ -47,6 +48,8 @@
 [ext_resource type="Texture2D" uid="uid://cq5hmwd3pieu4" path="res://assets/gfx/environment/corals/corals-yellow3.png" id="43_w8kxu"]
 [ext_resource type="Texture2D" uid="uid://beia3bxbvvyg" path="res://assets/gfx/environment/corals/corals-blue5.png" id="44_hj5hg"]
 [ext_resource type="Texture2D" uid="uid://dxl2o88scf238" path="res://assets/gfx/environment/corals/corals-purple6.png" id="45_bb3er"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fvde5"]
 
 [node name="TestLevel" instance=ExtResource("1_lrcau")]
 
@@ -363,6 +366,26 @@ tile_map_data = PackedByteArray("AAD+/xEAAgAAAAIAAgD//xEAAgABAAIAAgAAABEAAgAAAAI
 [node name="CurrentTileMap" parent="." index="4"]
 tile_map_data = PackedByteArray("AAD//xIAAAABAAAAAQAAABIAAAABAAAAAQABABIAAAABAAAAAQACABIAAAABAAAAAQADABIAAAABAAAAAQAEABIAAAABAAAAAQAGABIAAAAAAAAAAgAGABEAAAAAAAAAAgAGABAAAAAAAAAAAgAHABIAAAAAAAAAAgAHABEAAAAAAAAAAgAHABAAAAAAAAAAAgAHAA8AAAAAAAAAAgAIABEAAAAAAAAAAgAIABAAAAAAAAAAAgAIAA8AAAAAAAAAAgAJABAAAAAAAAAAAgAJAA8AAAAAAAAAAgAJAA4AAAAAAAAAAgAKAA8AAAAAAAAAAgAKAA4AAAAAAAAAAgAIAA4AAAAAAAAAAgAMAA4AAAACAAAAAAAMAA8AAAACAAAAAAAMABAAAAACAAAAAAAMABEAAAACAAAAAAAMABIAAAABAAAAAAAMABMAAAABAAAAAAAMABQAAAABAAAAAAAMABUAAAABAAAAAAANAA4AAAACAAAAAAANAA8AAAACAAAAAAANABAAAAACAAAAAAANABEAAAACAAAAAAANABIAAAABAAAAAAANABMAAAABAAAAAAANABQAAAABAAAAAAANABUAAAABAAAAAAANABYAAAABAAAAAAAMABYAAAABAAAAAAA=")
 current_strength = Array[float]([50.0, 200.0, 350.0])
+
+[node name="Urchins" type="PanelContainer" parent="Tips" index="0"]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.183
+offset_top = 1723.72
+offset_right = 98.8169
+offset_bottom = 1763.72
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_ba66e")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fvde5")
+
+[node name="Label" type="Label" parent="Tips/Urchins" index="0"]
+layout_mode = 2
+text = "Be careful with the spiky urchins"
 
 [node name="EnergyNode" parent="Objects" index="0" instance=ExtResource("9_qm08k")]
 position = Vector2(-314.608, 369.19)
