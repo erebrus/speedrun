@@ -359,133 +359,136 @@ tile_map_data = PackedByteArray("AAABABQAAAACAAAAAAABABUAAAACAAAAAAACABUAAAACAAA
 current_strength = Array[float]([50.0, 150.0, 350.0])
 
 [node name="EnergyNode" parent="Objects" index="0" instance=ExtResource("9_etdjk")]
-position = Vector2(320, 668)
+position = Vector2(233, 656)
 
 [node name="EnergyNode3" parent="Objects" index="1" instance=ExtResource("9_etdjk")]
-position = Vector2(448, 742)
+position = Vector2(363, 753)
 
-[node name="EnergyNode2" parent="Objects" index="2" instance=ExtResource("9_etdjk")]
-position = Vector2(192, 741)
+[node name="EnergyNode4" parent="Objects" index="2" instance=ExtResource("9_etdjk")]
+position = Vector2(494, 622)
 
-[node name="Clam" parent="Objects" index="3" instance=ExtResource("10_y4f6c")]
+[node name="EnergyNode2" parent="Objects" index="3" instance=ExtResource("9_etdjk")]
+position = Vector2(111, 783)
+
+[node name="Clam" parent="Objects" index="4" instance=ExtResource("10_y4f6c")]
 position = Vector2(1191, 838)
 closed_time = 1.5
 open_time = 1.5
 
-[node name="Clam2" parent="Objects" index="4" instance=ExtResource("10_y4f6c")]
+[node name="Clam2" parent="Objects" index="5" instance=ExtResource("10_y4f6c")]
 position = Vector2(1177, 773)
 rotation = -2.01586
 scale = Vector2(1, -1)
 closed_time = 1.5
 open_time = 1.5
 
-[node name="Cave" parent="Objects" index="5" instance=ExtResource("11_k3wf1")]
+[node name="Cave" parent="Objects" index="6" instance=ExtResource("11_k3wf1")]
 position = Vector2(580, 814)
 rotation = -1.68948
 
-[node name="GrassA" parent="Objects" index="6" instance=ExtResource("12_u1edw")]
+[node name="GrassA" parent="Objects" index="7" instance=ExtResource("12_u1edw")]
 position = Vector2(-122, 1044)
 
-[node name="GrassA3" parent="Objects" index="7" instance=ExtResource("12_u1edw")]
+[node name="GrassA3" parent="Objects" index="8" instance=ExtResource("12_u1edw")]
 position = Vector2(-115, 1102)
 
-[node name="GrassA13" parent="Objects" index="8" instance=ExtResource("12_u1edw")]
+[node name="GrassA13" parent="Objects" index="9" instance=ExtResource("12_u1edw")]
 position = Vector2(902, 1064)
 
-[node name="GrassA22" parent="Objects" index="9" instance=ExtResource("12_u1edw")]
+[node name="GrassA22" parent="Objects" index="10" instance=ExtResource("12_u1edw")]
 position = Vector2(1335, 1163)
 
-[node name="GrassA23" parent="Objects" index="10" instance=ExtResource("12_u1edw")]
+[node name="GrassA23" parent="Objects" index="11" instance=ExtResource("12_u1edw")]
 position = Vector2(1122, 1004)
 
-[node name="GrassA24" parent="Objects" index="11" instance=ExtResource("12_u1edw")]
+[node name="GrassA24" parent="Objects" index="12" instance=ExtResource("12_u1edw")]
 position = Vector2(1231, 983)
 
-[node name="GrassA14" parent="Objects" index="12" instance=ExtResource("12_u1edw")]
+[node name="GrassA14" parent="Objects" index="13" instance=ExtResource("12_u1edw")]
 position = Vector2(1123, 826)
 scale = Vector2(-1, -1)
 
-[node name="GrassA15" parent="Objects" index="13" instance=ExtResource("12_u1edw")]
+[node name="GrassA15" parent="Objects" index="14" instance=ExtResource("12_u1edw")]
 position = Vector2(1265, 952)
 scale = Vector2(-1, -1)
 
-[node name="GrassA16" parent="Objects" index="14" instance=ExtResource("12_u1edw")]
+[node name="GrassA16" parent="Objects" index="15" instance=ExtResource("12_u1edw")]
 position = Vector2(1272, 1080)
 rotation = 0.310305
 scale = Vector2(-1, -1)
 
-[node name="GrassA17" parent="Objects" index="15" instance=ExtResource("12_u1edw")]
+[node name="GrassA17" parent="Objects" index="16" instance=ExtResource("12_u1edw")]
 position = Vector2(992, 873)
 scale = Vector2(-1, -1)
 
-[node name="GrassA5" parent="Objects" index="16" instance=ExtResource("12_u1edw")]
+[node name="GrassA5" parent="Objects" index="17" instance=ExtResource("12_u1edw")]
 position = Vector2(854, 1015)
 
-[node name="GrassA2" parent="Objects" index="17" instance=ExtResource("13_1xa21")]
+[node name="GrassA2" parent="Objects" index="18" instance=ExtResource("13_1xa21")]
 position = Vector2(-277, 1010)
 
-[node name="GrassA4" parent="Objects" index="18" instance=ExtResource("13_1xa21")]
+[node name="GrassA4" parent="Objects" index="19" instance=ExtResource("13_1xa21")]
 position = Vector2(-173, 1042)
 
-[node name="GrassA6" parent="Objects" index="19" instance=ExtResource("13_1xa21")]
+[node name="GrassA6" parent="Objects" index="20" instance=ExtResource("13_1xa21")]
 position = Vector2(1109, 700)
 
-[node name="GrassA7" parent="Objects" index="20" instance=ExtResource("13_1xa21")]
+[node name="GrassA7" parent="Objects" index="21" instance=ExtResource("13_1xa21")]
 position = Vector2(889, 700)
 
-[node name="GrassA8" parent="Objects" index="21" instance=ExtResource("13_1xa21")]
+[node name="GrassA8" parent="Objects" index="22" instance=ExtResource("13_1xa21")]
 position = Vector2(930, 700)
 
-[node name="GrassA9" parent="Objects" index="22" instance=ExtResource("13_1xa21")]
+[node name="GrassA9" parent="Objects" index="23" instance=ExtResource("13_1xa21")]
 position = Vector2(971, 700)
 
-[node name="GrassA18" parent="Objects" index="23" instance=ExtResource("13_1xa21")]
+[node name="GrassA18" parent="Objects" index="24" instance=ExtResource("13_1xa21")]
 position = Vector2(948, 836)
 scale = Vector2(-1, -1)
 
-[node name="GrassA27" parent="Objects" index="24" instance=ExtResource("13_1xa21")]
+[node name="GrassA27" parent="Objects" index="25" instance=ExtResource("13_1xa21")]
 position = Vector2(744, 1098)
 scale = Vector2(-1, -1)
 
-[node name="GrassA28" parent="Objects" index="25" instance=ExtResource("13_1xa21")]
+[node name="GrassA28" parent="Objects" index="26" instance=ExtResource("13_1xa21")]
 position = Vector2(785, 1085)
 scale = Vector2(-1, -1)
 
-[node name="GrassA29" parent="Objects" index="26" instance=ExtResource("13_1xa21")]
+[node name="GrassA29" parent="Objects" index="27" instance=ExtResource("13_1xa21")]
 position = Vector2(1200, 807)
 rotation = -0.598648
 scale = Vector2(-1, -1)
 
-[node name="GrassA19" parent="Objects" index="27" instance=ExtResource("13_1xa21")]
+[node name="GrassA19" parent="Objects" index="28" instance=ExtResource("13_1xa21")]
 position = Vector2(1250, 754)
 rotation = -1.67552
 scale = Vector2(-1, -1)
 
-[node name="GrassA20" parent="Objects" index="28" instance=ExtResource("13_1xa21")]
+[node name="GrassA20" parent="Objects" index="29" instance=ExtResource("13_1xa21")]
 position = Vector2(1278, 754)
 rotation = -4.66701
 scale = Vector2(-1, -1)
 
-[node name="GrassA21" parent="Objects" index="29" instance=ExtResource("13_1xa21")]
+[node name="GrassA21" parent="Objects" index="30" instance=ExtResource("13_1xa21")]
 position = Vector2(1293, 724)
 rotation = -3.71057
 scale = Vector2(-1, -1)
 
-[node name="GrassA10" parent="Objects" index="30" instance=ExtResource("13_1xa21")]
+[node name="GrassA10" parent="Objects" index="31" instance=ExtResource("13_1xa21")]
 position = Vector2(1217, 727)
 
-[node name="GrassA25" parent="Objects" index="31" instance=ExtResource("13_1xa21")]
+[node name="GrassA25" parent="Objects" index="32" instance=ExtResource("13_1xa21")]
 position = Vector2(1319, 721)
 rotation = -0.0143032
 
-[node name="GrassA26" parent="Objects" index="32" instance=ExtResource("13_1xa21")]
+[node name="GrassA26" parent="Objects" index="33" instance=ExtResource("13_1xa21")]
 position = Vector2(1238, 733)
 rotation = 0.464258
 
-[node name="GrassA11" parent="Objects" index="33" instance=ExtResource("13_1xa21")]
+[node name="GrassA11" parent="Objects" index="34" instance=ExtResource("13_1xa21")]
 position = Vector2(1064, 699)
 
-[node name="GrassA12" parent="Objects" index="34" instance=ExtResource("13_1xa21")]
+[node name="GrassA12" parent="Objects" index="35" instance=ExtResource("13_1xa21")]
 position = Vector2(1016, 699)
 
 [node name="Camera2D" parent="." index="7"]
