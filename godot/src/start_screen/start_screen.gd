@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 
 @export var button_press_auto_connect: bool = false
 
@@ -12,9 +12,12 @@ func _ready() -> void:
 	Globals.music_manager.fade_game_music()
 	Globals.music_manager.fade_in_menu_music()
 	
-	player_name.text = Leaderboard.player_name
 	Leaderboard.session_created.connect(_on_player_identified)
 	Leaderboard.session_failed.connect(_on_session_failed)
+	
+	if not Leaderboard.player_name.is_empty():
+		player_name.text = Leaderboard.player_name
+		is_ready = true
 	
 
 func _exit_tree() -> void:
@@ -32,14 +35,20 @@ func _on_start_button_pressed() -> void:
 	if not is_ready:
 		return
 	
-	Leaderboard.set_player_name.call_deferred(player_name.text)
+	var player_name = player_name.text
+	if player_name.is_empty():
+		Leaderboard.generate_name.call_deferred()
+	else:
+		Leaderboard.set_player_name.call_deferred(player_name)
+	
 	start_sfx.play()
 	
 	Globals.start_game()
 	
 
 func _on_player_identified() -> void:
-	player_name.text = Leaderboard.player_name
+	if not Leaderboard.player_name.is_empty():
+		player_name.text = Leaderboard.player_name
 	is_ready = true
 	
 

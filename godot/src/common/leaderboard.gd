@@ -24,13 +24,16 @@ func _ready() -> void:
 		
 		if response.seen_before:
 			player_name = response.player_name
-		else:
-			await set_player_name("Guest%s" % _rng.randi())
+			
 		
 		session_created.emit()
 	else:
 		Logger.error("Login failed with reason: " + response.error_data.to_string())
 		
+
+func generate_name() -> void:
+	await set_player_name("Guest%s" % _rng.randi())
+	
 
 func set_player_name(value: String) -> void:
 	if value == player_name:
@@ -59,7 +62,7 @@ func submit_score(leaderboard: String, score: int, check_highscore: bool = false
 		else:
 			is_highscore = previous_score < response.score
 	
-	return SubmitResponse.new(response.rank, response.score, is_highscore)
+	return SubmitResponse.new(response.rank, score, previous_score, is_highscore)
 	
 
 func get_top_scores(leaderboard: String, count: int = 10) -> Array[Rank]:
@@ -77,11 +80,13 @@ func get_scores(leaderboard: String, from: int = 0, count: int = 10) -> Array[Ra
 
 class SubmitResponse extends RefCounted:
 	var score: int
+	var best_score: int
 	var rank: int
 	var is_highscore: bool
 	
-	func _init(_rank: int, new_score: int, _is_highscore) -> void:
+	func _init(_rank: int, new_score: int, previous_score: Variant, _is_highscore: bool) -> void:
 		score = new_score
+		best_score = new_score if _is_highscore else previous_score
 		is_highscore = _is_highscore
 		rank = _rank
 		

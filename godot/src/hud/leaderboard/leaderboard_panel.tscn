@@ -1,8 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://b778impvuqi80"]
+[gd_scene load_steps=9 format=3 uid="uid://b778impvuqi80"]
 
 [ext_resource type="Theme" uid="uid://m1aiqyn5vres" path="res://src/hud/theme.tres" id="1_opgo0"]
 [ext_resource type="Script" uid="uid://cfka3vfr5e4vr" path="res://src/hud/leaderboard/leaderboard_panel.gd" id="1_ss4l0"]
 [ext_resource type="PackedScene" uid="uid://xk5f6d721oah" path="res://src/hud/leaderboard/rank_row.tscn" id="2_6r4yo"]
+[ext_resource type="Texture2D" uid="uid://dv02cdlyk0u4u" path="res://assets/gfx/UI/ui-panel.png" id="4_g2w0s"]
+[ext_resource type="Texture2D" uid="uid://cju5eqft53a2o" path="res://assets/gfx/UI/seaweedback.png" id="4_q1sm7"]
+[ext_resource type="Texture2D" uid="uid://d38ce3kbxi61j" path="res://assets/gfx/UI/leaderboard_row_highlight.png" id="6_k13si"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q1sm7"]
+texture = ExtResource("4_g2w0s")
+texture_margin_left = 40.0
+texture_margin_top = 27.0
+texture_margin_right = 40.0
+texture_margin_bottom = 14.0
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u8ltn"]
+texture = ExtResource("6_k13si")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [node name="LeaderboardPanel" type="MarginContainer"]
 texture_filter = 1
@@ -17,8 +35,15 @@ theme = ExtResource("1_opgo0")
 script = ExtResource("1_ss4l0")
 row_scene = ExtResource("2_6r4yo")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("4_q1sm7")
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_q1sm7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -27,6 +52,7 @@ size_flags_horizontal = 4
 [node name="TitleRow" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/TitleRow"]
 layout_mode = 2
@@ -48,18 +74,61 @@ text = "Highscores"
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="RankRow" parent="PanelContainer/VBoxContainer/TopRanks" instance=ExtResource("2_6r4yo")]
+layout_mode = 2
+highlight_stylebox = SubResource("StyleBoxTexture_u8ltn")
+
+[node name="RankRow2" parent="PanelContainer/VBoxContainer/TopRanks" instance=ExtResource("2_6r4yo")]
+layout_mode = 2
+highlight_stylebox = SubResource("StyleBoxTexture_u8ltn")
+
+[node name="RankRow3" parent="PanelContainer/VBoxContainer/TopRanks" instance=ExtResource("2_6r4yo")]
+layout_mode = 2
+highlight_stylebox = SubResource("StyleBoxTexture_u8ltn")
+
+[node name="RankRow4" parent="PanelContainer/VBoxContainer/TopRanks" instance=ExtResource("2_6r4yo")]
+layout_mode = 2
+highlight_stylebox = SubResource("StyleBoxTexture_u8ltn")
+
+[node name="RankRow5" parent="PanelContainer/VBoxContainer/TopRanks" instance=ExtResource("2_6r4yo")]
+layout_mode = 2
+highlight_stylebox = SubResource("StyleBoxTexture_u8ltn")
+
+[node name="RankRow6" parent="PanelContainer/VBoxContainer/TopRanks" instance=ExtResource("2_6r4yo")]
+layout_mode = 2
+highlight_stylebox = SubResource("StyleBoxTexture_u8ltn")
+
 [node name="Bottom" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Bottom"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/Bottom"]
 layout_mode = 2
+theme_override_constants/margin_top = -10
+theme_override_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Bottom/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
 text = "..."
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AheadOfPlayer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Bottom"]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="RankRow7" parent="PanelContainer/VBoxContainer/Bottom/AheadOfPlayer" instance=ExtResource("2_6r4yo")]
+layout_mode = 2
+highlight_stylebox = SubResource("StyleBoxTexture_u8ltn")
+
+[node name="RankRow8" parent="PanelContainer/VBoxContainer/Bottom/AheadOfPlayer" instance=ExtResource("2_6r4yo")]
+layout_mode = 2
+highlight_stylebox = SubResource("StyleBoxTexture_u8ltn")
+
+[node name="RankRow9" parent="PanelContainer/VBoxContainer/Bottom/AheadOfPlayer" instance=ExtResource("2_6r4yo")]
+layout_mode = 2
+highlight_stylebox = SubResource("StyleBoxTexture_u8ltn")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -76,7 +145,7 @@ text = "Next Level"
 
 [node name="ExitButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Menu"
+text = "Exit"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/RepeatLevelButton" to="." method="_on_repeat_level_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]

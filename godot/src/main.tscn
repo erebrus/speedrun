@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ke438w5ne7cw"]
+[gd_scene load_steps=19 format=3 uid="uid://ke438w5ne7cw"]
 
 [ext_resource type="Script" uid="uid://cgpkxa13hhnox" path="res://src/main.gd" id="1_3cfgd"]
 [ext_resource type="PackedScene" uid="uid://bdj8t5d1w0lh5" path="res://src/common/level_manager.tscn" id="2_fyndt"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://4plrof37tcod" path="res://src/world/levels/level_6.tscn" id="9_mlv6i"]
 [ext_resource type="PackedScene" uid="uid://b778impvuqi80" path="res://src/hud/leaderboard/leaderboard_panel.tscn" id="10_mgm53"]
 [ext_resource type="PackedScene" uid="uid://bh8f5eo2lmqqf" path="res://src/hud/leaderboard/highscore.tscn" id="11_uewes"]
+[ext_resource type="PackedScene" uid="uid://datsi4kfyl4m0" path="res://src/hud/menu/pause_menu.tscn" id="17_e7lu8"]
 
 [sub_resource type="Resource" id="Resource_5q4o7"]
 metadata/__load_path__ = "res://src/tutorial_state.tres"
@@ -56,17 +57,23 @@ visible = true
 color = Color(0.133333, 0.113725, 0.113725, 1)
 metadata/_edit_lock_ = true
 
-[node name="LeaderboardPanel" parent="OverlayLayer" instance=ExtResource("10_mgm53")]
+[node name="LeaderboardPanel" parent="OverlayLayer" node_paths=PackedStringArray("level_manager") instance=ExtResource("10_mgm53")]
 unique_name_in_owner = true
 visible = false
 offset_left = -138.5
 offset_top = -47.0
 offset_right = 138.5
 offset_bottom = 47.0
+level_manager = NodePath("../../LevelManager")
 
 [node name="Highscore" parent="OverlayLayer" instance=ExtResource("11_uewes")]
 unique_name_in_owner = true
+process_mode = 3
 visible = false
+
+[node name="PauseMenu" parent="OverlayLayer" node_paths=PackedStringArray("level_manager") instance=ExtResource("17_e7lu8")]
+visible = false
+level_manager = NodePath("../../LevelManager")
 
 [connection signal="game_completed" from="LevelManager" to="." method="_on_level_manager_game_completed"]
 [connection signal="level_ready" from="LevelManager" to="." method="_on_level_manager_level_ready"]

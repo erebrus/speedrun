@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo1qqoci03ao1"
-path="res://.godot/imported/seaweedback.png-267baabcf7fc23245bc90fb211e38395.ctex"
+uid="uid://cju5eqft53a2o"
+path="res://.godot/imported/seaweedback.png-30b3fb10916ea12dd29f532a0a40d009.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/gfx/mocks/seaweedback.png"
-dest_files=["res://.godot/imported/seaweedback.png-267baabcf7fc23245bc90fb211e38395.ctex"]
+source_file="res://assets/gfx/UI/seaweedback.png"
+dest_files=["res://.godot/imported/seaweedback.png-30b3fb10916ea12dd29f532a0a40d009.ctex"]
 
 [params]
 

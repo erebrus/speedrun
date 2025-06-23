@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://y28tl4ax5wef"
-path="res://.godot/imported/Kenney Pixel Square.ttf-64bdf49ba5e0eb79f81157a4c2d9cf94.fontdata"
+uid="uid://dl8wj07sdcq6d"
+path="res://.godot/imported/TiltWarp-Regular-VariableFont_XROT,YROT.ttf-6cdd514d08560cc4e5fcb5313eb96651.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Kenney Pixel Square.ttf"
-dest_files=["res://.godot/imported/Kenney Pixel Square.ttf-64bdf49ba5e0eb79f81157a4c2d9cf94.fontdata"]
+source_file="res://assets/fonts/Tilt_Warp/TiltWarp-Regular-VariableFont_XROT,YROT.ttf"
+dest_files=["res://.godot/imported/TiltWarp-Regular-VariableFont_XROT,YROT.ttf-6cdd514d08560cc4e5fcb5313eb96651.fontdata"]
 
 [params]
 

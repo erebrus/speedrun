@@ -1,19 +1,14 @@
 extends MarginContainer
 
 signal loaded
-signal next_level_pressed
-signal reload_level_pressed
 
 @export var row_scene: PackedScene
+@export var level_manager: LevelManager
 
 @export var num_rows:= 10
 @export var rows_ahead_player:= 3
 
 var is_ready: bool = false
-var is_last_level: bool = false:
-	set(value):
-		%NextLevelButton.visible = not is_last_level
-	
 
 @onready var top_ranks: Container = %TopRanks
 @onready var bottom_ranks: Container = %Bottom
@@ -26,6 +21,7 @@ func _ready() -> void:
 
 func populate(level: int, leaderboard_key: String, player_rank: int) -> void:
 	is_ready = false
+	%NextLevelButton.visible = not level_manager.is_last_level()
 	
 	level_label.text = "#%s" % [level]
 	
@@ -71,7 +67,7 @@ func _on_next_level_button_pressed():
 	hide()
 	_clear()
 	
-	next_level_pressed.emit()
+	level_manager.load_next_level()
 	
 
 func _on_exit_button_pressed():
@@ -82,4 +78,4 @@ func _on_repeat_level_button_pressed():
 	hide()
 	_clear()
 	
-	reload_level_pressed.emit()
+	level_manager.load_current_level()

@@ -16,8 +16,6 @@ func _ready():
 	Events.level_ended.connect(_on_end_level)
 	fade_panel.fade_in()
 	level_manager.load_first_level()
-	leaderboard.next_level_pressed.connect(_on_next_level_pressed)
-	leaderboard.reload_level_pressed.connect(func():level_manager.load_current_level())
 	Debug.set_levels(level_manager.levels)
 	Events.player_near_end.connect(func():end_sfx.play())
 	Events.player_died.connect(func():level_manager.load_current_level())	
@@ -35,31 +33,23 @@ func end_level():
 	if result == null:
 		if not fade_panel.has_faded:
 			await fade_panel.fade_out_completed
-		_on_next_level_pressed()
+		level_manager.load_next_level()
 		return
 	
-	leaderboard.is_last_level = level_manager.is_last_level()
 	leaderboard.populate.call_deferred(level_number, leaderboard_key, result.rank)
 	
 	if not fade_panel.has_faded:
 		await fade_panel.fade_out_completed
 	
-	if result.is_highscore:
-		highscore.populate(result)
-		highscore.show()
-		await highscore.hidden
+	highscore.populate(result)
+	highscore.show()
+	await highscore.hidden
 	
 	if not leaderboard.is_ready:
 		await leaderboard.loaded
 	
 	leaderboard.show()
 	
-
-func _on_next_level_pressed() -> void:
-	if not level_manager.is_last_level():
-		fade_panel.fade_in()
-	level_manager.load_next_level()
-
 
 func _on_end_level():
 	end_level()
@@ -70,8 +60,8 @@ func _on_level_manager_game_completed() -> void:
 	Globals.do_win()
 
 
-func _on_level_manager_level_unloaded() -> void:
-	pass
+func _on_level_manager_level_unloading() -> void:
+	fade_panel.fade_in()
 
 func get_level()->BaseLevel:
 	if level_manager.has_loaded_level():

@@ -1,25 +1,19 @@
-[gd_resource type="Theme" load_steps=19 format=3 uid="uid://m1aiqyn5vres"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://m1aiqyn5vres"]
 
-[ext_resource type="Texture2D" uid="uid://3u0hlndvr5a2" path="res://assets/gfx/UI/leaderboard_panel.png" id="1_n4532"]
 [ext_resource type="Texture2D" uid="uid://nihbwr4i8x44" path="res://assets/gfx/UI/button_normal.png" id="1_rcque"]
-[ext_resource type="Texture2D" uid="uid://dcuefll0vueud" path="res://assets/gfx/UI/button_pressed.png" id="2_kgnic"]
+[ext_resource type="Texture2D" uid="uid://bgqg8k2uwj538" path="res://assets/gfx/UI/button_hover.png" id="1_yktrs"]
 [ext_resource type="Texture2D" uid="uid://bw2girkkhi45s" path="res://assets/gfx/UI/slider_area_filled.png" id="3_031gg"]
 [ext_resource type="Texture2D" uid="uid://hfa6e0p0oind" path="res://assets/gfx/UI/slider_grabber_normal.png" id="3_a3idg"]
 [ext_resource type="Texture2D" uid="uid://bfafs574ou8f7" path="res://assets/gfx/UI/slider_area_highlight.png" id="4_icy3u"]
 [ext_resource type="Texture2D" uid="uid://dxnxycvgfbcw4" path="res://assets/gfx/UI/slider_grabber_highlight.png" id="4_yktrs"]
 [ext_resource type="Texture2D" uid="uid://3b6b1pq730jr" path="res://assets/gfx/UI/slider_area_normal.png" id="5_a3idg"]
+[ext_resource type="Texture2D" uid="uid://dv02cdlyk0u4u" path="res://assets/gfx/UI/ui-panel.png" id="8_yktrs"]
+[ext_resource type="FontFile" uid="uid://dl8wj07sdcq6d" path="res://assets/fonts/Tilt_Warp/TiltWarp-Regular-VariableFont_XROT,YROT.ttf" id="9_yktrs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3idg"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kgnic"]
-texture = ExtResource("1_rcque")
-texture_margin_left = 4.0
-texture_margin_top = 4.0
-texture_margin_right = 4.0
-texture_margin_bottom = 4.0
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2pxwn"]
-texture = ExtResource("2_kgnic")
+texture = ExtResource("1_yktrs")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -61,22 +55,23 @@ expand_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yktrs"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fr6ux"]
-texture = ExtResource("2_kgnic")
-texture_margin_left = 3.0
-texture_margin_right = 3.0
-texture_margin_bottom = 3.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g2w0s"]
-texture = ExtResource("1_n4532")
-texture_margin_left = 8.0
-texture_margin_top = 8.0
-texture_margin_right = 8.0
-texture_margin_bottom = 8.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q1sm7"]
+texture = ExtResource("8_yktrs")
+texture_margin_left = 40.0
+texture_margin_top = 27.0
+texture_margin_right = 40.0
+texture_margin_bottom = 14.0
+axis_stretch_vertical = 2
 
 [resource]
+default_font = ExtResource("9_yktrs")
+Button/colors/font_color = Color(0.941176, 0.956863, 1, 1)
+Button/colors/font_focus_color = Color(0.666667, 0.65098, 0.886275, 1)
+Button/colors/font_hover_color = Color(0.666667, 0.65098, 0.886275, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
 Button/styles/focus = SubResource("StyleBoxEmpty_a3idg")
-Button/styles/hover = SubResource("StyleBoxTexture_kgnic")
+Button/styles/hover = SubResource("StyleBoxTexture_2pxwn")
 Button/styles/hover_pressed = SubResource("StyleBoxTexture_2pxwn")
 Button/styles/normal = SubResource("StyleBoxTexture_yncia")
 Button/styles/pressed = SubResource("StyleBoxTexture_2pxwn")
@@ -85,6 +80,15 @@ HSlider/icons/grabber_highlight = ExtResource("4_yktrs")
 HSlider/styles/grabber_area = SubResource("StyleBoxTexture_yktrs")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_13fs5")
 HSlider/styles/slider = SubResource("StyleBoxTexture_fl0ks")
+HeaderLarge/colors/font_color = Color(0.0509804, 0.364706, 0.337255, 1)
+HeaderLarge/font_sizes/font_size = 28
+HeaderMedium/colors/font_color = Color(0.666667, 0.65098, 0.886275, 1)
+HeaderSmall/colors/font_color = Color(0.0509804, 0.364706, 0.337255, 1)
+HeaderSmall/font_sizes/font_size = 20
+Label/colors/font_color = Color(0.85098, 0.980392, 0.968627, 1)
+LineEdit/colors/font_color = Color(0.941176, 0.956863, 1, 1)
+LineEdit/colors/font_placeholder_color = Color(0.85098, 0.980392, 0.968627, 1)
+LineEdit/font_sizes/font_size = 24
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_yktrs")
-LineEdit/styles/normal = SubResource("StyleBoxTexture_fr6ux")
-PanelContainer/styles/panel = SubResource("StyleBoxTexture_g2w0s")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_yktrs")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_q1sm7")
