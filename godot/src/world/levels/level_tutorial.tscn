@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://b2rn5s16m8cqa"]
+[gd_scene load_steps=57 format=4 uid="uid://b2rn5s16m8cqa"]
 
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="1_l25c7"]
 [ext_resource type="Texture2D" uid="uid://bg5yhommbu724" path="res://assets/gfx/environment/seaweed6.png" id="2_ks0nc"]
@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dpo3a2i0pru2y" path="res://assets/gfx/environment/seaweed2.png" id="7_1cpod"]
 [ext_resource type="PackedScene" uid="uid://ba0qgk7glqhuv" path="res://src/world/objects/grass_b.tscn" id="7_q2op7"]
 [ext_resource type="Texture2D" uid="uid://dqc30htixarul" path="res://assets/gfx/environment/seaweed3.png" id="8_ygqkp"]
+[ext_resource type="Theme" uid="uid://m1aiqyn5vres" path="res://src/hud/theme.tres" id="9_g0a00"]
+[ext_resource type="Texture2D" uid="uid://b4td77twahju3" path="res://assets/gfx/UI/key3.png" id="10_g0a00"]
 [ext_resource type="Texture2D" uid="uid://six1oksu6odo" path="res://assets/gfx/environment/corals/corals-blue3.png" id="14_afkq4"]
 [ext_resource type="Texture2D" uid="uid://dyhse57di2qne" path="res://assets/gfx/environment/corals/corals-orange4.png" id="15_0av7m"]
 [ext_resource type="Texture2D" uid="uid://ccl4wgetix23j" path="res://assets/gfx/environment/corals/corals-orange1.png" id="16_0fquw"]
@@ -23,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cl2taaovdit2c" path="res://assets/gfx/environment/corals/corals-purple4.png" id="21_p3ti6"]
 [ext_resource type="Texture2D" uid="uid://cyadyxssfs3qt" path="res://assets/gfx/environment/corals/corals-purple3.png" id="22_ag4pa"]
 [ext_resource type="Texture2D" uid="uid://dwekqdjqd6u0i" path="res://assets/gfx/environment/corals/corals-purple2.png" id="23_crukw"]
+[ext_resource type="Texture2D" uid="uid://ddvq81nb4u7w4" path="res://assets/gfx/environment/corals/corals1.png" id="23_xg3jy"]
 [ext_resource type="Texture2D" uid="uid://bwd0b7rxw76dy" path="res://assets/gfx/environment/corals/corals-purple1.png" id="24_jmbtv"]
 [ext_resource type="Texture2D" uid="uid://cai6rjw78rk4b" path="res://assets/gfx/environment/corals/corals-pink3.png" id="25_qlwsq"]
 [ext_resource type="Texture2D" uid="uid://bjvhw4baqenhp" path="res://assets/gfx/environment/corals/corals-pink2.png" id="26_i8mbw"]
@@ -48,6 +51,25 @@
 [ext_resource type="Texture2D" uid="uid://dket2y68fuv" path="res://assets/gfx/environment/corals/corals-pink6.png" id="46_q3inn"]
 [ext_resource type="Texture2D" uid="uid://b35mwfykch5bp" path="res://assets/gfx/environment/corals/corals-orange6.png" id="47_1rwi5"]
 [ext_resource type="Texture2D" uid="uid://dswcexn8tkovc" path="res://assets/gfx/environment/corals/corals-yellow4.png" id="48_n2sm7"]
+[ext_resource type="FontFile" uid="uid://dl8wj07sdcq6d" path="res://assets/fonts/Tilt_Warp/TiltWarp-Regular-VariableFont_XROT,YROT.ttf" id="50_g0a00"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0fquw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xg3jy"]
+texture = ExtResource("10_g0a00")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xg3jy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iw4bo"]
+texture = ExtResource("10_g0a00")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [node name="TestLevel" instance=ExtResource("1_l25c7")]
 
@@ -57,194 +79,242 @@ modulate = Color(1, 1, 1, 1)
 [node name="Seaweed13" type="Sprite2D" parent="BG" index="0"]
 position = Vector2(-24, 502)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed12" type="Sprite2D" parent="BG" index="1"]
 position = Vector2(-77, 480)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed14" type="Sprite2D" parent="BG" index="2"]
 position = Vector2(-3, 440)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed15" type="Sprite2D" parent="BG" index="3"]
 position = Vector2(92, 483)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed16" type="Sprite2D" parent="BG" index="4"]
 position = Vector2(39, 469)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed17" type="Sprite2D" parent="BG" index="5"]
 position = Vector2(-132, 454)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed18" type="Sprite2D" parent="BG" index="6"]
 position = Vector2(243, 507)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed19" type="Sprite2D" parent="BG" index="7"]
 position = Vector2(178, 489)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed20" type="Sprite2D" parent="BG" index="8"]
 position = Vector2(282, 433)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed21" type="Sprite2D" parent="BG" index="9"]
 position = Vector2(375, 483)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed22" type="Sprite2D" parent="BG" index="10"]
 position = Vector2(327, 470)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed23" type="Sprite2D" parent="BG" index="11"]
 position = Vector2(125, 463)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed24" type="Sprite2D" parent="BG" index="12"]
 position = Vector2(518, 523)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed25" type="Sprite2D" parent="BG" index="13"]
 position = Vector2(465, 501)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed26" type="Sprite2D" parent="BG" index="14"]
 position = Vector2(539, 461)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed27" type="Sprite2D" parent="BG" index="15"]
 position = Vector2(634, 504)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed28" type="Sprite2D" parent="BG" index="16"]
 position = Vector2(581, 490)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed29" type="Sprite2D" parent="BG" index="17"]
 position = Vector2(410, 475)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed30" type="Sprite2D" parent="BG" index="18"]
 position = Vector2(785, 528)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed31" type="Sprite2D" parent="BG" index="19"]
 position = Vector2(720, 510)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed32" type="Sprite2D" parent="BG" index="20"]
 position = Vector2(824, 454)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed33" type="Sprite2D" parent="BG" index="21"]
 position = Vector2(917, 504)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed34" type="Sprite2D" parent="BG" index="22"]
 position = Vector2(869, 491)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed35" type="Sprite2D" parent="BG" index="23"]
 position = Vector2(667, 484)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed36" type="Sprite2D" parent="BG" index="24"]
 position = Vector2(1068, 519)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed37" type="Sprite2D" parent="BG" index="25"]
 position = Vector2(1015, 497)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed38" type="Sprite2D" parent="BG" index="26"]
 position = Vector2(1089, 457)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed39" type="Sprite2D" parent="BG" index="27"]
 position = Vector2(1184, 500)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed40" type="Sprite2D" parent="BG" index="28"]
 position = Vector2(1131, 486)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed41" type="Sprite2D" parent="BG" index="29"]
 position = Vector2(960, 471)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed42" type="Sprite2D" parent="BG" index="30"]
 position = Vector2(1335, 524)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed43" type="Sprite2D" parent="BG" index="31"]
 position = Vector2(1270, 506)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed44" type="Sprite2D" parent="BG" index="32"]
 position = Vector2(1374, 450)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed45" type="Sprite2D" parent="BG" index="33"]
 position = Vector2(1467, 500)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed46" type="Sprite2D" parent="BG" index="34"]
 position = Vector2(1419, 487)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed47" type="Sprite2D" parent="BG" index="35"]
 position = Vector2(1217, 480)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed48" type="Sprite2D" parent="BG" index="36"]
 position = Vector2(1614, 510)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed49" type="Sprite2D" parent="BG" index="37"]
 position = Vector2(1561, 488)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed50" type="Sprite2D" parent="BG" index="38"]
 position = Vector2(1635, 448)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed51" type="Sprite2D" parent="BG" index="39"]
 position = Vector2(1730, 491)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed52" type="Sprite2D" parent="BG" index="40"]
 position = Vector2(1677, 477)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed53" type="Sprite2D" parent="BG" index="41"]
 position = Vector2(1506, 462)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed54" type="Sprite2D" parent="BG" index="42"]
 position = Vector2(1881, 515)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed55" type="Sprite2D" parent="BG" index="43"]
 position = Vector2(1816, 497)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed56" type="Sprite2D" parent="BG" index="44"]
 position = Vector2(1920, 441)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed57" type="Sprite2D" parent="BG" index="45"]
 position = Vector2(2013, 491)
 texture = ExtResource("2_ks0nc")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed58" type="Sprite2D" parent="BG" index="46"]
 position = Vector2(1965, 478)
 texture = ExtResource("3_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed59" type="Sprite2D" parent="BG" index="47"]
 position = Vector2(1763, 471)
 texture = ExtResource("4_vxs8w")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed8" parent="BG" index="48"]
 visible = false
@@ -277,16 +347,19 @@ visible = false
 visible = false
 position = Vector2(643, 503)
 texture = ExtResource("2_mf8a0")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed10" type="Sprite2D" parent="BG" index="57"]
 visible = false
 position = Vector2(1155, 496)
 texture = ExtResource("2_mf8a0")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed11" type="Sprite2D" parent="BG" index="58"]
 visible = false
 position = Vector2(1045, 503)
 texture = ExtResource("2_mf8a0")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed1" parent="BG2" index="0"]
 position = Vector2(-96, 488)
@@ -294,6 +367,7 @@ position = Vector2(-96, 488)
 [node name="Seaweed12" type="Sprite2D" parent="BG2" index="1"]
 position = Vector2(-33, 510)
 texture = ExtResource("6_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed5" parent="BG2" index="2"]
 position = Vector2(91, 419)
@@ -319,51 +393,282 @@ position = Vector2(-146, 466)
 [node name="Seaweed13" type="Sprite2D" parent="BG2" index="9"]
 position = Vector2(597, 420)
 texture = ExtResource("6_pu22r")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed14" type="Sprite2D" parent="BG2" index="10"]
 position = Vector2(519, 520)
 texture = ExtResource("7_1cpod")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed15" type="Sprite2D" parent="BG2" index="11"]
 position = Vector2(698, 429)
 texture = ExtResource("7_1cpod")
 flip_h = true
+metadata/_edit_lock_ = true
 
 [node name="Seaweed16" type="Sprite2D" parent="BG2" index="12"]
 position = Vector2(228, 496)
 texture = ExtResource("8_ygqkp")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed17" type="Sprite2D" parent="BG2" index="13"]
 position = Vector2(1756, 500)
 texture = ExtResource("8_ygqkp")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed18" type="Sprite2D" parent="BG2" index="14"]
 position = Vector2(306, 446)
 texture = ExtResource("2_mf8a0")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed19" type="Sprite2D" parent="BG2" index="15"]
 position = Vector2(445, 477)
 texture = ExtResource("2_mf8a0")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed11" type="Sprite2D" parent="BG2" index="16"]
 position = Vector2(756, 488)
 texture = ExtResource("2_mf8a0")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed9" type="Sprite2D" parent="BG2" index="17"]
 visible = false
 position = Vector2(640, 494)
 texture = ExtResource("2_mf8a0")
+metadata/_edit_lock_ = true
 
 [node name="Seaweed10" type="Sprite2D" parent="BG2" index="18"]
 position = Vector2(154, 420)
 texture = ExtResource("2_mf8a0")
+metadata/_edit_lock_ = true
 
 [node name="Terrain" parent="." index="3"]
-tile_map_data = PackedByteArray("AAD5/xAAAgAAAAMAAAD4/xAAAgABAAIAAwD4/xEAAgAAAAIAAwD4/xIAAgACAAIAAwD4/xMAAgABAAEAAwD5/xMAAgACAAYAAgD5/xQAAgACAAAAAwD5/xEAAgADAAIAAQD5/w8AAgABAAIAAAD4/w8AAgAAAAAAAAD5/xIAAgABAAIAAQD6/xQAAgADAAYAAgD6/xMAAgABAAEAAQD7/xQAAgAAAAIAAAD7/xUAAgACAAIAAgD8/xUAAgACAAIAAgD8/xQAAgADAAIAAAD6/xUAAgABAAEAAwD6/w8AAgAAAAIAAAD7/w8AAgADAAYAAwD8/w8AAgABAAIAAgD6/xAAAgADAAIAAgD9/xAAAgACAAIAAwD9/xEAAgAAAAEAAwD+/xEAAgAAAAYAAAD+/xAAAgADAAIAAQD9/w8AAgACAAYAAAD8/w4AAgACAAIAAAD7/w4AAgACAAEAAAD+/w8AAgACAAAAAQD7/xAAAgABAAEAAgD9/w4AAgADAAEAAQD9/xUAAgAAAAIAAgD9/xQAAgADAAIAAAD+/xQAAgADAAIAAAD+/xIAAgABAAAAAwD//xIAAgAAAAIAAgD//xEAAgABAAIAAAAAABIAAgACAAIAAgAAABEAAgABAAIAAAABABEAAgABAAIAAAD+/xUAAgADAAIAAgD//xUAAgACAAIAAgAAABUAAgAAAAIAAgAAABQAAgACAAIAAAD//xQAAgACAAIAAAABABQAAgADAAIAAAABABUAAgABAAIAAgABABIAAgABAAIAAgACABIAAgABAAIAAgADABIAAgACAAIAAgAEABIAAgADAAIAAgADABEAAgABAAIAAAACABEAAgACAAIAAAACABQAAgABAAIAAAACABUAAgABAAIAAgADABUAAgABAAIAAgAEABUAAgADAAIAAgADABQAAgACAAIAAAAEABQAAgAAAAIAAAAEABEAAgACAAIAAAAFABIAAgABAAIAAgAFABEAAgADAAIAAAAFABUAAgAAAAIAAgAFABQAAgABAAIAAAAGABEAAgACAAYAAQAGABQAAgACAAIAAAAGABUAAgAAAAIAAgAHABUAAgABAAIAAgAIABUAAgADAAIAAgAIABQAAgABAAIAAAAJABQAAgACAAYAAQAJABUAAgADAAEAAgAKABQAAgAAAAEAAgAKABMAAgAAAAYAAQALABMAAgAAAAAAAgAJABMAAgABAAAAAAAKABIAAgAAAAAAAAALABIAAgABAAYAAwAHABEAAgADAAIAAgAHABAAAgABAAIAAAAIABAAAgACAAYAAQAJABAAAgACAAIAAgAJAA8AAgADAAIAAAAGABAAAgABAAAAAAAIABEAAgABAAAAAgAGABIAAgABAAEAAgAIAA8AAgABAAAAAAAKAA8AAgACAAYAAQAHABQAAgAAAAIAAAALABEAAgACAAEAAAAKABAAAgABAAAAAgADAA8AAgAAAAEAAwAEAA8AAgABAAEAAgAEAA4AAgAAAAEAAQADAA4AAgADAAEAAAAMABEAAgACAAIAAAAMABIAAgABAAIAAgANABEAAgABAAIAAAALAA8AAgACAAAAAgALAA4AAgAAAAYAAQAKAA4AAgADAAAAAAAMAA4AAgADAAIAAgAMAA0AAgADAAIAAAALAA0AAgADAAEAAAANAA0AAgABAAIAAAANAA4AAgACAAIAAgAOAA4AAgADAAYAAgAOAA0AAgACAAEAAQANABIAAgAAAAIAAgAOABIAAgADAAIAAgAOABEAAgAAAAIAAAAPABEAAgACAAYAAwAPABAAAgADAAIAAwAQABAAAgAAAAIAAQAQABEAAgABAAEAAgAPABIAAgAAAAAAAgAPAA4AAgAAAAEAAQAPAA8AAgABAAYAAAAOAA8AAgAAAAAAAwAQAA8AAgACAAAAAQD//xgAAgACAAEAAwD//xcAAgACAAAAAAAAABcAAgACAAEAAQAAABgAAgACAAEAAgAMABQAAgACAAEAAAAMABUAAgACAAEAAwANABUAAgAAAAAAAgANABQAAgACAAEAAQA=")
+tile_map_data = PackedByteArray("AAD5/xMAAgADAAEAAAD5/xQAAgABAAMAAgD5/w8AAgAAAAIAAgD4/w8AAgABAAAAAwD6/xQAAgADAAMAAwD6/xMAAgABAAEAAQD7/xQAAgAAAAIAAAD7/xUAAgACAAIAAgD8/xUAAgACAAIAAgD8/xQAAgADAAIAAAD6/xUAAgAAAAIAAgD6/w8AAgACAAIAAgD7/w8AAgABAAIAAgD8/w8AAgABAAIAAgD9/xAAAgACAAIAAwD9/xEAAgAAAAEAAwD+/xEAAgAAAAYAAAD+/xAAAgADAAIAAQD9/w8AAgACAAYAAAD8/w4AAgACAAIAAAD7/w4AAgABAAIAAAD+/w8AAgACAAAAAQD9/w4AAgADAAEAAQD9/xUAAgAAAAIAAgD9/xQAAgADAAIAAAD+/xQAAgADAAIAAAD+/xIAAgABAAAAAwD//xIAAgAAAAIAAgD//xEAAgABAAIAAAAAABIAAgACAAIAAgAAABEAAgABAAIAAAABABEAAgABAAIAAAD+/xUAAgADAAIAAgD//xUAAgACAAIAAgAAABUAAgAAAAIAAgAAABQAAgACAAIAAAD//xQAAgACAAIAAAABABQAAgADAAIAAAABABUAAgABAAIAAgABABIAAgABAAIAAgACABIAAgABAAIAAgADABIAAgACAAIAAgAEABIAAgADAAIAAgADABEAAgABAAIAAAACABEAAgACAAIAAAACABQAAgABAAIAAAACABUAAgABAAIAAgADABUAAgABAAIAAgAEABUAAgADAAIAAgADABQAAgACAAIAAAAEABQAAgAAAAIAAAAEABEAAgACAAIAAAAFABIAAgABAAIAAgAFABEAAgADAAIAAAAFABUAAgAAAAIAAgAFABQAAgABAAIAAAAGABEAAgACAAYAAQAGABQAAgACAAIAAAAGABUAAgAAAAIAAgAHABUAAgABAAIAAgAIABUAAgADAAIAAgAIABQAAgABAAIAAAAJABQAAgACAAYAAQAJABUAAgADAAEAAgAKABQAAgAAAAEAAgAKABMAAgAAAAYAAQALABMAAgAAAAAAAgAJABMAAgABAAAAAAAKABIAAgAAAAAAAAALABIAAgABAAYAAwAHABEAAgADAAIAAgAHABAAAgABAAIAAAAIABAAAgACAAYAAQAJABAAAgACAAIAAgAJAA8AAgADAAIAAAAGABAAAgABAAAAAAAIABEAAgABAAAAAgAGABIAAgABAAEAAgAIAA8AAgABAAAAAAAKAA8AAgACAAYAAQAHABQAAgAAAAIAAAALABEAAgACAAEAAAAKABAAAgABAAAAAgADAA8AAgAAAAEAAwAEAA8AAgABAAEAAgAEAA4AAgAAAAEAAQADAA4AAgADAAEAAAAMABEAAgACAAIAAAAMABIAAgABAAIAAgANABEAAgABAAIAAAALAA8AAgACAAAAAgALAA4AAgAAAAYAAQAKAA4AAgADAAAAAAAMAA4AAgADAAIAAgAMAA0AAgADAAIAAAALAA0AAgADAAEAAAANAA0AAgABAAIAAAANAA4AAgACAAIAAgAOAA4AAgAAAAIAAgAOAA0AAgAAAAIAAAANABIAAgAAAAIAAgAOABIAAgADAAIAAgAOABEAAgAAAAIAAAAPABEAAgADAAIAAAAQABEAAgADAAIAAAAPABIAAgAAAAIAAgAPAA4AAgABAAIAAgD//xgAAgACAAEAAwD//xcAAgACAAAAAAAAABcAAgACAAEAAQAAABgAAgACAAEAAgAMABQAAgACAAEAAAAMABUAAgACAAEAAwANABUAAgAAAAAAAgANABQAAgACAAEAAQD5/w4AAgABAAUAAgD4/w4AAgACAAMAAQD6/w4AAgABAAMAAwD3/w4AAgACAAIAAgD3/w0AAgADAAIAAAD4/w0AAgADAAIAAAD5/w0AAgAAAAIAAAD6/w0AAgADAAAAAQD2/w0AAgAAAAIAAAD1/w0AAgADAAAAAAD1/w4AAgACAAMAAgD0/w8AAgACAAIAAwD0/xAAAgACAAIAAwD0/xEAAgADAAMAAgD0/xIAAgACAAQAAQD1/xIAAgAAAAMAAAD1/xMAAgADAAIAAQD2/xQAAgAAAAIAAAD3/xQAAgABAAIAAAD4/xQAAgAAAAIAAAD5/xUAAgACAAIAAgD4/xUAAgACAAIAAgD3/xUAAgADAAIAAgD2/xUAAgAAAAIAAgD1/xUAAgAAAAAAAwD1/xQAAgACAAYAAADz/xIAAgAAAAIAAwD0/xMAAgACAAMAAQDz/xMAAgACAAEAAwD1/w8AAgAAAAMAAAD2/w4AAgADAAMAAAD0/w4AAgAAAAEAAAD1/xAAAgABAAIAAQD1/xEAAgAAAAMAAwDz/xEAAgAAAAEAAAD0/xQAAgAAAAEAAwD2/xEAAgADAAAAAQD2/xIAAgADAAEAAgD2/w8AAgAAAAEAAgAQAA4AAgABAAIAAgARAA4AAgADAAIAAgASAA4AAgABAAIAAgATAA4AAgABAAIAAgAUAA4AAgABAAIAAgAVAA4AAgACAAMAAQAWAA4AAgADAAMAAAAXAA4AAgADAAIAAgAYAA4AAgADAAIAAgAZAA4AAgACAAMAAQAaAA4AAgADAAMAAAAbAA4AAgACAAIAAgAcAA0AAgACAAIAAAAcAA4AAgADAAIAAgAdAA4AAgABAAMAAQAQABIAAgABAAMAAQARABIAAgACAAUAAAASABIAAgABAAUAAQATABEAAgAAAAEAAQAbABEAAgADAAAAAAAcABEAAgADAAIAAAAdABEAAgADAAMAAgAdABIAAgADAAIAAgAeABIAAgACAAAAAgAeABEAAgAAAAIAAQAeABAAAgADAAIAAQAeAA8AAgAAAAIAAQAeAA4AAgABAAMAAAAcABIAAgAAAAIAAgAbABIAAgACAAYAAwAaABIAAgABAAIAAAAZABIAAgAAAAIAAAAYABIAAgAAAAIAAAAXABIAAgAAAAIAAAAWABIAAgABAAIAAAAVABIAAgACAAIAAAAUABIAAgACAAIAAAATABIAAgABAAMAAwASABEAAgADAAIAAAARABEAAgACAAIAAAATABMAAgADAAIAAgAUABMAAgABAAIAAgAVABMAAgADAAIAAgAWABMAAgACAAIAAgAXABMAAgAAAAIAAgAYABMAAgACAAIAAgAZABMAAgABAAMAAQASABMAAgAAAAIAAgAaABMAAgABAAMAAAAbABMAAgACAAEAAgAdABAAAgABAAIAAwAdAA8AAgAAAAIAAwAdAA0AAgADAAMAAgAeAA0AAgAAAAMAAwAPAA0AAgABAAIAAAAQAA0AAgAAAAMAAgARAA0AAgADAAQAAQASAA0AAgABAAMAAwATAA0AAgACAAIAAAAUAA0AAgAAAAIAAAAVAA0AAgABAAIAAAAWAA0AAgADAAMAAgAXAA0AAgAAAAUAAgAYAA0AAgABAAQAAAAZAA0AAgABAAMAAwAaAA0AAgADAAIAAAAbAA0AAgABAAIAAAAWAA8AAgAAAAAAAgAVAA8AAgACAAAAAwAZAA8AAgABAAAAAwAaAA8AAgABAAAAAgAWAAwAAgAAAAEAAAAXAAwAAgABAAIAAAAYAAwAAgADAAIAAAAZAAwAAgABAAEAAQAdAAwAAgADAAAAAAAeAAwAAgACAAAAAQAfAA0AAgAAAAEAAQAfAA4AAgADAAEAAgARAAsAAgACAAIAAAARAAwAAgACAAQAAQAQAAwAAgAAAAIAAwASAAwAAgABAAIAAQASAAsAAgADAAAAAQAQAAsAAgABAAEAAAAQABMAAgADAAAAAwARABMAAgAAAAIAAgAUABUAAgAAAAIAAAAVABUAAgAAAAEAAQAVABYAAgACAAAAAgAUABYAAgADAAIAAgATABYAAgAAAAEAAwATABUAAgACAAEAAAAZABYAAgAAAAAAAwAaABYAAgAAAAIAAgAaABUAAgABAAMAAwAaABQAAgAAAAIAAQAZABQAAgACAAIAAwAZABUAAgADAAIAAwAbABYAAgACAAEAAgAbABUAAgADAAEAAQAdABQAAgABAAEAAQAdABUAAgABAAAAAgAcABUAAgACAAEAAwAcABQAAgADAAAAAAAVAAgAAgABAAIAAAAUAAgAAgABAAAAAAAUAAkAAgAAAAIAAwAUAAoAAgACAAAAAwAVAAoAAgACAAIAAgAWAAoAAgACAAEAAgAWAAkAAgAAAAIAAQAWAAgAAgABAAAAAQAVAAkAAgADAAQAAgA=")
+metadata/_edit_lock_ = true
 
 [node name="CurrentTileMap" parent="." index="4"]
-tile_map_data = PackedByteArray("AAD//xMAAAACAAAAAQAAABMAAAACAAAAAQABABMAAAACAAAAAQACABMAAAACAAAAAQADABMAAAACAAAAAQD+/xMAAAACAAAAAQA=")
+tile_map_data = PackedByteArray("AAD//xMAAAACAAAAAQAAABMAAAACAAAAAQABABMAAAACAAAAAQACABMAAAACAAAAAQADABMAAAACAAAAAQD+/xMAAAACAAAAAQAOAA8AAAABAAAAAwAPAA8AAAABAAAAAwAQAA8AAAABAAAAAwARAA8AAAABAAAAAwASAA8AAAABAAAAAwATAA8AAAABAAAAAwAUAA8AAAABAAAAAwAVAA8AAAABAAAAAwAWAA8AAAABAAAAAwAXAA8AAAABAAAAAwAYAA8AAAABAAAAAwAYAA4AAAABAAAAAwAYABAAAAABAAAAAwAXABAAAAABAAAAAwAWABAAAAABAAAAAwAVABAAAAABAAAAAwAUABAAAAABAAAAAwATABAAAAABAAAAAwASABAAAAABAAAAAwARABAAAAABAAAAAwAQABAAAAABAAAAAwAPABAAAAABAAAAAwAOABAAAAABAAAAAwAOABEAAAABAAAAAwAPABEAAAABAAAAAwAQABEAAAABAAAAAwARABEAAAABAAAAAwASABEAAAABAAAAAwATABEAAAABAAAAAwAUABEAAAABAAAAAwAVABEAAAABAAAAAwAWABEAAAABAAAAAwAXABEAAAABAAAAAwAYABEAAAABAAAAAwAZAA4AAAABAAAAAwAZAA8AAAABAAAAAwAZABAAAAABAAAAAwAZABEAAAABAAAAAwAZABIAAAABAAAAAwA=")
 current_strength = Array[float]([50.0, 150.0, 350.0])
+metadata/_edit_lock_ = true
+
+[node name="Thrust" type="PanelContainer" parent="Tips" index="0"]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -780.781
+offset_top = 1558.56
+offset_right = -498.781
+offset_bottom = 1598.56
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_g0a00")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0fquw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tips/Thrust" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Tips/Thrust/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Press"
+
+[node name="KeyTooltip" type="PanelContainer" parent="Tips/Thrust/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_xg3jy")
+
+[node name="Label" type="Label" parent="Tips/Thrust/HBoxContainer/KeyTooltip" index="0"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("50_g0a00")
+theme_override_font_sizes/font_size = 16
+text = "W"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Tips/Thrust/HBoxContainer" index="2"]
+layout_mode = 2
+text = "to swim towards the mouse"
+
+[node name="Back" type="PanelContainer" parent="Tips" index="1"]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -465.465
+offset_top = 1858.86
+offset_right = -183.465
+offset_bottom = 1898.86
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_g0a00")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0fquw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tips/Back" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Tips/Back/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Press"
+
+[node name="KeyTooltip" type="PanelContainer" parent="Tips/Back/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_xg3jy")
+
+[node name="Label" type="Label" parent="Tips/Back/HBoxContainer/KeyTooltip" index="0"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("50_g0a00")
+theme_override_font_sizes/font_size = 16
+text = "S"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Tips/Back/HBoxContainer" index="2"]
+layout_mode = 2
+text = "to swim backwards"
+
+[node name="Strafe" type="PanelContainer" parent="Tips" index="2"]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -771.772
+offset_top = 1744.74
+offset_right = -489.772
+offset_bottom = 1784.74
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_g0a00")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0fquw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tips/Strafe" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Tips/Strafe/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Press"
+
+[node name="KeyTooltip" type="PanelContainer" parent="Tips/Strafe/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_xg3jy")
+
+[node name="Label" type="Label" parent="Tips/Strafe/HBoxContainer/KeyTooltip" index="0"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("50_g0a00")
+theme_override_font_sizes/font_size = 16
+text = "A"
+horizontal_alignment = 1
+
+[node name="KeyTooltip2" type="PanelContainer" parent="Tips/Strafe/HBoxContainer" index="2"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_xg3jy")
+
+[node name="Label" type="Label" parent="Tips/Strafe/HBoxContainer/KeyTooltip2" index="0"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("50_g0a00")
+theme_override_font_sizes/font_size = 16
+text = "D"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Tips/Strafe/HBoxContainer" index="3"]
+layout_mode = 2
+text = "to strafe left or right"
+
+[node name="Boost" type="PanelContainer" parent="Tips" index="3"]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1156.16
+offset_top = 1510.51
+offset_right = 1438.16
+offset_bottom = 1590.51
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_g0a00")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xg3jy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tips/Boost" index="0"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tips/Boost/VBoxContainer" index="0"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Tips/Boost/VBoxContainer/HBoxContainer" index="0"]
+layout_mode = 2
+text = "Release"
+
+[node name="KeyTooltip" type="PanelContainer" parent="Tips/Boost/VBoxContainer/HBoxContainer" index="1"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_iw4bo")
+
+[node name="Label" type="Label" parent="Tips/Boost/VBoxContainer/HBoxContainer/KeyTooltip" index="0"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("50_g0a00")
+theme_override_font_sizes/font_size = 16
+text = "W"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Tips/Boost/VBoxContainer/HBoxContainer" index="2"]
+layout_mode = 2
+text = "when the bar is"
+
+[node name="Label3" type="Label" parent="Tips/Boost/VBoxContainer" index="1"]
+layout_mode = 2
+text = "in the green area to add an"
+
+[node name="Label4" type="Label" parent="Tips/Boost/VBoxContainer" index="2"]
+layout_mode = 2
+text = "extra boost to your speed"
+
+[node name="Home" type="PanelContainer" parent="Tips" index="4"]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 2471.47
+offset_top = 1510.51
+offset_right = 2753.47
+offset_bottom = 1550.51
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_g0a00")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0fquw")
+
+[node name="Label" type="Label" parent="Tips/Home" index="0"]
+layout_mode = 2
+text = "Find safety in the cave"
 
 [node name="EnergyNode" parent="Objects" index="0" instance=ExtResource("3_6q0lt")]
 position = Vector2(-314.608, 369.19)
@@ -372,7 +677,7 @@ position = Vector2(-314.608, 369.19)
 position = Vector2(-374, 370)
 
 [node name="Clam" parent="Objects" index="2" instance=ExtResource("4_ks0nc")]
-position = Vector2(1191, 838)
+position = Vector2(694, 420)
 closed_time = 1.5
 open_time = 1.5
 
@@ -383,132 +688,584 @@ closed_time = 1.5
 open_time = 1.5
 
 [node name="Cave" parent="Objects" index="4" instance=ExtResource("5_pu22r")]
-position = Vector2(490, 527)
+position = Vector2(915, 520)
 rotation = 3.23235
 
 [node name="GrassA" parent="Objects" index="5" instance=ExtResource("6_vxs8w")]
-position = Vector2(-122, 1044)
+position = Vector2(838, 573)
 
 [node name="GrassA3" parent="Objects" index="6" instance=ExtResource("6_vxs8w")]
-position = Vector2(-115, 1102)
+position = Vector2(872, 558)
 
 [node name="GrassA13" parent="Objects" index="7" instance=ExtResource("6_vxs8w")]
-position = Vector2(488, 855)
+position = Vector2(732, 570)
 
 [node name="GrassA22" parent="Objects" index="8" instance=ExtResource("6_vxs8w")]
-position = Vector2(921, 954)
+position = Vector2(641, 687)
 
 [node name="GrassA23" parent="Objects" index="9" instance=ExtResource("6_vxs8w")]
-position = Vector2(1122, 1004)
+position = Vector2(681, 262)
 
 [node name="GrassA24" parent="Objects" index="10" instance=ExtResource("6_vxs8w")]
-position = Vector2(1231, 983)
+position = Vector2(877, 414)
 
 [node name="GrassA14" parent="Objects" index="11" instance=ExtResource("6_vxs8w")]
 position = Vector2(246, 582)
 rotation = -0.359538
 scale = Vector2(-1, -1)
 
-[node name="GrassA15" parent="Objects" index="12" instance=ExtResource("6_vxs8w")]
+[node name="GrassA30" parent="Objects" index="12" instance=ExtResource("6_vxs8w")]
+position = Vector2(-129, 519)
+rotation = -0.359538
+scale = Vector2(-1, -1)
+
+[node name="GrassA15" parent="Objects" index="13" instance=ExtResource("6_vxs8w")]
 position = Vector2(128, 507)
 scale = Vector2(-1, -1)
 
-[node name="GrassA16" parent="Objects" index="13" instance=ExtResource("6_vxs8w")]
-position = Vector2(858, 871)
-rotation = 0.310305
+[node name="GrassA16" parent="Objects" index="14" instance=ExtResource("6_vxs8w")]
+position = Vector2(577, 545)
+rotation = 3.45226
 scale = Vector2(-1, -1)
 
-[node name="GrassA17" parent="Objects" index="14" instance=ExtResource("6_vxs8w")]
-position = Vector2(1189, 649)
+[node name="GrassA17" parent="Objects" index="15" instance=ExtResource("6_vxs8w")]
+position = Vector2(703, 354)
 scale = Vector2(-1, -1)
 
-[node name="GrassA5" parent="Objects" index="15" instance=ExtResource("6_vxs8w")]
+[node name="GrassA5" parent="Objects" index="16" instance=ExtResource("6_vxs8w")]
 position = Vector2(302, 625)
 rotation = -0.359538
 
-[node name="GrassA2" parent="Objects" index="16" instance=ExtResource("7_q2op7")]
+[node name="GrassA33" parent="Objects" index="17" instance=ExtResource("6_vxs8w")]
+position = Vector2(-279, 489)
+rotation = 2.69099
+
+[node name="GrassA2" parent="Objects" index="18" instance=ExtResource("7_q2op7")]
 position = Vector2(-277, 1010)
 
-[node name="GrassA4" parent="Objects" index="17" instance=ExtResource("7_q2op7")]
+[node name="GrassA4" parent="Objects" index="19" instance=ExtResource("7_q2op7")]
 position = Vector2(-173, 1042)
 
-[node name="GrassA6" parent="Objects" index="18" instance=ExtResource("7_q2op7")]
+[node name="GrassA6" parent="Objects" index="20" instance=ExtResource("7_q2op7")]
 position = Vector2(370, 547)
 rotation = -0.47822
 
-[node name="GrassA7" parent="Objects" index="19" instance=ExtResource("7_q2op7")]
+[node name="GrassA7" parent="Objects" index="21" instance=ExtResource("7_q2op7")]
 position = Vector2(265, 638)
 
-[node name="GrassA8" parent="Objects" index="20" instance=ExtResource("7_q2op7")]
+[node name="GrassA8" parent="Objects" index="22" instance=ExtResource("7_q2op7")]
 position = Vector2(349, 569)
 rotation = -0.47822
 
-[node name="GrassA9" parent="Objects" index="21" instance=ExtResource("7_q2op7")]
+[node name="GrassA9" parent="Objects" index="23" instance=ExtResource("7_q2op7")]
 position = Vector2(323, 596)
 rotation = -0.359538
 
-[node name="GrassA18" parent="Objects" index="22" instance=ExtResource("7_q2op7")]
+[node name="GrassA18" parent="Objects" index="24" instance=ExtResource("7_q2op7")]
 position = Vector2(393, 483)
 scale = Vector2(-1, -1)
 
-[node name="GrassA27" parent="Objects" index="23" instance=ExtResource("7_q2op7")]
+[node name="GrassA27" parent="Objects" index="25" instance=ExtResource("7_q2op7")]
 position = Vector2(305, 547)
 rotation = -0.359538
 scale = Vector2(-1, -1)
 
-[node name="GrassA28" parent="Objects" index="24" instance=ExtResource("7_q2op7")]
+[node name="GrassA28" parent="Objects" index="26" instance=ExtResource("7_q2op7")]
 position = Vector2(277, 559)
 rotation = -0.359538
 scale = Vector2(-1, -1)
 
-[node name="GrassA29" parent="Objects" index="25" instance=ExtResource("7_q2op7")]
+[node name="GrassA31" parent="Objects" index="27" instance=ExtResource("7_q2op7")]
+position = Vector2(-104, 514)
+rotation = 0.355545
+scale = Vector2(-1, -1)
+
+[node name="GrassA29" parent="Objects" index="28" instance=ExtResource("7_q2op7")]
 position = Vector2(333, 535)
 rotation = -0.598648
 scale = Vector2(-1, -1)
 
-[node name="GrassA19" parent="Objects" index="26" instance=ExtResource("7_q2op7")]
-position = Vector2(1156, 642)
+[node name="GrassA19" parent="Objects" index="29" instance=ExtResource("7_q2op7")]
+position = Vector2(671, 342)
 scale = Vector2(-1, -1)
 
-[node name="GrassA20" parent="Objects" index="27" instance=ExtResource("7_q2op7")]
-position = Vector2(1227, 761)
+[node name="GrassA20" parent="Objects" index="30" instance=ExtResource("7_q2op7")]
+position = Vector2(573, 358)
 scale = Vector2(-1, -1)
 
-[node name="GrassA21" parent="Objects" index="28" instance=ExtResource("7_q2op7")]
+[node name="GrassA21" parent="Objects" index="31" instance=ExtResource("7_q2op7")]
 position = Vector2(123, 504)
 scale = Vector2(-1, -1)
 
-[node name="GrassA10" parent="Objects" index="29" instance=ExtResource("7_q2op7")]
+[node name="GrassA10" parent="Objects" index="32" instance=ExtResource("7_q2op7")]
 position = Vector2(223, 639)
 
-[node name="GrassA25" parent="Objects" index="30" instance=ExtResource("7_q2op7")]
-position = Vector2(1089, 1019)
+[node name="GrassA32" parent="Objects" index="33" instance=ExtResource("7_q2op7")]
+position = Vector2(-267, 639)
+
+[node name="GrassA25" parent="Objects" index="34" instance=ExtResource("7_q2op7")]
+position = Vector2(672, 686)
 rotation = -0.0143032
 
-[node name="GrassA26" parent="Objects" index="31" instance=ExtResource("7_q2op7")]
+[node name="GrassA26" parent="Objects" index="35" instance=ExtResource("7_q2op7")]
 position = Vector2(24, 746)
 rotation = 0.464258
 
-[node name="GrassA11" parent="Objects" index="32" instance=ExtResource("7_q2op7")]
+[node name="GrassA11" parent="Objects" index="36" instance=ExtResource("7_q2op7")]
 position = Vector2(1, 735)
 
-[node name="GrassA12" parent="Objects" index="33" instance=ExtResource("7_q2op7")]
+[node name="GrassA12" parent="Objects" index="37" instance=ExtResource("7_q2op7")]
 position = Vector2(417, 639)
 
-[node name="Camera2D" parent="." index="7"]
-position = Vector2(-152, 579)
+[node name="GrassA34" parent="Objects" index="38" instance=ExtResource("6_vxs8w")]
+position = Vector2(659, 489)
+rotation = 3.14159
 
-[node name="Player" parent="." index="9"]
-position = Vector2(-152, 579)
+[node name="GrassA35" parent="Objects" index="39" instance=ExtResource("6_vxs8w")]
+position = Vector2(691, 569)
+
+[node name="GrassA36" parent="Objects" index="40" instance=ExtResource("7_q2op7")]
+position = Vector2(-277, 1010)
+
+[node name="GrassA37" parent="Objects" index="41" instance=ExtResource("7_q2op7")]
+position = Vector2(-173, 1042)
+
+[node name="GrassA38" parent="Objects" index="42" instance=ExtResource("7_q2op7")]
+position = Vector2(78, 640)
+
+[node name="GrassA39" parent="Objects" index="43" instance=ExtResource("7_q2op7")]
+position = Vector2(161, 604)
+
+[node name="GrassA40" parent="Objects" index="44" instance=ExtResource("7_q2op7")]
+position = Vector2(266, 606)
+
+[node name="GrassA41" parent="Objects" index="45" instance=ExtResource("7_q2op7")]
+position = Vector2(182, 510)
+rotation = -3.14159
+
+[node name="GrassA42" parent="Objects" index="46" instance=ExtResource("7_q2op7")]
+position = Vector2(135, 511)
+scale = Vector2(-1, -1)
+
+[node name="GrassA43" parent="Objects" index="47" instance=ExtResource("7_q2op7")]
+position = Vector2(118, 638)
+
+[node name="Corals-pink68" type="Sprite2D" parent="Objects" index="48"]
+position = Vector2(205, 457)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-yellow40" type="Sprite2D" parent="Objects" index="49"]
+position = Vector2(226, 462)
+texture = ExtResource("18_xg3jy")
+
+[node name="Corals-purple45" type="Sprite2D" parent="Objects" index="50"]
+position = Vector2(226, 488)
+texture = ExtResource("21_p3ti6")
+
+[node name="Corals-pink69" type="Sprite2D" parent="Objects" index="51"]
+position = Vector2(237, 476.001)
+texture = ExtResource("26_i8mbw")
+
+[node name="Corals-green27" type="Sprite2D" parent="Objects" index="52"]
+position = Vector2(186, 470)
+texture = ExtResource("31_g6c3a")
+
+[node name="Corals-yellow41" type="Sprite2D" parent="Objects" index="53"]
+position = Vector2(172, 462)
+texture = ExtResource("36_ke18h")
+
+[node name="Corals11" type="Sprite2D" parent="Objects" index="54"]
+position = Vector2(183, 441)
+texture = ExtResource("23_xg3jy")
+
+[node name="Corals-blue24" type="Sprite2D" parent="Objects" index="55"]
+position = Vector2(213, 444)
+texture = ExtResource("14_afkq4")
+
+[node name="Corals-orange66" type="Sprite2D" parent="Objects" index="56"]
+position = Vector2(197, 436)
+texture = ExtResource("15_0av7m")
+
+[node name="Corals-yellow42" type="Sprite2D" parent="Objects" index="57"]
+position = Vector2(54.0001, 505)
+texture = ExtResource("19_iw4bo")
+
+[node name="Corals-purple46" type="Sprite2D" parent="Objects" index="58"]
+position = Vector2(250, 441.001)
+texture = ExtResource("24_jmbtv")
+
+[node name="Corals-pink70" type="Sprite2D" parent="Objects" index="59"]
+position = Vector2(104, 520)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-orange67" type="Sprite2D" parent="Objects" index="60"]
+position = Vector2(88.0001, 516)
+texture = ExtResource("28_t0xht")
+
+[node name="Corals-green28" type="Sprite2D" parent="Objects" index="61"]
+position = Vector2(102, 509)
+texture = ExtResource("29_kg78h")
+
+[node name="Corals-green29" type="Sprite2D" parent="Objects" index="62"]
+position = Vector2(232, 444)
+texture = ExtResource("30_6dnew")
+
+[node name="Corals-yellow43" type="Sprite2D" parent="Objects" index="63"]
+position = Vector2(147, 456)
+texture = ExtResource("33_lik57")
+
+[node name="Corals-pink74" type="Sprite2D" parent="Objects" index="64"]
+position = Vector2(469, 459)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-yellow47" type="Sprite2D" parent="Objects" index="65"]
+position = Vector2(490, 464)
+texture = ExtResource("18_xg3jy")
+
+[node name="Corals-purple51" type="Sprite2D" parent="Objects" index="66"]
+position = Vector2(503, 482)
+texture = ExtResource("21_p3ti6")
+
+[node name="Corals-pink75" type="Sprite2D" parent="Objects" index="67"]
+position = Vector2(514, 470)
+texture = ExtResource("26_i8mbw")
+
+[node name="Corals-green33" type="Sprite2D" parent="Objects" index="68"]
+position = Vector2(398, 478)
+texture = ExtResource("31_g6c3a")
+
+[node name="Corals-yellow48" type="Sprite2D" parent="Objects" index="69"]
+position = Vector2(384, 470)
+texture = ExtResource("36_ke18h")
+
+[node name="Corals12" type="Sprite2D" parent="Objects" index="70"]
+position = Vector2(442, 455)
+texture = ExtResource("23_xg3jy")
+
+[node name="Corals-blue29" type="Sprite2D" parent="Objects" index="71"]
+position = Vector2(477, 446)
+texture = ExtResource("14_afkq4")
+
+[node name="Corals-orange71" type="Sprite2D" parent="Objects" index="72"]
+position = Vector2(456, 450)
+texture = ExtResource("15_0av7m")
+
+[node name="Corals-purple52" type="Sprite2D" parent="Objects" index="73"]
+position = Vector2(514, 443)
+texture = ExtResource("24_jmbtv")
+
+[node name="Corals-green34" type="Sprite2D" parent="Objects" index="74"]
+position = Vector2(496, 446)
+texture = ExtResource("30_6dnew")
+
+[node name="Corals-yellow49" type="Sprite2D" parent="Objects" index="75"]
+position = Vector2(359, 464)
+texture = ExtResource("33_lik57")
+
+[node name="Corals-orange37" type="Sprite2D" parent="Objects" index="76"]
+position = Vector2(752, 463)
+texture = ExtResource("16_0fquw")
+
+[node name="Corals-pink37" type="Sprite2D" parent="Objects" index="77"]
+position = Vector2(759, 479)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-yellow30" type="Sprite2D" parent="Objects" index="78"]
+position = Vector2(786, 468)
+texture = ExtResource("18_xg3jy")
+
+[node name="Corals-purple27" type="Sprite2D" parent="Objects" index="79"]
+position = Vector2(773, 462)
+texture = ExtResource("21_p3ti6")
+
+[node name="Corals-pink38" type="Sprite2D" parent="Objects" index="80"]
+position = Vector2(740, 474)
+texture = ExtResource("26_i8mbw")
+
+[node name="Corals-purple29" type="Sprite2D" parent="Objects" index="81"]
+position = Vector2(959, 400)
+texture = ExtResource("21_p3ti6")
+
+[node name="Corals-pink42" type="Sprite2D" parent="Objects" index="82"]
+position = Vector2(945, 404)
+texture = ExtResource("26_i8mbw")
+
+[node name="Corals-orange40" type="Sprite2D" parent="Objects" index="83"]
+position = Vector2(560, 472)
+texture = ExtResource("16_0fquw")
+
+[node name="Corals-pink43" type="Sprite2D" parent="Objects" index="84"]
+position = Vector2(746, 434)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-yellow33" type="Sprite2D" parent="Objects" index="85"]
+position = Vector2(725, 429)
+texture = ExtResource("18_xg3jy")
+
+[node name="Corals-purple30" type="Sprite2D" parent="Objects" index="86"]
+position = Vector2(547, 456)
+texture = ExtResource("21_p3ti6")
+
+[node name="Corals-pink80" type="Sprite2D" parent="Objects" index="87"]
+position = Vector2(495, 550)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-blue32" type="Sprite2D" parent="Objects" index="88"]
+position = Vector2(530, 565)
+texture = ExtResource("14_afkq4")
+
+[node name="Corals-orange78" type="Sprite2D" parent="Objects" index="89"]
+position = Vector2(546, 573)
+texture = ExtResource("15_0av7m")
+
+[node name="Corals-purple58" type="Sprite2D" parent="Objects" index="90"]
+position = Vector2(493, 568)
+texture = ExtResource("24_jmbtv")
+
+[node name="Corals-green41" type="Sprite2D" parent="Objects" index="91"]
+position = Vector2(511, 565)
+texture = ExtResource("30_6dnew")
+
+[node name="Corals-pink81" type="Sprite2D" parent="Objects" index="92"]
+position = Vector2(879, 454)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-blue33" type="Sprite2D" parent="Objects" index="93"]
+position = Vector2(914, 469)
+texture = ExtResource("14_afkq4")
+
+[node name="Corals-orange79" type="Sprite2D" parent="Objects" index="94"]
+position = Vector2(930, 477)
+texture = ExtResource("15_0av7m")
+
+[node name="Corals-purple59" type="Sprite2D" parent="Objects" index="95"]
+position = Vector2(877, 472)
+texture = ExtResource("24_jmbtv")
+
+[node name="Corals-green42" type="Sprite2D" parent="Objects" index="96"]
+position = Vector2(895, 469)
+texture = ExtResource("30_6dnew")
+
+[node name="Corals-pink82" type="Sprite2D" parent="Objects" index="97"]
+position = Vector2(664, 567)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-blue34" type="Sprite2D" parent="Objects" index="98"]
+position = Vector2(699, 582)
+texture = ExtResource("14_afkq4")
+
+[node name="Corals-orange80" type="Sprite2D" parent="Objects" index="99"]
+position = Vector2(715, 590)
+texture = ExtResource("15_0av7m")
+
+[node name="Corals-purple60" type="Sprite2D" parent="Objects" index="100"]
+position = Vector2(662, 585)
+texture = ExtResource("24_jmbtv")
+
+[node name="Corals-green43" type="Sprite2D" parent="Objects" index="101"]
+position = Vector2(680, 582)
+texture = ExtResource("30_6dnew")
+
+[node name="Corals-pink88" type="Sprite2D" parent="Objects" index="102"]
+position = Vector2(796, 603)
+rotation = 3.14159
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-blue36" type="Sprite2D" parent="Objects/Corals-pink88" index="0"]
+position = Vector2(35, 15)
+texture = ExtResource("14_afkq4")
+
+[node name="Corals-orange86" type="Sprite2D" parent="Objects/Corals-pink88" index="1"]
+position = Vector2(51, 23)
+texture = ExtResource("15_0av7m")
+
+[node name="Corals-purple66" type="Sprite2D" parent="Objects/Corals-pink88" index="2"]
+position = Vector2(-2, 18)
+texture = ExtResource("24_jmbtv")
+
+[node name="Corals-green45" type="Sprite2D" parent="Objects/Corals-pink88" index="3"]
+position = Vector2(16, 15)
+texture = ExtResource("30_6dnew")
+
+[node name="Corals-pink83" type="Sprite2D" parent="Objects" index="103"]
+position = Vector2(614, 418)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-blue35" type="Sprite2D" parent="Objects" index="104"]
+position = Vector2(649, 433)
+texture = ExtResource("14_afkq4")
+
+[node name="Corals-orange81" type="Sprite2D" parent="Objects" index="105"]
+position = Vector2(665, 441)
+texture = ExtResource("15_0av7m")
+
+[node name="Corals-purple61" type="Sprite2D" parent="Objects" index="106"]
+position = Vector2(612, 436)
+texture = ExtResource("24_jmbtv")
+
+[node name="Corals-orange82" type="Sprite2D" parent="Objects" index="107"]
+position = Vector2(634, 566)
+texture = ExtResource("16_0fquw")
+
+[node name="Corals-yellow60" type="Sprite2D" parent="Objects" index="108"]
+position = Vector2(621, 576)
+texture = ExtResource("18_xg3jy")
+
+[node name="Corals-purple62" type="Sprite2D" parent="Objects" index="109"]
+position = Vector2(621, 550)
+texture = ExtResource("21_p3ti6")
+
+[node name="Corals-pink84" type="Sprite2D" parent="Objects" index="110"]
+position = Vector2(610, 562)
+texture = ExtResource("26_i8mbw")
+
+[node name="Corals-orange83" type="Sprite2D" parent="Objects" index="111"]
+position = Vector2(826, 493)
+texture = ExtResource("16_0fquw")
+
+[node name="Corals-yellow61" type="Sprite2D" parent="Objects" index="112"]
+position = Vector2(692, 491)
+texture = ExtResource("18_xg3jy")
+
+[node name="Corals-purple63" type="Sprite2D" parent="Objects" index="113"]
+position = Vector2(692, 465)
+texture = ExtResource("21_p3ti6")
+
+[node name="Corals-pink85" type="Sprite2D" parent="Objects" index="114"]
+position = Vector2(681, 477)
+texture = ExtResource("26_i8mbw")
+
+[node name="Corals-orange84" type="Sprite2D" parent="Objects" index="115"]
+position = Vector2(547, 376)
+texture = ExtResource("16_0fquw")
+
+[node name="Corals-yellow62" type="Sprite2D" parent="Objects" index="116"]
+position = Vector2(534, 386)
+texture = ExtResource("18_xg3jy")
+
+[node name="Corals-purple64" type="Sprite2D" parent="Objects" index="117"]
+position = Vector2(534, 360)
+texture = ExtResource("21_p3ti6")
+
+[node name="Corals-pink86" type="Sprite2D" parent="Objects" index="118"]
+position = Vector2(523, 372)
+texture = ExtResource("26_i8mbw")
+
+[node name="Corals-orange85" type="Sprite2D" parent="Objects" index="119"]
+position = Vector2(826, 407)
+texture = ExtResource("16_0fquw")
+
+[node name="Corals-yellow63" type="Sprite2D" parent="Objects" index="120"]
+position = Vector2(813, 417)
+texture = ExtResource("18_xg3jy")
+
+[node name="Corals-purple65" type="Sprite2D" parent="Objects" index="121"]
+position = Vector2(813, 391)
+texture = ExtResource("21_p3ti6")
+
+[node name="Corals-pink87" type="Sprite2D" parent="Objects" index="122"]
+position = Vector2(802, 403)
+texture = ExtResource("26_i8mbw")
+
+[node name="Corals-green44" type="Sprite2D" parent="Objects" index="123"]
+position = Vector2(630, 433)
+texture = ExtResource("30_6dnew")
+
+[node name="Corals-pink44" type="Sprite2D" parent="Objects" index="124"]
+position = Vector2(533, 460)
+texture = ExtResource("26_i8mbw")
+
+[node name="Corals-pink78" type="Sprite2D" parent="Objects" index="125"]
+position = Vector2(44, 655)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-yellow53" type="Sprite2D" parent="Objects" index="126"]
+position = Vector2(10.0002, 632)
+texture = ExtResource("18_xg3jy")
+
+[node name="Corals-purple55" type="Sprite2D" parent="Objects" index="127"]
+position = Vector2(78.0002, 687)
+texture = ExtResource("21_p3ti6")
+
+[node name="Corals-pink79" type="Sprite2D" parent="Objects" index="128"]
+position = Vector2(89.0002, 675)
+texture = ExtResource("26_i8mbw")
+
+[node name="Corals-green37" type="Sprite2D" parent="Objects" index="129"]
+position = Vector2(38.0002, 669)
+texture = ExtResource("31_g6c3a")
+
+[node name="Corals-yellow54" type="Sprite2D" parent="Objects" index="130"]
+position = Vector2(24.0002, 661)
+texture = ExtResource("36_ke18h")
+
+[node name="Corals14" type="Sprite2D" parent="Objects" index="131"]
+position = Vector2(35.0003, 640)
+texture = ExtResource("23_xg3jy")
+
+[node name="Corals-blue31" type="Sprite2D" parent="Objects" index="132"]
+position = Vector2(-2.99984, 614)
+texture = ExtResource("14_afkq4")
+
+[node name="Corals-orange73" type="Sprite2D" parent="Objects" index="133"]
+position = Vector2(49.0003, 635)
+texture = ExtResource("15_0av7m")
+
+[node name="Corals-purple56" type="Sprite2D" parent="Objects" index="134"]
+position = Vector2(124, 679)
+texture = ExtResource("24_jmbtv")
+
+[node name="Corals-green38" type="Sprite2D" parent="Objects" index="135"]
+position = Vector2(106, 682)
+texture = ExtResource("30_6dnew")
+
+[node name="Corals-yellow55" type="Sprite2D" parent="Objects" index="136"]
+position = Vector2(-0.999756, 655)
+texture = ExtResource("33_lik57")
+
+[node name="Corals-blue25" type="Sprite2D" parent="Objects" index="137"]
+position = Vector2(70.0001, 498)
+texture = ExtResource("34_g8pxr")
+
+[node name="Corals-purple47" type="Sprite2D" parent="Objects" index="138"]
+position = Vector2(87.0001, 503)
+texture = ExtResource("38_o1vrl")
+
+[node name="Corals-yellow44" type="Sprite2D" parent="Objects" index="139"]
+position = Vector2(269, 636)
+texture = ExtResource("19_iw4bo")
+
+[node name="Corals-pink71" type="Sprite2D" parent="Objects" index="140"]
+position = Vector2(319, 651)
+texture = ExtResource("17_g0a00")
+
+[node name="Corals-orange68" type="Sprite2D" parent="Objects" index="141"]
+position = Vector2(303, 647)
+texture = ExtResource("28_t0xht")
+
+[node name="Corals-green30" type="Sprite2D" parent="Objects" index="142"]
+position = Vector2(317, 640)
+texture = ExtResource("29_kg78h")
+
+[node name="Corals-blue26" type="Sprite2D" parent="Objects" index="143"]
+position = Vector2(285, 629)
+texture = ExtResource("34_g8pxr")
+
+[node name="Corals-purple48" type="Sprite2D" parent="Objects" index="144"]
+position = Vector2(302, 634)
+texture = ExtResource("38_o1vrl")
+
+[node name="Camera2D" parent="." index="8"]
+position = Vector2(-241, 559)
 
 [node name="Corals" type="Node2D" parent="." index="10"]
 
 [node name="Corals-blue3" type="Sprite2D" parent="Corals" index="0"]
-position = Vector2(-218, 585)
+position = Vector2(-208, 608)
 texture = ExtResource("14_afkq4")
 
 [node name="Corals-orange4" type="Sprite2D" parent="Corals" index="1"]
-position = Vector2(-210, 602)
+position = Vector2(-213, 625)
 texture = ExtResource("15_0av7m")
 
 [node name="Corals-orange1" type="Sprite2D" parent="Corals" index="2"]
@@ -632,94 +1389,103 @@ position = Vector2(-70, 689)
 texture = ExtResource("34_g8pxr")
 
 [node name="Corals-blue4" type="Sprite2D" parent="Corals" index="32"]
-position = Vector2(-172, 523)
+position = Vector2(-166, 500)
 texture = ExtResource("35_nf5gl")
 
 [node name="Corals-blue7" type="Sprite2D" parent="Corals" index="33"]
 position = Vector2(-23, 665)
 texture = ExtResource("14_afkq4")
 
-[node name="Corals-orange2" type="Sprite2D" parent="Corals" index="34"]
-position = Vector2(-196, 518)
+[node name="Corals-blue9" type="Sprite2D" parent="Corals" index="34"]
+position = Vector2(-321, 608)
+texture = ExtResource("14_afkq4")
+
+[node name="Corals-orange2" type="Sprite2D" parent="Corals" index="35"]
+position = Vector2(-185, 496)
 texture = ExtResource("16_0fquw")
 
-[node name="Corals-pink8" type="Sprite2D" parent="Corals" index="35"]
-position = Vector2(-188, 533)
+[node name="Corals-pink8" type="Sprite2D" parent="Corals" index="36"]
+position = Vector2(-202, 500)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-yellow8" type="Sprite2D" parent="Corals" index="36"]
-position = Vector2(-222, 517)
+[node name="Corals-yellow8" type="Sprite2D" parent="Corals" index="37"]
+position = Vector2(-322, 536)
 texture = ExtResource("20_r006i")
 
-[node name="Corals-yellow10" type="Sprite2D" parent="Corals" index="37"]
-position = Vector2(-209, 528)
+[node name="Corals-yellow11" type="Sprite2D" parent="Corals" index="38"]
+position = Vector2(-323, 625)
+rotation = 1.5708
+texture = ExtResource("20_r006i")
+
+[node name="Corals-yellow10" type="Sprite2D" parent="Corals" index="39"]
+position = Vector2(-218, 495)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-blue8" type="Sprite2D" parent="Corals" index="38"]
-position = Vector2(-238, 512)
+[node name="Corals-blue8" type="Sprite2D" parent="Corals" index="40"]
+position = Vector2(-240, 490)
 texture = ExtResource("14_afkq4")
 
-[node name="Corals-yellow23" type="Sprite2D" parent="Corals" index="39"]
-position = Vector2(-213, 615)
+[node name="Corals-yellow23" type="Sprite2D" parent="Corals" index="41"]
+position = Vector2(-220, 637)
 texture = ExtResource("20_r006i")
 
-[node name="Corals-blue18" type="Sprite2D" parent="Corals" index="40"]
-position = Vector2(-229, 610)
+[node name="Corals-blue18" type="Sprite2D" parent="Corals" index="42"]
+position = Vector2(-235, 632)
 texture = ExtResource("14_afkq4")
 
-[node name="Corals-yellow6" type="Sprite2D" parent="Corals" index="41"]
-position = Vector2(-148, 517)
+[node name="Corals-yellow6" type="Sprite2D" parent="Corals" index="43"]
+position = Vector2(-151, 505)
 texture = ExtResource("36_ke18h")
 
-[node name="Corals5" type="Sprite2D" parent="Corals" index="42"]
+[node name="Corals5" type="Sprite2D" parent="Corals" index="44"]
 position = Vector2(-133, 678)
 texture = ExtResource("37_0otvl")
 
-[node name="Corals-purple6" type="Sprite2D" parent="Corals" index="43"]
+[node name="Corals-purple6" type="Sprite2D" parent="Corals" index="45"]
 position = Vector2(-87, 684)
 texture = ExtResource("38_o1vrl")
 
-[node name="Corals-blue6" type="Sprite2D" parent="Corals" index="44"]
+[node name="Corals-blue6" type="Sprite2D" parent="Corals" index="46"]
 position = Vector2(-158, 654)
 texture = ExtResource("39_6h8co")
 
-[node name="Corals-orange12" type="Sprite2D" parent="Corals" index="45"]
+[node name="Corals-orange12" type="Sprite2D" parent="Corals" index="47"]
 position = Vector2(-89, 465)
 texture = ExtResource("16_0fquw")
 
-[node name="Corals-pink9" type="Sprite2D" parent="Corals" index="46"]
+[node name="Corals-pink9" type="Sprite2D" parent="Corals" index="48"]
 position = Vector2(-85, 482)
 texture = ExtResource("17_g0a00")
 
-[node name="Corals-yellow9" type="Sprite2D" parent="Corals" index="47"]
+[node name="Corals-yellow9" type="Sprite2D" parent="Corals" index="49"]
 position = Vector2(-106, 477)
 texture = ExtResource("18_xg3jy")
 
-[node name="Corals-purple8" type="Sprite2D" parent="Corals" index="48"]
+[node name="Corals-purple8" type="Sprite2D" parent="Corals" index="50"]
 position = Vector2(188, 563)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink10" type="Sprite2D" parent="Corals" index="49"]
+[node name="Corals-pink10" type="Sprite2D" parent="Corals" index="51"]
 position = Vector2(174, 567)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-purple10" type="Sprite2D" parent="Corals" index="50"]
+[node name="Corals-purple10" type="Sprite2D" parent="Corals" index="52"]
 position = Vector2(364, 484)
 texture = ExtResource("21_p3ti6")
 
-[node name="Corals-pink11" type="Sprite2D" parent="Corals" index="51"]
+[node name="Corals-pink11" type="Sprite2D" parent="Corals" index="53"]
 position = Vector2(350, 488)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-orange20" type="Sprite2D" parent="Corals" index="52"]
+[node name="Corals-orange20" type="Sprite2D" parent="Corals" index="54"]
 position = Vector2(89, 569)
 texture = ExtResource("40_76lmh")
 
-[node name="Corals-orange21" type="Sprite2D" parent="Corals" index="53"]
+[node name="Corals-orange21" type="Sprite2D" parent="Corals" index="55"]
 position = Vector2(104, 572)
 texture = ExtResource("41_d6qvj")
 
-[node name="Corals-blue13" type="Sprite2D" parent="Corals" index="54"]
+[node name="Corals-blue13" type="Sprite2D" parent="Corals" index="56"]
 position = Vector2(98, 587)
 texture = ExtResource("42_kvtvi")
 
@@ -803,90 +1569,179 @@ texture = ExtResource("47_1rwi5")
 position = Vector2(346, -9)
 texture = ExtResource("48_n2sm7")
 
-[node name="Corals-orange9" type="Sprite2D" parent="Corals" index="55"]
+[node name="Corals-yellow22" type="Sprite2D" parent="Corals/Corals-blue13" index="20"]
+position = Vector2(463, -29)
+texture = ExtResource("48_n2sm7")
+
+[node name="Corals-yellow23" type="Sprite2D" parent="Corals/Corals-blue13" index="21"]
+position = Vector2(767, -7)
+texture = ExtResource("48_n2sm7")
+
+[node name="Corals-yellow24" type="Sprite2D" parent="Corals/Corals-blue13" index="22"]
+position = Vector2(770, 87)
+texture = ExtResource("48_n2sm7")
+
+[node name="Corals-yellow25" type="Sprite2D" parent="Corals/Corals-blue13" index="23"]
+position = Vector2(550, 124)
+texture = ExtResource("48_n2sm7")
+
+[node name="Corals-yellow27" type="Sprite2D" parent="Corals/Corals-blue13" index="24"]
+position = Vector2(550, 124)
+texture = ExtResource("48_n2sm7")
+
+[node name="Corals-orange9" type="Sprite2D" parent="Corals" index="57"]
 position = Vector2(-130, 470)
 texture = ExtResource("40_76lmh")
 
-[node name="Corals-orange10" type="Sprite2D" parent="Corals" index="56"]
+[node name="Corals-orange10" type="Sprite2D" parent="Corals" index="58"]
 position = Vector2(-113, 473)
 texture = ExtResource("41_d6qvj")
 
-[node name="Corals-blue2" type="Sprite2D" parent="Corals" index="57"]
+[node name="Corals-blue2" type="Sprite2D" parent="Corals" index="59"]
 position = Vector2(-121, 488)
 texture = ExtResource("42_kvtvi")
 
-[node name="Corals-purple26" type="Sprite2D" parent="Corals" index="58"]
+[node name="Corals-orange9" type="Sprite2D" parent="Corals/Corals-blue2" index="0"]
+position = Vector2(-217, 10)
+texture = ExtResource("40_76lmh")
+
+[node name="Corals-orange10" type="Sprite2D" parent="Corals/Corals-blue2" index="1"]
+position = Vector2(-200, 13)
+texture = ExtResource("41_d6qvj")
+
+[node name="Corals-blue2" type="Sprite2D" parent="Corals/Corals-blue2" index="2"]
+position = Vector2(-208, 28)
+texture = ExtResource("42_kvtvi")
+
+[node name="Corals-purple26" type="Sprite2D" parent="Corals" index="60"]
 position = Vector2(248, 534)
 texture = ExtResource("45_0xvd3")
 
-[node name="Corals-pink35" type="Sprite2D" parent="Corals" index="59"]
+[node name="Corals-pink35" type="Sprite2D" parent="Corals" index="61"]
 position = Vector2(232, 529)
 texture = ExtResource("46_q3inn")
 
-[node name="Corals-orange35" type="Sprite2D" parent="Corals" index="60"]
+[node name="Corals-orange35" type="Sprite2D" parent="Corals" index="62"]
 position = Vector2(252, 552)
 texture = ExtResource("47_1rwi5")
 
-[node name="Corals-yellow28" type="Sprite2D" parent="Corals" index="61"]
+[node name="Corals-yellow28" type="Sprite2D" parent="Corals" index="63"]
 position = Vector2(232, 547)
 texture = ExtResource("48_n2sm7")
 
-[node name="Corals-purple27" type="Sprite2D" parent="Corals" index="62"]
+[node name="Corals-purple27" type="Sprite2D" parent="Corals" index="64"]
 position = Vector2(484, 462)
 texture = ExtResource("45_0xvd3")
 
-[node name="Corals-pink36" type="Sprite2D" parent="Corals" index="63"]
+[node name="Corals-pink36" type="Sprite2D" parent="Corals" index="65"]
 position = Vector2(468, 457)
 texture = ExtResource("46_q3inn")
 
-[node name="Corals-orange36" type="Sprite2D" parent="Corals" index="64"]
+[node name="Corals-yellow12" type="Sprite2D" parent="Corals" index="66"]
+position = Vector2(-324, 642)
+rotation = 3.14159
+texture = ExtResource("18_xg3jy")
+
+[node name="Corals-purple11" type="Sprite2D" parent="Corals" index="67"]
+position = Vector2(-295, 468)
+texture = ExtResource("22_ag4pa")
+
+[node name="Corals-green8" type="Sprite2D" parent="Corals" index="68"]
+position = Vector2(-330, 649)
+rotation = 3.14159
+texture = ExtResource("32_gf1ex")
+
+[node name="Corals-purple28" type="Sprite2D" parent="Corals" index="69"]
+position = Vector2(-291, 649)
+rotation = 3.14159
+texture = ExtResource("45_0xvd3")
+
+[node name="Corals-pink37" type="Sprite2D" parent="Corals" index="70"]
+position = Vector2(-304, 653)
+rotation = 3.14159
+texture = ExtResource("46_q3inn")
+
+[node name="Corals-orange36" type="Sprite2D" parent="Corals" index="71"]
 position = Vector2(488, 480)
 texture = ExtResource("47_1rwi5")
 
-[node name="Corals-yellow29" type="Sprite2D" parent="Corals" index="65"]
+[node name="Corals-yellow29" type="Sprite2D" parent="Corals" index="72"]
 position = Vector2(468, 475)
 texture = ExtResource("48_n2sm7")
 
-[node name="Corals-pink19" type="Sprite2D" parent="Corals" index="66"]
+[node name="Corals-pink19" type="Sprite2D" parent="Corals" index="73"]
 position = Vector2(68, 579)
 texture = ExtResource("26_i8mbw")
 
-[node name="Corals-orange22" type="Sprite2D" parent="Corals" index="67"]
+[node name="Corals-orange22" type="Sprite2D" parent="Corals" index="74"]
 position = Vector2(61, 563)
 texture = ExtResource("16_0fquw")
 
-[node name="Corals-pink20" type="Sprite2D" parent="Corals" index="68"]
+[node name="Corals-pink20" type="Sprite2D" parent="Corals" index="75"]
 position = Vector2(45, 576)
 texture = ExtResource("46_q3inn")
 
-[node name="Corals-purple15" type="Sprite2D" parent="Corals" index="69"]
+[node name="Corals-purple15" type="Sprite2D" parent="Corals" index="76"]
 position = Vector2(-5, 563)
 texture = ExtResource("24_jmbtv")
 
-[node name="Corals-green15" type="Sprite2D" parent="Corals" index="70"]
+[node name="Corals-green15" type="Sprite2D" parent="Corals" index="77"]
 position = Vector2(8, 579)
 texture = ExtResource("30_6dnew")
 
-[node name="Corals-purple16" type="Sprite2D" parent="Corals" index="71"]
+[node name="Corals-purple16" type="Sprite2D" parent="Corals" index="78"]
 position = Vector2(326, 491)
 texture = ExtResource("24_jmbtv")
 
-[node name="Corals-green16" type="Sprite2D" parent="Corals" index="72"]
+[node name="Corals-green16" type="Sprite2D" parent="Corals" index="79"]
 position = Vector2(339, 507)
 texture = ExtResource("30_6dnew")
 
-[node name="Corals10" type="Sprite2D" parent="Corals" index="73"]
+[node name="Corals10" type="Sprite2D" parent="Corals" index="80"]
 position = Vector2(-37, 559)
 texture = ExtResource("37_0otvl")
 
-[node name="Corals-blue14" type="Sprite2D" parent="Corals" index="74"]
+[node name="Corals-blue14" type="Sprite2D" parent="Corals" index="81"]
 position = Vector2(-56, 562)
 texture = ExtResource("39_6h8co")
 
-[node name="Corals11" type="Sprite2D" parent="Corals" index="75"]
+[node name="Corals11" type="Sprite2D" parent="Corals" index="82"]
 position = Vector2(318, 510)
 texture = ExtResource("37_0otvl")
 
-[node name="Corals-blue15" type="Sprite2D" parent="Corals" index="76"]
+[node name="Corals-blue15" type="Sprite2D" parent="Corals" index="83"]
 position = Vector2(299, 513)
 texture = ExtResource("39_6h8co")
+
+[node name="Corals-yellow13" type="Sprite2D" parent="Corals" index="84"]
+position = Vector2(-357, 567)
+rotation = 1.5708
+texture = ExtResource("19_iw4bo")
+
+[node name="Corals-orange6" type="Sprite2D" parent="Corals" index="85"]
+position = Vector2(-344, 583)
+rotation = -1.5708
+texture = ExtResource("28_t0xht")
+
+[node name="Corals-green9" type="Sprite2D" parent="Corals" index="86"]
+position = Vector2(-360, 586)
+rotation = -1.5708
+texture = ExtResource("29_kg78h")
+
+[node name="Corals-blue10" type="Sprite2D" parent="Corals" index="87"]
+position = Vector2(-346, 551)
+rotation = -1.5708
+texture = ExtResource("34_g8pxr")
+
+[node name="Corals6" type="Sprite2D" parent="Corals" index="88"]
+position = Vector2(-347, 599)
+rotation = -1.5708
+texture = ExtResource("37_0otvl")
+
+[node name="Corals-purple12" type="Sprite2D" parent="Corals" index="89"]
+position = Vector2(-337, 567)
+rotation = -1.5708
+texture = ExtResource("38_o1vrl")
+
+[node name="Player" parent="." index="11"]
+position = Vector2(-241, 559)

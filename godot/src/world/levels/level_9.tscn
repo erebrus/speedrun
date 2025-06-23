@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://cglj3v02ye0nw"]
+[gd_scene load_steps=60 format=4 uid="uid://cglj3v02ye0nw"]
 
 [ext_resource type="PackedScene" uid="uid://lqtollaovard" path="res://src/world/base_level.tscn" id="1_xx6l8"]
 [ext_resource type="Texture2D" uid="uid://bg5yhommbu724" path="res://assets/gfx/environment/seaweed6.png" id="2_iub6i"]
@@ -8,10 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://4xv6i8je5imf" path="res://assets/gfx/environment/seaweed1.png" id="6_wrn13"]
 [ext_resource type="Texture2D" uid="uid://dpo3a2i0pru2y" path="res://assets/gfx/environment/seaweed2.png" id="7_bl7h5"]
 [ext_resource type="Texture2D" uid="uid://dqc30htixarul" path="res://assets/gfx/environment/seaweed3.png" id="8_0amp4"]
+[ext_resource type="Theme" uid="uid://m1aiqyn5vres" path="res://src/hud/theme.tres" id="9_287ir"]
 [ext_resource type="PackedScene" uid="uid://b4qx3sm45yl5d" path="res://src/world/objects/energy_node.tscn" id="9_twcwm"]
 [ext_resource type="PackedScene" uid="uid://b2ivjq3gqi8r2" path="res://src/world/objects/cave.tscn" id="10_dpond"]
+[ext_resource type="Texture2D" uid="uid://b4td77twahju3" path="res://assets/gfx/UI/key3.png" id="10_lovc4"]
 [ext_resource type="Texture2D" uid="uid://ddvq81nb4u7w4" path="res://assets/gfx/environment/corals/corals1.png" id="11_7ep1w"]
 [ext_resource type="PackedScene" uid="uid://ev1ert1usngp" path="res://src/world/objects/urchin.tscn" id="11_iub6i"]
+[ext_resource type="FontFile" uid="uid://dl8wj07sdcq6d" path="res://assets/fonts/Tilt_Warp/TiltWarp-Regular-VariableFont_XROT,YROT.ttf" id="11_wrn13"]
 [ext_resource type="Texture2D" uid="uid://six1oksu6odo" path="res://assets/gfx/environment/corals/corals-blue3.png" id="12_4js8s"]
 [ext_resource type="Texture2D" uid="uid://dyhse57di2qne" path="res://assets/gfx/environment/corals/corals-orange4.png" id="13_5knsn"]
 [ext_resource type="Texture2D" uid="uid://ccl4wgetix23j" path="res://assets/gfx/environment/corals/corals-orange1.png" id="14_ig7mq"]
@@ -53,6 +56,17 @@
 [ext_resource type="Texture2D" uid="uid://bq1oqwmlt072v" path="res://assets/gfx/environment/corals/corals2.png" id="50_6c2st"]
 [ext_resource type="Texture2D" uid="uid://cagphmix1iws3" path="res://assets/gfx/environment/corals/corals-blue6.png" id="51_hn66d"]
 [ext_resource type="Texture2D" uid="uid://dyor6d73ae0je" path="res://assets/gfx/environment/corals/corals-blue2.png" id="52_phb0j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1nn1v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bl7h5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0amp4"]
+texture = ExtResource("10_lovc4")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [node name="TestLevel" instance=ExtResource("1_xx6l8")]
 
@@ -421,6 +435,72 @@ tile_map_data = PackedByteArray("AAD8/xEAAgADAAMAAgD9/xAAAgADAAIAAAD9/xEAAgAAAAM
 tile_map_data = PackedByteArray("AAABABIAAAABAAAAAQACABIAAAABAAAAAQADABIAAAABAAAAAQAEABIAAAABAAAAAQAFABIAAAABAAAAAQAGABIAAAABAAAAAQABABEAAAABAAAAAQACABEAAAABAAAAAQADABEAAAABAAAAAQAEABEAAAABAAAAAQAFABEAAAABAAAAAQAGABEAAAABAAAAAQAHABEAAAABAAAAAQAIABEAAAABAAAAAQAJABEAAAABAAAAAQAKABEAAAABAAAAAQALABEAAAABAAAAAQAMABEAAAABAAAAAQANABEAAAABAAAAAQAOABEAAAABAAAAAQAPABEAAAABAAAAAQAQABEAAAABAAAAAQARABEAAAABAAAAAQAHABIAAAABAAAAAQAIABIAAAABAAAAAQAJABIAAAABAAAAAQAKABIAAAABAAAAAQALABIAAAABAAAAAQAMABIAAAABAAAAAQANABIAAAABAAAAAQAOABIAAAABAAAAAQAPABIAAAABAAAAAQAQABIAAAABAAAAAQARABIAAAABAAAAAQABABMAAAABAAAAAQACABMAAAABAAAAAQADABMAAAABAAAAAQAEABMAAAABAAAAAQAFABMAAAABAAAAAQAGABMAAAABAAAAAQAHABMAAAABAAAAAQAIABMAAAABAAAAAQAJABMAAAABAAAAAQAKABMAAAABAAAAAQALABMAAAABAAAAAQAMABMAAAABAAAAAQANABMAAAABAAAAAQAOABMAAAABAAAAAQAPABMAAAABAAAAAQAQABMAAAABAAAAAQARABMAAAABAAAAAQASABMAAAABAAAAAQASABEAAAABAAAAAQATABEAAAABAAAAAQAUABEAAAABAAAAAQAVABEAAAABAAAAAQAWABEAAAABAAAAAQAXABEAAAABAAAAAQAYABEAAAABAAAAAQAZABEAAAABAAAAAQAaABEAAAABAAAAAQAbABEAAAABAAAAAQAcABEAAAABAAAAAQAdABEAAAABAAAAAQAeABEAAAABAAAAAQAfABEAAAABAAAAAQAgABEAAAABAAAAAQAhABEAAAABAAAAAQASABIAAAABAAAAAQATABIAAAABAAAAAQAUABIAAAABAAAAAQAVABIAAAABAAAAAQAWABIAAAABAAAAAQAXABIAAAABAAAAAQAYABIAAAABAAAAAQAZABIAAAABAAAAAQAaABIAAAABAAAAAQAbABIAAAABAAAAAQAcABIAAAABAAAAAQAdABIAAAABAAAAAQAeABIAAAABAAAAAQAfABIAAAABAAAAAQAgABIAAAABAAAAAQAhABIAAAABAAAAAQATABMAAAABAAAAAQAUABMAAAABAAAAAQAVABMAAAABAAAAAQAWABMAAAABAAAAAQAXABMAAAABAAAAAQAYABMAAAABAAAAAQAZABMAAAABAAAAAQAaABMAAAABAAAAAQAbABMAAAABAAAAAQAcABMAAAABAAAAAQAdABMAAAABAAAAAQAeABMAAAABAAAAAQAfABMAAAABAAAAAQAgABMAAAABAAAAAQAhABMAAAABAAAAAQAlABUAAAABAAAAAgAlABYAAAAAAAAAAgAlABcAAAABAAAAAgAlABgAAAAAAAAAAgAlABkAAAABAAAAAgAlABoAAAAAAAAAAgAlABsAAAABAAAAAgAmABgAAAAAAAAAAgAmABcAAAABAAAAAgAmABYAAAAAAAAAAgAmABUAAAABAAAAAgAmABkAAAABAAAAAgAmABoAAAAAAAAAAgAmABsAAAABAAAAAgAkABUAAAABAAAAAgAkABYAAAAAAAAAAgAkABcAAAABAAAAAgAkABgAAAAAAAAAAgAkABkAAAABAAAAAgAkABoAAAAAAAAAAgAkABsAAAABAAAAAgA=")
 current_strength = Array[float]([50.0, 150.0, 350.0])
 
+[node name="Energy" type="PanelContainer" parent="Tips" index="0"]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.183
+offset_top = 1717.72
+offset_right = 98.8168
+offset_bottom = 1757.72
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_287ir")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1nn1v")
+
+[node name="Label" type="Label" parent="Tips/Energy" index="0"]
+layout_mode = 2
+text = "Collect pearls to fill up your energy"
+
+[node name="Boost" type="PanelContainer" parent="Tips" index="1"]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3507.51
+offset_top = 1642.64
+offset_right = 3789.51
+offset_bottom = 1722.64
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_287ir")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bl7h5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tips/Boost" index="0"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="Tips/Boost/VBoxContainer" index="0"]
+layout_mode = 2
+text = "Once your energy is full, press"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tips/Boost/VBoxContainer" index="1"]
+layout_mode = 2
+
+[node name="KeyTooltip" type="PanelContainer" parent="Tips/Boost/VBoxContainer/HBoxContainer" index="0"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_0amp4")
+
+[node name="Label" type="Label" parent="Tips/Boost/VBoxContainer/HBoxContainer/KeyTooltip" index="0"]
+texture_filter = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("11_wrn13")
+theme_override_font_sizes/font_size = 16
+text = "SPACE"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Tips/Boost/VBoxContainer/HBoxContainer" index="1"]
+layout_mode = 2
+text = "for a super thrust!"
+
 [node name="EnergyNode" parent="Objects" index="0" instance=ExtResource("9_twcwm")]
 position = Vector2(332, 593)
 
@@ -448,9 +528,6 @@ position = Vector2(193, 594)
 [node name="Cave" parent="Objects" index="8" instance=ExtResource("10_dpond")]
 position = Vector2(1202, 1261)
 rotation = 4.66876
-
-[node name="Camera2D" parent="." index="7"]
-position = Vector2(-22, 593)
 
 [node name="Urchins" type="Node2D" parent="." index="8"]
 
@@ -538,7 +615,7 @@ rotation = -2.39285
 position = Vector2(1156, 517)
 rotation = -4.03869
 
-[node name="Player" parent="." index="10"]
+[node name="Camera2D" parent="." index="9"]
 position = Vector2(-22, 593)
 
 [node name="Corals" type="Node2D" parent="." index="11"]
@@ -1650,3 +1727,6 @@ texture = ExtResource("11_7ep1w")
 [node name="Corals-blue2" type="Sprite2D" parent="Corals/Corals6" index="0"]
 position = Vector2(-7, 10)
 texture = ExtResource("52_phb0j")
+
+[node name="Player" parent="." index="12"]
+position = Vector2(-22, 593)
