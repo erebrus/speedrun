@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5kt7i6kbcbkt"]
+
+[ext_resource type="Script" uid="uid://bpvx6ia3hw8xb" path="res://src/world/scatter/scatter.gd" id="1_r0byo"]
+
+[node name="Scatter" type="Node2D"]
+script = ExtResource("1_r0byo")
+min_radius = null
+max_radius = null
+rotation_type = null
